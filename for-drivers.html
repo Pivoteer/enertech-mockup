@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Charge at Enertech EV Stations | For Drivers</title>
+  <meta name="description" content="How to start a charge, check speeds, and get support at Enertech EV charging stations across Colorado. No app required — plug in, scan, and charge." />
+  <link rel="canonical" href="https://enertechev.com/for-drivers" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:         #0C0C0C;
+      --ink-2:       #1C1C1C;
+      --ink-3:       #2E2E2E;
+      --secondary:   #6B6B6B;
+      --muted:       #9B9B9B;
+      --border:      rgba(0,0,0,0.08);
+      --border-mid:  rgba(0,0,0,0.14);
+      --canvas:      #F9FAFB;
+      --surface:     #FFFFFF;
+      --canvas-dark: #0C0C0C;
+      --surface-dark:#1C1C1C;
+      --border-dark: rgba(255,255,255,0.09);
+      --shadow-sm:   0 4px 12px -4px rgba(0,0,0,0.08);
+      --shadow-card: 0 20px 40px -15px rgba(0,0,0,0.07);
+      --shadow-lift: 0 28px 48px -12px rgba(0,0,0,0.18);
+      --r-xl:  2.5rem;
+      --r-lg:  1.5rem;
+      --r-md:  0.875rem;
+      --r-sm:  0.5rem;
+      --ease:  cubic-bezier(0.32, 0.72, 0, 1);
+      --max: 1320px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+      background: var(--canvas);
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── TYPOGRAPHY ── */
+    .h1 { font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 900; line-height: 1.0; letter-spacing: -0.03em; }
+    .h2 { font-size: clamp(1.75rem, 3vw, 2.75rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.022em; }
+    .h3 { font-size: 1.1rem; font-weight: 700; line-height: 1.3; letter-spacing: -0.01em; }
+    .body-lg { font-size: 1.15rem; line-height: 1.7; color: var(--secondary); }
+    .body-md { font-size: 1rem; line-height: 1.65; color: var(--secondary); }
+    .label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+
+    /* ── LAYOUT ── */
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .section { padding: 120px 0; }
+    .section--dark { background: var(--canvas-dark); color: #F9FAFB; }
+    .section--dark .body-lg,
+    .section--dark .body-md { color: rgba(249,250,251,0.62); }
+    .section--dark .label { color: rgba(249,250,251,0.35); }
+    .section--dark .h2 { color: #F9FAFB; }
+    .section--mid { background: var(--surface); }
+
+    /* ── REVEAL ANIMATIONS ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s var(--ease), transform 0.75s var(--ease);
+    }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 80ms; }
+    .reveal-d2 { transition-delay: 160ms; }
+    .reveal-d3 { transition-delay: 240ms; }
+    .reveal-d4 { transition-delay: 320ms; }
+    .reveal-d5 { transition-delay: 480ms; }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      border: none; cursor: pointer;
+      font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.95rem;
+      transition: all 0.3s var(--ease); text-decoration: none; white-space: nowrap;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary {
+      background: var(--ink); color: #F9FAFB;
+      padding: 14px 16px 14px 24px; border-radius: var(--r-md);
+    }
+    .btn-primary:hover { background: var(--ink-3); box-shadow: var(--shadow-lift); }
+    .btn-icon {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: rgba(255,255,255,0.14);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      transition: transform 0.3s var(--ease), background 0.3s var(--ease);
+    }
+    .btn-primary:hover .btn-icon { transform: translateX(3px); background: rgba(255,255,255,0.22); }
+    .btn-ghost-light {
+      background: transparent; color: var(--ink);
+      padding: 14px 20px; border-radius: var(--r-md);
+      border: 1.5px solid var(--border-mid);
+    }
+    .btn-ghost-light:hover { border-color: var(--ink); }
+    .btn-white {
+      background: #F9FAFB; color: var(--ink);
+      padding: 14px 16px 14px 24px; border-radius: var(--r-md);
+    }
+    .btn-white:hover { background: #fff; box-shadow: var(--shadow-lift); }
+    .btn-white .btn-icon { background: rgba(0,0,0,0.07); }
+    .btn-white:hover .btn-icon { transform: translateX(3px); }
+    .risk { font-size: 0.82rem; color: rgba(255,255,255,0.42); margin-top: 12px; }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(12,12,12,0.88);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-inner {
+      max-width: var(--max); margin: 0 auto; padding: 0 40px;
+      height: 66px; display: flex; align-items: center;
+      justify-content: space-between; gap: 24px;
+    }
+    .nav-logo { font-size: 1.2rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; flex-shrink: 0; }
+    .nav-links { display: flex; gap: 2px; list-style: none; }
+    .nav-links a {
+      display: block; padding: 8px 14px;
+      font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.55);
+      text-decoration: none; border-radius: var(--r-sm);
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: #F9FAFB; background: rgba(255,255,255,0.07); }
+    .nav-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .nav-cta .btn-primary { padding: 10px 12px 10px 18px; font-size: 0.875rem; }
+    .nav-cta .btn-icon { width: 28px; height: 28px; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      background: var(--canvas-dark);
+      color: #F9FAFB;
+      padding: 140px 0 100px;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0; overflow: hidden;
+    }
+    .hero-bg-img {
+      width: 100%; height: 120%;
+      object-fit: cover; object-position: center 55%;
+      will-change: transform;
+      transform: translateY(-10%);
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        105deg,
+        rgba(10,10,10,0.88) 0%,
+        rgba(10,10,10,0.72) 45%,
+        rgba(10,10,10,0.40) 80%,
+        rgba(10,10,10,0.28) 100%
+      );
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 680px;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 999px;
+      padding: 6px 14px 6px 10px;
+      margin-bottom: 32px;
+    }
+    .hero-eyebrow-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: #fff; opacity: 0.7;
+    }
+    .hero-eyebrow span { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+    .hero h1 { color: #F9FAFB; margin-bottom: 24px; }
+    .hero .body-lg { color: rgba(249,250,251,0.7); max-width: 560px; margin-bottom: 48px; }
+
+    /* ── SUPPORT BAND ── */
+    .support-band {
+      background: var(--ink-2);
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .support-band-inner {
+      max-width: var(--max); margin: 0 auto; padding: 0 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 24px; flex-wrap: wrap;
+    }
+    .support-item {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .support-icon {
+      width: 40px; height: 40px; border-radius: var(--r-sm);
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .support-icon svg { width: 18px; height: 18px; color: rgba(255,255,255,0.7); }
+    .support-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 2px; }
+    .support-value { font-size: 0.95rem; font-weight: 600; color: #F9FAFB; }
+    .support-value a { color: #F9FAFB; text-decoration: none; }
+    .support-value a:hover { text-decoration: underline; }
+    .support-divider { width: 1px; height: 40px; background: rgba(255,255,255,0.1); }
+
+    /* ── STEPS ── */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+    .step-card {
+      background: var(--surface);
+      padding: 56px 48px;
+      position: relative;
+      transition: background 0.3s var(--ease);
+    }
+    .step-card:hover { background: #FAFAFA; }
+    .step-number {
+      font-size: 4.5rem; font-weight: 900; letter-spacing: -0.04em;
+      line-height: 1; color: var(--border-mid);
+      margin-bottom: 28px;
+      transition: color 0.3s var(--ease);
+    }
+    .step-card:hover .step-number { color: rgba(0,0,0,0.12); }
+    .step-card .h3 { margin-bottom: 12px; }
+    .step-card .body-md { margin-bottom: 0; }
+    .step-note {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 16px;
+      background: var(--canvas);
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      padding: 8px 12px;
+      font-size: 0.82rem; font-weight: 500; color: var(--secondary);
+    }
+    .step-note svg { width: 14px; height: 14px; flex-shrink: 0; opacity: 0.6; }
+    /* Full-width last step if odd count */
+    .step-card--wide {
+      grid-column: 1 / -1;
+    }
+    /* Step connector line on desktop */
+    @media (min-width: 768px) {
+      .step-card { border-right: 3px solid var(--canvas); border-bottom: 3px solid var(--canvas); }
+      .step-card:nth-child(even) { border-right: none; }
+    }
+
+    /* ── CHARGER SPECS ── */
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+      border-radius: var(--r-xl);
+      overflow: hidden;
+    }
+    .spec-card {
+      background: var(--surface-dark);
+      padding: 48px 40px 56px;
+      position: relative;
+      transition: background 0.25s var(--ease);
+    }
+    .spec-card:hover { background: #232323; }
+    .spec-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--r-sm);
+      padding: 5px 12px;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 28px;
+    }
+    .spec-name {
+      font-size: 1.5rem; font-weight: 800; letter-spacing: -0.025em; color: #F9FAFB;
+      margin-bottom: 6px;
+    }
+    .spec-sub {
+      font-size: 0.875rem; color: rgba(255,255,255,0.4);
+      margin-bottom: 36px;
+    }
+    .spec-stat-row {
+      display: flex; flex-direction: column; gap: 20px;
+    }
+    .spec-stat { display: flex; flex-direction: column; gap: 4px; }
+    .spec-stat-value {
+      font-size: 2rem; font-weight: 900; letter-spacing: -0.03em;
+      color: #F9FAFB; line-height: 1;
+    }
+    .spec-stat-label { font-size: 0.78rem; font-weight: 500; color: rgba(255,255,255,0.4); }
+    .spec-divider {
+      width: 100%; height: 1px;
+      background: rgba(255,255,255,0.07);
+      margin: 20px 0;
+    }
+    .spec-feature-list {
+      list-style: none; display: flex; flex-direction: column; gap: 10px;
+      margin-top: 28px;
+    }
+    .spec-feature-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.875rem; color: rgba(255,255,255,0.55);
+    }
+    .spec-check {
+      width: 16px; height: 16px; flex-shrink: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 2px;
+    }
+    .spec-check svg { width: 8px; height: 8px; color: rgba(255,255,255,0.6); }
+
+    /* ── APP SECTION ── */
+    .app-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .app-badge-row {
+      display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap;
+    }
+    .app-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--ink);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--r-md);
+      padding: 12px 20px;
+      text-decoration: none;
+      transition: background 0.25s var(--ease), border-color 0.25s;
+    }
+    .app-badge:hover { background: var(--ink-3); border-color: rgba(255,255,255,0.25); }
+    .app-badge svg { width: 22px; height: 22px; color: #F9FAFB; flex-shrink: 0; }
+    .app-badge-text { display: flex; flex-direction: column; }
+    .app-badge-line1 { font-size: 0.65rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+    .app-badge-line2 { font-size: 0.95rem; font-weight: 700; color: #F9FAFB; }
+    .app-visual {
+      position: relative;
+    }
+    .app-card {
+      background: var(--surface-dark);
+      border-radius: var(--r-xl);
+      padding: 40px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .app-card-header {
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 32px;
+    }
+    .app-logo-circle {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .app-logo-circle svg { width: 22px; height: 22px; color: #F9FAFB; }
+    .app-card-title { font-size: 1rem; font-weight: 700; color: #F9FAFB; }
+    .app-card-sub { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+    .app-feature-row {
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .app-feature {
+      display: flex; align-items: center; gap: 14px;
+      padding: 16px;
+      background: rgba(255,255,255,0.04);
+      border-radius: var(--r-md);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .app-feature-icon {
+      width: 36px; height: 36px; border-radius: var(--r-sm);
+      background: rgba(255,255,255,0.07);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .app-feature-icon svg { width: 16px; height: 16px; color: rgba(255,255,255,0.65); }
+    .app-feature-text { display: flex; flex-direction: column; gap: 2px; }
+    .app-feature-name { font-size: 0.875rem; font-weight: 600; color: #F9FAFB; }
+    .app-feature-desc { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+
+    /* ── FAQ ── */
+    .faq-list {
+      display: flex; flex-direction: column;
+      border-top: 1px solid var(--border);
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-q {
+      width: 100%; background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+      padding: 28px 0;
+      text-align: left;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem; font-weight: 600; color: var(--ink);
+      transition: color 0.2s;
+    }
+    .faq-q:hover { color: var(--ink-3); }
+    .faq-toggle {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--canvas);
+      border: 1px solid var(--border-mid);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.25s var(--ease), transform 0.3s var(--ease);
+    }
+    .faq-toggle svg { width: 12px; height: 12px; color: var(--secondary); transition: transform 0.3s var(--ease); }
+    .faq-item.open .faq-toggle { background: var(--ink); border-color: var(--ink); }
+    .faq-item.open .faq-toggle svg { color: #F9FAFB; transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s var(--ease), padding 0.3s var(--ease);
+    }
+    .faq-a-inner {
+      padding-bottom: 28px;
+      font-size: 1rem; line-height: 1.7; color: var(--secondary);
+      max-width: 700px;
+    }
+    .faq-item.open .faq-a { max-height: 400px; }
+
+    /* ── SUPPORT SECTION ── */
+    .support-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      border-radius: var(--r-xl);
+      overflow: hidden;
+    }
+    .support-card {
+      background: var(--surface);
+      padding: 56px 48px;
+    }
+    .support-card--dark {
+      background: var(--ink);
+      color: #F9FAFB;
+    }
+    .support-card--dark .h3 { color: #F9FAFB; }
+    .support-card--dark .body-md { color: rgba(249,250,251,0.6); }
+    .support-phone {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 900; letter-spacing: -0.03em;
+      color: #F9FAFB; text-decoration: none;
+      display: block; margin: 20px 0 8px;
+      transition: opacity 0.2s;
+    }
+    .support-phone:hover { opacity: 0.8; }
+    .support-available {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 999px; padding: 5px 12px;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+    }
+    .pulse-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: rgba(255,255,255,0.8);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+    .support-steps {
+      list-style: none; display: flex; flex-direction: column; gap: 14px;
+      margin-top: 24px;
+    }
+    .support-steps li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 0.95rem; color: var(--secondary);
+    }
+    .support-step-num {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--canvas); border: 1px solid var(--border-mid);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; font-weight: 700; color: var(--secondary);
+      flex-shrink: 0; margin-top: 2px;
+    }
+
+    /* ── CONNECTOR COMPAT ── */
+    .compat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .compat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 32px 28px;
+      transition: box-shadow 0.25s var(--ease), transform 0.25s var(--ease);
+    }
+    .compat-card:hover { box-shadow: var(--shadow-lift); transform: translateY(-3px); }
+    .compat-icon {
+      width: 52px; height: 52px; border-radius: var(--r-md);
+      background: var(--canvas);
+      border: 1px solid var(--border-mid);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+    .compat-icon svg { width: 24px; height: 24px; color: var(--ink-3); }
+    .compat-card .h3 { margin-bottom: 8px; }
+    .compat-card .body-md { font-size: 0.9rem; }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--canvas-dark);
+      padding: 64px 0 40px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-inner {
+      max-width: var(--max); margin: 0 auto; padding: 0 40px;
+    }
+    .footer-top {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 48px; flex-wrap: wrap;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      margin-bottom: 32px;
+    }
+    .footer-brand { max-width: 320px; }
+    .footer-logo { font-size: 1.3rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; }
+    .footer-tagline { font-size: 0.875rem; color: rgba(255,255,255,0.38); margin-top: 10px; line-height: 1.5; }
+    .footer-links { display: flex; gap: 48px; flex-wrap: wrap; }
+    .footer-col { display: flex; flex-direction: column; gap: 4px; }
+    .footer-col-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.28); margin-bottom: 8px; }
+    .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.5); text-decoration: none; padding: 4px 0; transition: color 0.2s; }
+    .footer-col a:hover { color: #F9FAFB; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.25); }
+    .footer-service { font-size: 0.78rem; color: rgba(255,255,255,0.25); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .wrap { padding: 0 24px; }
+      .section { padding: 80px 0; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .step-card--wide { grid-column: auto; }
+      .specs-grid { grid-template-columns: 1fr; }
+      .app-split { grid-template-columns: 1fr; gap: 48px; }
+      .support-grid { grid-template-columns: 1fr; }
+      .compat-row { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .footer-top { flex-direction: column; }
+    }
+    @media (max-width: 600px) {
+      .hero { padding: 100px 0 72px; }
+      .support-band-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .support-divider { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Enertech</a>
+      <ul class="nav-links">
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="property-managers.html">For Property Managers</a></li>
+        <li><a href="for-drivers.html" class="active">For Drivers</a></li>
+        <li><a href="service-area.html">Service Area</a></li>
+      </ul>
+      <div class="nav-right nav-cta">
+        <a href="assessment.html" class="btn btn-primary">
+          Get a free assessment
+          <span class="btn-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Page hero">
+    <div class="hero-bg">
+      <img class="hero-bg-img" src="assets/hero-bg.JPG" alt="Enertech EV charging stations at a Colorado multifamily property" loading="eager" fetchpriority="high" id="hero-img" />
+    </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="hero-content">
+        <div class="hero-eyebrow reveal">
+          <span class="hero-eyebrow-dot" aria-hidden="true"></span>
+          <span>For EV Drivers</span>
+        </div>
+        <h1 class="h1 reveal reveal-d1">Plug in.<br>Scan. Charge.</h1>
+        <p class="body-lg reveal reveal-d2">Charging at an Enertech station is straightforward — no app required to get started. Everything you need is on the charger. Here's how it works.</p>
+        <div class="reveal reveal-d3">
+          <a href="tel:+18888957158" class="btn btn-white">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Need help right now? Call 24/7 support
+            <span class="btn-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 24/7 SUPPORT BAND -->
+  <div class="support-band" role="complementary" aria-label="Quick support info">
+    <div class="support-band-inner">
+      <div class="support-item">
+        <div class="support-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div>
+          <div class="support-label">24/7 Driver Support</div>
+          <div class="support-value"><a href="tel:+18888957158">+1 888 895 7158</a></div>
+        </div>
+      </div>
+      <div class="support-divider" aria-hidden="true"></div>
+      <div class="support-item">
+        <div class="support-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <div>
+          <div class="support-label">App</div>
+          <div class="support-value">Monta (optional — no download required)</div>
+        </div>
+      </div>
+      <div class="support-divider" aria-hidden="true"></div>
+      <div class="support-item">
+        <div class="support-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div>
+          <div class="support-label">Charger types on site</div>
+          <div class="support-value">Level 2 (AC) · DC Fast Charging</div>
+        </div>
+      </div>
+      <div class="support-divider" aria-hidden="true"></div>
+      <div class="support-item">
+        <div class="support-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <div class="support-label">Connectors</div>
+          <div class="support-value">SAE J1772 · NACS/Tesla adapter available</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW TO START A CHARGE -->
+  <section class="section" aria-labelledby="how-to-charge-heading">
+    <div class="wrap">
+      <div style="max-width:560px; margin-bottom: 72px;">
+        <p class="label reveal">Step by step</p>
+        <h2 class="h2 reveal reveal-d1" id="how-to-charge-heading">How to start a charge</h2>
+        <p class="body-lg reveal reveal-d2">No account needed. No app download required. Just plug in and follow the prompts on the charger screen — it takes about 60 seconds.</p>
+      </div>
+
+      <div class="steps-grid">
+
+        <div class="step-card reveal">
+          <div class="step-number" aria-hidden="true">01</div>
+          <h3 class="h3">Pull into an EV charging space</h3>
+          <p class="body-md">Look for spaces marked <strong>EV Charging</strong> in the parking area. Enertech stations are identified by the Enertech logo on the charger pedestal.</p>
+        </div>
+
+        <div class="step-card reveal reveal-d1">
+          <div class="step-number" aria-hidden="true">02</div>
+          <h3 class="h3">Plug in your vehicle</h3>
+          <p class="body-md">Grab the connector from the charger and plug it into your vehicle's charging port. The charger screen will wake up automatically once the cable is connected.</p>
+          <div class="step-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            SAE J1772 connector — fits all non-Tesla EVs. Tesla drivers: use the J1772 adapter that came with your vehicle, or ask about the NACS adapter on site.
+          </div>
+        </div>
+
+        <div class="step-card reveal reveal-d2">
+          <div class="step-number" aria-hidden="true">03</div>
+          <h3 class="h3">Scan the QR code on the screen</h3>
+          <p class="body-md">Use your phone's camera to scan the QR code displayed on the charger screen. This opens the Monta web app directly in your browser — no app download required.</p>
+          <div class="step-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            If the charger screen is off, press the screen or reconnect the cable to wake it.
+          </div>
+        </div>
+
+        <div class="step-card reveal reveal-d3">
+          <div class="step-number" aria-hidden="true">04</div>
+          <h3 class="h3">Enter payment details</h3>
+          <p class="body-md">In the Monta web app, enter your payment information to authorize the session. Pricing is shown before you confirm — you'll only be charged for the energy you use.</p>
+        </div>
+
+        <div class="step-card step-card--wide reveal reveal-d4">
+          <div class="step-number" aria-hidden="true">05</div>
+          <h3 class="h3">Charging begins — check your progress anytime</h3>
+          <p class="body-md">The charger screen shows your session status in real time. If you downloaded the Monta app or created an account, you can also monitor charge progress, view session history, and get a notification when your vehicle is fully charged.</p>
+          <div class="step-note" style="margin-top:20px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            When your session ends, unplug and return the cable to the holster. You're done.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CHARGER SPECS -->
+  <section class="section section--dark" aria-labelledby="charger-specs-heading">
+    <div class="wrap">
+      <div style="max-width:560px; margin-bottom: 72px;">
+        <p class="label reveal">Hardware</p>
+        <h2 class="h2 reveal reveal-d1" id="charger-specs-heading">Autel chargers — built for multifamily</h2>
+        <p class="body-lg reveal reveal-d2">All Enertech sites use commercial-grade Autel charging hardware. Depending on the property, you may see Level 2 or DC fast charging — or both.</p>
+      </div>
+
+      <div class="specs-grid">
+
+        <!-- AC Ultra -->
+        <div class="spec-card reveal">
+          <div class="spec-badge">Level 2 · AC</div>
+          <div class="spec-name">AC Ultra</div>
+          <div class="spec-sub">Autel MaxiCharger AC Ultra</div>
+          <div class="spec-stat-row">
+            <div class="spec-stat">
+              <div class="spec-stat-value">80A</div>
+              <div class="spec-stat-label">Max output (amperage)</div>
+            </div>
+            <div class="spec-stat">
+              <div class="spec-stat-value">19.2 kW</div>
+              <div class="spec-stat-label">Max power output</div>
+            </div>
+            <div class="spec-stat">
+              <div class="spec-stat-value">~30 mi</div>
+              <div class="spec-stat-label">Range added per hour (avg)</div>
+            </div>
+          </div>
+          <div class="spec-divider" aria-hidden="true"></div>
+          <ul class="spec-feature-list" aria-label="AC Ultra features">
+            <li>
+              <span class="spec-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              SAE J1772 connector standard
+            </li>
+            <li>
+              <span class="spec-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Networked via Monta — real-time monitoring
+            </li>
+            <li>
+              <span class="spec-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Overnight charge for most EVs
+            </li>
+          </ul>
+        </div>
+
+        <!-- AC Pro -->
+        <div class="spec-card reveal reveal-d1">
+          <div class="spec-badge">Level 2 · AC</div>
+          <div class="spec-name">AC Pro</div>
+          <div class="spec-sub">Autel MaxiCharger AC Pro</div>
+          <div class="spec-stat-row">
+            <div class="spec-stat">
+              <div class="spec-stat-value">80A</div>
+              <div class="spec-stat-label">Max output (amperage)</div>
+            </div>
+            <div class="spec-stat">
+              <div class="spec-stat-value">19.2 kW</div>
+              <div class="spec-stat-label">Max power output</div>
+            </div>
+            <div class="spec-stat">
+              <div class="spec-stat-value">~30 mi</div>
+              <div class="spec-stat-label">Range added per hour (avg)</div>
+            </div>
+          </div>
+          <div class="spec-divider" aria-hidden="true"></div>
+          <ul class="spec-feature-list" aria-label="AC Pro features">
+            <li>
+              <span class="spec-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              SAE J1772 connector standard
+            </li>
+            <li>
+              <span class="spec-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Touchscreen display with QR code
+            </li>
+            <li>
+              <span class="spec-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Ideal for overnight residential charging
+            </li>
+          </ul>
+        </div>
+
+        <!-- DC Compact -->
+        <div class="spec-card reveal reveal-d2">
+          <div class="spec-badge">DC Fast Charging</div>
+          <div class="spec-name">DC Compact</div>
+          <div class="spec-sub">Autel MaxiCharger DC Compact</div>
+          <div class="spec-stat-row">
+            <div class="spec-stat">
+              <div class="spec-stat-value">40 kW</div>
+              <div class="spec-stat-label">Max power output</div>
+            </div>
+            <div class="spec-stat">
+              <div class="spec-stat-value">~100 mi</div>
+              <div class="spec-stat-label">Range added per hour (avg)</div>
+            </div>
+            <div class="spec-stat">
+              <div class="spec-stat-value">~45 min</div>
+              <div class="spec-stat-label">Typical 20–80% charge time</div>
+            </div>
+          </div>
+          <div class="spec-divider" aria-hidden="true"></div>
+          <ul class="spec-feature-list" aria-label="DC Compact features">
+            <li>
+              <span class="spec-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Fastest charge available at Enertech sites
+            </li>
+            <li>
+              <span class="spec-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Not at all properties — check site signage
+            </li>
+            <li>
+              <span class="spec-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Vehicle must support DC fast charging
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <p class="body-md reveal" style="margin-top: 28px; text-align: center; font-size: 0.85rem;">
+        Actual charge times vary by vehicle battery size, current charge level, and temperature. These figures are estimates based on average EV efficiency.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONNECTOR COMPATIBILITY -->
+  <section class="section section--mid" aria-labelledby="compatibility-heading">
+    <div class="wrap">
+      <div style="max-width:560px; margin-bottom: 56px;">
+        <p class="label reveal">Compatibility</p>
+        <h2 class="h2 reveal reveal-d1" id="compatibility-heading">What vehicles can charge here?</h2>
+        <p class="body-lg reveal reveal-d2">Enertech Level 2 stations use the SAE J1772 connector — the standard for all non-Tesla EVs sold in North America. Tesla drivers have two options.</p>
+      </div>
+      <div class="compat-row">
+        <div class="compat-card reveal">
+          <div class="compat-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3 class="h3">All non-Tesla EVs</h3>
+          <p class="body-md">Chevy, Ford, Rivian, Hyundai, Kia, BMW, Volkswagen, Nissan, Audi, and all other J1772-equipped EVs plug in directly. No adapter needed.</p>
+        </div>
+        <div class="compat-card reveal reveal-d1">
+          <div class="compat-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          </div>
+          <h3 class="h3">Tesla (with adapter)</h3>
+          <p class="body-md">Tesla vehicles ship with a J1772 adapter in the charge kit. Use that adapter to connect to any Enertech Level 2 station — it works the same way. NACS adapters may also be available on site.</p>
+        </div>
+        <div class="compat-card reveal reveal-d2">
+          <div class="compat-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3 class="h3">DC fast charging</h3>
+          <p class="body-md">Select Enertech sites have DC fast charging. Your vehicle must support DC fast charging (check your owner's manual). Not all EVs do — PHEVs in particular typically cannot use DC fast chargers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MONTA APP -->
+  <section class="section section--dark" aria-labelledby="monta-app-heading">
+    <div class="wrap">
+      <div class="app-split">
+        <div>
+          <p class="label reveal">Powered by Monta</p>
+          <h2 class="h2 reveal reveal-d1" id="monta-app-heading">Get more from your charges with the Monta app</h2>
+          <p class="body-lg reveal reveal-d2" style="margin-top: 20px;">You don't need the Monta app to charge — the QR code on the charger gets you going in seconds. But if you charge here regularly, the free app adds a lot.</p>
+          <div class="app-badge-row reveal reveal-d3">
+            <a href="https://apps.apple.com/app/monta/id1541233074" target="_blank" rel="noopener noreferrer" class="app-badge" aria-label="Download Monta on the App Store">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              <div class="app-badge-text">
+                <span class="app-badge-line1">Download on the</span>
+                <span class="app-badge-line2">App Store</span>
+              </div>
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.monta.app" target="_blank" rel="noopener noreferrer" class="app-badge" aria-label="Get Monta on Google Play">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.18 23.76c.3.17.64.24.99.2l12.5-7.29-2.84-2.84-10.65 9.93zM.43 1.18C.17 1.49 0 1.96 0 2.58v18.85c0 .62.17 1.09.44 1.39l.07.07 10.56-10.56v-.25L.5 1.11l-.07.07zM20.33 10.53L16.99 8.6l-3.14 3.14 3.14 3.14 3.36-1.95c.96-.55.96-1.46 0-2.01v.01zM3.18.24L15.68 7.53l-2.84 2.84L2.19.44A1.18 1.18 0 013.18.24z"/></svg>
+              <div class="app-badge-text">
+                <span class="app-badge-line1">Get it on</span>
+                <span class="app-badge-line2">Google Play</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="app-visual reveal reveal-d2">
+          <div class="app-card">
+            <div class="app-card-header">
+              <div class="app-logo-circle" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </div>
+              <div>
+                <div class="app-card-title">Monta</div>
+                <div class="app-card-sub">EV charging app — free to use</div>
+              </div>
+            </div>
+            <div class="app-feature-row">
+              <div class="app-feature">
+                <div class="app-feature-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </div>
+                <div class="app-feature-text">
+                  <div class="app-feature-name">Live charge monitoring</div>
+                  <div class="app-feature-desc">See kWh delivered, charge rate, and estimated time remaining</div>
+                </div>
+              </div>
+              <div class="app-feature">
+                <div class="app-feature-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                </div>
+                <div class="app-feature-text">
+                  <div class="app-feature-name">Session history</div>
+                  <div class="app-feature-desc">Review all past charges, costs, and energy totals</div>
+                </div>
+              </div>
+              <div class="app-feature">
+                <div class="app-feature-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                </div>
+                <div class="app-feature-text">
+                  <div class="app-feature-name">Saved payment method</div>
+                  <div class="app-feature-desc">Start future charges faster — no re-entering card details</div>
+                </div>
+              </div>
+              <div class="app-feature">
+                <div class="app-feature-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17H2a3 3 0 003-3V9a7 7 0 0114 0v5a3 3 0 003 3z"/><path d="M9.35 21a2 2 0 003.3 0"/></svg>
+                </div>
+                <div class="app-feature-text">
+                  <div class="app-feature-name">Charge complete notification</div>
+                  <div class="app-feature-desc">Get notified when your vehicle reaches your target charge level</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" aria-labelledby="faq-heading">
+    <div class="wrap">
+      <div style="max-width:560px; margin-bottom: 72px;">
+        <p class="label reveal">Common questions</p>
+        <h2 class="h2 reveal reveal-d1" id="faq-heading">Driver FAQ</h2>
+        <p class="body-lg reveal reveal-d2">Quick answers for the most common questions at Enertech charging stations.</p>
+      </div>
+
+      <div class="faq-list" style="max-width: 800px;" role="list">
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-1">
+            Do I need to download an app to charge?
+            <span class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-a" id="faq-1" role="region">
+            <div class="faq-a-inner">No. Scan the QR code on the charger screen after you plug in and you'll be taken to a Monta web app in your browser — no download required. You can download the Monta app if you want charge notifications and session history, but it's not needed to start a charge.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-2">
+            How much does it cost to charge?
+            <span class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-a" id="faq-2" role="region">
+            <div class="faq-a-inner">Pricing is shown in the Monta web app before you confirm your session. Rates are set per-site and billed by kWh or by time depending on the location. You'll always see the rate before you start.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-3">
+            The QR code isn't working — what do I do?
+            <span class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-a" id="faq-3" role="region">
+            <div class="faq-a-inner">First, make sure your vehicle is plugged in — the charger screen activates when a cable is connected. If the QR code still won't scan, call our 24/7 driver support line at <a href="tel:+18888957158" style="color: inherit; font-weight: 600;">+1 888 895 7158</a>. We'll get you going.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-4">
+            My charge stopped unexpectedly. What happened?
+            <span class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-a" id="faq-4" role="region">
+            <div class="faq-a-inner">Most unexpected stops are caused by the cable being bumped loose or the vehicle's onboard charger pausing the session (common if the battery is nearly full or if the car went into a sleep mode). Try unplugging and re-plugging the cable. If the issue continues, call <a href="tel:+18888957158" style="color: inherit; font-weight: 600;">+1 888 895 7158</a> — we monitor all stations remotely and can diagnose the issue in real time.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-5">
+            I was charged but the charger didn't work. How do I get a refund?
+            <span class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-a" id="faq-5" role="region">
+            <div class="faq-a-inner">Call our driver support line at <a href="tel:+18888957158" style="color: inherit; font-weight: 600;">+1 888 895 7158</a> and we'll sort it out. Billing disputes can also be raised directly through the Monta app or web session — tap "Report an issue" on your session receipt.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-6">
+            Can I use this charger if I don't live at this property?
+            <span class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-a" id="faq-6" role="region">
+            <div class="faq-a-inner">Access is set by each property — some Enertech stations are resident-only, while others are open to any driver. Look for signage at the station or contact the property directly to confirm access. If you're unsure, call us at <a href="tel:+18888957158" style="color: inherit; font-weight: 600;">+1 888 895 7158</a>.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-7">
+            How long can I leave my car plugged in after it's fully charged?
+            <span class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-a" id="faq-7" role="region">
+            <div class="faq-a-inner">This depends on the property's parking rules. At high-demand properties, Enertech stations may have an idle fee that kicks in after your vehicle is fully charged. Check the Monta web app at the start of your session — any idle fee policy will be shown before you confirm.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPPORT CTA -->
+  <section class="section" style="padding-top: 0;" aria-labelledby="support-cta-heading">
+    <div class="wrap">
+      <div class="support-grid">
+        <div class="support-card support-card--dark reveal">
+          <p class="label" style="color: rgba(255,255,255,0.3);">24/7 driver support</p>
+          <h3 class="h3" style="margin-top: 12px;" id="support-cta-heading">Something not working?</h3>
+          <p class="body-md" style="margin-top: 8px;">Call us any time — day or night. Our support team can diagnose most issues remotely and will get you charging again as fast as possible.</p>
+          <a href="tel:+18888957158" class="support-phone">+1 888 895 7158</a>
+          <div class="support-available">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            Available 24 hours, 7 days a week
+          </div>
+        </div>
+
+        <div class="support-card reveal reveal-d1">
+          <p class="label">Before you call</p>
+          <h3 class="h3" style="margin-top: 12px;">Quick troubleshooting checklist</h3>
+          <p class="body-md" style="margin-top: 8px; margin-bottom: 0;">These steps resolve most issues in under a minute.</p>
+          <ul class="support-steps" aria-label="Troubleshooting steps">
+            <li>
+              <span class="support-step-num" aria-hidden="true">1</span>
+              Make sure the cable is fully seated in both the charger and your vehicle.
+            </li>
+            <li>
+              <span class="support-step-num" aria-hidden="true">2</span>
+              Wake the charger screen by pressing it or reconnecting the cable.
+            </li>
+            <li>
+              <span class="support-step-num" aria-hidden="true">3</span>
+              Re-scan the QR code — the session link expires if left inactive for several minutes.
+            </li>
+            <li>
+              <span class="support-step-num" aria-hidden="true">4</span>
+              Check that your vehicle's charge port cover is fully open and the port is clean.
+            </li>
+            <li>
+              <span class="support-step-num" aria-hidden="true">5</span>
+              Still not working? Call us at <a href="tel:+18888957158" style="color: var(--ink); font-weight: 600;">+1 888 895 7158</a>.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">Enertech</a>
+          <p class="footer-tagline">Colorado's EV charging partner for multifamily properties. Colorado Springs to Fort Collins — zero cost to the property, always.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <div class="footer-col-title">For properties</div>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="property-managers.html">For Property Managers</a>
+            <a href="property-owners.html">For Property Owners</a>
+            <a href="hoa.html">For HOAs</a>
+            <a href="assessment.html">Get a free assessment</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">For drivers</div>
+            <a href="for-drivers.html">How to charge</a>
+            <a href="for-drivers.html#charger-specs-heading">Charger specs</a>
+            <a href="for-drivers.html#faq-heading">Driver FAQ</a>
+            <a href="tel:+18888957158">24/7 support: +1 888 895 7158</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Resources</div>
+            <a href="service-area.html">Service area</a>
+            <a href="blog.html">Blog</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Enertech. Colorado Springs to Fort Collins.</p>
+        <p class="footer-service">enertechev.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── REVEAL ON SCROLL ──
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in-view');
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => revealObs.observe(el));
+
+    // Trigger above-fold reveals immediately
+    document.querySelectorAll('.hero .reveal').forEach(el => {
+      el.classList.add('in-view');
+    });
+
+    // ── HERO PARALLAX ──
+    const heroBgImg = document.getElementById('hero-img');
+    if (heroBgImg) {
+      const onScroll = () => {
+        const y = window.scrollY;
+        heroBgImg.style.transform = `translateY(calc(-10% + ${y * 0.3}px))`;
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+    }
+
+    // ── FAQ ACCORDION ──
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+        });
+        // Open clicked if was closed
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
