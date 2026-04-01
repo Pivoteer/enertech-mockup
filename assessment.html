@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get a Free Property Assessment | Enertech EV Charging</title>
+  <meta name="description" content="Book a free 20-minute property assessment with Enertech. We'll tell you honestly whether EV charging makes sense for your Colorado multifamily property — and what the revenue looks like." />
+  <link rel="canonical" href="https://enertechev.com/assessment" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:         #0C0C0C;
+      --ink-2:       #1C1C1C;
+      --ink-3:       #2E2E2E;
+      --secondary:   #6B6B6B;
+      --muted:       #9B9B9B;
+      --border:      rgba(0,0,0,0.08);
+      --border-mid:  rgba(0,0,0,0.14);
+      --canvas:      #F9FAFB;
+      --surface:     #FFFFFF;
+      --canvas-dark: #0C0C0C;
+      --surface-dark:#1C1C1C;
+      --border-dark: rgba(255,255,255,0.09);
+      --shadow-sm:   0 4px 12px -4px rgba(0,0,0,0.08);
+      --shadow-card: 0 20px 40px -15px rgba(0,0,0,0.07);
+      --shadow-lift: 0 28px 48px -12px rgba(0,0,0,0.18);
+      --r-xl:  2.5rem;
+      --r-lg:  1.5rem;
+      --r-md:  0.875rem;
+      --r-sm:  0.5rem;
+      --ease:  cubic-bezier(0.32, 0.72, 0, 1);
+      --max: 1320px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+      background: var(--canvas);
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── TYPOGRAPHY ── */
+    .h1 { font-size: clamp(2.2rem, 4.5vw, 3.5rem); font-weight: 900; line-height: 1.0; letter-spacing: -0.03em; }
+    .h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.022em; }
+    .h3 { font-size: 1.05rem; font-weight: 700; line-height: 1.3; letter-spacing: -0.01em; }
+    .body-lg { font-size: 1.1rem; line-height: 1.7; color: var(--secondary); }
+    .body-md { font-size: 1rem; line-height: 1.65; color: var(--secondary); }
+    .label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+
+    /* ── LAYOUT ── */
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+
+    /* ── REVEAL ── */
+    .reveal {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
+    }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 80ms; }
+    .reveal-d2 { transition-delay: 160ms; }
+    .reveal-d3 { transition-delay: 240ms; }
+    .reveal-d4 { transition-delay: 320ms; }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      border: none; cursor: pointer;
+      font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.95rem;
+      transition: all 0.3s var(--ease); text-decoration: none; white-space: nowrap;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: var(--ink); color: #F9FAFB; padding: 14px 16px 14px 24px; border-radius: var(--r-md); }
+    .btn-primary:hover { background: var(--ink-3); box-shadow: var(--shadow-lift); }
+    .btn-icon {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: rgba(255,255,255,0.14);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      transition: transform 0.3s var(--ease);
+    }
+    .btn-primary:hover .btn-icon { transform: translateX(3px); }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(12,12,12,0.88);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-inner {
+      max-width: var(--max); margin: 0 auto; padding: 0 40px;
+      height: 66px; display: flex; align-items: center;
+      justify-content: space-between; gap: 24px;
+    }
+    .nav-logo { font-size: 1.2rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; }
+    .nav-links { display: flex; gap: 2px; list-style: none; }
+    .nav-links a {
+      display: block; padding: 8px 14px;
+      font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.55);
+      text-decoration: none; border-radius: var(--r-sm);
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover { color: #F9FAFB; background: rgba(255,255,255,0.07); }
+    .nav-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .nav-phone {
+      font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.55);
+      text-decoration: none; padding: 8px 14px; border-radius: var(--r-sm);
+      transition: color 0.2s;
+    }
+    .nav-phone:hover { color: #F9FAFB; }
+
+    /* ── MAIN PAGE LAYOUT ── */
+    .page-wrap {
+      min-height: calc(100dvh - 66px);
+      display: grid;
+      grid-template-columns: 1fr 480px;
+      gap: 0;
+    }
+
+    /* ── LEFT PANEL ── */
+    .left-panel {
+      background: var(--ink);
+      padding: 80px 72px 80px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .left-panel::before {
+      content: '';
+      position: absolute; bottom: -120px; left: -80px;
+      width: 500px; height: 500px; border-radius: 50%;
+      background: rgba(255,255,255,0.02);
+      pointer-events: none;
+    }
+    .left-bg {
+      position: absolute; inset: 0; z-index: 0;
+    }
+    .left-bg-img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 55%;
+      opacity: 0.18;
+    }
+    .left-content {
+      position: relative; z-index: 1;
+      display: flex; flex-direction: column;
+      height: 100%; min-height: 600px;
+    }
+    .left-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 999px; padding: 6px 14px 6px 10px; margin-bottom: 40px;
+      width: fit-content;
+    }
+    .left-eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: #fff; opacity: 0.6; }
+    .left-eyebrow span { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+    .left-panel .h1 { color: #F9FAFB; margin-bottom: 20px; }
+    .left-panel .body-lg { color: rgba(249,250,251,0.62); max-width: 480px; margin-bottom: 56px; }
+
+    /* What to expect list */
+    .expect-list {
+      list-style: none; display: flex; flex-direction: column; gap: 20px;
+      margin-bottom: 56px;
+    }
+    .expect-item {
+      display: flex; align-items: flex-start; gap: 16px;
+    }
+    .expect-num {
+      width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+      border: 1.5px solid rgba(255,255,255,0.18);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; font-weight: 700; color: rgba(255,255,255,0.5);
+      margin-top: 1px;
+    }
+    .expect-text { display: flex; flex-direction: column; gap: 3px; }
+    .expect-title { font-size: 0.95rem; font-weight: 600; color: #F9FAFB; }
+    .expect-desc { font-size: 0.85rem; color: rgba(255,255,255,0.45); line-height: 1.5; }
+
+    /* Trust signals at bottom of left panel */
+    .left-trust {
+      margin-top: auto;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .trust-icon {
+      width: 36px; height: 36px; border-radius: var(--r-sm); flex-shrink: 0;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .trust-icon svg { width: 16px; height: 16px; color: rgba(255,255,255,0.55); }
+    .trust-text { font-size: 0.875rem; color: rgba(255,255,255,0.5); line-height: 1.4; }
+    .trust-text strong { color: rgba(255,255,255,0.8); font-weight: 600; }
+
+    /* ── RIGHT PANEL — FORM ── */
+    .right-panel {
+      background: var(--surface);
+      padding: 64px 56px;
+      display: flex; flex-direction: column;
+      border-left: 1px solid var(--border);
+    }
+    .form-header { margin-bottom: 40px; }
+    .form-header .h2 { margin-bottom: 10px; }
+    .form-header .body-md { font-size: 0.95rem; }
+
+    /* Form */
+    .assessment-form { display: flex; flex-direction: column; gap: 20px; flex: 1; }
+
+    .field-group { display: flex; flex-direction: column; gap: 7px; }
+    .field-label {
+      font-size: 0.8rem; font-weight: 600; color: var(--ink);
+      letter-spacing: 0.02em;
+    }
+    .field-label .req { color: var(--muted); font-weight: 400; margin-left: 4px; }
+    .field-input,
+    .field-select,
+    .field-textarea {
+      width: 100%;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      color: var(--ink);
+      background: var(--canvas);
+      border: 1.5px solid var(--border-mid);
+      border-radius: var(--r-md);
+      padding: 13px 16px;
+      transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+      outline: none;
+      -webkit-appearance: none;
+    }
+    .field-input::placeholder,
+    .field-textarea::placeholder { color: var(--muted); }
+    .field-input:focus,
+    .field-select:focus,
+    .field-textarea:focus {
+      border-color: var(--ink);
+      background: var(--surface);
+      box-shadow: 0 0 0 3px rgba(12,12,12,0.06);
+    }
+    .field-input.error,
+    .field-select.error { border-color: #c0392b; }
+    .field-error { font-size: 0.78rem; color: #c0392b; display: none; }
+    .field-input.error + .field-error,
+    .field-select.error + .field-error { display: block; }
+    .field-select {
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B6B6B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 40px;
+    }
+    .field-textarea { resize: vertical; min-height: 96px; line-height: 1.5; }
+
+    /* Two-col row */
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    /* Property type pills */
+    .pill-group { display: flex; gap: 8px; flex-wrap: wrap; }
+    .pill-input { display: none; }
+    .pill-label {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1.5px solid var(--border-mid);
+      border-radius: 999px;
+      font-size: 0.82rem; font-weight: 500; color: var(--secondary);
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+      user-select: none;
+    }
+    .pill-input:checked + .pill-label {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: #F9FAFB;
+    }
+    .pill-label:hover { border-color: var(--ink-3); color: var(--ink); }
+
+    /* Submit area */
+    .form-submit { margin-top: 8px; }
+    .submit-btn {
+      width: 100%; display: flex; align-items: center; justify-content: center; gap: 12px;
+      background: var(--ink); color: #F9FAFB;
+      border: none; border-radius: var(--r-md);
+      padding: 17px 24px;
+      font-family: 'Outfit', sans-serif; font-size: 1rem; font-weight: 700;
+      cursor: pointer; letter-spacing: -0.01em;
+      transition: background 0.25s var(--ease), box-shadow 0.25s var(--ease), transform 0.15s;
+    }
+    .submit-btn:hover { background: var(--ink-3); box-shadow: var(--shadow-lift); }
+    .submit-btn:active { transform: scale(0.98); }
+    .submit-btn svg { flex-shrink: 0; transition: transform 0.3s var(--ease); }
+    .submit-btn:hover svg { transform: translateX(3px); }
+    .submit-risk {
+      font-size: 0.78rem; color: var(--muted);
+      text-align: center; margin-top: 12px; line-height: 1.5;
+    }
+
+    /* ── SUCCESS STATE ── */
+    .form-success {
+      display: none;
+      flex-direction: column; align-items: center; justify-content: center;
+      text-align: center;
+      flex: 1; padding: 40px 0;
+    }
+    .success-icon {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: var(--ink); border: none;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 28px;
+    }
+    .success-icon svg { width: 28px; height: 28px; color: #F9FAFB; }
+    .form-success .h2 { margin-bottom: 14px; }
+    .form-success .body-md { max-width: 320px; margin: 0 auto 32px; }
+    .success-next {
+      display: flex; flex-direction: column; gap: 12px; width: 100%;
+    }
+    .success-next-item {
+      display: flex; align-items: center; gap: 14px;
+      background: var(--canvas); border: 1px solid var(--border);
+      border-radius: var(--r-md); padding: 16px 20px;
+      text-align: left;
+    }
+    .success-next-item svg { width: 18px; height: 18px; color: var(--secondary); flex-shrink: 0; }
+    .success-next-item p { font-size: 0.875rem; color: var(--secondary); }
+    .success-next-item strong { color: var(--ink); display: block; font-size: 0.9rem; margin-bottom: 2px; }
+
+    /* ── FOOTER BAR ── */
+    .footer-bar {
+      background: var(--canvas-dark);
+      padding: 28px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-bar-inner {
+      max-width: var(--max); margin: 0 auto; padding: 0 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 24px; flex-wrap: wrap;
+    }
+    .footer-bar-logo { font-size: 1rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; }
+    .footer-bar-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-bar-links a { font-size: 0.8rem; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+    .footer-bar-links a:hover { color: rgba(255,255,255,0.75); }
+    .footer-bar-copy { font-size: 0.78rem; color: rgba(255,255,255,0.25); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1000px) {
+      .page-wrap { grid-template-columns: 1fr; }
+      .left-panel { padding: 72px 40px; }
+      .left-content { min-height: auto; }
+      .left-trust { margin-top: 48px; }
+      .right-panel { padding: 56px 40px; border-left: none; border-top: 1px solid var(--border); }
+    }
+    @media (max-width: 600px) {
+      .wrap { padding: 0 20px; }
+      .left-panel { padding: 56px 24px; }
+      .right-panel { padding: 48px 24px; }
+      .field-row { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .footer-bar-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Enertech</a>
+      <ul class="nav-links">
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="property-managers.html">For Property Managers</a></li>
+        <li><a href="for-drivers.html">For Drivers</a></li>
+        <li><a href="service-area.html">Service Area</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="tel:+18888957158" class="nav-phone">+1 888 895 7158</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main>
+    <div class="page-wrap">
+
+      <!-- LEFT PANEL -->
+      <div class="left-panel">
+        <div class="left-bg" aria-hidden="true">
+          <img class="left-bg-img" src="assets/property-fusion.jpg" alt="" />
+        </div>
+        <div class="left-content">
+
+          <div class="left-eyebrow reveal">
+            <span class="left-eyebrow-dot" aria-hidden="true"></span>
+            <span>Free · No obligation</span>
+          </div>
+
+          <h1 class="h1 reveal reveal-d1">Get a free<br>property assessment</h1>
+          <p class="body-lg reveal reveal-d2">Tell us about your property. We'll put together a clear picture of what EV charging would look like — how many chargers, where they'd go, and what your revenue share would be. No pressure to move forward.</p>
+
+          <ul class="expect-list reveal reveal-d2" aria-label="What to expect">
+            <li class="expect-item">
+              <span class="expect-num" aria-hidden="true">1</span>
+              <div class="expect-text">
+                <span class="expect-title">20-minute conversation</span>
+                <span class="expect-desc">We'll ask about your property's parking layout, electrical setup, and how many residents you think have EVs.</span>
+              </div>
+            </li>
+            <li class="expect-item">
+              <span class="expect-num" aria-hidden="true">2</span>
+              <div class="expect-text">
+                <span class="expect-title">A proposal tailored to your property</span>
+                <span class="expect-desc">Recommended charger count and placement, revenue-share terms, and which Colorado incentive programs you likely qualify for.</span>
+              </div>
+            </li>
+            <li class="expect-item">
+              <span class="expect-num" aria-hidden="true">3</span>
+              <div class="expect-text">
+                <span class="expect-title">An honest answer</span>
+                <span class="expect-desc">If the economics don't make sense for your property, we'll tell you. We'd rather be upfront than push a partnership that doesn't fit.</span>
+              </div>
+            </li>
+          </ul>
+
+          <div class="left-trust reveal reveal-d3" role="list" aria-label="Trust signals">
+            <div class="trust-item" role="listitem">
+              <div class="trust-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <p class="trust-text"><strong>Zero cost to your property — ever.</strong> Hardware, installation, permits, electrical work, and ongoing operations.</p>
+            </div>
+            <div class="trust-item" role="listitem">
+              <div class="trust-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <p class="trust-text"><strong>Serving Colorado's Front Range</strong> from Colorado Springs to Fort Collins.</p>
+            </div>
+            <div class="trust-item" role="listitem">
+              <div class="trust-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+              </div>
+              <p class="trust-text"><strong>Colorado-based team.</strong> When you need us, we're here — not managing your property from a remote call center.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- RIGHT PANEL — FORM -->
+      <div class="right-panel">
+
+        <div class="form-header reveal">
+          <h2 class="h2">Tell us about your property</h2>
+          <p class="body-md" style="margin-top: 10px;">We'll follow up within one business day to schedule your free assessment.</p>
+        </div>
+
+        <!-- FORM -->
+        <form class="assessment-form" id="assessment-form" novalidate aria-label="Property assessment request form">
+
+          <div class="field-row reveal reveal-d1">
+            <div class="field-group">
+              <label class="field-label" for="first-name">First name <span class="req">*</span></label>
+              <input class="field-input" type="text" id="first-name" name="first_name" placeholder="Alex" autocomplete="given-name" required />
+              <span class="field-error">Please enter your first name</span>
+            </div>
+            <div class="field-group">
+              <label class="field-label" for="last-name">Last name <span class="req">*</span></label>
+              <input class="field-input" type="text" id="last-name" name="last_name" placeholder="Johnson" autocomplete="family-name" required />
+              <span class="field-error">Please enter your last name</span>
+            </div>
+          </div>
+
+          <div class="field-group reveal reveal-d1">
+            <label class="field-label" for="email">Email address <span class="req">*</span></label>
+            <input class="field-input" type="email" id="email" name="email" placeholder="alex@yourproperty.com" autocomplete="email" required />
+            <span class="field-error">Please enter a valid email address</span>
+          </div>
+
+          <div class="field-group reveal reveal-d2">
+            <label class="field-label" for="phone">Phone number <span class="req" style="font-weight:400;">(optional)</span></label>
+            <input class="field-input" type="tel" id="phone" name="phone" placeholder="(303) 555-0100" autocomplete="tel" />
+          </div>
+
+          <div class="field-row reveal reveal-d2">
+            <div class="field-group">
+              <label class="field-label" for="city">Property city <span class="req">*</span></label>
+              <select class="field-select" id="city" name="city" required>
+                <option value="" disabled selected>Select city</option>
+                <option>Denver</option>
+                <option>Aurora</option>
+                <option>Boulder</option>
+                <option>Fort Collins</option>
+                <option>Loveland</option>
+                <option>Greeley</option>
+                <option>Longmont</option>
+                <option>Westminster</option>
+                <option>Arvada</option>
+                <option>Lakewood</option>
+                <option>Thornton</option>
+                <option>Broomfield</option>
+                <option>Colorado Springs</option>
+                <option>Pueblo</option>
+                <option>Englewood</option>
+                <option>Littleton</option>
+                <option>Castle Rock</option>
+                <option>Parker</option>
+                <option>Other Colorado city</option>
+              </select>
+              <span class="field-error">Please select a city</span>
+            </div>
+            <div class="field-group">
+              <label class="field-label" for="units">Number of units <span class="req">*</span></label>
+              <select class="field-select" id="units" name="units" required>
+                <option value="" disabled selected>Select range</option>
+                <option>20–50 units</option>
+                <option>51–100 units</option>
+                <option>101–200 units</option>
+                <option>201–400 units</option>
+                <option>400+ units</option>
+              </select>
+              <span class="field-error">Please select a unit count</span>
+            </div>
+          </div>
+
+          <div class="field-group reveal reveal-d2">
+            <label class="field-label">Property type</label>
+            <div class="pill-group" role="group" aria-label="Property type">
+              <input class="pill-input" type="radio" name="property_type" id="type-apartment" value="Multifamily apartment" />
+              <label class="pill-label" for="type-apartment">Apartment complex</label>
+              <input class="pill-input" type="radio" name="property_type" id="type-condo" value="Condominium" />
+              <label class="pill-label" for="type-condo">Condominium</label>
+              <input class="pill-input" type="radio" name="property_type" id="type-hoa" value="HOA community" />
+              <label class="pill-label" for="type-hoa">HOA community</label>
+              <input class="pill-input" type="radio" name="property_type" id="type-mixed" value="Mixed-use" />
+              <label class="pill-label" for="type-mixed">Mixed-use</label>
+              <input class="pill-input" type="radio" name="property_type" id="type-other" value="Other" />
+              <label class="pill-label" for="type-other">Other</label>
+            </div>
+          </div>
+
+          <div class="field-group reveal reveal-d3">
+            <label class="field-label" for="chargers">Do you currently have EV chargers? <span class="req" style="font-weight:400;">(optional)</span></label>
+            <select class="field-select" id="chargers" name="existing_chargers">
+              <option value="" disabled selected>Select one</option>
+              <option>No — we don't have any chargers</option>
+              <option>Yes — they're working well</option>
+              <option>Yes — but they're a problem (broken, costly, or underused)</option>
+              <option>We're planning new construction</option>
+            </select>
+          </div>
+
+          <div class="field-group reveal reveal-d3">
+            <label class="field-label" for="message">Anything else you'd like us to know? <span class="req" style="font-weight:400;">(optional)</span></label>
+            <textarea class="field-textarea" id="message" name="message" placeholder="E.g. we're a portfolio of 4 properties, or we've already had a quote from another company..."></textarea>
+          </div>
+
+          <div class="form-submit reveal reveal-d4">
+            <button type="submit" class="submit-btn" id="submit-btn">
+              Request my free assessment
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <p class="submit-risk">No obligation. We'll tell you honestly if it's not the right fit. Takes about 20 minutes.</p>
+          </div>
+
+        </form>
+
+        <!-- SUCCESS STATE (hidden until form submitted) -->
+        <div class="form-success" id="form-success" aria-live="polite">
+          <div class="success-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h2 class="h2">We got it — thank you.</h2>
+          <p class="body-md">Someone from the Enertech team will be in touch within one business day to schedule your free assessment.</p>
+          <div class="success-next" role="list" aria-label="Next steps">
+            <div class="success-next-item" role="listitem">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <p><strong>What happens next</strong>We'll schedule a 20-minute call to learn about your property and walk through what a partnership would look like.</p>
+            </div>
+            <div class="success-next-item" role="listitem">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <p><strong>Need to reach us sooner?</strong>Call us at <a href="tel:+18888957158" style="color: var(--ink); font-weight: 600;">+1 888 895 7158</a> — we're available during business hours.</p>
+            </div>
+            <div class="success-next-item" role="listitem">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <p><strong>Want to learn more first?</strong><a href="how-it-works.html" style="color: var(--ink); font-weight: 600;">Read how the partnership works →</a></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER BAR -->
+  <footer class="footer-bar" role="contentinfo">
+    <div class="footer-bar-inner">
+      <a href="index.html" class="footer-bar-logo">Enertech</a>
+      <div class="footer-bar-links">
+        <a href="how-it-works.html">How It Works</a>
+        <a href="for-drivers.html">For Drivers</a>
+        <a href="service-area.html">Service Area</a>
+        <a href="tel:+18888957158">+1 888 895 7158</a>
+      </div>
+      <p class="footer-bar-copy">&copy; 2026 Enertech. Colorado Springs to Fort Collins.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ── REVEAL ──
+    const revealEls = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in-view'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => obs.observe(el));
+    // Trigger above-fold immediately
+    document.querySelectorAll('.left-panel .reveal, .right-panel .reveal').forEach(el => {
+      el.classList.add('in-view');
+    });
+
+    // ── FORM VALIDATION & SUBMIT ──
+    const form = document.getElementById('assessment-form');
+    const successState = document.getElementById('form-success');
+
+    function validateField(input) {
+      const required = input.hasAttribute('required');
+      if (!required) return true;
+      let valid = true;
+      if (input.tagName === 'SELECT') {
+        valid = input.value !== '';
+      } else if (input.type === 'email') {
+        valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim());
+      } else {
+        valid = input.value.trim().length > 0;
+      }
+      input.classList.toggle('error', !valid);
+      return valid;
+    }
+
+    // Live validation on blur
+    form.querySelectorAll('.field-input, .field-select').forEach(input => {
+      input.addEventListener('blur', () => validateField(input));
+      input.addEventListener('input', () => {
+        if (input.classList.contains('error')) validateField(input);
+      });
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Validate all required fields
+      let allValid = true;
+      form.querySelectorAll('.field-input[required], .field-select[required]').forEach(input => {
+        if (!validateField(input)) allValid = false;
+      });
+
+      if (!allValid) {
+        // Scroll to first error
+        const firstError = form.querySelector('.error');
+        if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      // Show loading state
+      const btn = document.getElementById('submit-btn');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      // TODO: Replace this timeout with a real form submission
+      // e.g. fetch('/api/assessment', { method: 'POST', body: new FormData(form) })
+      // or Formspree: fetch('https://formspree.io/f/YOUR_ID', { method: 'POST', body: new FormData(form) })
+      setTimeout(() => {
+        form.style.display = 'none';
+        successState.style.display = 'flex';
+      }, 900);
+    });
+  </script>
+</body>
+</html>
