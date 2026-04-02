@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EV Charging for Multifamily Property Owners | Enertech Colorado</title>
+  <meta name="description" content="Add a revenue-generating EV charging program to your Colorado multifamily property at zero cost. Enertech covers everything. You earn a monthly revenue share and increase your asset's long-term value." />
+  <link rel="canonical" href="https://enertechev.com/property-owners" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:         #0C0C0C;
+      --ink-2:       #1C1C1C;
+      --ink-3:       #2E2E2E;
+      --secondary:   #6B6B6B;
+      --muted:       #9B9B9B;
+      --border:      rgba(0,0,0,0.08);
+      --border-mid:  rgba(0,0,0,0.14);
+      --canvas:      #F9FAFB;
+      --surface:     #FFFFFF;
+      --canvas-dark: #0C0C0C;
+      --surface-dark:#1C1C1C;
+      --border-dark: rgba(255,255,255,0.09);
+      --shadow-sm:   0 4px 12px -4px rgba(0,0,0,0.08);
+      --shadow-card: 0 20px 40px -15px rgba(0,0,0,0.07);
+      --shadow-lift: 0 28px 48px -12px rgba(0,0,0,0.18);
+      --r-xl:  2.5rem;
+      --r-lg:  1.5rem;
+      --r-md:  0.875rem;
+      --r-sm:  0.5rem;
+      --ease:  cubic-bezier(0.32, 0.72, 0, 1);
+      --max: 1320px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+      background: var(--canvas);
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .h1 { font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 900; line-height: 1.0; letter-spacing: -0.03em; }
+    .h2 { font-size: clamp(1.75rem, 3vw, 2.75rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.022em; }
+    .h3 { font-size: 1.1rem; font-weight: 700; line-height: 1.3; letter-spacing: -0.01em; }
+    .body-lg { font-size: 1.15rem; line-height: 1.7; color: var(--secondary); }
+    .body-md { font-size: 1rem; line-height: 1.65; color: var(--secondary); }
+    .label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .section { padding: 120px 0; }
+    .section--dark { background: var(--canvas-dark); color: #F9FAFB; }
+    .section--dark .body-lg, .section--dark .body-md { color: rgba(249,250,251,0.62); }
+    .section--dark .label { color: rgba(249,250,251,0.35); }
+    .section--dark .h2, .section--dark .h3 { color: #F9FAFB; }
+    .section--mid { background: var(--surface); }
+
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.75s var(--ease), transform 0.75s var(--ease); }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 80ms; }
+    .reveal-d2 { transition-delay: 160ms; }
+    .reveal-d3 { transition-delay: 240ms; }
+    .reveal-d4 { transition-delay: 320ms; }
+    .reveal-d5 { transition-delay: 400ms; }
+
+    .btn { display: inline-flex; align-items: center; gap: 10px; border: none; cursor: pointer; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.95rem; transition: all 0.3s var(--ease); text-decoration: none; white-space: nowrap; }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: var(--ink); color: #F9FAFB; padding: 14px 16px 14px 24px; border-radius: var(--r-md); }
+    .btn-primary:hover { background: var(--ink-3); box-shadow: var(--shadow-lift); }
+    .btn-icon { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.3s var(--ease), background 0.3s var(--ease); }
+    .btn-primary:hover .btn-icon { transform: translateX(3px); background: rgba(255,255,255,0.22); }
+    .btn-ghost-light { background: transparent; color: var(--ink); padding: 14px 20px; border-radius: var(--r-md); border: 1.5px solid var(--border-mid); }
+    .btn-ghost-light:hover { border-color: var(--ink); }
+    .btn-white { background: #F9FAFB; color: var(--ink); padding: 14px 16px 14px 24px; border-radius: var(--r-md); }
+    .btn-white:hover { background: #fff; box-shadow: var(--shadow-lift); }
+    .btn-white .btn-icon { background: rgba(0,0,0,0.07); }
+    .btn-white:hover .btn-icon { transform: translateX(3px); }
+    .risk { font-size: 0.82rem; color: rgba(255,255,255,0.42); margin-top: 12px; }
+    .risk-dark { font-size: 0.82rem; color: var(--muted); margin-top: 12px; }
+
+    /* NAV */
+    .nav { position: sticky; top: 0; z-index: 100; background: rgba(12,12,12,0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .nav-logo { font-size: 1.2rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; flex-shrink: 0; }
+    .nav-links { display: flex; gap: 2px; list-style: none; }
+    .nav-links a { display: block; padding: 8px 14px; font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.55); text-decoration: none; border-radius: var(--r-sm); transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: #F9FAFB; background: rgba(255,255,255,0.07); }
+    .nav-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .nav-cta .btn-primary { padding: 10px 12px 10px 18px; font-size: 0.875rem; }
+    .nav-cta .btn-icon { width: 28px; height: 28px; }
+
+    /* HERO */
+    .hero { position: relative; min-height: 88dvh; display: flex; align-items: flex-end; overflow: hidden; color: #F9FAFB; }
+    .hero-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+    .hero-bg-img { width: 100%; height: 120%; object-fit: cover; object-position: center 35%; will-change: transform; transform: translateY(-10%); }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.65) 45%, rgba(10,10,10,0.2) 100%); }
+    .hero-content { position: relative; z-index: 2; padding: 0 0 100px; width: 100%; }
+    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.14); border-radius: 999px; padding: 6px 14px 6px 10px; margin-bottom: 32px; width: fit-content; }
+    .hero-eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: #fff; opacity: 0.7; }
+    .hero-eyebrow span { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+    .hero h1 { color: #F9FAFB; margin-bottom: 24px; }
+    .hero .body-lg { color: rgba(249,250,251,0.65); margin-bottom: 40px; }
+    .hero-cta-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+
+    /* Hero right — stat cards */
+    .hero-stats { display: flex; flex-direction: column; gap: 3px; padding-bottom: 8px; }
+    .hero-stat-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(12px);
+      border-radius: var(--r-lg);
+      padding: 28px 32px;
+    }
+    .hero-stat-val { font-size: 2.25rem; font-weight: 900; letter-spacing: -0.04em; color: #F9FAFB; line-height: 1; margin-bottom: 6px; }
+    .hero-stat-lbl { font-size: 0.82rem; color: rgba(255,255,255,0.45); line-height: 1.4; }
+
+    /* VALUE PROPS — Z-AXIS BENTO */
+    .value-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 3px; border-radius: var(--r-xl); overflow: hidden;
+    }
+    .value-card { background: var(--surface); padding: 52px 44px; transition: background 0.25s var(--ease); }
+    .value-card:hover { background: #FAFAFA; }
+    .value-card--dark { background: var(--ink); }
+    .value-card--dark:hover { background: var(--ink-2); }
+    .value-card--full { grid-column: span 3; background: var(--canvas); padding: 48px 44px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; }
+    .value-icon { width: 48px; height: 48px; border-radius: var(--r-md); background: var(--canvas); border: 1px solid var(--border-mid); display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+    .value-card--dark .value-icon { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.12); }
+    .value-icon svg { width: 22px; height: 22px; color: var(--ink-3); }
+    .value-card--dark .value-icon svg { color: rgba(255,255,255,0.65); }
+    .value-card .h3 { margin-bottom: 12px; }
+    .value-card--dark .h3 { color: #F9FAFB; }
+    .value-card .body-md { font-size: 0.925rem; }
+    .value-card--dark .body-md { color: rgba(255,255,255,0.55); }
+    .value-divider { width: 1px; background: var(--border-mid); }
+
+    /* OWNERSHIP MATH */
+    .math-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; border-radius: var(--r-xl); overflow: hidden; }
+    .math-card { background: var(--surface-dark); padding: 56px 48px; }
+    .math-card--light { background: var(--surface); }
+    .math-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 24px; }
+    .math-label--dark { color: var(--muted); }
+    .math-scenario { display: flex; flex-direction: column; gap: 16px; }
+    .math-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .math-card--light .math-row { border-bottom-color: var(--border); }
+    .math-row:last-child { border-bottom: none; font-weight: 700; }
+    .math-row-label { font-size: 0.9rem; color: rgba(255,255,255,0.5); }
+    .math-card--light .math-row-label { color: var(--secondary); }
+    .math-row-val { font-size: 0.95rem; font-weight: 600; color: #F9FAFB; }
+    .math-card--light .math-row-val { color: var(--ink); }
+    .math-row-val.negative { color: rgba(220,80,80,0.85); }
+    .math-row-val.positive { color: #F9FAFB; }
+    .math-card--light .math-row-val.positive { color: var(--ink); }
+    .math-total-row { display: flex; align-items: center; justify-content: space-between; padding: 20px 0 0; margin-top: 8px; border-top: 2px solid rgba(255,255,255,0.12); }
+    .math-card--light .math-total-row { border-top-color: var(--border-mid); }
+    .math-total-label { font-size: 0.95rem; font-weight: 700; color: rgba(255,255,255,0.8); }
+    .math-card--light .math-total-label { color: var(--ink); }
+    .math-total-val { font-size: 1.4rem; font-weight: 900; letter-spacing: -0.025em; color: #F9FAFB; }
+    .math-card--light .math-total-val { color: var(--ink); }
+    .math-note { font-size: 0.78rem; color: rgba(255,255,255,0.3); margin-top: 16px; line-height: 1.5; }
+    .math-card--light .math-note { color: var(--muted); }
+
+    /* COMPLIANCE */
+    .compliance-split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .compliance-cards { display: flex; flex-direction: column; gap: 3px; }
+    .compliance-card { background: var(--surface-dark); border-radius: var(--r-lg); padding: 36px 36px; display: flex; align-items: flex-start; gap: 20px; transition: background 0.2s; }
+    .compliance-card:hover { background: #1e1e1e; }
+    .compliance-icon { width: 44px; height: 44px; border-radius: var(--r-sm); background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .compliance-icon svg { width: 20px; height: 20px; color: rgba(255,255,255,0.6); }
+    .compliance-card-title { font-size: 0.95rem; font-weight: 700; color: #F9FAFB; margin-bottom: 6px; }
+    .compliance-card-body { font-size: 0.875rem; color: rgba(255,255,255,0.5); line-height: 1.55; }
+    .compliance-link { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; margin-top: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1px; transition: color 0.2s, border-color 0.2s; }
+    .compliance-link:hover { color: rgba(255,255,255,0.75); border-color: rgba(255,255,255,0.3); }
+    .compliance-link svg { width: 11px; height: 11px; }
+
+    /* SELF-INSTALL COMPARE */
+    .compare-split { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; border-radius: var(--r-xl); overflow: hidden; }
+    .compare-col { padding: 56px 48px; }
+    .compare-col--diy { background: var(--canvas); }
+    .compare-col--enertech { background: var(--ink); }
+    .compare-col-header { margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+    .compare-col--enertech .compare-col-header { border-bottom-color: rgba(255,255,255,0.08); }
+    .compare-col-tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+    .compare-col--enertech .compare-col-tag { color: rgba(255,255,255,0.3); }
+    .compare-col-title { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; color: var(--ink); }
+    .compare-col--enertech .compare-col-title { color: #F9FAFB; }
+    .compare-items { display: flex; flex-direction: column; gap: 16px; }
+    .compare-item { display: flex; align-items: flex-start; gap: 12px; font-size: 0.9rem; }
+    .compare-item-text { color: var(--secondary); line-height: 1.5; }
+    .compare-col--enertech .compare-item-text { color: rgba(255,255,255,0.55); }
+    .compare-bullet { width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center; }
+    .compare-bullet--x { background: rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.1); }
+    .compare-bullet--x svg { width: 8px; height: 8px; color: var(--muted); }
+    .compare-bullet--check { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); }
+    .compare-bullet--check svg { width: 8px; height: 8px; color: rgba(255,255,255,0.8); }
+
+    /* CTA */
+    .cta-section { background: var(--ink); padding: 120px 0; text-align: center; }
+    .cta-section .h2 { color: #F9FAFB; margin-bottom: 16px; }
+    .cta-section .body-lg { color: rgba(249,250,251,0.55); max-width: 520px; margin: 0 auto 48px; }
+    .cta-btn-row { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+    /* FOOTER */
+    .footer { background: var(--canvas-dark); padding: 64px 0 40px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .footer-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 48px; flex-wrap: wrap; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 32px; }
+    .footer-brand { max-width: 320px; }
+    .footer-logo { font-size: 1.3rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; }
+    .footer-tagline { font-size: 0.875rem; color: rgba(255,255,255,0.38); margin-top: 10px; line-height: 1.5; }
+    .footer-links { display: flex; gap: 48px; flex-wrap: wrap; }
+    .footer-col { display: flex; flex-direction: column; gap: 4px; }
+    .footer-col-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.28); margin-bottom: 8px; }
+    .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.5); text-decoration: none; padding: 4px 0; transition: color 0.2s; }
+    .footer-col a:hover { color: #F9FAFB; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.25); }
+
+    @media (max-width: 1000px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+      .hero-stats { flex-direction: row; flex-wrap: wrap; }
+      .hero-stat-card { flex: 1; min-width: 160px; }
+      .math-grid { grid-template-columns: 1fr; }
+      .compliance-split { grid-template-columns: 1fr; gap: 48px; }
+      .compare-split { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 900px) {
+      .wrap { padding: 0 24px; }
+      .section { padding: 80px 0; }
+      .value-grid { grid-template-columns: 1fr; }
+      .value-card--full { grid-column: auto; grid-template-columns: 1fr; gap: 32px; }
+      .value-divider { width: 100%; height: 1px; }
+      .nav-links { display: none; }
+      .footer-top { flex-direction: column; }
+    }
+    @media (max-width: 600px) {
+      .hero { min-height: 100dvh; }
+      .hero-content { padding-bottom: 72px; }
+      .hero-cta-row { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Enertech</a>
+      <ul class="nav-links">
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="property-managers.html">For Property Managers</a></li>
+        <li><a href="for-drivers.html">For Drivers</a></li>
+        <li><a href="service-area.html">Service Area</a></li>
+      </ul>
+      <div class="nav-right nav-cta">
+        <a href="assessment.html" class="btn btn-primary">
+          Get a free assessment
+          <span class="btn-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO — bottom-anchored with stat cards -->
+  <section class="hero" aria-label="Page hero">
+    <div class="hero-bg">
+      <img class="hero-bg-img" id="hero-img" src="assets/property-fusion.jpg" alt="Colorado multifamily property with Enertech EV charging" loading="eager" fetchpriority="high" />
+    </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="wrap">
+        <div class="hero-inner">
+          <div>
+            <div class="hero-eyebrow reveal">
+              <span class="hero-eyebrow-dot" aria-hidden="true"></span>
+              <span>For Property Owners</span>
+            </div>
+            <h1 class="h1 reveal reveal-d1">A revenue-generating amenity. Zero capital required.</h1>
+            <p class="body-lg reveal reveal-d2">Enertech installs, owns, and operates EV charging at your Colorado multifamily property at zero cost — ever. You earn a monthly revenue share, increase your asset's long-term value, and stay ahead of Colorado's evolving EV requirements. All without lifting a finger.</p>
+            <div class="hero-cta-row reveal reveal-d3">
+              <a href="assessment.html" class="btn btn-white">
+                Get a free property assessment
+                <span class="btn-icon" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </span>
+              </a>
+              <a href="how-it-works.html" class="btn btn-ghost-light" style="color: rgba(255,255,255,0.65); border-color: rgba(255,255,255,0.25);">How the model works</a>
+            </div>
+            <p class="risk reveal reveal-d4">Free, no obligation. Takes about 20 minutes.</p>
+          </div>
+          <div class="hero-stats reveal reveal-d2" role="list" aria-label="Key numbers">
+            <div class="hero-stat-card" role="listitem">
+              <div class="hero-stat-val">$0</div>
+              <div class="hero-stat-lbl">Capital outlay — hardware, electrical, permits, and ongoing operations</div>
+            </div>
+            <div class="hero-stat-card" role="listitem">
+              <div class="hero-stat-val">30–60</div>
+              <div class="hero-stat-lbl">Days until your first revenue share payment after go-live</div>
+            </div>
+            <div class="hero-stat-card" role="listitem">
+              <div class="hero-stat-val">100%</div>
+              <div class="hero-stat-lbl">Of ongoing operations, maintenance, and resident support handled by Enertech</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE PROPS -->
+  <section class="section section--mid" aria-labelledby="value-heading">
+    <div class="wrap">
+      <div style="max-width: 560px; margin-bottom: 72px;">
+        <p class="label reveal">What you get</p>
+        <h2 class="h2 reveal reveal-d1" id="value-heading">Three things EV charging adds to your asset — at no cost.</h2>
+      </div>
+
+      <div class="value-grid">
+
+        <div class="value-card reveal">
+          <div class="value-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <h3 class="h3">Passive revenue</h3>
+          <p class="body-md">Your parking lot generates income. Every charging session produces revenue, and your property earns a percentage of it — paid monthly, with no administrative work from your team. The chargers run themselves.</p>
+        </div>
+
+        <div class="value-card reveal reveal-d1">
+          <div class="value-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <h3 class="h3">Long-term asset value</h3>
+          <p class="body-md">EV charging infrastructure is increasingly a factor in property valuations and tenant preference across Colorado's Front Range. Installing it now — at zero cost — adds a lasting amenity that strengthens your asset's competitive position.</p>
+        </div>
+
+        <div class="value-card reveal reveal-d2">
+          <div class="value-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="h3">Colorado compliance — handled</h3>
+          <p class="body-md">Colorado's EV-ready building requirements are expanding. New construction rules and utility program timelines mean acting earlier captures better incentive terms. Enertech monitors Colorado's regulatory landscape and keeps your property ahead of it.</p>
+        </div>
+
+        <!-- Full-width: three ownership outcomes -->
+        <div class="value-card value-card--full reveal">
+          <div>
+            <p class="label" style="margin-bottom: 16px;">No capital required</p>
+            <p class="h3" style="margin-bottom: 10px;">$0 upfront</p>
+            <p class="body-md" style="font-size: 0.9rem;">Hardware, installation, electrical, permits — Enertech covers 100%. Your capital stays allocated to where you need it most.</p>
+          </div>
+          <div class="value-divider" aria-hidden="true"></div>
+          <div>
+            <p class="label" style="margin-bottom: 16px;">No operational burden</p>
+            <p class="h3" style="margin-bottom: 10px;">Zero management lift</p>
+            <p class="body-md" style="font-size: 0.9rem;">Enertech handles monitoring, maintenance, resident billing, and driver support. Your property management team is not involved in EV charging operations.</p>
+          </div>
+          <div class="value-divider" aria-hidden="true"></div>
+          <div>
+            <p class="label" style="margin-bottom: 16px;">Revenue from day one</p>
+            <p class="h3" style="margin-bottom: 10px;">Monthly payments</p>
+            <p class="body-md" style="font-size: 0.9rem;">Revenue share starts when chargers go live. First payment typically arrives within 30–60 days. No invoicing, no chasing — payments arrive automatically.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OWNERSHIP MATH — DIY vs Enertech -->
+  <section class="section section--dark" aria-labelledby="math-heading">
+    <div class="wrap">
+      <div style="max-width: 580px; margin-bottom: 72px;">
+        <p class="label reveal">The economics</p>
+        <h2 class="h2 reveal reveal-d1" id="math-heading">What it costs to install EV charging yourself vs. partnering with Enertech.</h2>
+        <p class="body-lg reveal reveal-d2">Property owners who self-fund EV charging take on real capital exposure, ongoing costs, and operational complexity. The Enertech model eliminates all three.</p>
+      </div>
+
+      <div class="math-grid reveal reveal-d1">
+
+        <div class="math-card">
+          <p class="math-label">Property self-installs · illustrative example</p>
+          <div class="math-scenario" role="list" aria-label="Self-install costs">
+            <div class="math-row" role="listitem">
+              <span class="math-row-label">Hardware (8 Level 2 chargers)</span>
+              <span class="math-row-val negative">–$24,000</span>
+            </div>
+            <div class="math-row" role="listitem">
+              <span class="math-row-label">Electrical & panel work</span>
+              <span class="math-row-val negative">–$18,000</span>
+            </div>
+            <div class="math-row" role="listitem">
+              <span class="math-row-label">Permits & utility fees</span>
+              <span class="math-row-val negative">–$3,500</span>
+            </div>
+            <div class="math-row" role="listitem">
+              <span class="math-row-label">Annual network subscription</span>
+              <span class="math-row-val negative">–$2,400/yr</span>
+            </div>
+            <div class="math-row" role="listitem">
+              <span class="math-row-label">Annual maintenance (est.)</span>
+              <span class="math-row-val negative">–$3,000/yr</span>
+            </div>
+            <div class="math-row" role="listitem">
+              <span class="math-row-label">Staff time managing issues</span>
+              <span class="math-row-val negative">Ongoing</span>
+            </div>
+          </div>
+          <div class="math-total-row">
+            <span class="math-total-label">Year-one total exposure</span>
+            <span class="math-total-val">$50,900+</span>
+          </div>
+          <p class="math-note">Illustrative only. Actual costs vary by property size, electrical infrastructure, and municipality. Xcel rebates can reduce upfront costs — but only if you navigate the application process yourself.</p>
+        </div>
+
+        <div class="math-card math-card--light">
+          <p class="math-label math-label--dark">Enertech partnership · same property</p>
+          <div class="math-scenario" role="list" aria-label="Enertech partnership costs">
+            <div class="math-row" role="listitem">
+              <span class="math-row-label">Hardware</span>
+              <span class="math-row-val positive">$0</span>
+            </div>
+            <div class="math-row" role="listitem">
+              <span class="math-row-label">Electrical & panel work</span>
+              <span class="math-row-val positive">$0</span>
+            </div>
+            <div class="math-row" role="listitem">
+              <span class="math-row-label">Permits & utility coordination</span>
+              <span class="math-row-val positive">$0</span>
+            </div>
+            <div class="math-row" role="listitem">
+              <span class="math-row-label">Ongoing operations & monitoring</span>
+              <span class="math-row-val positive">$0</span>
+            </div>
+            <div class="math-row" role="listitem">
+              <span class="math-row-label">Resident support & billing</span>
+              <span class="math-row-val positive">$0</span>
+            </div>
+            <div class="math-row" role="listitem">
+              <span class="math-row-label">Monthly revenue share earned</span>
+              <span class="math-row-val positive">+ Revenue</span>
+            </div>
+          </div>
+          <div class="math-total-row">
+            <span class="math-total-label">Year-one total exposure</span>
+            <span class="math-total-val">$0</span>
+          </div>
+          <p class="math-note" style="color: var(--muted);">Revenue share amounts are negotiated per property and stated in your agreement. A free assessment will include a projected revenue estimate for your specific site.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COLORADO COMPLIANCE -->
+  <section class="section section--dark" style="padding-top: 0;" aria-labelledby="compliance-heading">
+    <div class="wrap">
+      <div class="compliance-split">
+        <div>
+          <p class="label reveal">Colorado regulatory landscape</p>
+          <h2 class="h2 reveal reveal-d1" id="compliance-heading">Colorado is moving fast on EV infrastructure. Enertech keeps your property ahead of it.</h2>
+          <p class="body-lg reveal reveal-d2" style="margin-top: 20px;">Between utility rebate program timelines, state mandates for new construction, and rising tenant expectations, the window to install EV charging on favorable terms is narrower than many property owners realise. Enertech navigates all of this on your behalf.</p>
+          <div class="reveal reveal-d3" style="margin-top: 40px;">
+            <a href="assessment.html" class="btn btn-white">
+              See what your property qualifies for
+              <span class="btn-icon" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="compliance-cards reveal reveal-d1">
+          <div class="compliance-card">
+            <div class="compliance-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div>
+              <p class="compliance-card-title">Xcel Energy rebate program</p>
+              <p class="compliance-card-body">Make-ready and per-port equipment rebates for multifamily properties in Xcel's service territory. Pre-project approval must be secured before installation begins — Enertech handles the full application process on your behalf.</p>
+              <a href="https://www.xcelenergy.com/programs_and_rebates/residential_programs_and_rebates/electric_vehicles" target="_blank" rel="noopener noreferrer" class="compliance-link">
+                xcelenergy.com
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="compliance-card">
+            <div class="compliance-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div>
+              <p class="compliance-card-title">Charge Ahead Colorado</p>
+              <p class="compliance-card-body">State grant funding for EV charging at income-qualified multifamily properties — typically those serving households at or below 80% of Area Median Income. Can stack with Xcel rebates for qualifying properties.</p>
+              <a href="https://chargeaheadcolorado.org" target="_blank" rel="noopener noreferrer" class="compliance-link">
+                chargeaheadcolorado.org
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="compliance-card">
+            <div class="compliance-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <div>
+              <p class="compliance-card-title">Colorado EV-ready building requirements</p>
+              <p class="compliance-card-body">Colorado has expanding EV-ready provisions for new multifamily construction. Enertech provides guidance on what Colorado municipalities currently require and coordinates pre-construction EV infrastructure planning.</p>
+              <a href="https://energy.colorado.gov" target="_blank" rel="noopener noreferrer" class="compliance-link">
+                Colorado Energy Office
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELF-INSTALL VS ENERTECH -->
+  <section class="section" aria-labelledby="compare-heading">
+    <div class="wrap">
+      <div style="max-width: 560px; margin-bottom: 72px;">
+        <p class="label reveal">The ownership question</p>
+        <h2 class="h2 reveal reveal-d1" id="compare-heading">Should you own the chargers yourself or partner with Enertech?</h2>
+        <p class="body-lg reveal reveal-d2">Some property owners want to own their EV infrastructure outright. Here's an honest comparison of what that involves versus the Enertech partnership model.</p>
+      </div>
+
+      <div class="compare-split reveal reveal-d1">
+        <div class="compare-col compare-col--diy">
+          <div class="compare-col-header">
+            <p class="compare-col-tag">Option A</p>
+            <p class="compare-col-title">Property self-funds and owns chargers</p>
+          </div>
+          <div class="compare-items">
+            <div class="compare-item">
+              <span class="compare-bullet compare-bullet--x" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+              <p class="compare-item-text"><strong style="color:var(--ink);">$5,000–$20,000+</strong> upfront capital depending on scope, electrical infrastructure, and number of chargers</p>
+            </div>
+            <div class="compare-item">
+              <span class="compare-bullet compare-bullet--x" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+              <p class="compare-item-text">Ongoing network software subscription fees, maintenance costs, and repair bills</p>
+            </div>
+            <div class="compare-item">
+              <span class="compare-bullet compare-bullet--x" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+              <p class="compare-item-text">Property staff handle maintenance requests, resident complaints, and billing disputes</p>
+            </div>
+            <div class="compare-item">
+              <span class="compare-bullet compare-bullet--x" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+              <p class="compare-item-text">Your team navigates Xcel rebate applications, permits, and utility coordination</p>
+            </div>
+            <div class="compare-item">
+              <span class="compare-bullet compare-bullet--x" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+              <p class="compare-item-text">All charging revenue goes to the property — but only after costs, which erode returns significantly in the early years</p>
+            </div>
+            <div class="compare-item">
+              <span class="compare-bullet compare-bullet--x" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+              <p class="compare-item-text">Hardware replacement at end of life is your cost</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="compare-col compare-col--enertech">
+          <div class="compare-col-header">
+            <p class="compare-col-tag">Option B</p>
+            <p class="compare-col-title">Enertech partnership</p>
+          </div>
+          <div class="compare-items">
+            <div class="compare-item">
+              <span class="compare-bullet compare-bullet--check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <p class="compare-item-text"><strong style="color:#F9FAFB;">$0</strong> upfront — hardware, electrical, permits, and all installation costs covered by Enertech</p>
+            </div>
+            <div class="compare-item">
+              <span class="compare-bullet compare-bullet--check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <p class="compare-item-text">$0 ongoing costs — Enertech covers all maintenance, monitoring, and software</p>
+            </div>
+            <div class="compare-item">
+              <span class="compare-bullet compare-bullet--check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <p class="compare-item-text">Residents contact Enertech directly — your property management team has zero operational involvement</p>
+            </div>
+            <div class="compare-item">
+              <span class="compare-bullet compare-bullet--check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <p class="compare-item-text">Enertech handles all Xcel rebate applications, Charge Ahead grant eligibility, permits, and utility coordination</p>
+            </div>
+            <div class="compare-item">
+              <span class="compare-bullet compare-bullet--check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <p class="compare-item-text">Property earns a monthly revenue share from day one — net of all costs, which Enertech absorbs</p>
+            </div>
+            <div class="compare-item">
+              <span class="compare-bullet compare-bullet--check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <p class="compare-item-text">Hardware replacement at end of life — also at zero cost to your property</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="cta-section" aria-labelledby="cta-heading">
+    <div class="wrap">
+      <p class="label reveal" style="color: rgba(255,255,255,0.3); margin-bottom: 16px;">Ready to move forward?</p>
+      <h2 class="h2 reveal reveal-d1" id="cta-heading">Find out what your property qualifies for.</h2>
+      <p class="body-lg reveal reveal-d2">A free 20-minute assessment will tell you exactly what EV charging would look like at your property — revenue share estimate, incentive eligibility, and a realistic timeline.</p>
+      <div class="cta-btn-row reveal reveal-d3">
+        <a href="assessment.html" class="btn btn-white">
+          Get a free property assessment
+          <span class="btn-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+        <a href="how-it-works.html" class="btn btn-ghost-light" style="color: rgba(255,255,255,0.65); border-color: rgba(255,255,255,0.25);">How the model works</a>
+      </div>
+      <p class="risk reveal reveal-d4">No obligation. We'll tell you honestly if it's not the right fit.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">Enertech</a>
+          <p class="footer-tagline">Colorado's EV charging partner for multifamily properties. Colorado Springs to Fort Collins — zero cost to the property, always.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <div class="footer-col-title">For properties</div>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="property-managers.html">For Property Managers</a>
+            <a href="property-owners.html">For Property Owners</a>
+            <a href="hoa.html">For HOAs</a>
+            <a href="assessment.html">Get a free assessment</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">For drivers</div>
+            <a href="for-drivers.html">How to charge</a>
+            <a href="for-drivers.html#charger-specs-heading">Charger specs</a>
+            <a href="for-drivers.html#faq-heading">Driver FAQ</a>
+            <a href="tel:+18888957158">24/7 support: +1 888 895 7158</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Resources</div>
+            <a href="service-area.html">Service area</a>
+            <a href="blog.html">Blog</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Enertech. Colorado Springs to Fort Collins.</p>
+        <p class="footer-copy">enertechev.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => obs.observe(el));
+    document.querySelectorAll('.hero .reveal').forEach(el => el.classList.add('in-view'));
+
+    const heroImg = document.getElementById('hero-img');
+    if (heroImg) {
+      window.addEventListener('scroll', () => {
+        heroImg.style.transform = `translateY(calc(-10% + ${window.scrollY * 0.25}px))`;
+      }, { passive: true });
+    }
+  </script>
+</body>
+</html>
