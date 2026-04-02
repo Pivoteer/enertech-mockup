@@ -481,6 +481,20 @@
           </div>
 
           <div class="field-group reveal reveal-d2">
+            <label class="field-label" for="role">Your role <span class="req">*</span></label>
+            <select class="field-select" id="role" name="role" required>
+              <option value="" disabled selected>Select your role</option>
+              <option>Property manager</option>
+              <option>Regional manager</option>
+              <option>Property owner</option>
+              <option>Developer / new construction</option>
+              <option>HOA board member</option>
+              <option>Other</option>
+            </select>
+            <span class="field-error">Please select your role</span>
+          </div>
+
+          <div class="field-group reveal reveal-d2">
             <label class="field-label" for="phone">Phone number <span class="req" style="font-weight:400;">(optional)</span></label>
             <input class="field-input" type="tel" id="phone" name="phone" placeholder="(303) 555-0100" autocomplete="tel" />
           </div>
@@ -671,13 +685,24 @@
       btn.textContent = 'Sending…';
       btn.disabled = true;
 
-      // TODO: Replace this timeout with a real form submission
-      // e.g. fetch('/api/assessment', { method: 'POST', body: new FormData(form) })
-      // or Formspree: fetch('https://formspree.io/f/YOUR_ID', { method: 'POST', body: new FormData(form) })
-      setTimeout(() => {
-        form.style.display = 'none';
-        successState.style.display = 'flex';
-      }, 900);
+      fetch('https://formspree.io/f/mqeglvno', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      })
+      .then(res => {
+        if (res.ok) {
+          form.style.display = 'none';
+          successState.style.display = 'flex';
+        } else {
+          return res.json().then(data => { throw new Error(data.error || 'Submission failed'); });
+        }
+      })
+      .catch(() => {
+        btn.textContent = 'Something went wrong — please try again';
+        btn.disabled = false;
+        btn.style.background = '#c0392b';
+      });
     });
   </script>
 </body>
