@@ -57,26 +57,48 @@
 
     a { color: inherit; text-decoration: none; }
 
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      border: none; cursor: pointer;
+      font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.95rem;
+      transition: all 0.3s var(--ease); text-decoration: none; white-space: nowrap;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: var(--ink); color: #F9FAFB; padding: 14px 16px 14px 24px; border-radius: var(--r-md); }
+    .btn-primary:hover { background: var(--ink-3); box-shadow: var(--shadow-lift); }
+    .btn-icon {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: rgba(255,255,255,0.14);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      transition: transform 0.3s var(--ease), background 0.3s var(--ease);
+    }
+    .btn-primary:hover .btn-icon { transform: translateX(3px); background: rgba(255,255,255,0.22); }
+
     /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1.25rem 2rem;
-      background: rgba(249,250,251,0.85);
-      backdrop-filter: blur(18px) saturate(160%);
-      border-bottom: 1px solid var(--border);
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(12,12,12,0.88);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
-    .nav-logo { font-weight: 800; font-size: 1.1rem; letter-spacing: -0.02em; color: var(--ink); }
-    .nav-logo span { opacity: 0.4; }
-    .nav-links { display: flex; align-items: center; gap: 2rem; }
-    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--secondary); transition: color 0.2s; }
-    .nav-links a:hover { color: var(--ink); }
-    .nav-cta {
-      background: var(--ink); color: #fff; padding: 0.6rem 1.3rem;
-      border-radius: 100px; font-size: 0.875rem; font-weight: 600;
-      transition: opacity 0.2s var(--ease);
+    .nav-inner {
+      max-width: var(--max); margin: 0 auto; padding: 0 40px;
+      height: 66px; display: flex; align-items: center;
+      justify-content: space-between; gap: 24px;
     }
-    .nav-cta:hover { opacity: 0.8; }
+    .nav-logo { font-size: 1.2rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; flex-shrink: 0; }
+    .nav-links { display: flex; gap: 2px; list-style: none; }
+    .nav-links a {
+      display: block; padding: 8px 14px;
+      font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.55);
+      text-decoration: none; border-radius: var(--r-sm);
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: #F9FAFB; background: rgba(255,255,255,0.07); }
+    .nav-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .nav-cta .btn-primary { padding: 10px 12px 10px 18px; font-size: 0.875rem; }
+    .nav-cta .btn-icon { width: 28px; height: 28px; }
 
     /* ── HERO ── */
     .hero {
@@ -360,7 +382,7 @@
       width: 44px; height: 44px; border-radius: var(--r-md);
       background: var(--canvas); border: 1px solid var(--border-mid);
       display: flex; align-items: center; justify-content: center;
-      font-size: 1.25rem; flex-shrink: 0;
+      color: var(--ink); flex-shrink: 0;
     }
     .local-point-title { font-weight: 700; margin-bottom: 0.25rem; }
     .local-point-body { font-size: 0.9rem; color: var(--secondary); line-height: 1.6; }
@@ -459,17 +481,26 @@
 <body>
 
   <!-- NAV -->
-  <nav>
-    <a href="index.html" class="nav-logo"><img src="assets/logo-black.png" alt="Enertech" style="height:26px;width:auto;display:block;"></a>
-    <div class="nav-links">
-      <a href="how-it-works.html">How It Works</a>
-      <a href="property-managers.html">Property Managers</a>
-      <a href="property-owners.html">Property Owners</a>
-      <a href="hoa.html">For HOAs</a>
-      <a href="for-drivers.html">For Drivers</a>
-      <a href="service-area.html" style="color:var(--ink); font-weight:600;">Service Area</a>
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="assets/logo-white.png" alt="Enertech" style="height:26px;width:auto;display:block;"></a>
+      <ul class="nav-links">
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="property-managers.html">Property Managers</a></li>
+        <li><a href="property-owners.html">Property Owners</a></li>
+        <li><a href="hoa.html">For HOAs</a></li>
+        <li><a href="for-drivers.html">For Drivers</a></li>
+        <li><a href="service-area.html" class="active">Service Area</a></li>
+      </ul>
+      <div class="nav-right nav-cta">
+        <a href="assessment.html" class="btn btn-primary">
+          Get a free assessment
+          <span class="btn-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+      </div>
     </div>
-    <a href="assessment.html" class="nav-cta">Get Free Assessment</a>
   </nav>
 
   <!-- HERO: split with corridor map -->
@@ -737,7 +768,7 @@
         <p class="xcel-body reveal reveal-delay-3" style="margin-top:-0.5rem;">
           We also monitor Charge Ahead Colorado grants, which can stack on top of Xcel rebates for income-qualified multifamily communities.
         </p>
-        <a href="https://www.xcelenergy.com/programs_and_rebates/residential_programs_and_rebates/electric_vehicles/multifamily_ev_charging" target="_blank" rel="noopener" class="xcel-link reveal reveal-delay-4">
+        <a href="https://co.my.xcelenergy.com/customersupport/s/article/Commercial-EV-Infrastructure-Rebate-Program" target="_blank" rel="noopener" class="xcel-link reveal reveal-delay-4">
           Xcel Energy multifamily EV rebates ↗
         </a>
       </div>
@@ -844,21 +875,21 @@
           </h2>
           <div class="local-points" style="margin-top:2.5rem;">
             <div class="local-point reveal reveal-delay-2">
-              <div class="local-point-icon">⚡</div>
+              <div class="local-point-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
               <div>
                 <div class="local-point-title">Utility relationships in your specific territory</div>
                 <div class="local-point-body">We have established working relationships with Xcel Energy's multifamily EV team. That means faster rebate approvals and pre-application conversations national operators can't have.</div>
               </div>
             </div>
             <div class="local-point reveal reveal-delay-3">
-              <div class="local-point-icon">🏛️</div>
+              <div class="local-point-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><rect x="3" y="18" width="18" height="2" rx="1"/><rect x="3" y="4" width="18" height="2" rx="1"/><line x1="6" y1="6" x2="6" y2="18"/><line x1="10" y1="6" x2="10" y2="18"/><line x1="14" y1="6" x2="14" y2="18"/><line x1="18" y1="6" x2="18" y2="18"/></svg></div>
               <div>
                 <div class="local-point-title">We know your permit jurisdiction</div>
                 <div class="local-point-body">Every Colorado municipality has its own permit process and inspection requirements. We've navigated Denver, Boulder, Fort Collins, Colorado Springs, and dozens of other jurisdictions — not generically, but specifically.</div>
               </div>
             </div>
             <div class="local-point reveal reveal-delay-4">
-              <div class="local-point-icon">🔧</div>
+              <div class="local-point-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
               <div>
                 <div class="local-point-title">On-site response is hours, not days</div>
                 <div class="local-point-body">When a charger needs on-site attention, our team is in Colorado. National operators dispatch from regional hubs that may be hundreds of miles away — a broken charger can sit for days.</div>
@@ -908,7 +939,7 @@
               </tr>
               <tr>
                 <td>Who you talk to</td>
-                <td class="td-good">Alex Paterson-Jones, directly</td>
+                <td class="td-good">Our local Colorado team, directly</td>
                 <td class="td-bad">Call center or account manager</td>
               </tr>
             </tbody>
