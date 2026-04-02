@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EV Charging for Property Managers | Zero Cost, Zero Hassle | Enertech</title>
+  <meta name="description" content="Enertech installs and operates EV charging at your Colorado apartment community at zero cost. Your property earns revenue. Your staff never deal with charger issues. Here's how." />
+  <link rel="canonical" href="https://enertechev.com/property-managers" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:         #0C0C0C;
+      --ink-2:       #1C1C1C;
+      --ink-3:       #2E2E2E;
+      --secondary:   #6B6B6B;
+      --muted:       #9B9B9B;
+      --border:      rgba(0,0,0,0.08);
+      --border-mid:  rgba(0,0,0,0.14);
+      --canvas:      #F9FAFB;
+      --surface:     #FFFFFF;
+      --canvas-dark: #0C0C0C;
+      --surface-dark:#1C1C1C;
+      --border-dark: rgba(255,255,255,0.09);
+      --shadow-sm:   0 4px 12px -4px rgba(0,0,0,0.08);
+      --shadow-card: 0 20px 40px -15px rgba(0,0,0,0.07);
+      --shadow-lift: 0 28px 48px -12px rgba(0,0,0,0.18);
+      --r-xl:  2.5rem;
+      --r-lg:  1.5rem;
+      --r-md:  0.875rem;
+      --r-sm:  0.5rem;
+      --ease:  cubic-bezier(0.32, 0.72, 0, 1);
+      --max: 1320px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+      background: var(--canvas);
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── TYPOGRAPHY ── */
+    .h1 { font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 900; line-height: 1.0; letter-spacing: -0.03em; }
+    .h2 { font-size: clamp(1.75rem, 3vw, 2.75rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.022em; }
+    .h3 { font-size: 1.1rem; font-weight: 700; line-height: 1.3; letter-spacing: -0.01em; }
+    .body-lg { font-size: 1.15rem; line-height: 1.7; color: var(--secondary); }
+    .body-md { font-size: 1rem; line-height: 1.65; color: var(--secondary); }
+    .label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+
+    /* ── LAYOUT ── */
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .section { padding: 120px 0; }
+    .section--dark { background: var(--canvas-dark); color: #F9FAFB; }
+    .section--dark .body-lg,
+    .section--dark .body-md { color: rgba(249,250,251,0.62); }
+    .section--dark .label { color: rgba(249,250,251,0.35); }
+    .section--dark .h2,
+    .section--dark .h3 { color: #F9FAFB; }
+    .section--mid { background: var(--surface); }
+
+    /* ── REVEAL ── */
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.75s var(--ease), transform 0.75s var(--ease);
+    }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 80ms; }
+    .reveal-d2 { transition-delay: 160ms; }
+    .reveal-d3 { transition-delay: 240ms; }
+    .reveal-d4 { transition-delay: 320ms; }
+    .reveal-d5 { transition-delay: 400ms; }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      border: none; cursor: pointer;
+      font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.95rem;
+      transition: all 0.3s var(--ease); text-decoration: none; white-space: nowrap;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: var(--ink); color: #F9FAFB; padding: 14px 16px 14px 24px; border-radius: var(--r-md); }
+    .btn-primary:hover { background: var(--ink-3); box-shadow: var(--shadow-lift); }
+    .btn-icon {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: rgba(255,255,255,0.14);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      transition: transform 0.3s var(--ease), background 0.3s var(--ease);
+    }
+    .btn-primary:hover .btn-icon { transform: translateX(3px); background: rgba(255,255,255,0.22); }
+    .btn-ghost-light { background: transparent; color: var(--ink); padding: 14px 20px; border-radius: var(--r-md); border: 1.5px solid var(--border-mid); }
+    .btn-ghost-light:hover { border-color: var(--ink); }
+    .btn-white { background: #F9FAFB; color: var(--ink); padding: 14px 16px 14px 24px; border-radius: var(--r-md); }
+    .btn-white:hover { background: #fff; box-shadow: var(--shadow-lift); }
+    .btn-white .btn-icon { background: rgba(0,0,0,0.07); }
+    .btn-white:hover .btn-icon { transform: translateX(3px); }
+    .risk { font-size: 0.82rem; color: rgba(255,255,255,0.42); margin-top: 12px; }
+    .risk-dark { font-size: 0.82rem; color: var(--muted); margin-top: 12px; }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(12,12,12,0.88);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-inner {
+      max-width: var(--max); margin: 0 auto; padding: 0 40px;
+      height: 66px; display: flex; align-items: center;
+      justify-content: space-between; gap: 24px;
+    }
+    .nav-logo { font-size: 1.2rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; flex-shrink: 0; }
+    .nav-links { display: flex; gap: 2px; list-style: none; }
+    .nav-links a {
+      display: block; padding: 8px 14px;
+      font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.55);
+      text-decoration: none; border-radius: var(--r-sm);
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: #F9FAFB; background: rgba(255,255,255,0.07); }
+    .nav-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .nav-cta .btn-primary { padding: 10px 12px 10px 18px; font-size: 0.875rem; }
+    .nav-cta .btn-icon { width: 28px; height: 28px; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; min-height: 92dvh;
+      display: grid; grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+    }
+
+    /* Left — copy */
+    .hero-left {
+      background: var(--canvas-dark);
+      padding: 140px 72px 100px 80px;
+      display: flex; flex-direction: column; justify-content: center;
+      position: relative; z-index: 1;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 999px; padding: 6px 14px 6px 10px; margin-bottom: 36px;
+      width: fit-content;
+    }
+    .hero-eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: #fff; opacity: 0.6; }
+    .hero-eyebrow span { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.65); }
+    .hero-left .h1 { color: #F9FAFB; margin-bottom: 24px; }
+    .hero-left .body-lg { color: rgba(249,250,251,0.65); max-width: 480px; margin-bottom: 48px; }
+    .hero-cta-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+
+    /* Right — photo */
+    .hero-right {
+      position: relative; overflow: hidden;
+    }
+    .hero-right-img {
+      position: absolute; inset: 0;
+      width: 100%; height: 120%;
+      object-fit: cover; object-position: center 40%;
+      will-change: transform; transform: translateY(-10%);
+    }
+    .hero-right-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(270deg, transparent 50%, rgba(12,12,12,0.25) 100%);
+    }
+
+    /* ── PAIN POINTS BAND ── */
+    .pain-band {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 56px 0;
+    }
+    .pain-band-inner {
+      max-width: var(--max); margin: 0 auto; padding: 0 40px;
+    }
+    .pain-intro {
+      font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 28px;
+    }
+    .pain-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+    }
+    .pain-card {
+      background: var(--canvas);
+      border-radius: var(--r-md);
+      padding: 28px 24px;
+      position: relative;
+    }
+    .pain-q {
+      font-size: 1rem; font-weight: 700; color: var(--ink);
+      margin-bottom: 8px; line-height: 1.35;
+    }
+    .pain-a {
+      font-size: 0.875rem; color: var(--secondary); line-height: 1.5;
+    }
+    .pain-resolved {
+      display: inline-flex; align-items: center; gap: 5px;
+      margin-top: 14px;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .pain-resolved-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ink); }
+
+    /* ── BENTO — WHAT YOU GET ── */
+    .bento {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 3px;
+      border-radius: var(--r-xl);
+      overflow: hidden;
+    }
+    .bento-card {
+      background: var(--surface);
+      padding: 52px 44px;
+      transition: background 0.25s var(--ease);
+      position: relative; overflow: hidden;
+    }
+    .bento-card:hover { background: #FAFAFA; }
+    .bento-card--wide { grid-column: span 2; }
+    .bento-card--dark {
+      background: var(--ink);
+      color: #F9FAFB;
+    }
+    .bento-card--dark:hover { background: var(--ink-2); }
+    .bento-card--photo {
+      padding: 0; overflow: hidden; position: relative;
+    }
+    .bento-photo {
+      width: 100%; height: 100%; min-height: 320px;
+      object-fit: cover; object-position: center 45%;
+      display: block;
+    }
+    .bento-photo-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(12,12,12,0.55) 100%);
+    }
+    .bento-photo-label {
+      position: absolute; bottom: 28px; left: 36px;
+      font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.7);
+      letter-spacing: 0.06em;
+    }
+    .bento-icon {
+      width: 48px; height: 48px; border-radius: var(--r-md);
+      background: var(--canvas); border: 1px solid var(--border-mid);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 24px;
+    }
+    .bento-card--dark .bento-icon {
+      background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.12);
+    }
+    .bento-icon svg { width: 22px; height: 22px; color: var(--ink-3); }
+    .bento-card--dark .bento-icon svg { color: rgba(255,255,255,0.7); }
+    .bento-card .h3 { margin-bottom: 12px; }
+    .bento-card--dark .h3 { color: #F9FAFB; }
+    .bento-card .body-md { font-size: 0.925rem; }
+    .bento-card--dark .body-md { color: rgba(255,255,255,0.55); }
+    .bento-stat {
+      font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 900;
+      letter-spacing: -0.04em; color: #F9FAFB; line-height: 1;
+      margin-bottom: 8px;
+    }
+    .bento-stat-label { font-size: 0.875rem; color: rgba(255,255,255,0.45); }
+    .bento-list {
+      list-style: none; display: flex; flex-direction: column; gap: 10px;
+      margin-top: 20px;
+    }
+    .bento-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.9rem; color: var(--secondary);
+    }
+    .bento-list li::before { content: '—'; color: var(--border-mid); flex-shrink: 0; }
+    .bento-card--dark .bento-list li { color: rgba(255,255,255,0.5); }
+    .bento-card--dark .bento-list li::before { color: rgba(255,255,255,0.15); }
+
+    /* ── OBJECTION CARDS ── */
+    .objections-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3px; border-radius: var(--r-xl); overflow: hidden;
+    }
+    .objection-card {
+      background: var(--surface); padding: 52px 48px;
+      transition: background 0.2s;
+    }
+    .objection-card:hover { background: #FAFAFA; }
+    .objection-q {
+      font-size: 1.05rem; font-weight: 800; color: var(--ink);
+      letter-spacing: -0.015em; line-height: 1.3;
+      margin-bottom: 16px; padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .objection-q::before {
+      content: '"'; font-size: 2rem; color: var(--border-mid);
+      line-height: 0; vertical-align: -0.4em; margin-right: 4px;
+    }
+    .objection-a { font-size: 0.95rem; color: var(--secondary); line-height: 1.65; }
+
+    /* ── PORTFOLIO STRIP ── */
+    .portfolio-strip {
+      background: var(--ink);
+      padding: 72px 0;
+    }
+    .portfolio-inner {
+      max-width: var(--max); margin: 0 auto; padding: 0 40px;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+    }
+    .portfolio-left .h2 { color: #F9FAFB; margin-bottom: 16px; }
+    .portfolio-left .body-lg { color: rgba(255,255,255,0.55); margin-bottom: 36px; }
+    .portfolio-stats {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+      border-radius: var(--r-lg); overflow: hidden;
+    }
+    .portfolio-stat {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.07);
+      padding: 28px 24px;
+    }
+    .portfolio-stat-val {
+      font-size: 2rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB;
+      line-height: 1; margin-bottom: 6px;
+    }
+    .portfolio-stat-lbl { font-size: 0.8rem; color: rgba(255,255,255,0.38); line-height: 1.4; }
+
+    /* ── TESTIMONIAL ── */
+    .testimonial-section {
+      background: var(--canvas);
+      padding: 120px 0;
+    }
+    .testimonial-wrap {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3px; border-radius: var(--r-xl); overflow: hidden;
+    }
+    .testimonial-photo-wrap {
+      position: relative; overflow: hidden; min-height: 480px;
+    }
+    .testimonial-photo {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 30%;
+    }
+    .testimonial-photo-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(12,12,12,0.6) 100%);
+    }
+    .testimonial-photo-tag {
+      position: absolute; bottom: 28px; left: 36px;
+      font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.7);
+      letter-spacing: 0.06em;
+    }
+    .testimonial-content {
+      background: var(--surface);
+      padding: 64px 56px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .testimonial-quote {
+      font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+      font-weight: 500; color: var(--ink);
+      line-height: 1.6; letter-spacing: -0.01em;
+      margin-bottom: 36px;
+    }
+    .testimonial-quote::before { content: '\201C'; }
+    .testimonial-quote::after { content: '\201D'; }
+    .testimonial-attr { display: flex; flex-direction: column; gap: 4px; }
+    .testimonial-name { font-size: 0.95rem; font-weight: 700; color: var(--ink); }
+    .testimonial-role { font-size: 0.82rem; color: var(--muted); }
+
+    /* ── REPLACEMENT SECTION ── */
+    .replacement-split {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+    }
+    .replacement-card {
+      background: var(--ink); border-radius: var(--r-xl);
+      padding: 56px 48px; position: relative; overflow: hidden;
+    }
+    .replacement-card::before {
+      content: ''; position: absolute; top: -60px; right: -60px;
+      width: 240px; height: 240px; border-radius: 50%;
+      background: rgba(255,255,255,0.03); pointer-events: none;
+    }
+    .replacement-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 20px; }
+    .replacement-card .h3 { color: #F9FAFB; font-size: 1.35rem; font-weight: 800; margin-bottom: 16px; }
+    .replacement-list {
+      list-style: none; display: flex; flex-direction: column; gap: 14px; margin-top: 24px;
+    }
+    .replacement-list li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 0.9rem; color: rgba(255,255,255,0.55);
+    }
+    .r-check {
+      width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; margin-top: 1px;
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .r-check svg { width: 8px; height: 8px; color: rgba(255,255,255,0.7); }
+
+    /* ── CTA SECTION ── */
+    .cta-section {
+      background: var(--ink); padding: 120px 0; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: ''; position: absolute; top: -120px; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 600px; border-radius: 50%;
+      background: rgba(255,255,255,0.02); pointer-events: none;
+    }
+    .cta-section .h2 { color: #F9FAFB; margin-bottom: 16px; }
+    .cta-section .body-lg { color: rgba(249,250,251,0.55); max-width: 520px; margin: 0 auto 48px; }
+    .cta-btn-row { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+    /* ── FOOTER ── */
+    .footer { background: var(--canvas-dark); padding: 64px 0 40px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .footer-top {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 48px; flex-wrap: wrap;
+      padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 32px;
+    }
+    .footer-brand { max-width: 320px; }
+    .footer-logo { font-size: 1.3rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; }
+    .footer-tagline { font-size: 0.875rem; color: rgba(255,255,255,0.38); margin-top: 10px; line-height: 1.5; }
+    .footer-links { display: flex; gap: 48px; flex-wrap: wrap; }
+    .footer-col { display: flex; flex-direction: column; gap: 4px; }
+    .footer-col-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.28); margin-bottom: 8px; }
+    .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.5); text-decoration: none; padding: 4px 0; transition: color 0.2s; }
+    .footer-col a:hover { color: #F9FAFB; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.25); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1000px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-right { min-height: 420px; }
+      .hero-right-img { height: 100%; }
+      .portfolio-inner { grid-template-columns: 1fr; gap: 48px; }
+      .replacement-split { grid-template-columns: 1fr; gap: 48px; }
+      .testimonial-wrap { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 900px) {
+      .wrap { padding: 0 24px; }
+      .section { padding: 80px 0; }
+      .bento { grid-template-columns: 1fr; }
+      .bento-card--wide { grid-column: auto; }
+      .pain-grid { grid-template-columns: 1fr 1fr; }
+      .objections-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .footer-top { flex-direction: column; }
+    }
+    @media (max-width: 600px) {
+      .hero-left { padding: 100px 24px 72px; }
+      .hero-cta-row { flex-direction: column; align-items: flex-start; }
+      .pain-grid { grid-template-columns: 1fr; }
+      .pain-band { padding: 40px 0; }
+      .pain-band-inner { padding: 0 24px; }
+      .portfolio-stats { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Enertech</a>
+      <ul class="nav-links">
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="property-managers.html" class="active">For Property Managers</a></li>
+        <li><a href="for-drivers.html">For Drivers</a></li>
+        <li><a href="service-area.html">Service Area</a></li>
+      </ul>
+      <div class="nav-right nav-cta">
+        <a href="assessment.html" class="btn btn-primary">
+          Get a free assessment
+          <span class="btn-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO — split screen -->
+  <section class="hero" aria-label="Page hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow reveal">
+        <span class="hero-eyebrow-dot" aria-hidden="true"></span>
+        <span>For Property Managers</span>
+      </div>
+      <h1 class="h1 reveal reveal-d1">EV charging that runs itself.</h1>
+      <p class="body-lg reveal reveal-d2">Enertech installs and operates EV charging at your Colorado apartment community at zero cost. Your property earns revenue from day one. Your staff never deal with a charger issue — ever.</p>
+      <div class="hero-cta-row reveal reveal-d3">
+        <a href="assessment.html" class="btn btn-white">
+          Get a free property assessment
+          <span class="btn-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+        <a href="how-it-works.html" class="btn btn-ghost-light" style="color: rgba(255,255,255,0.65); border-color: rgba(255,255,255,0.2);">See how it works</a>
+      </div>
+      <p class="risk reveal reveal-d4">Free, no obligation. Takes about 20 minutes.</p>
+    </div>
+    <div class="hero-right" aria-hidden="true">
+      <img class="hero-right-img" id="hero-img" src="assets/property-sunset.jpg" alt="Enertech EV charger at a Colorado apartment community at sunset" loading="eager" fetchpriority="high" />
+      <div class="hero-right-overlay"></div>
+    </div>
+  </section>
+
+  <!-- PAIN POINTS BAND -->
+  <div class="pain-band" role="complementary">
+    <div class="pain-band-inner">
+      <p class="pain-intro reveal">Common problems Enertech solves</p>
+      <div class="pain-grid">
+        <div class="pain-card reveal">
+          <p class="pain-q">Tenants keep asking about EV charging.</p>
+          <p class="pain-a">We install it at zero cost. You can answer "yes, we have charging" within a few months.</p>
+          <span class="pain-resolved"><span class="pain-resolved-dot" aria-hidden="true"></span>Resolved</span>
+        </div>
+        <div class="pain-card reveal reveal-d1">
+          <p class="pain-q">Our current chargers are always broken.</p>
+          <p class="pain-a">We replace broken programs entirely at no cost and operate everything going forward.</p>
+          <span class="pain-resolved"><span class="pain-resolved-dot" aria-hidden="true"></span>Resolved</span>
+        </div>
+        <div class="pain-card reveal reveal-d2">
+          <p class="pain-q">We don't have the budget for a big installation.</p>
+          <p class="pain-a">There's no budget required. Enertech covers 100% of the cost — hardware, electrical, permits, everything.</p>
+          <span class="pain-resolved"><span class="pain-resolved-dot" aria-hidden="true"></span>Resolved</span>
+        </div>
+        <div class="pain-card reveal reveal-d3">
+          <p class="pain-q">My team doesn't have time to manage chargers.</p>
+          <p class="pain-a">They won't have to. Residents contact Enertech directly. Your office is completely out of the loop.</p>
+          <span class="pain-resolved"><span class="pain-resolved-dot" aria-hidden="true"></span>Resolved</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BENTO — WHAT YOU GET -->
+  <section class="section section--mid" aria-labelledby="benefits-heading">
+    <div class="wrap">
+      <div style="max-width: 560px; margin-bottom: 72px;">
+        <p class="label reveal">What the partnership looks like</p>
+        <h2 class="h2 reveal reveal-d1" id="benefits-heading">Everything you want. Nothing you don't.</h2>
+        <p class="body-lg reveal reveal-d2">A modern amenity, passive income, and zero operational lift. That's what an Enertech partnership delivers for property managers.</p>
+      </div>
+
+      <div class="bento">
+
+        <!-- Zero cost — wide dark -->
+        <div class="bento-card bento-card--wide bento-card--dark reveal">
+          <div class="bento-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          </div>
+          <div class="bento-stat">$0</div>
+          <div class="bento-stat-label" style="margin-bottom: 20px;">Cost to your property — installation, hardware, electrical, permits, and ongoing operations. Zero, always.</div>
+          <ul class="bento-list" aria-label="Zero cost details">
+            <li>Commercial-grade Autel Level 2 and DC fast chargers — owned by Enertech</li>
+            <li>Full electrical scope including panel upgrades if required</li>
+            <li>All municipal permits and utility coordination handled by Enertech</li>
+            <li>Hardware replacement at end of life — also at zero cost</li>
+          </ul>
+        </div>
+
+        <!-- Photo -->
+        <div class="bento-card bento-card--photo reveal reveal-d1">
+          <img class="bento-photo" src="assets/hero-bg.JPG" alt="Row of Enertech EV charging stations in a Colorado parking lot" loading="lazy" />
+          <div class="bento-photo-overlay" aria-hidden="true"></div>
+          <p class="bento-photo-label">Enertech installation — Colorado Front Range</p>
+        </div>
+
+        <!-- Revenue -->
+        <div class="bento-card reveal reveal-d2">
+          <div class="bento-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <h3 class="h3">Monthly revenue share</h3>
+          <p class="body-md">Your property earns a percentage of every charging session. Paid monthly — no invoicing, no chasing. First payment typically arrives within 30–60 days of go-live.</p>
+        </div>
+
+        <!-- Hands-off operations -->
+        <div class="bento-card reveal reveal-d3">
+          <div class="bento-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          </div>
+          <h3 class="h3">Your staff do nothing</h3>
+          <p class="body-md">When something breaks, tenants call Enertech — not your office. We handle billing disputes, outage reports, and all driver support. Your team's involvement ends at lease signing.</p>
+        </div>
+
+        <!-- 24/7 monitoring -->
+        <div class="bento-card bento-card--dark reveal">
+          <div class="bento-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3 class="h3">24/7 remote monitoring</h3>
+          <p class="body-md">Every charger on every Enertech site is monitored continuously via the Monta network. We identify faults before residents report them — and dispatch Colorado technicians when on-site repair is needed.</p>
+        </div>
+
+        <!-- Colorado expertise -->
+        <div class="bento-card reveal reveal-d1">
+          <div class="bento-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+          </div>
+          <h3 class="h3">Colorado programs, handled</h3>
+          <p class="body-md">Xcel Energy rebates, Charge Ahead Colorado grants, utility interconnection — we navigate all of it on your behalf. Most properties qualify for significant funding that further offsets installation costs.</p>
+        </div>
+
+        <!-- Competitive amenity -->
+        <div class="bento-card reveal reveal-d2">
+          <div class="bento-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3 class="h3">A competitive amenity — fast</h3>
+          <p class="body-md">EV adoption across Colorado's Front Range is growing every year. Properties with reliable EV charging are increasingly preferred by prospective tenants. Most Enertech sites are live within 3–4 months of signing.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OBJECTION HANDLING -->
+  <section class="section" aria-labelledby="objections-heading">
+    <div class="wrap">
+      <div style="max-width: 560px; margin-bottom: 72px;">
+        <p class="label reveal">The questions we always get</p>
+        <h2 class="h2 reveal reveal-d1" id="objections-heading">We've heard every objection. Here's the honest answer.</h2>
+      </div>
+
+      <div class="objections-grid">
+
+        <div class="objection-card reveal">
+          <p class="objection-q">What's the catch? This sounds too good to be true.</p>
+          <p class="objection-a">The model works because Enertech earns revenue when chargers are used — charging session fees paid by residents. We use that revenue to fund hardware, operations, and capital. Your property gets a share. We only succeed if the chargers run well, which means we're as motivated as you are to keep them operational. There's no catch — just aligned incentives.</p>
+        </div>
+
+        <div class="objection-card reveal reveal-d1">
+          <p class="objection-q">We already have EV chargers. What happens to those?</p>
+          <p class="objection-a">If your current chargers are working well, we're probably not the right fit right now — and we'll tell you that. If they're a cost center, constantly broken, or generating complaints, we can replace the entire program at zero cost. We've transitioned properties away from other operators before. A free assessment will give you an honest comparison.</p>
+        </div>
+
+        <div class="objection-card reveal reveal-d2">
+          <p class="objection-q">What if a resident has a problem with the charger?</p>
+          <p class="objection-a">They call Enertech. Our driver support line is +1 888 895 7158, staffed 24 hours a day, 7 days a week. The number is printed on every charger. Billing questions, outage reports, access issues — all handled by us. Your office is not involved unless you want to be.</p>
+        </div>
+
+        <div class="objection-card reveal reveal-d3">
+          <p class="objection-q">How long does it take from signing to chargers being live?</p>
+          <p class="objection-a">Most properties are live within 3–4 months of signing. The timeline includes a proposal and agreement phase (2–4 weeks), permit applications (typically 2–6 weeks depending on the municipality), Xcel rebate pre-approval if applicable, and installation itself — which usually takes 1–3 days on-site. We'll give you a realistic estimate specific to your property and city during the assessment.</p>
+        </div>
+
+        <div class="objection-card reveal reveal-d4">
+          <p class="objection-q">Does our property qualify? We only have 30 units.</p>
+          <p class="objection-a">Generally, Enertech works best with properties of 20 units or more — the charger utilization needs to support the revenue model. That said, a free assessment is the right way to find out. Property layout, parking configuration, and existing electrical capacity all factor in. We'll tell you honestly if it's not a good fit.</p>
+        </div>
+
+        <div class="objection-card reveal reveal-d5">
+          <p class="objection-q">Our ownership group would need to approve this. How do we make that case?</p>
+          <p class="objection-a">We can help. Our proposal includes a clear breakdown of the zero-cost model, projected revenue share, and the Colorado incentive programs the property qualifies for. We're happy to join a call with ownership to walk through the economics directly — or provide documentation for your internal approval process. There's no pressure to move forward from a free assessment.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO / REGIONAL MANAGERS STRIP -->
+  <div class="portfolio-strip" role="complementary">
+    <div class="portfolio-inner">
+      <div class="portfolio-left reveal">
+        <p class="label" style="color: rgba(255,255,255,0.3); margin-bottom: 16px;">Managing multiple properties?</p>
+        <h2 class="h2">One partner for your entire Colorado portfolio.</h2>
+        <p class="body-lg">Regional managers and management companies can roll out EV charging across every Colorado property through a single Enertech partnership. Zero capital outlay. Zero operational lift. One local operator managing it all.</p>
+        <a href="assessment.html" class="btn btn-white" style="margin-top: 36px;">
+          Talk about your portfolio
+          <span class="btn-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+      </div>
+      <div class="portfolio-stats reveal reveal-d1" role="list" aria-label="Portfolio partnership benefits">
+        <div class="portfolio-stat" role="listitem">
+          <div class="portfolio-stat-val">$0</div>
+          <div class="portfolio-stat-lbl">Capital required across your entire portfolio</div>
+        </div>
+        <div class="portfolio-stat" role="listitem">
+          <div class="portfolio-stat-val">1</div>
+          <div class="portfolio-stat-lbl">Colorado-based operator managing every site</div>
+        </div>
+        <div class="portfolio-stat" role="listitem">
+          <div class="portfolio-stat-val">0</div>
+          <div class="portfolio-stat-lbl">Hours of management time from your team per month</div>
+        </div>
+        <div class="portfolio-stat" role="listitem">
+          <div class="portfolio-stat-val">24/7</div>
+          <div class="portfolio-stat-lbl">Monitoring and driver support across all sites</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIAL -->
+  <section class="testimonial-section" aria-labelledby="testimonial-heading">
+    <div class="wrap">
+      <div style="max-width: 560px; margin-bottom: 64px;">
+        <p class="label reveal">From the properties we serve</p>
+        <h2 class="h2 reveal reveal-d1" id="testimonial-heading">What property managers say</h2>
+      </div>
+      <div class="testimonial-wrap reveal reveal-d1">
+        <div class="testimonial-photo-wrap">
+          <img class="testimonial-photo" src="assets/property-fusion.jpg" alt="Fusion 355 apartment community in Colorado Springs — an Enertech partner property" loading="lazy" />
+          <div class="testimonial-photo-overlay" aria-hidden="true"></div>
+          <p class="testimonial-photo-tag">Fusion 355 · Colorado Springs, CO</p>
+        </div>
+        <div class="testimonial-content">
+          <blockquote class="testimonial-quote">
+            The installation was completely hands-off for our team. Enertech handled the permits, the electrical work, and the whole setup. Since go-live, we haven't had a single maintenance call come to our office — residents contact Enertech directly. And we're earning revenue from it every month.
+          </blockquote>
+          <div class="testimonial-attr">
+            <p class="testimonial-name">Property Manager</p>
+            <p class="testimonial-role">Fusion 355 · Colorado Springs</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPLACEMENT PROGRAM -->
+  <section class="section section--mid" aria-labelledby="replacement-heading">
+    <div class="wrap">
+      <div class="replacement-split">
+        <div>
+          <p class="label reveal">Already have chargers?</p>
+          <h2 class="h2 reveal reveal-d1" id="replacement-heading">If your current EV charging is more headache than amenity, we can replace it.</h2>
+          <p class="body-lg reveal reveal-d2" style="margin-top: 16px;">Broken chargers, high maintenance costs, resident complaints, and software that no one manages — these are all signs a transition makes sense. Enertech has replaced programs from other operators before. The process is simpler than most property managers expect.</p>
+          <div class="reveal reveal-d3" style="margin-top: 36px;">
+            <a href="assessment.html" class="btn btn-primary">
+              Get a free assessment of your current setup
+              <span class="btn-icon" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </a>
+            <p class="risk-dark">We'll tell you honestly whether a transition makes sense for your property.</p>
+          </div>
+        </div>
+        <div class="replacement-card reveal reveal-d1">
+          <p class="replacement-label">Charger replacement process</p>
+          <h3 class="h3">What a transition looks like</h3>
+          <ul class="replacement-list" aria-label="Replacement process steps">
+            <li>
+              <span class="r-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Free assessment of your existing equipment — make, model, age, repair history, and costs
+            </li>
+            <li>
+              <span class="r-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Clear comparison: current costs vs. Enertech revenue-share model
+            </li>
+            <li>
+              <span class="r-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Enertech handles removal of old hardware and installs new equipment — zero cost to your property
+            </li>
+            <li>
+              <span class="r-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Residents transitioned to the new system with minimal disruption
+            </li>
+            <li>
+              <span class="r-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Revenue share begins from go-live — property earns instead of spending
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="cta-section" aria-labelledby="cta-heading">
+    <div class="wrap" style="position: relative; z-index: 1;">
+      <p class="label reveal" style="color: rgba(255,255,255,0.3); margin-bottom: 16px;">Ready to get started?</p>
+      <h2 class="h2 reveal reveal-d1" id="cta-heading">Find out what EV charging could look like at your property.</h2>
+      <p class="body-lg reveal reveal-d2">A free assessment takes about 20 minutes. No obligation to move forward. We'll tell you honestly if the economics don't work for your property.</p>
+      <div class="cta-btn-row reveal reveal-d3">
+        <a href="assessment.html" class="btn btn-white">
+          Get a free property assessment
+          <span class="btn-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+        <a href="how-it-works.html" class="btn btn-ghost-light" style="color: rgba(255,255,255,0.65); border-color: rgba(255,255,255,0.2);">See how the model works</a>
+      </div>
+      <p class="risk reveal reveal-d4">Free, no obligation. We'll tell you honestly if it's not the right fit.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">Enertech</a>
+          <p class="footer-tagline">Colorado's EV charging partner for multifamily properties. Colorado Springs to Fort Collins — zero cost to the property, always.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <div class="footer-col-title">For properties</div>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="property-managers.html">For Property Managers</a>
+            <a href="property-owners.html">For Property Owners</a>
+            <a href="hoa.html">For HOAs</a>
+            <a href="assessment.html">Get a free assessment</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">For drivers</div>
+            <a href="for-drivers.html">How to charge</a>
+            <a href="for-drivers.html#charger-specs-heading">Charger specs</a>
+            <a href="for-drivers.html#faq-heading">Driver FAQ</a>
+            <a href="tel:+18888957158">24/7 support: +1 888 895 7158</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Resources</div>
+            <a href="service-area.html">Service area</a>
+            <a href="blog.html">Blog</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Enertech. Colorado Springs to Fort Collins.</p>
+        <p class="footer-copy">enertechev.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── REVEAL ──
+    const revealEls = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in-view'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => obs.observe(el));
+    document.querySelectorAll('.hero .reveal, .pain-band .reveal').forEach(el => el.classList.add('in-view'));
+
+    // ── HERO PARALLAX ──
+    const heroImg = document.getElementById('hero-img');
+    if (heroImg) {
+      window.addEventListener('scroll', () => {
+        heroImg.style.transform = `translateY(calc(-10% + ${window.scrollY * 0.25}px))`;
+      }, { passive: true });
+    }
+  </script>
+</body>
+</html>
