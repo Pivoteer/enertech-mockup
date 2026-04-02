@@ -269,11 +269,20 @@
     }
     .spec-card {
       background: var(--surface-dark);
-      padding: 48px 40px 56px;
+      padding: 0 0 56px;
       position: relative;
       transition: background 0.25s var(--ease);
     }
     .spec-card:hover { background: #232323; }
+    .spec-img {
+      width: 100%; height: 260px;
+      object-fit: contain; object-position: center;
+      background: rgba(255,255,255,0.03);
+      border-radius: var(--r-xl) var(--r-xl) 0 0;
+      padding: 2rem 3rem 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .spec-card-body { padding: 0 40px; }
     .spec-badge {
       display: inline-block;
       background: rgba(255,255,255,0.08);
@@ -569,7 +578,7 @@
   <!-- NAV -->
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">Enertech</a>
+      <a href="index.html" class="nav-logo"><img src="assets/logo-white.png" alt="Enertech" style="height:26px;width:auto;display:block;"></a>
       <ul class="nav-links">
         <li><a href="how-it-works.html">How It Works</a></li>
         <li><a href="property-managers.html">Property Managers</a></li>
@@ -731,6 +740,8 @@
 
         <!-- AC Ultra -->
         <div class="spec-card reveal">
+          <img class="spec-img" src="assets/Charger-AC-Ultra.jpg" alt="Autel MaxiCharger AC Ultra EV charging station" loading="lazy" />
+          <div class="spec-card-body">
           <div class="spec-badge">Level 2 · AC</div>
           <div class="spec-name">AC Ultra</div>
           <div class="spec-sub">Autel MaxiCharger AC Ultra</div>
@@ -763,10 +774,13 @@
               Overnight charge for most EVs
             </li>
           </ul>
+          </div><!-- /spec-card-body -->
         </div>
 
         <!-- AC Pro -->
         <div class="spec-card reveal reveal-d1">
+          <img class="spec-img" src="assets/Charger-AC-Pro.jpg" alt="Autel MaxiCharger AC Pro EV charging station" loading="lazy" />
+          <div class="spec-card-body">
           <div class="spec-badge">Level 2 · AC</div>
           <div class="spec-name">AC Pro</div>
           <div class="spec-sub">Autel MaxiCharger AC Pro</div>
@@ -799,10 +813,13 @@
               Ideal for overnight residential charging
             </li>
           </ul>
+          </div><!-- /spec-card-body -->
         </div>
 
         <!-- DC Compact -->
         <div class="spec-card reveal reveal-d2">
+          <img class="spec-img" src="assets/Charger-DC-COMPACT 1.jpg" alt="Autel MaxiCharger DC Compact fast charging station" loading="lazy" />
+          <div class="spec-card-body">
           <div class="spec-badge">DC Fast Charging</div>
           <div class="spec-name">DC Compact</div>
           <div class="spec-sub">Autel MaxiCharger DC Compact</div>
@@ -835,6 +852,7 @@
               Vehicle must support DC fast charging
             </li>
           </ul>
+          </div><!-- /spec-card-body -->
         </div>
 
       </div>
