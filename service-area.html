@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EV Charging Service Area — Colorado Front Range | Enertech</title>
+  <meta name="description" content="Enertech serves Colorado multifamily properties from Colorado Springs to Fort Collins — the entire Front Range corridor. See if your city is in our service area and get a free property assessment." />
+  <link rel="canonical" href="https://enertechev.com/service-area" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:         #0C0C0C;
+      --ink-2:       #1C1C1C;
+      --ink-3:       #2E2E2E;
+      --secondary:   #6B6B6B;
+      --muted:       #9B9B9B;
+      --border:      rgba(0,0,0,0.08);
+      --border-mid:  rgba(0,0,0,0.14);
+      --canvas:      #F9FAFB;
+      --surface:     #FFFFFF;
+      --canvas-dark: #0C0C0C;
+      --surface-dark:#1C1C1C;
+      --border-dark: rgba(255,255,255,0.09);
+      --shadow-sm:   0 4px 12px -4px rgba(0,0,0,0.08);
+      --shadow-card: 0 20px 40px -15px rgba(0,0,0,0.07);
+      --shadow-lift: 0 28px 48px -12px rgba(0,0,0,0.18);
+      --r-xl:  2.5rem;
+      --r-lg:  1.5rem;
+      --r-md:  0.875rem;
+      --r-sm:  0.5rem;
+      --ease:  cubic-bezier(0.32, 0.72, 0, 1);
+      --max: 1320px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+      background: var(--canvas);
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .h1 { font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 900; line-height: 1.0; letter-spacing: -0.03em; }
+    .h2 { font-size: clamp(1.9rem, 3.5vw, 3rem); font-weight: 800; line-height: 1.05; letter-spacing: -0.025em; }
+    .h3 { font-size: clamp(1.3rem, 2vw, 1.75rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.015em; }
+    .h4 { font-size: 1.125rem; font-weight: 600; line-height: 1.3; }
+    .body-lg { font-size: clamp(1.05rem, 1.5vw, 1.2rem); line-height: 1.65; }
+    .body-sm { font-size: 0.9rem; line-height: 1.6; }
+    .label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 2rem;
+      background: rgba(249,250,251,0.85);
+      backdrop-filter: blur(18px) saturate(160%);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-weight: 800; font-size: 1.1rem; letter-spacing: -0.02em; color: var(--ink); }
+    .nav-logo span { opacity: 0.4; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--secondary); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta {
+      background: var(--ink); color: #fff; padding: 0.6rem 1.3rem;
+      border-radius: 100px; font-size: 0.875rem; font-weight: 600;
+      transition: opacity 0.2s var(--ease);
+    }
+    .nav-cta:hover { opacity: 0.8; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; min-height: 100dvh;
+      display: grid; grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+    }
+    .hero-left {
+      background: var(--canvas-dark);
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 6rem 3rem 5rem;
+      position: relative; z-index: 2;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 100px; padding: 0.4rem 1rem;
+      margin-bottom: 2rem; align-self: flex-start;
+    }
+    .hero-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: #fff; opacity: 0.6; }
+    .hero-title { color: #fff; margin-bottom: 1.25rem; }
+    .hero-title em { font-style: normal; opacity: 0.45; }
+    .hero-sub {
+      color: rgba(255,255,255,0.6);
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      line-height: 1.65; margin-bottom: 2.5rem;
+      max-width: 420px;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-white {
+      background: #fff; color: var(--ink);
+      padding: 0.875rem 2rem; border-radius: 100px;
+      font-weight: 700; font-size: 0.95rem;
+      transition: opacity 0.2s var(--ease);
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .btn-white:hover { opacity: 0.85; }
+    .btn-ghost-dark {
+      background: transparent; color: rgba(255,255,255,0.7);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 0.875rem 2rem; border-radius: 100px;
+      font-weight: 600; font-size: 0.95rem;
+      transition: all 0.2s var(--ease);
+    }
+    .btn-ghost-dark:hover { background: rgba(255,255,255,0.08); color: #fff; }
+
+    /* Hero right: corridor visual */
+    .hero-right {
+      background: var(--canvas-dark);
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+      padding: 5rem 3rem;
+      border-left: 1px solid rgba(255,255,255,0.06);
+    }
+    .hero-right::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url('assets/hero-bg.JPG') center/cover no-repeat;
+      opacity: 0.08;
+    }
+
+    /* ── CORRIDOR MAP ── */
+    .corridor {
+      position: relative; z-index: 1;
+      width: 100%; max-width: 360px;
+      padding: 2rem 0;
+    }
+    .corridor-spine {
+      position: absolute; left: 50%; top: 0; bottom: 0;
+      width: 1px; background: rgba(255,255,255,0.12);
+      transform: translateX(-50%);
+    }
+    .corridor-cities {
+      display: flex; flex-direction: column; gap: 0;
+      position: relative; z-index: 1;
+    }
+    .corridor-city {
+      display: grid; align-items: center;
+      position: relative;
+      padding: 0.55rem 0;
+    }
+    /* Cities alternate left/right */
+    .corridor-city.left {
+      grid-template-columns: 1fr auto;
+      text-align: right;
+      padding-right: calc(50% + 1.5rem);
+    }
+    .corridor-city.right {
+      grid-template-columns: auto 1fr;
+      text-align: left;
+      padding-left: calc(50% + 1.5rem);
+    }
+    .corridor-city-name {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.95rem; font-weight: 500;
+      white-space: nowrap;
+    }
+    .corridor-city.anchor .corridor-city-name {
+      color: #fff; font-weight: 700;
+    }
+    /* Center dot */
+    .corridor-city::before {
+      content: '';
+      position: absolute; left: 50%; top: 50%;
+      width: 7px; height: 7px; border-radius: 50%;
+      background: rgba(255,255,255,0.25);
+      transform: translate(-50%, -50%);
+    }
+    .corridor-city.anchor::before {
+      width: 11px; height: 11px;
+      background: rgba(255,255,255,0.7);
+      box-shadow: 0 0 0 3px rgba(255,255,255,0.12);
+    }
+    /* Connector line from dot to name */
+    .corridor-city.left .corridor-tick {
+      display: block; height: 1px; background: rgba(255,255,255,0.12);
+      width: 1rem; position: absolute;
+      right: calc(50% + 3.5px); top: 50%;
+    }
+    .corridor-city.right .corridor-tick {
+      display: block; height: 1px; background: rgba(255,255,255,0.12);
+      width: 1rem; position: absolute;
+      left: calc(50% + 3.5px); top: 50%;
+    }
+    .corridor-label {
+      display: flex; align-items: center; gap: 0.5rem;
+      color: rgba(255,255,255,0.35);
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 1rem 0;
+      justify-content: center;
+    }
+    .corridor-label .rule { width: 20px; height: 1px; background: rgba(255,255,255,0.2); }
+
+    /* ── STATS BAND ── */
+    .stats-band {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 2rem;
+    }
+    .stats-inner {
+      max-width: var(--max); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg); overflow: hidden;
+    }
+    .stat-cell {
+      background: var(--surface); padding: 2rem 2.5rem;
+      display: flex; flex-direction: column; gap: 0.3rem;
+    }
+    .stat-num {
+      font-size: clamp(2rem, 3vw, 2.75rem); font-weight: 900;
+      letter-spacing: -0.04em; line-height: 1;
+      color: var(--ink);
+    }
+    .stat-label { font-size: 0.85rem; color: var(--secondary); font-weight: 500; }
+
+    /* ── LAYOUT ── */
+    .section { padding: 7rem 2rem; }
+    .section-sm { padding: 5rem 2rem; }
+    .container { max-width: var(--max); margin: 0 auto; }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 0.6rem; margin-bottom: 1.2rem;
+    }
+    .section-label .rule { width: 24px; height: 2px; background: var(--ink); border-radius: 2px; }
+
+    /* ── CITY MARKETS ── */
+    .markets-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+      margin-top: 3.5rem;
+    }
+    .market-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--r-xl); padding: 2rem 2rem 1.75rem;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+    }
+    .market-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); }
+    .market-card.featured {
+      background: var(--canvas-dark); border-color: var(--border-dark);
+    }
+    .market-name {
+      font-size: 1.25rem; font-weight: 800; letter-spacing: -0.015em;
+      margin-bottom: 0.35rem; color: var(--ink);
+    }
+    .market-card.featured .market-name { color: #fff; }
+    .market-desc { font-size: 0.88rem; color: var(--secondary); line-height: 1.55; margin-bottom: 1.25rem; }
+    .market-card.featured .market-desc { color: rgba(255,255,255,0.55); }
+    .market-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .market-tag {
+      background: var(--canvas); border: 1px solid var(--border);
+      border-radius: 100px; padding: 0.25rem 0.7rem;
+      font-size: 0.75rem; font-weight: 600; color: var(--secondary);
+    }
+    .market-card.featured .market-tag {
+      background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.6);
+    }
+    .xcel-badge {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 100px; padding: 0.25rem 0.7rem;
+      font-size: 0.72rem; font-weight: 700; color: var(--secondary);
+      letter-spacing: 0.04em;
+    }
+    .market-card.featured .xcel-badge {
+      background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.5);
+    }
+    .xcel-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+
+    /* ── XCEL TERRITORY ── */
+    .xcel-section { background: var(--canvas-dark); padding: 7rem 2rem; }
+    .xcel-inner {
+      max-width: var(--max); margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+    }
+    .xcel-label { color: rgba(255,255,255,0.4); }
+    .xcel-label .rule { background: rgba(255,255,255,0.3); }
+    .xcel-title { color: #fff; margin-top: 0.5rem; }
+    .xcel-body { color: rgba(255,255,255,0.6); font-size: 1.05rem; line-height: 1.7; margin: 1rem 0 1.5rem; }
+    .xcel-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      color: rgba(255,255,255,0.8); font-weight: 500;
+      border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 0.1rem;
+      font-size: 0.9rem; transition: all 0.2s;
+    }
+    .xcel-link:hover { color: #fff; border-color: rgba(255,255,255,0.5); }
+    .xcel-cities {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
+    }
+    .xcel-city {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--r-md); padding: 0.875rem 1rem;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .xcel-city-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: rgba(255,255,255,0.4); flex-shrink: 0;
+    }
+    .xcel-city-name { color: rgba(255,255,255,0.75); font-size: 0.9rem; font-weight: 500; }
+    .xcel-city-note { color: rgba(255,255,255,0.35); font-size: 0.78rem; }
+
+    /* ── WHY LOCAL ── */
+    .local-section { padding: 7rem 2rem; }
+    .local-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+      align-items: start; margin-top: 3.5rem;
+    }
+    .local-table {
+      width: 100%; border-collapse: collapse;
+      border-radius: var(--r-lg); overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .local-table thead { background: var(--ink); }
+    .local-table th {
+      padding: 1rem 1.25rem; text-align: left;
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em; color: #fff;
+    }
+    .local-table tbody tr { border-bottom: 1px solid var(--border); }
+    .local-table tbody tr:last-child { border-bottom: none; }
+    .local-table tbody tr:nth-child(even) { background: var(--canvas); }
+    .local-table td {
+      padding: 0.875rem 1.25rem; font-size: 0.88rem; line-height: 1.5; vertical-align: top;
+    }
+    .local-table td:first-child { font-weight: 600; color: var(--ink); }
+    .td-good { color: #1a6b2e; font-weight: 600; }
+    .td-bad { color: #a0160f; }
+    .local-points { display: flex; flex-direction: column; gap: 1.75rem; }
+    .local-point { display: flex; gap: 1.25rem; align-items: flex-start; }
+    .local-point-icon {
+      width: 44px; height: 44px; border-radius: var(--r-md);
+      background: var(--canvas); border: 1px solid var(--border-mid);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem; flex-shrink: 0;
+    }
+    .local-point-title { font-weight: 700; margin-bottom: 0.25rem; }
+    .local-point-body { font-size: 0.9rem; color: var(--secondary); line-height: 1.6; }
+
+    /* ── NOT COVERED ── */
+    .not-covered {
+      background: var(--surface); padding: 3rem 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .not-covered-inner {
+      max-width: var(--max); margin: 0 auto;
+      display: flex; gap: 3rem; align-items: center;
+    }
+    .not-covered-text { flex: 1; }
+    .not-covered-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .not-covered-body { font-size: 0.92rem; color: var(--secondary); line-height: 1.6; }
+    .not-covered-cta {
+      flex-shrink: 0;
+      background: var(--ink); color: #fff;
+      padding: 0.875rem 1.75rem; border-radius: 100px;
+      font-weight: 700; font-size: 0.9rem;
+      transition: opacity 0.2s;
+    }
+    .not-covered-cta:hover { opacity: 0.8; }
+
+    /* ── CTA ── */
+    .cta-section {
+      padding: 8rem 2rem; background: var(--canvas-dark); color: #fff; text-align: center;
+    }
+    .cta-section .h2 { color: #fff; max-width: 680px; margin: 0 auto 1.25rem; }
+    .cta-section .body-lg { color: rgba(255,255,255,0.6); max-width: 520px; margin: 0 auto 3rem; }
+    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .cta-btn {
+      background: #fff; color: var(--ink);
+      padding: 1rem 2.25rem; border-radius: 100px;
+      font-weight: 700; font-size: 1rem;
+      transition: opacity 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .cta-btn:hover { opacity: 0.85; }
+    .cta-btn-ghost {
+      background: transparent; color: rgba(255,255,255,0.75);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 1rem 2.25rem; border-radius: 100px;
+      font-weight: 600; font-size: 1rem;
+      transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .cta-btn-ghost:hover { background: rgba(255,255,255,0.08); color: #fff; }
+    .cta-trust {
+      margin-top: 2.5rem; display: flex; align-items: center; justify-content: center;
+      gap: 2rem; flex-wrap: wrap;
+    }
+    .cta-trust-item { display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.4); font-size: 0.85rem; }
+    .trust-dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,0.25); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink-2, #1C1C1C); color: rgba(255,255,255,0.5);
+      padding: 3rem 2rem; text-align: center; font-size: 0.85rem;
+    }
+    footer a { color: rgba(255,255,255,0.5); }
+    footer a:hover { color: #fff; }
+    .footer-links { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+
+    /* ── REVEAL ── */
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-right { min-height: 60vh; }
+      .markets-grid { grid-template-columns: 1fr 1fr; }
+      .xcel-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .local-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .section { padding: 5rem 1.25rem; }
+      .markets-grid { grid-template-columns: 1fr; }
+      .not-covered-inner { flex-direction: column; gap: 1.5rem; }
+      .stats-inner { grid-template-columns: 1fr 1fr; }
+      .xcel-cities { grid-template-columns: 1fr; }
+      .corridor { max-width: 280px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">Enertech <span>EV</span></a>
+    <div class="nav-links">
+      <a href="how-it-works.html">How It Works</a>
+      <a href="property-managers.html">Property Managers</a>
+      <a href="property-owners.html">Property Owners</a>
+      <a href="hoa.html">For HOAs</a>
+      <a href="for-drivers.html">For Drivers</a>
+    </div>
+    <a href="assessment.html" class="nav-cta">Get Free Assessment</a>
+  </nav>
+
+  <!-- HERO: split with corridor map -->
+  <section class="hero">
+
+    <!-- Left: copy -->
+    <div class="hero-left">
+      <div class="hero-eyebrow label">
+        <span class="dot"></span>
+        Colorado Front Range
+      </div>
+      <h1 class="h1 hero-title">
+        Built for<br>Colorado.<br><em>Not just<br>operating here.</em>
+      </h1>
+      <p class="hero-sub">
+        Enertech serves the entire Front Range corridor — from Pueblo in the south to Fort Collins in the north. We're Colorado-based, with deep knowledge of local utility programs, permit jurisdictions, and the multifamily market.
+      </p>
+      <div class="hero-actions">
+        <a href="assessment.html" class="btn-white">Check your property →</a>
+        <a href="#markets" class="btn-ghost-dark">See all cities</a>
+      </div>
+    </div>
+
+    <!-- Right: corridor visualization -->
+    <div class="hero-right">
+      <div class="corridor">
+        <div class="corridor-spine"></div>
+        <div class="corridor-cities">
+
+          <div class="corridor-label">
+            <div class="rule"></div>
+            North
+            <div class="rule"></div>
+          </div>
+
+          <div class="corridor-city anchor right">
+            <span class="corridor-tick"></span>
+            <span class="corridor-city-name">Fort Collins</span>
+          </div>
+          <div class="corridor-city left">
+            <span class="corridor-city-name">Loveland</span>
+            <span class="corridor-tick"></span>
+          </div>
+          <div class="corridor-city right">
+            <span class="corridor-tick"></span>
+            <span class="corridor-city-name">Greeley</span>
+          </div>
+          <div class="corridor-city left">
+            <span class="corridor-city-name">Windsor</span>
+            <span class="corridor-tick"></span>
+          </div>
+          <div class="corridor-city right">
+            <span class="corridor-tick"></span>
+            <span class="corridor-city-name">Longmont</span>
+          </div>
+          <div class="corridor-city left">
+            <span class="corridor-city-name">Boulder</span>
+            <span class="corridor-tick"></span>
+          </div>
+          <div class="corridor-city right">
+            <span class="corridor-tick"></span>
+            <span class="corridor-city-name">Broomfield</span>
+          </div>
+          <div class="corridor-city left">
+            <span class="corridor-city-name">Westminster</span>
+            <span class="corridor-tick"></span>
+          </div>
+          <div class="corridor-city right">
+            <span class="corridor-tick"></span>
+            <span class="corridor-city-name">Thornton</span>
+          </div>
+          <div class="corridor-city anchor left">
+            <span class="corridor-city-name">Denver</span>
+            <span class="corridor-tick"></span>
+          </div>
+          <div class="corridor-city right">
+            <span class="corridor-tick"></span>
+            <span class="corridor-city-name">Aurora</span>
+          </div>
+          <div class="corridor-city left">
+            <span class="corridor-city-name">Arvada</span>
+            <span class="corridor-tick"></span>
+          </div>
+          <div class="corridor-city right">
+            <span class="corridor-tick"></span>
+            <span class="corridor-city-name">Lakewood</span>
+          </div>
+          <div class="corridor-city left">
+            <span class="corridor-city-name">Englewood</span>
+            <span class="corridor-tick"></span>
+          </div>
+          <div class="corridor-city right">
+            <span class="corridor-tick"></span>
+            <span class="corridor-city-name">Littleton</span>
+          </div>
+          <div class="corridor-city left">
+            <span class="corridor-city-name">Parker</span>
+            <span class="corridor-tick"></span>
+          </div>
+          <div class="corridor-city right">
+            <span class="corridor-tick"></span>
+            <span class="corridor-city-name">Castle Rock</span>
+          </div>
+          <div class="corridor-city anchor left">
+            <span class="corridor-city-name">Colorado Springs</span>
+            <span class="corridor-tick"></span>
+          </div>
+          <div class="corridor-city right">
+            <span class="corridor-tick"></span>
+            <span class="corridor-city-name">Pueblo</span>
+          </div>
+
+          <div class="corridor-label">
+            <div class="rule"></div>
+            South
+            <div class="rule"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- STATS BAND -->
+  <div class="stats-band">
+    <div class="stats-inner">
+      <div class="stat-cell reveal">
+        <div class="stat-num">200+</div>
+        <div class="stat-label">miles of Front Range coverage</div>
+      </div>
+      <div class="stat-cell reveal reveal-delay-1">
+        <div class="stat-num">18+</div>
+        <div class="stat-label">Colorado cities served</div>
+      </div>
+      <div class="stat-cell reveal reveal-delay-2">
+        <div class="stat-num">Local</div>
+        <div class="stat-label">Colorado-based team — not a remote operator</div>
+      </div>
+      <div class="stat-cell reveal reveal-delay-3">
+        <div class="stat-num">$0</div>
+        <div class="stat-label">Cost to any property in our service area</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CITY MARKETS -->
+  <section class="section" id="markets">
+    <div class="container">
+      <div class="section-label reveal">
+        <div class="rule"></div>
+        <span class="label">Service Area</span>
+      </div>
+      <h2 class="h2 reveal reveal-delay-1" style="max-width:640px;">
+        Every major Colorado multifamily market. One local operator.
+      </h2>
+      <p class="body-lg reveal reveal-delay-2" style="color:var(--secondary); max-width:580px; margin-top:1rem;">
+        Enertech serves the entire Front Range from a single Colorado base. That means faster response times, deeper permit jurisdiction knowledge, and direct utility relationships — not a remote office managing Colorado from out of state.
+      </p>
+
+      <div class="markets-grid">
+
+        <div class="market-card featured reveal">
+          <div class="market-name">Denver Metro</div>
+          <div class="market-desc">Colorado's largest multifamily market. Enertech operates across the full metro — from LoDo and Capitol Hill to Aurora, Lakewood, and the suburbs. Deep familiarity with Denver Building Services permit process.</div>
+          <div class="market-tags">
+            <span class="xcel-badge"><span class="xcel-dot"></span>Xcel Territory</span>
+            <span class="market-tag">Denver</span>
+            <span class="market-tag">Aurora</span>
+            <span class="market-tag">Lakewood</span>
+            <span class="market-tag">Arvada</span>
+            <span class="market-tag">Westminster</span>
+            <span class="market-tag">Thornton</span>
+            <span class="market-tag">Englewood</span>
+            <span class="market-tag">Littleton</span>
+          </div>
+        </div>
+
+        <div class="market-card reveal reveal-delay-1">
+          <div class="market-name">Boulder County</div>
+          <div class="market-desc">High EV adoption rates and a progressive renter demographic make Boulder County one of Colorado's strongest markets for multifamily EV charging. We're active in Boulder, Longmont, and Broomfield.</div>
+          <div class="market-tags">
+            <span class="xcel-badge"><span class="xcel-dot"></span>Xcel Territory</span>
+            <span class="market-tag">Boulder</span>
+            <span class="market-tag">Longmont</span>
+            <span class="market-tag">Broomfield</span>
+          </div>
+        </div>
+
+        <div class="market-card reveal reveal-delay-2">
+          <div class="market-name">Fort Collins &amp; Northern Front Range</div>
+          <div class="market-desc">A growing university and tech hub with active multifamily development and strong tenant EV demand. Enertech serves Fort Collins, Loveland, Greeley, and Windsor across the northern corridor.</div>
+          <div class="market-tags">
+            <span class="xcel-badge"><span class="xcel-dot"></span>Xcel Territory</span>
+            <span class="market-tag">Fort Collins</span>
+            <span class="market-tag">Loveland</span>
+            <span class="market-tag">Greeley</span>
+            <span class="market-tag">Windsor</span>
+          </div>
+        </div>
+
+        <div class="market-card reveal reveal-delay-1">
+          <div class="market-name">Colorado Springs</div>
+          <div class="market-desc">The Front Range's second-largest city with a large multifamily base and growing EV adoption. Colorado Springs sits in Xcel Energy's service territory, making it eligible for rebate programs.</div>
+          <div class="market-tags">
+            <span class="xcel-badge"><span class="xcel-dot"></span>Xcel Territory</span>
+            <span class="market-tag">Colorado Springs</span>
+          </div>
+        </div>
+
+        <div class="market-card reveal reveal-delay-2">
+          <div class="market-name">South Denver Suburbs</div>
+          <div class="market-desc">Fast-growing residential corridors south of Denver with newer multifamily construction and high concentrations of EV-owning professionals. Parker, Castle Rock, and the Douglas County corridor.</div>
+          <div class="market-tags">
+            <span class="xcel-badge"><span class="xcel-dot"></span>Xcel Territory</span>
+            <span class="market-tag">Parker</span>
+            <span class="market-tag">Castle Rock</span>
+            <span class="market-tag">Highlands Ranch</span>
+          </div>
+        </div>
+
+        <div class="market-card reveal reveal-delay-3">
+          <div class="market-name">Pueblo &amp; Southern Colorado</div>
+          <div class="market-desc">Expanding our reach south of Colorado Springs. Pueblo offers strong multifamily density and may qualify for Charge Ahead Colorado grants targeting income-qualified communities.</div>
+          <div class="market-tags">
+            <span class="market-tag">Pueblo</span>
+            <span class="market-tag">Charge Ahead eligible</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- XCEL TERRITORY -->
+  <section class="xcel-section">
+    <div class="xcel-inner">
+      <div>
+        <div class="section-label xcel-label reveal">
+          <div class="rule"></div>
+          <span class="label">Xcel Energy Rebates</span>
+        </div>
+        <h2 class="h2 xcel-title reveal reveal-delay-1">
+          Most of our service area qualifies for Xcel Energy EV rebates.
+        </h2>
+        <p class="xcel-body reveal reveal-delay-2">
+          Properties in Xcel Energy's service territory are eligible for make-ready infrastructure rebates and per-port equipment rebates — potentially offsetting tens of thousands of dollars in installation costs. Enertech handles the application on your behalf before installation begins.
+        </p>
+        <p class="xcel-body reveal reveal-delay-3" style="margin-top:-0.5rem;">
+          We also monitor Charge Ahead Colorado grants, which can stack on top of Xcel rebates for income-qualified multifamily communities.
+        </p>
+        <a href="https://www.xcelenergy.com/programs_and_rebates/residential_programs_and_rebates/electric_vehicles/multifamily_ev_charging" target="_blank" rel="noopener" class="xcel-link reveal reveal-delay-4">
+          Xcel Energy multifamily EV rebates ↗
+        </a>
+      </div>
+      <div class="xcel-cities reveal reveal-delay-2">
+        <div class="xcel-city">
+          <span class="xcel-city-dot"></span>
+          <div>
+            <div class="xcel-city-name">Denver</div>
+            <div class="xcel-city-note">Xcel territory</div>
+          </div>
+        </div>
+        <div class="xcel-city">
+          <span class="xcel-city-dot"></span>
+          <div>
+            <div class="xcel-city-name">Boulder</div>
+            <div class="xcel-city-note">Xcel territory</div>
+          </div>
+        </div>
+        <div class="xcel-city">
+          <span class="xcel-city-dot"></span>
+          <div>
+            <div class="xcel-city-name">Fort Collins</div>
+            <div class="xcel-city-note">Xcel territory</div>
+          </div>
+        </div>
+        <div class="xcel-city">
+          <span class="xcel-city-dot"></span>
+          <div>
+            <div class="xcel-city-name">Loveland</div>
+            <div class="xcel-city-note">Xcel territory</div>
+          </div>
+        </div>
+        <div class="xcel-city">
+          <span class="xcel-city-dot"></span>
+          <div>
+            <div class="xcel-city-name">Colorado Springs</div>
+            <div class="xcel-city-note">Xcel territory</div>
+          </div>
+        </div>
+        <div class="xcel-city">
+          <span class="xcel-city-dot"></span>
+          <div>
+            <div class="xcel-city-name">Pueblo</div>
+            <div class="xcel-city-note">Xcel territory</div>
+          </div>
+        </div>
+        <div class="xcel-city">
+          <span class="xcel-city-dot"></span>
+          <div>
+            <div class="xcel-city-name">Longmont</div>
+            <div class="xcel-city-note">Xcel territory</div>
+          </div>
+        </div>
+        <div class="xcel-city">
+          <span class="xcel-city-dot"></span>
+          <div>
+            <div class="xcel-city-name">Aurora</div>
+            <div class="xcel-city-note">Xcel territory</div>
+          </div>
+        </div>
+        <div class="xcel-city">
+          <span class="xcel-city-dot"></span>
+          <div>
+            <div class="xcel-city-name">Lakewood</div>
+            <div class="xcel-city-note">Xcel territory</div>
+          </div>
+        </div>
+        <div class="xcel-city">
+          <span class="xcel-city-dot"></span>
+          <div>
+            <div class="xcel-city-name">Westminster</div>
+            <div class="xcel-city-note">Xcel territory</div>
+          </div>
+        </div>
+        <div class="xcel-city">
+          <span class="xcel-city-dot"></span>
+          <div>
+            <div class="xcel-city-name">Greeley</div>
+            <div class="xcel-city-note">Xcel territory</div>
+          </div>
+        </div>
+        <div class="xcel-city">
+          <span class="xcel-city-dot"></span>
+          <div>
+            <div class="xcel-city-name">Broomfield</div>
+            <div class="xcel-city-note">Xcel territory</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY LOCAL MATTERS -->
+  <section class="local-section">
+    <div class="container">
+      <div class="local-grid">
+        <div>
+          <div class="section-label reveal">
+            <div class="rule"></div>
+            <span class="label">Local vs. National</span>
+          </div>
+          <h2 class="h2 reveal reveal-delay-1" style="max-width:500px;">
+            Being Colorado-based isn't a talking point. It changes how we work.
+          </h2>
+          <div class="local-points" style="margin-top:2.5rem;">
+            <div class="local-point reveal reveal-delay-2">
+              <div class="local-point-icon">⚡</div>
+              <div>
+                <div class="local-point-title">Utility relationships in your specific territory</div>
+                <div class="local-point-body">We have established working relationships with Xcel Energy's multifamily EV team. That means faster rebate approvals and pre-application conversations national operators can't have.</div>
+              </div>
+            </div>
+            <div class="local-point reveal reveal-delay-3">
+              <div class="local-point-icon">🏛️</div>
+              <div>
+                <div class="local-point-title">We know your permit jurisdiction</div>
+                <div class="local-point-body">Every Colorado municipality has its own permit process and inspection requirements. We've navigated Denver, Boulder, Fort Collins, Colorado Springs, and dozens of other jurisdictions — not generically, but specifically.</div>
+              </div>
+            </div>
+            <div class="local-point reveal reveal-delay-4">
+              <div class="local-point-icon">🔧</div>
+              <div>
+                <div class="local-point-title">On-site response is hours, not days</div>
+                <div class="local-point-body">When a charger needs on-site attention, our team is in Colorado. National operators dispatch from regional hubs that may be hundreds of miles away — a broken charger can sit for days.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <table class="local-table reveal reveal-delay-2">
+            <thead>
+              <tr>
+                <th>What matters</th>
+                <th>Enertech</th>
+                <th>National operators</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Physical location</td>
+                <td class="td-good">Colorado-based</td>
+                <td class="td-bad">Remote — CO managed from out of state</td>
+              </tr>
+              <tr>
+                <td>Xcel rebate applications</td>
+                <td class="td-good">Handled end-to-end</td>
+                <td class="td-bad">Generic guidance at best</td>
+              </tr>
+              <tr>
+                <td>Charge Ahead Colorado grants</td>
+                <td class="td-good">Active expertise</td>
+                <td class="td-bad">Often unaware of program</td>
+              </tr>
+              <tr>
+                <td>Local permit experience</td>
+                <td class="td-good">Deep — specific jurisdictions</td>
+                <td class="td-bad">Generic — relies on general contractor</td>
+              </tr>
+              <tr>
+                <td>On-site response time</td>
+                <td class="td-good">Hours — we're here</td>
+                <td class="td-bad">Days — remote dispatch</td>
+              </tr>
+              <tr>
+                <td>Colorado mandate compliance</td>
+                <td class="td-good">Current, specific guidance</td>
+                <td class="td-bad">Generic, often outdated</td>
+              </tr>
+              <tr>
+                <td>Who you talk to</td>
+                <td class="td-good">Alex Paterson-Jones, directly</td>
+                <td class="td-bad">Call center or account manager</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOT IN SERVICE AREA BAND -->
+  <div class="not-covered">
+    <div class="not-covered-inner">
+      <div class="not-covered-text">
+        <div class="not-covered-title">Outside the Front Range? Let's talk.</div>
+        <div class="not-covered-body">Our primary service corridor runs Colorado Springs to Fort Collins. If your property is in a Front Range market not listed, or you're evaluating a new development outside this area, reach out — we assess each project individually and our coverage continues to expand.</div>
+      </div>
+      <a href="assessment.html" class="not-covered-cta">Get in touch →</a>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="section-label reveal" style="color:rgba(255,255,255,0.4); justify-content:center; margin-bottom:1.5rem;">
+      <div class="rule" style="background:rgba(255,255,255,0.3);"></div>
+      <span class="label">Ready to get started?</span>
+    </div>
+    <h2 class="h2 reveal reveal-delay-1">
+      Your property is in our backyard.<br>Let's get you on the map.
+    </h2>
+    <p class="body-lg reveal reveal-delay-2">
+      Request a free assessment and we'll confirm eligibility, identify applicable incentive programs, and build a proposal — specific to your property and your Colorado location.
+    </p>
+    <div class="cta-actions reveal reveal-delay-3">
+      <a href="assessment.html" class="cta-btn">Get Your Free Assessment →</a>
+      <a href="how-it-works.html" class="cta-btn-ghost">How the model works</a>
+    </div>
+    <div class="cta-trust reveal reveal-delay-4">
+      <span class="cta-trust-item">Colorado Springs to Fort Collins</span>
+      <span class="trust-dot"></span>
+      <span class="cta-trust-item">Free assessment — no commitment</span>
+      <span class="trust-dot"></span>
+      <span class="cta-trust-item">Xcel rebates handled for you</span>
+      <span class="trust-dot"></span>
+      <span class="cta-trust-item">$0 cost to your property</span>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="property-managers.html">Property Managers</a>
+      <a href="property-owners.html">Property Owners</a>
+      <a href="hoa.html">For HOAs</a>
+      <a href="for-drivers.html">For Drivers</a>
+      <a href="service-area.html">Service Area</a>
+      <a href="assessment.html">Free Assessment</a>
+    </div>
+    <p>© 2025 Enertech EV. Colorado-based EV charging for multifamily communities.</p>
+    <p style="margin-top:0.5rem;"><a href="tel:+18888957158">+1 888 895 7158</a></p>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach(el => revealObs.observe(el));
+  </script>
+
+</body>
+</html>
