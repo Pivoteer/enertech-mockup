@@ -99,7 +99,7 @@
       background: var(--canvas);
       color: var(--ink);
       font-size: 17px;
-      line-height: 1.6;
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -107,8 +107,8 @@
     .h1 { font-size: clamp(2.5rem, 5vw, 4.25rem); font-weight: 900; line-height: 1.0; letter-spacing: -0.03em; }
     .h2 { font-size: clamp(1.75rem, 3vw, 2.75rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.022em; }
     .h3 { font-size: 1.15rem; font-weight: 700; line-height: 1.25; letter-spacing: -0.01em; }
-    .body-lg { font-size: 1.15rem; line-height: 1.7; color: var(--secondary); }
-    .body-md { font-size: 1rem; line-height: 1.65; color: var(--secondary); }
+    .body-lg { font-size: 1.15rem; line-height: 1.75; letter-spacing: 0.012em; color: var(--secondary); }
+    .body-md { font-size: 1rem; line-height: 1.72; letter-spacing: 0.012em; color: var(--secondary); }
     .label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
 
     /* ── LAYOUT ── */
@@ -569,7 +569,7 @@
     .local-diff-item { display: flex; gap: 20px; align-items: flex-start; }
     .diff-check { width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--border-mid); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
     .diff-check svg { width: 11px; height: 11px; stroke: var(--ink); stroke-width: 2; fill: none; }
-    .local-diff-item p { font-size: 0.95rem; color: var(--secondary); line-height: 1.6; }
+    .local-diff-item p { font-size: 0.95rem; color: var(--secondary); line-height: 1.65; }
     .local-diff-item p strong { color: var(--ink); font-weight: 700; }
 
     /* ─────────────────────────────────────────
@@ -839,7 +839,7 @@
         </div>
         <div class="step reveal reveal-d1">
           <div class="step-num">02</div>
-          <div class="step-content"><h3>We install everything — at zero cost</h3><p>Enertech covers hardware, all electrical and conduit work, panel upgrades if needed, permits, and utility coordination. We navigate Xcel Energy rebates and Charge Ahead Colorado grants on your behalf. Timeline from agreement to live chargers: 3–4 months for most Front Range properties.</p></div>
+          <div class="step-content"><h3>We install everything — at zero cost</h3><p>Enertech covers hardware, all electrical and conduit work, panel upgrades if needed, permits, and utility coordination. We handle local incentive programs on your behalf. Timeline from agreement to live chargers: 3–4 months for most Front Range properties.</p></div>
         </div>
         <div class="step reveal reveal-d2">
           <div class="step-num">03</div>
@@ -904,17 +904,17 @@
           <div class="bento-icon">
             <svg viewBox="0 0 24 24" style="stroke:#F9FAFB;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
           </div>
-          <h3>Permits &amp; incentives</h3>
-          <p style="font-size:.875rem;color:rgba(249,250,251,0.55);line-height:1.65;margin-top:8px;">We handle every permit, utility application, and incentive program. You never deal with the paperwork.</p>
+          <h3>Permits &amp; approvals</h3>
+          <p style="font-size:.875rem;color:rgba(249,250,251,0.55);line-height:1.65;margin-top:8px;">We handle every permit, utility application, and local program. You never deal with the paperwork.</p>
         </div>
         <div>
           <div class="bento-divider"></div>
           <ul>
             <li>All municipal building permits</li>
-            <li>Xcel Energy rebate applications</li>
-            <li>Charge Ahead Colorado eligibility</li>
+            <li>Utility pre-approval and coordination</li>
+            <li>Local incentive program applications</li>
             <li>Utility interconnection</li>
-            <li>Colorado mandate compliance</li>
+            <li>Colorado building code compliance</li>
           </ul>
         </div>
       </div>
@@ -972,7 +972,7 @@
         <div class="accordion-item reveal"><button class="accordion-trigger">We already have EV chargers.<span class="accordion-icon">+</span></button><div class="accordion-body"><div class="accordion-body-inner">If your current setup generates more headaches than revenue — maintenance calls, broken equipment, billing complaints — a free assessment can show you what a transition would look like. We've replaced other operators' equipment before, at no cost to the property. It's simpler than it sounds.</div></div></div>
         <div class="accordion-item reveal reveal-d1"><button class="accordion-trigger">We're not sure our tenants even want this.<span class="accordion-icon">+</span></button><div class="accordion-body"><div class="accordion-body-inner">Colorado has one of the highest EV adoption rates in the country and it's growing fast. Most property managers are surprised by how many tenants already own — or plan to get — an EV. The free assessment includes an honest demand picture for your specific property and neighborhood.</div></div></div>
         <div class="accordion-item reveal reveal-d2"><button class="accordion-trigger">We don't want to deal with tenant complaints about chargers.<span class="accordion-icon">+</span></button><div class="accordion-body"><div class="accordion-body-inner">You won't. Tenants call Enertech directly for billing questions, access issues, and outages. Your office is never in the loop unless you specifically want to be. That's not a feature — it's how the model works. We're the operator, not the property.</div></div></div>
-        <div class="accordion-item reveal reveal-d3"><button class="accordion-trigger">How long until the chargers are actually live?<span class="accordion-icon">+</span></button><div class="accordion-body"><div class="accordion-body-inner">Assessment through go-live typically runs 3–4 months for most Front Range properties. Permit timelines vary by municipality. If Xcel rebates or Charge Ahead grants are part of the plan, the funding process can add a few months — but chargers can go live before those funds arrive if timing is important to your property.</div></div></div>
+        <div class="accordion-item reveal reveal-d3"><button class="accordion-trigger">How long until the chargers are actually live?<span class="accordion-icon">+</span></button><div class="accordion-body"><div class="accordion-body-inner">Assessment through go-live typically runs 3–4 months for most Front Range properties. Permit timelines vary by municipality. Local incentive programs can affect the overall timeline — but chargers can go live before those processes complete if timing is important to your property.</div></div></div>
         <div class="accordion-item reveal reveal-d4"><button class="accordion-trigger">Why not just buy our own chargers?<span class="accordion-icon">+</span></button><div class="accordion-body"><div class="accordion-body-inner">You could. Upfront hardware and installation typically runs $5,000–$20,000+, before ongoing maintenance, software subscriptions, and repair costs. With Enertech, that cost is $0 — and we handle everything that comes after installation too.</div></div></div>
         <div class="accordion-item reveal reveal-d5"><button class="accordion-trigger">We manage multiple properties. Can Enertech handle that?<span class="accordion-icon">+</span></button><div class="accordion-body"><div class="accordion-body-inner">Yes. We work with management companies running multiple Colorado properties under a single partnership agreement. One operator, one point of contact, consistent EV charging program across all your Front Range sites.</div></div></div>
       </div>
@@ -1020,7 +1020,7 @@
       <div class="testimonial-stack">
         <div class="t-card t-card-sm reveal reveal-d1">
           <div class="t-card-body">
-            <div class="t-quote">When our old chargers started breaking down, we dreaded the whole process. Enertech replaced the equipment, handled Xcel's rebate paperwork, and now tenants call them — not us. Night and day compared to our previous vendor.</div>
+            <div class="t-quote">When our old chargers started breaking down, we dreaded the whole process. Enertech replaced the equipment, handled all the paperwork, and now tenants call them — not us. Night and day compared to our previous vendor.</div>
             <div class="t-attr">
               <strong>Regional Manager, Fort Collins</strong>
               <span>Portfolio of four Front Range properties · Charger replacement</span>
@@ -1090,45 +1090,7 @@
   </div>
 </section>
 
-<!-- ══════ PROGRAMS ══════ -->
-<section class="section section--dark">
-  <div class="wrap">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:64px;">
-      <div>
-        <p class="label reveal">Colorado programs</p>
-        <h2 class="h2 reveal reveal-d1" style="margin-top:12px;">Serious incentive funding exists in Colorado. We navigate it for you.</h2>
-      </div>
-      <p class="body-md reveal reveal-d2" style="padding-bottom:4px;">Most national EV companies don't know these programs exist. Enertech has deep working relationships with each one — and we handle every application on your behalf.</p>
-    </div>
-    <div class="programs-grid">
-      <div class="program-card program-card-main reveal">
-        <div class="program-tag">Utility rebate</div>
-        <h3 class="h3" style="font-size:1.2rem;margin-bottom:16px;">Xcel Energy EV rebate program</h3>
-        <p class="body-md">Xcel offers make-ready infrastructure and per-port equipment rebates for multifamily properties in their Colorado service territory. The program is currently closed to new applicants — Enertech monitors reopening and files applications on your behalf.</p>
-        <a href="https://co.my.xcelenergy.com/customersupport/s/article/Commercial-EV-Infrastructure-Rebate-Program" target="_blank" rel="noopener" class="program-link">Program details at xcelenergy.com <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 11L11 1M11 1H4M11 1v7"/></svg></a>
-      </div>
-      <div class="program-card reveal reveal-d1">
-        <div class="program-tag">State grant</div>
-        <h3>Charge Ahead Colorado</h3>
-        <p>A state-funded grant for EV charging at income-qualified and underserved multifamily properties. Can stack with Xcel rebates for qualifying properties. We assess eligibility and handle the application.</p>
-        <a href="https://energyoffice.colorado.gov/charge-ahead-colorado" target="_blank" rel="noopener" class="program-link">energyoffice.colorado.gov/charge-ahead-colorado <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 11L11 1M11 1H4M11 1v7"/></svg></a>
-      </div>
-      <div class="program-card reveal reveal-d2">
-        <div class="program-tag">Colorado mandate</div>
-        <h3>EV-ready building requirements</h3>
-        <p>Colorado has expanding EV-ready requirements for multifamily properties. We provide compliance guidance and build to the standard — keeping your property current and ahead of what's coming.</p>
-        <a href="https://energyoffice.colorado.gov/building-energy-codes-toolkit" target="_blank" rel="noopener" class="program-link">Colorado Energy Office <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 11L11 1M11 1H4M11 1v7"/></svg></a>
-      </div>
-    </div>
-    <div style="margin-top:56px;" class="reveal">
-      <a href="#" class="btn btn-white">
-        <span style="flex:1;text-align:left;">See if your property qualifies</span>
-        <span class="btn-icon" style="background:rgba(0,0,0,0.07);"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span>
-      </a>
-      <p class="risk" style="margin-top:14px;">Free assessment. We'll review available incentives for your specific property and location.</p>
-    </div>
-  </div>
-</section>
+<!-- ══════ SERVICE AREA INTRO ══════ -->
 
 <!-- ══════ SERVICE AREA ══════ -->
 <section class="section" style="background:var(--surface);border-bottom:1px solid var(--border);">
@@ -1152,7 +1114,7 @@
         <p class="label reveal" style="margin-bottom:28px;">Why local matters for EV charging</p>
         <div class="local-diff-list">
           <div class="local-diff-item reveal reveal-d1"><div class="diff-check"><svg viewBox="0 0 11 11"><polyline points="1.5 5.5 4.5 8.5 9.5 2.5"/></svg></div><p><strong>Real response times.</strong> When a charger needs attention, we show up — not dispatch someone from a regional office in Phoenix.</p></div>
-          <div class="local-diff-item reveal reveal-d2"><div class="diff-check"><svg viewBox="0 0 11 11"><polyline points="1.5 5.5 4.5 8.5 9.5 2.5"/></svg></div><p><strong>Deep Colorado program knowledge.</strong> Xcel Energy rebate timelines, Charge Ahead eligibility rules, Front Range permit processes. National companies don't invest in this.</p></div>
+          <div class="local-diff-item reveal reveal-d2"><div class="diff-check"><svg viewBox="0 0 11 11"><polyline points="1.5 5.5 4.5 8.5 9.5 2.5"/></svg></div><p><strong>Deep local knowledge.</strong> Front Range permit processes, local utility requirements, and Colorado building codes. National companies don't invest in this depth of local expertise.</p></div>
           <div class="local-diff-item reveal reveal-d3"><div class="diff-check"><svg viewBox="0 0 11 11"><polyline points="1.5 5.5 4.5 8.5 9.5 2.5"/></svg></div><p><strong>A person, not a call center.</strong> You work with Alex Paterson-Jones and the Enertech team directly — not a rotating account manager at a 500-person company.</p></div>
         </div>
       </div>
@@ -1204,7 +1166,7 @@
           <a href="#">Fort Collins to Colorado Springs</a>
         </div>
       </div>
-      <div class="footer-col"><h4>Services</h4><ul><li><a href="how-it-works.html">New EV charging installation</a></li><li><a href="how-it-works.html">Charger replacement program</a></li><li><a href="assessment.html">New construction coordination</a></li><li><a href="hoa.html">HOA &amp; condo associations</a></li><li><a href="how-it-works.html">Rebate &amp; grant management</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="how-it-works.html">New EV charging installation</a></li><li><a href="how-it-works.html">Charger replacement program</a></li><li><a href="assessment.html">New construction coordination</a></li><li><a href="hoa.html">HOA &amp; condo associations</a></li><li><a href="how-it-works.html">Incentive program management</a></li></ul></div>
       <div class="footer-col"><h4>Property types</h4><ul><li><a href="property-managers.html">Multifamily apartments</a></li><li><a href="property-owners.html">Condominiums</a></li><li><a href="hoa.html">HOA communities</a></li><li><a href="assessment.html">Mixed-use properties</a></li><li><a href="property-managers.html">Property management portfolios</a></li></ul></div>
       <div class="footer-col"><h4>Resources</h4><ul><li><a href="how-it-works.html">How Enertech works</a></li><li><a href="service-area.html">Colorado service area</a></li><li><a href="for-drivers.html">For EV drivers</a></li><li><a href="assessment.html">Free property assessment</a></li></ul></div>
     </div>

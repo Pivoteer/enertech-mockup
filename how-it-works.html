@@ -43,7 +43,7 @@
       background: var(--canvas);
       color: var(--ink);
       font-size: 17px;
-      line-height: 1.6;
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -51,8 +51,8 @@
     .h1 { font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 900; line-height: 1.0; letter-spacing: -0.03em; }
     .h2 { font-size: clamp(1.75rem, 3vw, 2.75rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.022em; }
     .h3 { font-size: 1.1rem; font-weight: 700; line-height: 1.3; letter-spacing: -0.01em; }
-    .body-lg { font-size: 1.15rem; line-height: 1.7; color: var(--secondary); }
-    .body-md { font-size: 1rem; line-height: 1.65; color: var(--secondary); }
+    .body-lg { font-size: 1.15rem; line-height: 1.75; letter-spacing: 0.012em; color: var(--secondary); }
+    .body-md { font-size: 1rem; line-height: 1.72; letter-spacing: 0.012em; color: var(--secondary); }
     .label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
 
     /* ── LAYOUT ── */
@@ -611,7 +611,7 @@
             </li>
             <li class="light">
               <span class="check-circle check-circle--light" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-              Xcel rebate and Charge Ahead Colorado grant applications
+              Local utility and incentive program applications
             </li>
             <li class="light">
               <span class="check-circle check-circle--light" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
@@ -751,16 +751,15 @@
                 <div class="process-step-sub">Handled entirely by Enertech</div>
               </div>
             </div>
-            <p class="body-md">Colorado has active EV charging incentive programs that can significantly offset installation costs — Xcel Energy's rebate program, Charge Ahead Colorado grants for income-qualified properties, and federal incentives. We navigate all of them on your behalf. You never deal with the paperwork.</p>
-            <p class="body-md">Xcel's pre-project approval must be secured before installation begins. We handle that process and coordinate directly with the utility.</p>
+            <p class="body-md">Colorado has local utility and state incentive programs that can reduce installation costs. Enertech identifies which programs apply to your property and handles every application on your behalf — you never deal with the paperwork.</p>
             <div class="process-detail-grid">
               <div class="process-detail">
-                <div class="process-detail-title">Xcel Energy rebates</div>
-                <div class="process-detail-body">Make-ready and per-port equipment rebates for properties in Xcel's service territory — Enertech applies on your behalf</div>
+                <div class="process-detail-title">Utility coordination</div>
+                <div class="process-detail-body">Pre-project utility approval must be secured before installation begins — Enertech manages this process and coordinates directly</div>
               </div>
               <div class="process-detail">
-                <div class="process-detail-title">Charge Ahead Colorado</div>
-                <div class="process-detail-body">State grant program for income-qualified multifamily properties — can stack with Xcel rebates for qualifying sites</div>
+                <div class="process-detail-title">Incentive applications</div>
+                <div class="process-detail-body">We identify and apply to all local, state, and utility incentive programs your property qualifies for</div>
               </div>
             </div>
             <div class="timeline-pill">
@@ -953,54 +952,6 @@
               <div class="revenue-stat-lbl">Payment frequency</div>
             </div>
           </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- INCENTIVES -->
-  <section class="section" aria-labelledby="incentives-heading">
-    <div class="wrap">
-      <div style="max-width: 620px; margin-bottom: 16px;">
-        <p class="label reveal">Colorado incentives</p>
-        <h2 class="h2 reveal reveal-d1" id="incentives-heading">We navigate Colorado's EV incentive programs on your behalf</h2>
-        <p class="body-lg reveal reveal-d2">Xcel Energy rebates, Charge Ahead Colorado grants, and federal incentives can significantly reduce installation costs. Enertech handles every application — you never deal with the paperwork.</p>
-      </div>
-
-      <div class="incentives-grid">
-
-        <div class="incentive-card reveal">
-          <div class="incentive-badge">Xcel Energy territory</div>
-          <div class="incentive-logo"><span class="incentive-logo-dot" aria-hidden="true"></span>Xcel Energy</div>
-          <h3 class="h3">Multifamily EV rebate program</h3>
-          <p class="body-md">Xcel Energy offers make-ready infrastructure rebates and per-port equipment rebates for networked Level 2 chargers at multifamily properties in their service territory. The program is currently closed to new applicants — Enertech monitors reopening and applies on your behalf when it does.</p>
-          <a href="https://co.my.xcelenergy.com/customersupport/s/article/Commercial-EV-Infrastructure-Rebate-Program" target="_blank" rel="noopener noreferrer" class="incentive-link">
-            Program details at xcelenergy.com
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
-        </div>
-
-        <div class="incentive-card reveal reveal-d1">
-          <div class="incentive-badge">Income-qualified properties</div>
-          <div class="incentive-logo"><span class="incentive-logo-dot" aria-hidden="true"></span>State of Colorado</div>
-          <h3 class="h3">Charge Ahead Colorado grant</h3>
-          <p class="body-md">A state-funded grant program targeting EV charging at income-qualified and underserved multifamily properties — typically those serving households at or below 80% of Area Median Income. Can stack on top of Xcel rebates for qualifying properties.</p>
-          <a href="https://energyoffice.colorado.gov/charge-ahead-colorado" target="_blank" rel="noopener noreferrer" class="incentive-link">
-            Eligibility details at chargeaheadcolorado.org
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
-        </div>
-
-        <div class="incentive-card reveal reveal-d2">
-          <div class="incentive-badge">Federal</div>
-          <div class="incentive-logo"><span class="incentive-logo-dot" aria-hidden="true"></span>IRS Section 30C</div>
-          <h3 class="h3">Alternative Fuel Vehicle Refueling Credit</h3>
-          <p class="body-md">In Enertech's zero-cost model, we own the equipment — so this credit accrues to Enertech, which is part of how we fund the program. Property owners considering self-funded installations should consult their tax advisor about 30C eligibility.</p>
-          <a href="https://www.irs.gov/credits-deductions/alternative-fuel-vehicle-refueling-property-credit" target="_blank" rel="noopener noreferrer" class="incentive-link">
-            IRS guidance on Section 30C
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
         </div>
 
       </div>
