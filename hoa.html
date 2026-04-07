@@ -410,27 +410,30 @@
 
     /* ── COMPARISON TABLE ── */
     .table-section { background: var(--surface); padding: 7rem 2rem; }
+    .table-scroll-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 3.5rem; }
     .compare-table {
-      width: 100%; border-collapse: collapse; margin-top: 3.5rem;
+      width: 100%; border-collapse: collapse; min-width: 560px;
+      border: 1px solid var(--border);
       border-radius: var(--r-lg); overflow: hidden;
-      box-shadow: var(--shadow-card);
     }
-    .compare-table thead { background: var(--canvas-dark); color: #fff; }
+    .compare-table thead { background: var(--ink); }
     .compare-table th {
-      padding: 1.25rem 1.5rem; text-align: left;
-      font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em;
+      padding: 16px 20px; text-align: left;
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      color: #F9FAFB;
     }
-    .compare-table th:first-child { width: 40%; }
+    .compare-table th:first-child { width: 38%; }
+    .compare-table thead th:nth-child(2) { background: rgba(255,255,255,0.07); }
     .compare-table tbody tr { border-bottom: 1px solid var(--border); }
     .compare-table tbody tr:last-child { border-bottom: none; }
-    .compare-table tbody tr:nth-child(even) { background: var(--canvas); }
+    .compare-table tbody tr:nth-child(even) { background: var(--surface); }
     .compare-table td {
-      padding: 1rem 1.5rem; font-size: 0.93rem; line-height: 1.5;
-      vertical-align: top;
+      padding: 14px 20px; font-size: 0.9rem; line-height: 1.5;
+      vertical-align: top; color: var(--secondary);
     }
     .compare-table td:first-child { font-weight: 600; color: var(--ink); }
-    .compare-table td.good { color: #1a6b2e; font-weight: 600; }
-    .compare-table td.bad { color: #a0160f; font-weight: 500; }
+    .compare-table td.good { color: var(--ink); font-weight: 600; }
+    .compare-table td.bad { color: var(--secondary); font-weight: 400; }
     .compare-table td.neutral { color: var(--secondary); }
 
     /* ── CTA ── */
@@ -521,8 +524,6 @@
       .challenge-grid { grid-template-columns: 1fr; }
       .bento-3 { grid-template-columns: 1fr; }
       .handles-grid { grid-template-columns: 1fr; }
-      .compare-table thead th:nth-child(2) { display: none; }
-      .compare-table tbody td:nth-child(2) { display: none; }
     }
   </style>
 </head>
@@ -531,7 +532,7 @@
   <!-- NAV -->
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo"><img src="assets/logo-white.png" alt="Enertech" style="height:26px;width:auto;display:block;"></a>
+      <a href="index.html" class="nav-logo"><img src="assets/White_logo_notag.png" alt="Enertech" style="height:26px;width:auto;display:block;"></a>
       <ul class="nav-links">
         <li><a href="how-it-works.html">How It Works</a></li>
         <li><a href="property-managers.html">Property Managers</a></li>
@@ -899,7 +900,7 @@
         Enertech vs. the alternatives your board will consider.
       </h2>
 
-      <table class="compare-table reveal reveal-delay-2">
+      <div class="table-scroll-wrap reveal reveal-delay-2"><table class="compare-table">
         <thead>
           <tr>
             <th>Factor</th>
@@ -911,7 +912,7 @@
           <tr>
             <td>Upfront cost to HOA</td>
             <td class="good">$0 — zero capital required</td>
-            <td class="bad">$20,000–$80,000+ depending on scope</td>
+            <td class="bad">$15,000–$50,000+ depending on scope</td>
           </tr>
           <tr>
             <td>Special assessment needed</td>
@@ -954,7 +955,7 @@
             <td class="bad">Another capital expenditure for the HOA</td>
           </tr>
         </tbody>
-      </table>
+      </table></div>
     </div>
   </section>
 
@@ -1103,7 +1104,7 @@
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
-          <a href="index.html" class="footer-logo"><img src="assets/logo-white.png" alt="Enertech" style="height:28px;width:auto;display:block;"></a>
+          <a href="index.html" class="footer-logo"><img src="assets/White_logo_notag.png" alt="Enertech" style="height:28px;width:auto;display:block;"></a>
           <p class="footer-tagline">Colorado's EV charging partner for multifamily properties. Fort Collins to Colorado Springs — zero cost to the property, always.</p>
         </div>
         <div class="footer-links">

@@ -368,25 +368,28 @@
       display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
       align-items: start; margin-top: 3.5rem;
     }
+    .table-scroll-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
     .local-table {
-      width: 100%; border-collapse: collapse;
-      border-radius: var(--r-lg); overflow: hidden;
+      width: 100%; border-collapse: collapse; min-width: 480px;
       border: 1px solid var(--border);
+      border-radius: var(--r-lg); overflow: hidden;
     }
     .local-table thead { background: var(--ink); }
     .local-table th {
-      padding: 1rem 1.25rem; text-align: left;
-      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em; color: #fff;
+      padding: 16px 20px; text-align: left;
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #F9FAFB;
     }
+    .local-table thead th:nth-child(2) { background: rgba(255,255,255,0.07); }
     .local-table tbody tr { border-bottom: 1px solid var(--border); }
     .local-table tbody tr:last-child { border-bottom: none; }
     .local-table tbody tr:nth-child(even) { background: var(--canvas); }
     .local-table td {
-      padding: 0.875rem 1.25rem; font-size: 0.88rem; line-height: 1.5; vertical-align: top;
+      padding: 14px 20px; font-size: 0.9rem; line-height: 1.5; vertical-align: top;
+      color: var(--secondary);
     }
     .local-table td:first-child { font-weight: 600; color: var(--ink); }
-    .td-good { color: #1a6b2e; font-weight: 600; }
-    .td-bad { color: #a0160f; }
+    .td-good { color: var(--ink); font-weight: 600; }
+    .td-bad { color: var(--secondary); }
     .local-points { display: flex; flex-direction: column; gap: 1.75rem; }
     .local-point { display: flex; gap: 1.25rem; align-items: flex-start; }
     .local-point-icon {
@@ -509,7 +512,7 @@
   <!-- NAV -->
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo"><img src="assets/logo-white.png" alt="Enertech" style="height:26px;width:auto;display:block;"></a>
+      <a href="index.html" class="nav-logo"><img src="assets/White_logo_notag.png" alt="Enertech" style="height:26px;width:auto;display:block;"></a>
       <ul class="nav-links">
         <li><a href="how-it-works.html">How It Works</a></li>
         <li><a href="property-managers.html">Property Managers</a></li>
@@ -814,7 +817,7 @@
           </div>
         </div>
         <div>
-          <table class="local-table reveal reveal-delay-2">
+          <div class="table-scroll-wrap reveal reveal-delay-2"><table class="local-table">
             <thead>
               <tr>
                 <th>What matters</th>
@@ -829,14 +832,14 @@
                 <td class="td-bad">Remote — CO managed from out of state</td>
               </tr>
               <tr>
-                <td>Xcel rebate applications</td>
-                <td class="td-good">Handled end-to-end</td>
+                <td>Local utility program experience</td>
+                <td class="td-good">Deep — handled end-to-end</td>
                 <td class="td-bad">Generic guidance at best</td>
               </tr>
               <tr>
-                <td>Charge Ahead Colorado grants</td>
-                <td class="td-good">Active expertise</td>
-                <td class="td-bad">Often unaware of program</td>
+                <td>State incentive programs</td>
+                <td class="td-good">Active expertise across all programs</td>
+                <td class="td-bad">Often limited or unaware</td>
               </tr>
               <tr>
                 <td>Local permit experience</td>
@@ -859,7 +862,7 @@
                 <td class="td-bad">Call center or account manager</td>
               </tr>
             </tbody>
-          </table>
+          </table></div>
         </div>
       </div>
     </div>
@@ -908,7 +911,7 @@
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
-          <a href="index.html" class="footer-logo"><img src="assets/logo-white.png" alt="Enertech" style="height:28px;width:auto;display:block;"></a>
+          <a href="index.html" class="footer-logo"><img src="assets/White_logo_notag.png" alt="Enertech" style="height:28px;width:auto;display:block;"></a>
           <p class="footer-tagline">Colorado's EV charging partner for multifamily properties. Fort Collins to Colorado Springs — zero cost to the property, always.</p>
         </div>
         <div class="footer-links">
