@@ -60,8 +60,8 @@
     .section { padding: 120px 0; }
     .section--dark { background: var(--canvas-dark); color: #F9FAFB; }
     .section--dark .body-lg,
-    .section--dark .body-md { color: rgba(249,250,251,0.62); }
-    .section--dark .label { color: rgba(249,250,251,0.35); }
+    .section--dark .body-md { color: rgba(249,250,251,0.82); }
+    .section--dark .label { color: rgba(249,250,251,0.62); }
     .section--dark .h2,
     .section--dark .h3 { color: #F9FAFB; }
     .section--mid { background: var(--surface); }
@@ -101,7 +101,7 @@
     .btn-white:hover { background: #fff; box-shadow: var(--shadow-lift); }
     .btn-white .btn-icon { background: rgba(0,0,0,0.07); }
     .btn-white:hover .btn-icon { transform: translateX(3px); }
-    .risk { font-size: 0.82rem; color: rgba(255,255,255,0.42); margin-top: 12px; }
+    .risk { font-size: 0.82rem; color: rgba(255,255,255,0.68); margin-top: 12px; }
     .risk-dark { font-size: 0.82rem; color: var(--muted); margin-top: 12px; }
 
     /* ── NAV ── */
@@ -120,7 +120,7 @@
     .nav-links { display: flex; gap: 2px; list-style: none; }
     .nav-links a {
       display: block; padding: 8px 14px;
-      font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.55);
+      font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.78);
       text-decoration: none; border-radius: var(--r-sm);
       transition: color 0.2s, background 0.2s;
     }
@@ -191,7 +191,7 @@
       letter-spacing: -0.04em; color: #F9FAFB; line-height: 1;
       margin-bottom: 8px;
     }
-    .model-stat-label { font-size: 0.875rem; color: rgba(255,255,255,0.45); line-height: 1.4; }
+    .model-stat-label { font-size: 0.875rem; color: rgba(255,255,255,0.70); line-height: 1.4; }
 
     /* ── THE MODEL ── */
     .model-split {
@@ -204,8 +204,8 @@
     }
     .model-card--dark { background: var(--ink); }
     .model-card--dark .h3 { color: #F9FAFB; }
-    .model-card--dark .body-md { color: rgba(255,255,255,0.55); }
-    .model-card--dark .label { color: rgba(255,255,255,0.28); }
+    .model-card--dark .body-md { color: rgba(255,255,255,0.78); }
+    .model-card--dark .label { color: rgba(255,255,255,0.55); }
     .model-list {
       list-style: none; display: flex; flex-direction: column; gap: 14px;
       margin-top: 28px;
@@ -336,10 +336,10 @@
     }
     .cover-list li {
       display: flex; align-items: flex-start; gap: 10px;
-      font-size: 0.875rem; color: rgba(255,255,255,0.5);
+      font-size: 0.875rem; color: rgba(255,255,255,0.75);
     }
     .cover-list li::before {
-      content: '–'; color: rgba(255,255,255,0.2); flex-shrink: 0; margin-top: 1px;
+      content: '–'; color: rgba(255,255,255,0.55); flex-shrink: 0; margin-top: 1px;
     }
 
     /* ── REVENUE SHARE ── */
@@ -365,17 +365,17 @@
       display: flex; align-items: center; justify-content: space-between;
       margin-bottom: 20px;
     }
-    .revenue-label-text { font-size: 0.875rem; font-weight: 600; color: rgba(255,255,255,0.55); }
+    .revenue-label-text { font-size: 0.875rem; font-weight: 600; color: rgba(255,255,255,0.78); }
     .revenue-bar-wrap { flex: 1; margin: 0 20px; height: 8px; background: rgba(255,255,255,0.08); border-radius: 99px; overflow: hidden; }
     .revenue-bar { height: 100%; border-radius: 99px; background: rgba(255,255,255,0.55); transition: width 1.2s var(--ease); }
     .revenue-bar--property { background: #F9FAFB; }
     .revenue-pct { font-size: 0.95rem; font-weight: 700; color: #F9FAFB; width: 40px; text-align: right; }
     .revenue-divider { height: 1px; background: rgba(255,255,255,0.08); margin: 28px 0; }
-    .revenue-note { font-size: 0.82rem; color: rgba(255,255,255,0.35); line-height: 1.5; }
+    .revenue-note { font-size: 0.82rem; color: rgba(255,255,255,0.62); line-height: 1.5; }
     .revenue-stat-row { display: flex; gap: 32px; margin-top: 32px; }
     .revenue-stat { display: flex; flex-direction: column; gap: 4px; }
     .revenue-stat-val { font-size: 1.75rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; }
-    .revenue-stat-lbl { font-size: 0.78rem; color: rgba(255,255,255,0.38); }
+    .revenue-stat-lbl { font-size: 0.78rem; color: rgba(255,255,255,0.65); }
 
     /* ── INCENTIVES ── */
     .incentives-grid {
@@ -412,12 +412,12 @@
     }
 
     /* ── COMPARISON TABLE ── */
-    .compare-table { width: 100%; border-collapse: separate; border-spacing: 0; }
+    .compare-table { width: 100%; min-width: 680px; border-collapse: separate; border-spacing: 0; }
     .compare-table thead tr th {
       padding: 18px 24px;
       text-align: left; font-size: 0.78rem; font-weight: 700;
       letter-spacing: 0.08em; text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
+      color: rgba(255,255,255,0.62);
       background: rgba(255,255,255,0.04);
       border-bottom: 1px solid rgba(255,255,255,0.07);
     }
@@ -426,14 +426,14 @@
     .compare-table thead tr th.col-enertech { color: #F9FAFB; background: rgba(255,255,255,0.08); }
     .compare-table tbody tr td {
       padding: 20px 24px; border-bottom: 1px solid rgba(255,255,255,0.06);
-      font-size: 0.9rem; color: rgba(255,255,255,0.55); vertical-align: top;
+      font-size: 0.9rem; color: rgba(255,255,255,0.78); vertical-align: top;
     }
     .compare-table tbody tr td:first-child { font-weight: 600; color: rgba(255,255,255,0.7); }
     .compare-table tbody tr td.col-enertech { color: #F9FAFB; font-weight: 600; background: rgba(255,255,255,0.04); }
     .compare-table tbody tr:last-child td:first-child { border-radius: 0 0 0 var(--r-md); }
     .compare-table tbody tr:last-child td:last-child { border-radius: 0 0 var(--r-md) 0; }
     .compare-check { color: rgba(255,255,255,0.9); font-weight: 700; }
-    .compare-x { color: rgba(255,255,255,0.22); }
+    .compare-x { color: rgba(255,255,255,0.55); }
 
     /* ── CTA CLOSING ── */
     .cta-section {
@@ -442,7 +442,7 @@
       text-align: center;
     }
     .cta-section .h2 { color: #F9FAFB; margin-bottom: 20px; }
-    .cta-section .body-lg { color: rgba(249,250,251,0.6); margin-bottom: 48px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .cta-section .body-lg { color: rgba(249,250,251,0.80); margin-bottom: 48px; max-width: 520px; margin-left: auto; margin-right: auto; }
     .cta-btn-row { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
 
     /* ── FOOTER ── */
@@ -455,15 +455,15 @@
     }
     .footer-brand { max-width: 320px; }
     .footer-logo { font-size: 1.3rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; }
-    .footer-tagline { font-size: 0.875rem; color: rgba(255,255,255,0.38); margin-top: 10px; line-height: 1.5; }
+    .footer-tagline { font-size: 0.875rem; color: rgba(255,255,255,0.65); margin-top: 10px; line-height: 1.5; }
     .footer-links { display: flex; gap: 48px; flex-wrap: wrap; }
     .footer-col { display: flex; flex-direction: column; gap: 4px; }
-    .footer-col-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.28); margin-bottom: 8px; }
-    .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.5); text-decoration: none; padding: 4px 0; transition: color 0.2s; }
+    .footer-col-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 8px; }
+    .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.75); text-decoration: none; padding: 4px 0; transition: color 0.2s; }
     .footer-col a:hover { color: #F9FAFB; }
     .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.25); }
-    .footer-service { font-size: 0.78rem; color: rgba(255,255,255,0.25); }
+    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+    .footer-service { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1000px) {
@@ -551,7 +551,7 @@
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </span>
           </a>
-          <a href="#process" class="btn btn-ghost-light" style="color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.25);">See the full process</a>
+          <a href="#process" class="btn btn-ghost-light" style="color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.55);">See the full process</a>
         </div>
       </div>
     </div>
@@ -926,7 +926,7 @@
         </div>
 
         <div class="revenue-visual reveal reveal-d1">
-          <p class="label" style="color: rgba(255,255,255,0.3); margin-bottom: 32px;">How session revenue is split</p>
+          <p class="label" style="color: rgba(255,255,255,0.58); margin-bottom: 32px;">How session revenue is split</p>
 
           <div class="revenue-row">
             <span class="revenue-label-text">Your property</span>
@@ -1029,7 +1029,7 @@
   <!-- CLOSING CTA -->
   <section class="cta-section" aria-labelledby="cta-heading">
     <div class="wrap">
-      <p class="label reveal" style="color: rgba(255,255,255,0.3); margin-bottom: 16px;">Ready to get started?</p>
+      <p class="label reveal" style="color: rgba(255,255,255,0.58); margin-bottom: 16px;">Ready to get started?</p>
       <h2 class="h2 reveal reveal-d1" id="cta-heading">See what the model looks like for your property</h2>
       <p class="body-lg reveal reveal-d2">A free assessment takes about 20 minutes. We'll tell you honestly what EV charging would look like at your property — and whether Enertech is the right fit.</p>
       <div class="cta-btn-row reveal reveal-d3">

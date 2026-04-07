@@ -57,8 +57,8 @@
     .wrap { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
     .section { padding: 120px 0; }
     .section--dark { background: var(--canvas-dark); color: #F9FAFB; }
-    .section--dark .body-lg, .section--dark .body-md { color: rgba(249,250,251,0.62); }
-    .section--dark .label { color: rgba(249,250,251,0.35); }
+    .section--dark .body-lg, .section--dark .body-md { color: rgba(249,250,251,0.82); }
+    .section--dark .label { color: rgba(249,250,251,0.62); }
     .section--dark .h2, .section--dark .h3 { color: #F9FAFB; }
     .section--mid { background: var(--surface); }
 
@@ -82,7 +82,7 @@
     .btn-white:hover { background: #fff; box-shadow: var(--shadow-lift); }
     .btn-white .btn-icon { background: rgba(0,0,0,0.07); }
     .btn-white:hover .btn-icon { transform: translateX(3px); }
-    .risk { font-size: 0.82rem; color: rgba(255,255,255,0.42); margin-top: 12px; }
+    .risk { font-size: 0.82rem; color: rgba(255,255,255,0.68); margin-top: 12px; }
     .risk-dark { font-size: 0.82rem; color: var(--muted); margin-top: 12px; }
 
     /* NAV */
@@ -90,7 +90,7 @@
     .nav-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     .nav-logo { font-size: 1.2rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; flex-shrink: 0; }
     .nav-links { display: flex; gap: 2px; list-style: none; }
-    .nav-links a { display: block; padding: 8px 14px; font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.55); text-decoration: none; border-radius: var(--r-sm); transition: color 0.2s, background 0.2s; }
+    .nav-links a { display: block; padding: 8px 14px; font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.78); text-decoration: none; border-radius: var(--r-sm); transition: color 0.2s, background 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: #F9FAFB; background: rgba(255,255,255,0.07); }
     .nav-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
     .nav-cta .btn-primary { padding: 10px 12px 10px 18px; font-size: 0.875rem; }
@@ -131,7 +131,7 @@
       padding: 28px 32px;
     }
     .hero-stat-val { font-size: 2.25rem; font-weight: 900; letter-spacing: -0.04em; color: #F9FAFB; line-height: 1; margin-bottom: 6px; }
-    .hero-stat-lbl { font-size: 0.82rem; color: rgba(255,255,255,0.45); line-height: 1.4; }
+    .hero-stat-lbl { font-size: 0.82rem; color: rgba(255,255,255,0.70); line-height: 1.4; }
 
     /* VALUE PROPS — Z-AXIS BENTO */
     .value-grid {
@@ -144,26 +144,26 @@
     .value-card--dark:hover { background: var(--ink-2); }
     .value-card--full { grid-column: span 3; background: var(--canvas); padding: 48px 44px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; }
     .value-icon { width: 48px; height: 48px; border-radius: var(--r-md); background: var(--canvas); border: 1px solid var(--border-mid); display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
-    .value-card--dark .value-icon { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.12); }
+    .value-card--dark .value-icon { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.55); }
     .value-icon svg { width: 22px; height: 22px; color: var(--ink-3); }
     .value-card--dark .value-icon svg { color: rgba(255,255,255,0.65); }
     .value-card .h3 { margin-bottom: 12px; }
     .value-card--dark .h3 { color: #F9FAFB; }
     .value-card .body-md { font-size: 0.925rem; }
-    .value-card--dark .body-md { color: rgba(255,255,255,0.55); }
+    .value-card--dark .body-md { color: rgba(255,255,255,0.78); }
     .value-divider { width: 1px; background: var(--border-mid); }
 
     /* OWNERSHIP MATH */
     .math-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; border-radius: var(--r-xl); overflow: hidden; }
     .math-card { background: var(--surface-dark); padding: 56px 48px; }
     .math-card--light { background: var(--surface); }
-    .math-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 24px; }
+    .math-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.58); margin-bottom: 24px; }
     .math-label--dark { color: var(--muted); }
     .math-scenario { display: flex; flex-direction: column; gap: 16px; }
     .math-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
     .math-card--light .math-row { border-bottom-color: var(--border); }
     .math-row:last-child { border-bottom: none; font-weight: 700; }
-    .math-row-label { font-size: 0.9rem; color: rgba(255,255,255,0.5); }
+    .math-row-label { font-size: 0.9rem; color: rgba(255,255,255,0.75); }
     .math-card--light .math-row-label { color: var(--secondary); }
     .math-row-val { font-size: 0.95rem; font-weight: 600; color: #F9FAFB; }
     .math-card--light .math-row-val { color: var(--ink); }
@@ -176,7 +176,7 @@
     .math-card--light .math-total-label { color: var(--ink); }
     .math-total-val { font-size: 1.4rem; font-weight: 900; letter-spacing: -0.025em; color: #F9FAFB; }
     .math-card--light .math-total-val { color: var(--ink); }
-    .math-note { font-size: 0.78rem; color: rgba(255,255,255,0.3); margin-top: 16px; line-height: 1.5; }
+    .math-note { font-size: 0.78rem; color: rgba(255,255,255,0.58); margin-top: 16px; line-height: 1.5; }
     .math-card--light .math-note { color: var(--muted); }
 
     /* COMPLIANCE */
@@ -185,11 +185,11 @@
     .compliance-card { background: var(--surface-dark); border-radius: var(--r-lg); padding: 36px 36px; display: flex; align-items: flex-start; gap: 20px; transition: background 0.2s; }
     .compliance-card:hover { background: #1e1e1e; }
     .compliance-icon { width: 44px; height: 44px; border-radius: var(--r-sm); background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
-    .compliance-icon svg { width: 20px; height: 20px; color: rgba(255,255,255,0.6); }
+    .compliance-icon svg { width: 20px; height: 20px; color: rgba(255,255,255,0.80); }
     .compliance-card-title { font-size: 0.95rem; font-weight: 700; color: #F9FAFB; margin-bottom: 6px; }
-    .compliance-card-body { font-size: 0.875rem; color: rgba(255,255,255,0.5); line-height: 1.55; }
-    .compliance-link { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; margin-top: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1px; transition: color 0.2s, border-color 0.2s; }
-    .compliance-link:hover { color: rgba(255,255,255,0.75); border-color: rgba(255,255,255,0.3); }
+    .compliance-card-body { font-size: 0.875rem; color: rgba(255,255,255,0.75); line-height: 1.55; }
+    .compliance-link { font-size: 0.78rem; color: rgba(255,255,255,0.68); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; margin-top: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1px; transition: color 0.2s, border-color 0.2s; }
+    .compliance-link:hover { color: rgba(255,255,255,0.75); border-color: rgba(255,255,255,0.58); }
     .compliance-link svg { width: 11px; height: 11px; }
 
     /* SELF-INSTALL COMPARE */
@@ -198,15 +198,15 @@
     .compare-col--diy { background: var(--canvas); }
     .compare-col--enertech { background: var(--ink); }
     .compare-col-header { margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
-    .compare-col--enertech .compare-col-header { border-bottom-color: rgba(255,255,255,0.08); }
+    .compare-col--enertech .compare-col-header { border-bottom-color: rgba(255,255,255,0.55); }
     .compare-col-tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
-    .compare-col--enertech .compare-col-tag { color: rgba(255,255,255,0.3); }
+    .compare-col--enertech .compare-col-tag { color: rgba(255,255,255,0.58); }
     .compare-col-title { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; color: var(--ink); }
     .compare-col--enertech .compare-col-title { color: #F9FAFB; }
     .compare-items { display: flex; flex-direction: column; gap: 16px; }
     .compare-item { display: flex; align-items: flex-start; gap: 12px; font-size: 0.9rem; }
     .compare-item-text { color: var(--secondary); line-height: 1.5; }
-    .compare-col--enertech .compare-item-text { color: rgba(255,255,255,0.55); }
+    .compare-col--enertech .compare-item-text { color: rgba(255,255,255,0.78); }
     .compare-bullet { width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center; }
     .compare-bullet--x { background: rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.1); }
     .compare-bullet--x svg { width: 8px; height: 8px; color: var(--muted); }
@@ -216,7 +216,7 @@
     /* CTA */
     .cta-section { background: var(--ink); padding: 120px 0; text-align: center; }
     .cta-section .h2 { color: #F9FAFB; margin-bottom: 16px; }
-    .cta-section .body-lg { color: rgba(249,250,251,0.55); max-width: 520px; margin: 0 auto 48px; }
+    .cta-section .body-lg { color: rgba(249,250,251,0.78); max-width: 520px; margin: 0 auto 48px; }
     .cta-btn-row { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
 
     /* FOOTER */
@@ -225,14 +225,14 @@
     .footer-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 48px; flex-wrap: wrap; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 32px; }
     .footer-brand { max-width: 320px; }
     .footer-logo { font-size: 1.3rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; }
-    .footer-tagline { font-size: 0.875rem; color: rgba(255,255,255,0.38); margin-top: 10px; line-height: 1.5; }
+    .footer-tagline { font-size: 0.875rem; color: rgba(255,255,255,0.65); margin-top: 10px; line-height: 1.5; }
     .footer-links { display: flex; gap: 48px; flex-wrap: wrap; }
     .footer-col { display: flex; flex-direction: column; gap: 4px; }
-    .footer-col-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.28); margin-bottom: 8px; }
-    .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.5); text-decoration: none; padding: 4px 0; transition: color 0.2s; }
+    .footer-col-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 8px; }
+    .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.75); text-decoration: none; padding: 4px 0; transition: color 0.2s; }
     .footer-col a:hover { color: #F9FAFB; }
     .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.25); }
+    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
 
     @media (max-width: 1000px) {
       .hero-inner { grid-template-columns: 1fr; gap: 48px; }
@@ -320,7 +320,7 @@
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </span>
               </a>
-              <a href="how-it-works.html" class="btn btn-ghost-light" style="color: rgba(255,255,255,0.65); border-color: rgba(255,255,255,0.25);">How the model works</a>
+              <a href="how-it-works.html" class="btn btn-ghost-light" style="color: rgba(255,255,255,0.65); border-color: rgba(255,255,255,0.55);">How the model works</a>
             </div>
             <p class="risk reveal reveal-d4">Free, no obligation. Takes about 20 minutes.</p>
           </div>
@@ -623,7 +623,7 @@
   <!-- CLOSING CTA -->
   <section class="cta-section" aria-labelledby="cta-heading">
     <div class="wrap">
-      <p class="label reveal" style="color: rgba(255,255,255,0.3); margin-bottom: 16px;">Ready to move forward?</p>
+      <p class="label reveal" style="color: rgba(255,255,255,0.58); margin-bottom: 16px;">Ready to move forward?</p>
       <h2 class="h2 reveal reveal-d1" id="cta-heading">Find out what your property qualifies for.</h2>
       <p class="body-lg reveal reveal-d2">A free 20-minute assessment will tell you exactly what EV charging would look like at your property — revenue share estimate, charger placement, and a realistic timeline.</p>
       <div class="cta-btn-row reveal reveal-d3">
@@ -633,7 +633,7 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </span>
         </a>
-        <a href="how-it-works.html" class="btn btn-ghost-light" style="color: rgba(255,255,255,0.65); border-color: rgba(255,255,255,0.25);">How the model works</a>
+        <a href="how-it-works.html" class="btn btn-ghost-light" style="color: rgba(255,255,255,0.65); border-color: rgba(255,255,255,0.55);">How the model works</a>
       </div>
       <p class="risk reveal reveal-d4">No obligation. We'll tell you honestly if it's not the right fit.</p>
     </div>

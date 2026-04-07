@@ -60,8 +60,8 @@
     .section { padding: 120px 0; }
     .section--dark { background: var(--canvas-dark); color: #F9FAFB; }
     .section--dark .body-lg,
-    .section--dark .body-md { color: rgba(249,250,251,0.62); }
-    .section--dark .label { color: rgba(249,250,251,0.35); }
+    .section--dark .body-md { color: rgba(249,250,251,0.82); }
+    .section--dark .label { color: rgba(249,250,251,0.62); }
     .section--dark .h2,
     .section--dark .h3 { color: #F9FAFB; }
     .section--mid { background: var(--surface); }
@@ -101,7 +101,7 @@
     .btn-white:hover { background: #fff; box-shadow: var(--shadow-lift); }
     .btn-white .btn-icon { background: rgba(0,0,0,0.07); }
     .btn-white:hover .btn-icon { transform: translateX(3px); }
-    .risk { font-size: 0.82rem; color: rgba(255,255,255,0.42); margin-top: 12px; }
+    .risk { font-size: 0.82rem; color: rgba(255,255,255,0.68); margin-top: 12px; }
     .risk-dark { font-size: 0.82rem; color: var(--muted); margin-top: 12px; }
 
     /* ── NAV ── */
@@ -120,7 +120,7 @@
     .nav-links { display: flex; gap: 2px; list-style: none; }
     .nav-links a {
       display: block; padding: 8px 14px;
-      font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.55);
+      font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.78);
       text-decoration: none; border-radius: var(--r-sm);
       transition: color 0.2s, background 0.2s;
     }
@@ -264,20 +264,20 @@
       margin-bottom: 24px;
     }
     .bento-card--dark .bento-icon {
-      background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.55);
     }
     .bento-icon svg { width: 22px; height: 22px; color: var(--ink-3); }
     .bento-card--dark .bento-icon svg { color: rgba(255,255,255,0.7); }
     .bento-card .h3 { margin-bottom: 12px; }
     .bento-card--dark .h3 { color: #F9FAFB; }
     .bento-card .body-md { font-size: 0.925rem; }
-    .bento-card--dark .body-md { color: rgba(255,255,255,0.55); }
+    .bento-card--dark .body-md { color: rgba(255,255,255,0.78); }
     .bento-stat {
       font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 900;
       letter-spacing: -0.04em; color: #F9FAFB; line-height: 1;
       margin-bottom: 8px;
     }
-    .bento-stat-label { font-size: 0.875rem; color: rgba(255,255,255,0.45); }
+    .bento-stat-label { font-size: 0.875rem; color: rgba(255,255,255,0.70); }
     .bento-list {
       list-style: none; display: flex; flex-direction: column; gap: 10px;
       margin-top: 20px;
@@ -287,8 +287,8 @@
       font-size: 0.9rem; color: var(--secondary);
     }
     .bento-list li::before { content: '—'; color: var(--border-mid); flex-shrink: 0; }
-    .bento-card--dark .bento-list li { color: rgba(255,255,255,0.5); }
-    .bento-card--dark .bento-list li::before { color: rgba(255,255,255,0.15); }
+    .bento-card--dark .bento-list li { color: rgba(255,255,255,0.75); }
+    .bento-card--dark .bento-list li::before { color: rgba(255,255,255,0.55); }
 
     /* ── OBJECTION CARDS ── */
     .objections-grid {
@@ -323,7 +323,7 @@
       gap: 80px; align-items: center;
     }
     .portfolio-left .h2 { color: #F9FAFB; margin-bottom: 16px; }
-    .portfolio-left .body-lg { color: rgba(255,255,255,0.55); margin-bottom: 36px; }
+    .portfolio-left .body-lg { color: rgba(255,255,255,0.78); margin-bottom: 36px; }
     .portfolio-stats {
       display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
       border-radius: var(--r-lg); overflow: hidden;
@@ -336,7 +336,7 @@
       font-size: 2rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB;
       line-height: 1; margin-bottom: 6px;
     }
-    .portfolio-stat-lbl { font-size: 0.8rem; color: rgba(255,255,255,0.38); line-height: 1.4; }
+    .portfolio-stat-lbl { font-size: 0.8rem; color: rgba(255,255,255,0.65); line-height: 1.4; }
 
     /* ── TESTIMONIAL ── */
     .testimonial-section {
@@ -395,14 +395,14 @@
       width: 240px; height: 240px; border-radius: 50%;
       background: rgba(255,255,255,0.03); pointer-events: none;
     }
-    .replacement-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 20px; }
+    .replacement-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.58); margin-bottom: 20px; }
     .replacement-card .h3 { color: #F9FAFB; font-size: 1.35rem; font-weight: 800; margin-bottom: 16px; }
     .replacement-list {
       list-style: none; display: flex; flex-direction: column; gap: 14px; margin-top: 24px;
     }
     .replacement-list li {
       display: flex; align-items: flex-start; gap: 12px;
-      font-size: 0.9rem; color: rgba(255,255,255,0.55);
+      font-size: 0.9rem; color: rgba(255,255,255,0.78);
     }
     .r-check {
       width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; margin-top: 1px;
@@ -422,7 +422,7 @@
       background: rgba(255,255,255,0.02); pointer-events: none;
     }
     .cta-section .h2 { color: #F9FAFB; margin-bottom: 16px; }
-    .cta-section .body-lg { color: rgba(249,250,251,0.55); max-width: 520px; margin: 0 auto 48px; }
+    .cta-section .body-lg { color: rgba(249,250,251,0.78); max-width: 520px; margin: 0 auto 48px; }
     .cta-btn-row { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
 
     /* ── FOOTER ── */
@@ -435,14 +435,14 @@
     }
     .footer-brand { max-width: 320px; }
     .footer-logo { font-size: 1.3rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; }
-    .footer-tagline { font-size: 0.875rem; color: rgba(255,255,255,0.38); margin-top: 10px; line-height: 1.5; }
+    .footer-tagline { font-size: 0.875rem; color: rgba(255,255,255,0.65); margin-top: 10px; line-height: 1.5; }
     .footer-links { display: flex; gap: 48px; flex-wrap: wrap; }
     .footer-col { display: flex; flex-direction: column; gap: 4px; }
-    .footer-col-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.28); margin-bottom: 8px; }
-    .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.5); text-decoration: none; padding: 4px 0; transition: color 0.2s; }
+    .footer-col-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 8px; }
+    .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.75); text-decoration: none; padding: 4px 0; transition: color 0.2s; }
     .footer-col a:hover { color: #F9FAFB; }
     .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.25); }
+    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1000px) {
@@ -528,7 +528,7 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </span>
         </a>
-        <a href="how-it-works.html" class="btn btn-ghost-light" style="color: rgba(255,255,255,0.65); border-color: rgba(255,255,255,0.2);">See how it works</a>
+        <a href="how-it-works.html" class="btn btn-ghost-light" style="color: rgba(255,255,255,0.65); border-color: rgba(255,255,255,0.55);">See how it works</a>
       </div>
       <p class="risk reveal reveal-d4">Free, no obligation. Takes about 20 minutes.</p>
     </div>
@@ -697,7 +697,7 @@
   <div class="portfolio-strip" role="complementary">
     <div class="portfolio-inner">
       <div class="portfolio-left reveal">
-        <p class="label" style="color: rgba(255,255,255,0.3); margin-bottom: 16px;">Managing multiple properties?</p>
+        <p class="label" style="color: rgba(255,255,255,0.58); margin-bottom: 16px;">Managing multiple properties?</p>
         <h2 class="h2">One partner for your entire Colorado portfolio.</h2>
         <p class="body-lg">Regional managers and management companies can roll out EV charging across every Colorado property through a single Enertech partnership. Zero capital outlay. Zero operational lift. One local operator managing it all.</p>
         <a href="assessment.html" class="btn btn-white" style="margin-top: 36px;">
@@ -804,7 +804,7 @@
   <!-- CLOSING CTA -->
   <section class="cta-section" aria-labelledby="cta-heading">
     <div class="wrap" style="position: relative; z-index: 1;">
-      <p class="label reveal" style="color: rgba(255,255,255,0.3); margin-bottom: 16px;">Ready to get started?</p>
+      <p class="label reveal" style="color: rgba(255,255,255,0.58); margin-bottom: 16px;">Ready to get started?</p>
       <h2 class="h2 reveal reveal-d1" id="cta-heading">Find out what EV charging could look like at your property.</h2>
       <p class="body-lg reveal reveal-d2">A free assessment takes about 20 minutes. No obligation to move forward. We'll tell you honestly if the economics don't work for your property.</p>
       <div class="cta-btn-row reveal reveal-d3">
@@ -814,7 +814,7 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </span>
         </a>
-        <a href="how-it-works.html" class="btn btn-ghost-light" style="color: rgba(255,255,255,0.65); border-color: rgba(255,255,255,0.2);">See how the model works</a>
+        <a href="how-it-works.html" class="btn btn-ghost-light" style="color: rgba(255,255,255,0.65); border-color: rgba(255,255,255,0.55);">See how the model works</a>
       </div>
       <p class="risk reveal reveal-d4">Free, no obligation. We'll tell you honestly if it's not the right fit.</p>
     </div>
