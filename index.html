@@ -1612,94 +1612,24 @@
     }
 
     /* ── FOOTER ── */
-    footer {
-      background: #080808;
-      padding: 80px 0 40px;
+    .footer { background: var(--canvas-dark); padding: 64px 0 40px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .footer-top {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 48px; flex-wrap: wrap;
+      padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 32px;
     }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 280px 1fr 1fr 1fr;
-      gap: 56px;
-      padding-bottom: 64px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-    }
-
-    .footer-logo {
-      font-size: 1.15rem;
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      color: #F9FAFB;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 16px;
-    }
-
-    .footer-tagline {
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.62);
-      line-height: 1.65;
-      margin-bottom: 28px;
-    }
-
-    .footer-contact a {
-      display: block;
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.68);
-      text-decoration: none;
-      margin-bottom: 8px;
-      transition: color 0.2s;
-    }
-
-    .footer-contact a:hover {
-      color: rgba(255,255,255,0.8);
-    }
-
-    .footer-col h4 {
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
-      margin-bottom: 20px;
-    }
-
-    .footer-col ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 11px;
-    }
-
-    .footer-col a {
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.68);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-col a:hover {
-      color: rgba(255,255,255,0.8);
-    }
-
-    .footer-bottom {
-      padding-top: 32px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.55);
-    }
-
-    .footer-bottom a {
-      color: rgba(255,255,255,0.55);
-      text-decoration: none;
-      margin-left: 24px;
-    }
-
-    .footer-bottom a:hover {
-      color: rgba(255,255,255,0.75);
-    }
+    .footer-brand { max-width: 320px; }
+    .footer-logo { font-size: 1.3rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; }
+    .footer-tagline { font-size: 0.875rem; color: rgba(255,255,255,0.65); margin-top: 10px; line-height: 1.5; }
+    .footer-links { display: flex; gap: 48px; flex-wrap: wrap; }
+    .footer-col { display: flex; flex-direction: column; gap: 4px; }
+    .footer-col-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 8px; }
+    .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.75); text-decoration: none; padding: 4px 0; transition: color 0.2s; }
+    .footer-col a:hover { color: #F9FAFB; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+    .footer-service { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
 
     /* ── ZERO COST CALLOUT (inside model section) ── */
     .zero-cost-callout {
@@ -1807,9 +1737,8 @@
         gap: 48px;
       }
 
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+      .footer-top { flex-direction: column; }
+      .footer-inner { padding: 0 24px; }
 
       .stats-grid {
         grid-template-columns: 1fr 1fr;
@@ -1874,10 +1803,6 @@
       }
 
       .form-row {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-grid {
         grid-template-columns: 1fr;
       }
 
@@ -2517,54 +2442,41 @@
     </div>
   </section>
 
-  <!-- ══════ FOOTER ══════ -->
-  <footer>
-    <div class="wrap">
-      <div class="footer-grid">
-        <div>
-          <a href="index.html" class="footer-logo"><img src="assets/White_logo_notag.png" alt="Enertech"
-              style="height:28px;width:auto;display:block;margin-bottom:16px;"></a>
-          <p class="footer-tagline">Colorado's local EV charging operator for multifamily properties. Zero cost. Full
-            service. Revenue from day one.</p>
-          <div class="footer-contact">
-            <a href="tel:8773267783">(877) 326-7783</a>
-            <a href="mailto:ev@enertech.energy">ev@enertech.energy</a>
-            <a href="#">Fort Collins to Colorado Springs</a>
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo"><img src="assets/White_logo_notag.png" alt="Enertech" style="height:28px;width:auto;display:block;"></a>
+          <p class="footer-tagline">Colorado's EV charging partner for multifamily properties. Fort Collins to Colorado Springs — zero cost to the property, always.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <div class="footer-col-title">For properties</div>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="property-managers.html">For Property Managers</a>
+            <a href="property-owners.html">For Property Owners</a>
+            <a href="hoa.html">For HOAs</a>
+            <a href="assessment.html">Get a free assessment</a>
           </div>
-        </div>
-        <div class="footer-col">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="how-it-works.html">New EV charging installation</a></li>
-            <li><a href="how-it-works.html">Charger replacement program</a></li>
-            <li><a href="assessment.html">New construction coordination</a></li>
-            <li><a href="hoa.html">HOA &amp; condo associations</a></li>
-            <li><a href="how-it-works.html">Incentive program management</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Property types</h4>
-          <ul>
-            <li><a href="property-managers.html">Multifamily apartments</a></li>
-            <li><a href="property-owners.html">Condominiums</a></li>
-            <li><a href="hoa.html">HOA communities</a></li>
-            <li><a href="assessment.html">Mixed-use properties</a></li>
-            <li><a href="property-managers.html">Property management portfolios</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="how-it-works.html">How Enertech works</a></li>
-            <li><a href="service-area.html">Colorado service area</a></li>
-            <li><a href="for-drivers.html">For EV drivers</a></li>
-            <li><a href="assessment.html">Free property assessment</a></li>
-          </ul>
+          <div class="footer-col">
+            <div class="footer-col-title">For drivers</div>
+            <a href="for-drivers.html">How to charge</a>
+            <a href="for-drivers.html#charger-specs-heading">Charger specs</a>
+            <a href="for-drivers.html#faq-heading">Driver FAQ</a>
+            <a href="tel:+18888957158">24/7 support: +1 888 895 7158</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Resources</div>
+            <a href="service-area.html">Service area</a>
+            <a href="blog.html">Blog</a>
+            <a href="https://www.linkedin.com/company/enertech-energy" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 Enertech Energy. Licensed, bonded &amp; insured. Colorado-based.</span>
-        <div><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+        <p class="footer-copy">&copy; 2026 Enertech. Fort Collins to Colorado Springs.</p>
+        <p class="footer-service">enertech.energy</p>
       </div>
     </div>
   </footer>
