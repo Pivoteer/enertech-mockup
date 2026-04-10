@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HOA EV charging in Colorado: what the Right to Charge Act means | Enertech</title>
+  <meta name="description" content="Colorado law limits how HOAs can restrict EV charger installation. Here's what residents can demand, what boards can still control, and how community charging programs work." />
+  <link rel="canonical" href="https://enertech.energy/blog/hoa-ev-charging-colorado" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:         #0C0C0C;
+      --ink-2:       #1C1C1C;
+      --ink-3:       #2E2E2E;
+      --secondary:   #6B6B6B;
+      --muted:       #9B9B9B;
+      --border:      rgba(0,0,0,0.08);
+      --border-mid:  rgba(0,0,0,0.14);
+      --canvas:      #F9FAFB;
+      --surface:     #FFFFFF;
+      --canvas-dark: #0C0C0C;
+      --surface-dark:#1C1C1C;
+      --border-dark: rgba(255,255,255,0.09);
+      --shadow-sm:   0 4px 12px -4px rgba(0,0,0,0.08);
+      --shadow-card: 0 20px 40px -15px rgba(0,0,0,0.07);
+      --shadow-lift: 0 28px 48px -12px rgba(0,0,0,0.18);
+      --r-xl:  2.5rem;
+      --r-lg:  1.5rem;
+      --r-md:  0.875rem;
+      --r-sm:  0.5rem;
+      --ease:  cubic-bezier(0.32, 0.72, 0, 1);
+      --max: 1320px;
+      --article-max: 740px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+      background: var(--canvas);
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .h1 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.03em; }
+    .h2 { font-size: clamp(1.75rem, 3vw, 2.75rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.022em; }
+    .body-lg { font-size: 1.15rem; line-height: 1.75; letter-spacing: 0.012em; color: var(--secondary); }
+    .label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.75s var(--ease), transform 0.75s var(--ease); }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 80ms; }
+    .reveal-d2 { transition-delay: 160ms; }
+    .reveal-d3 { transition-delay: 240ms; }
+
+    .btn { display: inline-flex; align-items: center; gap: 10px; border: none; cursor: pointer; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.95rem; transition: all 0.3s var(--ease); text-decoration: none; white-space: nowrap; }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: var(--ink); color: #F9FAFB; padding: 14px 16px 14px 24px; border-radius: var(--r-md); }
+    .btn-primary:hover { background: var(--ink-3); box-shadow: var(--shadow-lift); }
+    .btn-white { background: #F9FAFB; color: var(--ink); padding: 14px 16px 14px 24px; border-radius: var(--r-md); }
+    .btn-white:hover { background: #fff; box-shadow: var(--shadow-lift); }
+    .btn-white .btn-icon { background: rgba(0,0,0,0.07); }
+    .btn-white:hover .btn-icon { transform: translateX(3px); }
+    .btn-ghost-light { background: transparent; color: var(--ink); padding: 14px 20px; border-radius: var(--r-md); border: 1.5px solid var(--border-mid); }
+    .btn-ghost-light:hover { border-color: var(--ink); }
+    .btn-icon { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.3s var(--ease), background 0.3s var(--ease); }
+    .btn-primary:hover .btn-icon { transform: translateX(3px); background: rgba(255,255,255,0.22); }
+    .risk { font-size: 0.82rem; color: rgba(255,255,255,0.68); margin-top: 12px; }
+
+    /* ── NAV ── */
+    .nav { position: sticky; top: 0; z-index: 100; background: rgba(12,12,12,0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .nav-logo { font-size: 1.2rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; flex-shrink: 0; }
+    .nav-links { display: flex; gap: 2px; list-style: none; }
+    .nav-links a { display: block; padding: 8px 14px; font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.78); text-decoration: none; border-radius: var(--r-sm); transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover { color: #F9FAFB; background: rgba(255,255,255,0.07); }
+    .nav-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .nav-cta .btn-primary { padding: 10px 12px 10px 18px; font-size: 0.875rem; }
+    .nav-cta .btn-icon { width: 28px; height: 28px; }
+    .nav-burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; padding: 8px; background: none; border: none; cursor: pointer; border-radius: 8px; flex-shrink: 0; }
+    .nav-burger span { display: block; width: 22px; height: 2px; background: #F9FAFB; border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease; }
+    .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile { display: none; position: fixed; top: 66px; left: 0; right: 0; bottom: 0; background: rgba(12,12,12,0.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 998; flex-direction: column; padding: 24px 24px 40px; overflow-y: auto; }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a { display: block; color: rgba(249,250,251,0.75); text-decoration: none; font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 500; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.07); transition: color 0.15s; }
+    .nav-mobile a:hover { color: #F9FAFB; }
+    .nav-mobile .mob-cta { display: block; margin-top: 24px; padding: 15px 24px; background: #F9FAFB; color: #0C0C0C !important; border-radius: 100px; text-align: center; font-weight: 700; font-size: 1rem; border-bottom: none; }
+    .nav-mobile .mob-cta:hover { background: #e0e0e0; }
+
+    /* ── ARTICLE HERO ── */
+    .article-hero { background: var(--canvas-dark); color: #F9FAFB; padding: 80px 0 72px; }
+    .article-hero-inner { max-width: var(--article-max); }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-bottom: 28px; }
+    .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: rgba(255,255,255,0.8); }
+    .breadcrumb-sep { opacity: 0.4; }
+    .article-tag { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.75); padding: 4px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); margin-bottom: 20px; }
+    .article-hero h1 { color: #F9FAFB; margin-bottom: 20px; }
+    .article-hero .body-lg { color: rgba(249,250,251,0.72); margin-bottom: 28px; }
+    .article-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 0.8rem; color: rgba(255,255,255,0.45); border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; }
+    .article-meta-dot { opacity: 0.4; }
+
+    /* ── ARTICLE BODY ── */
+    .article-wrap { max-width: var(--article-max); margin: 0 auto; padding: 0 40px; }
+    .article-body { padding: 64px 0 80px; }
+    .article-body p { font-size: 1.05rem; line-height: 1.78; color: var(--ink-2); margin-bottom: 1.5em; }
+    .article-body h2 { font-size: 1.5rem; font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; color: var(--ink); margin-top: 2.5em; margin-bottom: 0.75em; }
+    .article-body h3 { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.01em; color: var(--ink); margin-top: 1.75em; margin-bottom: 0.5em; }
+    .article-body ul, .article-body ol { padding-left: 1.5em; margin-bottom: 1.5em; }
+    .article-body li { font-size: 1.05rem; line-height: 1.75; color: var(--ink-2); margin-bottom: 0.4em; }
+    .article-body a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(0,0,0,0.25); transition: text-decoration-color 0.2s; }
+    .article-body a:hover { text-decoration-color: var(--ink); }
+    .article-body strong { font-weight: 700; color: var(--ink); }
+
+    /* ── CAN / CANNOT TABLE ── */
+    .split-table { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 2em 0; }
+    .split-col { border-radius: var(--r-md); padding: 24px; }
+    .split-col--can { background: #F0FDF4; }
+    .split-col--cannot { background: #FEF2F2; }
+    .split-col-title { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
+    .split-col--can .split-col-title { color: #166534; }
+    .split-col--cannot .split-col-title { color: #991B1B; }
+    .split-col ul { padding-left: 1.25em; margin: 0; }
+    .split-col li { font-size: 0.9rem; line-height: 1.65; margin-bottom: 0.4em; }
+    .split-col--can li { color: #14532D; }
+    .split-col--cannot li { color: #7F1D1D; }
+
+    /* ── CALLOUT ── */
+    .callout { background: var(--canvas-dark); color: #F9FAFB; border-radius: var(--r-lg); padding: 36px 40px; margin: 2.5em 0; }
+    .callout p { color: rgba(249,250,251,0.82); font-size: 1rem; margin-bottom: 0.75em; }
+    .callout p:last-of-type { margin-bottom: 20px; }
+    .callout strong { color: #F9FAFB; }
+    .callout-title { font-size: 1rem; font-weight: 800; letter-spacing: -0.01em; color: #F9FAFB; margin-bottom: 12px; }
+    .callout .risk { color: rgba(255,255,255,0.55); margin-top: 10px; }
+
+    /* ── CTA SECTION ── */
+    .cta-section { background: var(--ink); padding: 100px 0; text-align: center; }
+    .cta-section .h2 { color: #F9FAFB; margin-bottom: 20px; }
+    .cta-section .body-lg { color: rgba(249,250,251,0.80); margin-bottom: 48px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .cta-btn-row { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+    /* ── FOOTER ── */
+    .footer { background: var(--canvas-dark); padding: 64px 0 40px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .footer-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 48px; flex-wrap: wrap; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 32px; }
+    .footer-brand { max-width: 320px; }
+    .footer-logo { font-size: 1.3rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; }
+    .footer-tagline { font-size: 0.875rem; color: rgba(255,255,255,0.65); margin-top: 10px; line-height: 1.5; }
+    .footer-links { display: flex; gap: 48px; flex-wrap: wrap; }
+    .footer-col { display: flex; flex-direction: column; gap: 4px; }
+    .footer-col-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 8px; }
+    .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.75); text-decoration: none; padding: 4px 0; transition: color 0.2s; }
+    .footer-col a:hover { color: #F9FAFB; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+    .footer-service { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .wrap { padding: 0 24px; }
+      .article-wrap { padding: 0 24px; }
+      .nav-links { display: none; }
+      .nav-burger { display: flex; }
+      .nav-cta { display: none; }
+      .footer-top { flex-direction: column; }
+      .footer-inner { padding: 0 24px; }
+      .split-table { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .article-hero { padding: 60px 0 52px; }
+      .callout { padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo"><img src="../assets/White_logo_notag.png" alt="Enertech" style="height:26px;width:auto;display:block;"></a>
+      <ul class="nav-links">
+        <li><a href="../how-it-works.html">How It Works</a></li>
+        <li><a href="../property-managers.html">Property Managers</a></li>
+        <li><a href="../property-owners.html">Property Owners</a></li>
+        <li><a href="../hoa.html">For HOAs</a></li>
+        <li><a href="../for-drivers.html">For Drivers</a></li>
+        <li><a href="../service-area.html">Service Area</a></li>
+      </ul>
+      <div class="nav-right nav-cta">
+        <a href="../assessment.html" class="btn btn-primary">
+          Get a free assessment
+          <span class="btn-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+      </div>
+      <button class="nav-burger" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="../how-it-works.html">How It Works</a>
+    <a href="../property-managers.html">Property Managers</a>
+    <a href="../property-owners.html">Property Owners</a>
+    <a href="../hoa.html">For HOAs</a>
+    <a href="../for-drivers.html">For Drivers</a>
+    <a href="../service-area.html">Service Area</a>
+    <a href="../assessment.html" class="mob-cta">Get a free assessment</a>
+  </div>
+
+  <!-- ARTICLE HERO -->
+  <section class="article-hero" aria-label="Article header">
+    <div class="wrap">
+      <div class="article-hero-inner">
+        <div class="breadcrumb reveal">
+          <a href="../blog.html">Blog</a>
+          <span class="breadcrumb-sep">›</span>
+          <span>HOA</span>
+        </div>
+        <span class="article-tag reveal reveal-d1">HOA</span>
+        <h1 class="h1 reveal reveal-d1">HOA EV charging in Colorado: what the Right to Charge Act means for your community</h1>
+        <p class="body-lg reveal reveal-d2">Colorado law limits how HOAs can restrict EV charger installation — but the details matter. Here's what residents can demand, what boards can still control, and why a community charging program often works better than individual installs.</p>
+        <div class="article-meta reveal reveal-d3">
+          <span>Enertech</span>
+          <span class="article-meta-dot">·</span>
+          <span>7 min read</span>
+          <span class="article-meta-dot">·</span>
+          <span>HOA &amp; Governance</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE BODY -->
+  <div class="article-body">
+    <div class="article-wrap">
+
+      <p>Here's a situation Colorado HOA boards are encountering more often: a resident submits a request to install an EV charger in their garage or parking space. The board isn't sure what it can or can't do. Some members want to deny it outright. Others worry about setting a precedent. Meanwhile, the resident is getting impatient — and they've mentioned something about a state law.</p>
+
+      <p>The resident is probably right. Colorado has specific legal protections for EV charging installation in HOA communities — and boards that aren't familiar with them are at risk of taking positions they can't legally defend.</p>
+
+      <p>This guide covers what the law actually says, where boards still have legitimate authority, and why many Colorado HOAs are finding that a community-wide charging program resolves the tension entirely.</p>
+
+      <p><em>Note: this article provides a practical overview, not legal advice. For specific situations, we recommend consulting an attorney familiar with Colorado HOA law or the <a href="https://www.cai.org" target="_blank" rel="noopener">Community Associations Institute</a>.</em></p>
+
+      <h2>What Colorado's Right to Charge law actually says</h2>
+
+      <p>Colorado's right-to-charge protections for HOA communities are codified under the <a href="https://leg.colorado.gov/sites/default/files/documents/2023A/bills/2023a_116_enr.pdf" target="_blank" rel="noopener">Colorado Common Interest Ownership Act (CCIOA)</a>, which governs most HOAs in the state. The core provision is straightforward: an HOA <strong>cannot prohibit or unreasonably restrict</strong> a unit owner from installing EV charging equipment in their designated parking space or garage.</p>
+
+      <p>That phrase — "unreasonably restrict" — is where the nuance lives. The law doesn't give residents unlimited rights to install whatever they want, wherever they want, however they want. It gives boards the authority to set reasonable standards. What it removes is the ability to use those standards as a de facto ban.</p>
+
+      <p>A blanket "no EV chargers" policy is not defensible under Colorado law for HOAs governed by CCIOA. If your community's current rules say something close to that, it's worth reviewing them with legal counsel before a resident challenge forces the issue.</p>
+
+      <h2>What HOA boards CAN and CANNOT do</h2>
+
+      <p>The line between a reasonable restriction and an unreasonable one isn't always obvious. Here's how it generally shakes out in practice:</p>
+
+      <div class="split-table">
+        <div class="split-col split-col--can">
+          <div class="split-col-title">Boards CAN require</div>
+          <ul>
+            <li>Licensed and insured electrical contractors</li>
+            <li>Permits pulled before installation begins</li>
+            <li>Compliance with local building codes</li>
+            <li>Advance written notice to the board</li>
+            <li>Adherence to aesthetic standards (charger color, signage, cable management)</li>
+            <li>A separate meter for the resident's charging usage</li>
+            <li>Proof of homeowner's insurance covering the installation</li>
+            <li>That the owner bear all installation and operating costs</li>
+            <li>Restoration of common areas to original condition if the owner moves</li>
+          </ul>
+        </div>
+        <div class="split-col split-col--cannot">
+          <div class="split-col-title">Boards CANNOT do</div>
+          <ul>
+            <li>Impose a blanket prohibition on EV charging equipment</li>
+            <li>Set requirements so burdensome they effectively function as a ban</li>
+            <li>Require unreasonably expensive modifications as a condition of approval</li>
+            <li>Apply arbitrary or inconsistent standards across residents</li>
+            <li>Unreasonably delay review of a resident's installation request</li>
+            <li>Charge fees that bear no relationship to actual administrative costs</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>The practical test: if a reasonable person would look at your HOA's requirements and conclude that they make EV charging effectively impossible, those requirements are vulnerable. Courts and arbitrators applying Colorado law are looking at the substance of the restrictions, not just their form.</p>
+
+      <h2>Why individual installations often create more problems than they solve</h2>
+
+      <p>Even when a board navigates a resident's installation request correctly, individual installs can create downstream headaches that a community-wide program avoids entirely.</p>
+
+      <p><strong>Electrical infrastructure conflicts.</strong> One resident installs a 50-amp circuit to their space. Another wants the same thing. A third is in a location where the panel run is significantly more expensive. Now the board is managing piecemeal electrical work with no coordinated plan — and potentially running out of panel capacity before everyone who wants charging can get it.</p>
+
+      <p><strong>Maintenance responsibility disputes.</strong> When a resident owns their own charger, they're responsible for maintenance. When that charger breaks — and eventually it will — the board may still field complaints from other residents who can't get past a blocked or broken station. The lines of responsibility get messy fast.</p>
+
+      <p><strong>Equity issues.</strong> Residents with garages have easy access to individual charging. Residents in assigned surface spots or shared parking structures face far more complicated installation paths. Individual installs can inadvertently create a two-tier system that generates friction and, eventually, more requests to the board.</p>
+
+      <p><strong>Resale complications.</strong> When a resident sells their unit, who owns the charger? What happens to the dedicated circuit? Individual installations that seemed simple at the time become title and transfer issues at closing.</p>
+
+      <h2>What a community charging program looks like instead</h2>
+
+      <p>An increasing number of Colorado HOAs are getting ahead of the individual-install scramble by establishing a community-wide EV charging program — one that serves all residents who want it, is professionally managed, and costs the association nothing to set up or operate.</p>
+
+      <p>That's the model Enertech provides. We install commercial-grade networked Level 2 chargers in shared parking areas, cover 100% of the hardware and installation cost, and manage the entire program on an ongoing basis — maintenance, resident support, billing. The HOA earns a monthly revenue share from charging sessions and has zero operational involvement.</p>
+
+      <p>From a governance standpoint, a community program also simplifies the board's position on individual installation requests. When a resident asks about EV charging, the answer becomes: "We have a community program — here's how to get access." That's a much easier conversation than navigating the Right to Charge review process case by case.</p>
+
+      <div class="callout">
+        <div class="callout-title">How Enertech works with HOA boards</div>
+        <p>We present directly to HOA boards — walking through the program, answering governance questions, and providing the documentation boards typically need for a vote. We've worked through the process with Colorado HOAs governed by CCIOA and understand what boards need to see before approving a community charging agreement.</p>
+        <p>There's no cost to the association, ever. We cover hardware, installation, electrical work, permits, and ongoing management. Your community earns a revenue share from day one.</p>
+        <a href="../hoa.html" class="btn btn-white" style="font-size:0.9rem; padding:12px 14px 12px 20px; margin-bottom: 4px;">
+          See how it works for HOAs
+          <span class="btn-icon" aria-hidden="true" style="width:28px; height:28px;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+        <p class="risk">No obligation. We'll tell you honestly if the timing or property isn't the right fit.</p>
+      </div>
+
+      <h2>How to bring EV charging to your board</h2>
+
+      <p>If you're a resident trying to get EV charging approved, or a board member trying to build consensus around a community program, here's what tends to work:</p>
+
+      <p><strong>Frame it as a property value question, not a lifestyle preference.</strong> EV adoption in Colorado is accelerating every year. Properties with community charging are increasingly differentiated from those without it. That's a resale value and rental competitiveness argument that resonates with owners focused on long-term value.</p>
+
+      <p><strong>Address the cost objection early.</strong> Most board members assume EV charging means a capital expenditure. A zero-cost partnership model — where an operator like Enertech covers everything — removes that objection before it gets raised. Lead with it.</p>
+
+      <p><strong>Come with a specific proposal, not a general request.</strong> A vague ask to "look into EV charging" rarely goes anywhere. A specific proposal — including a vendor, program terms, and revenue implications — gives the board something to vote on.</p>
+
+      <p><strong>Reference Colorado law as context, not a threat.</strong> If the conversation turns to whether the board can restrict individual installations, it's useful to note that Colorado's right-to-charge provisions limit that authority. Framing it as useful context ("here's the regulatory landscape we're working in") rather than a legal threat tends to land better with boards who are trying to make a good-faith decision.</p>
+
+      <h2>The bottom line for Colorado HOAs</h2>
+
+      <p>Colorado's right-to-charge law has shifted the default: HOAs can no longer simply say no to EV charging requests. Boards that understand the boundaries of their authority — and get ahead of the issue with a community program — are in a much better position than those who wait for a resident dispute to force the conversation.</p>
+
+      <p>If your board is navigating EV charging requests, considering a community program, or just trying to understand what the law requires, we're happy to talk. We present to boards regularly and can walk through the program in the context of your community's specific situation — no commitment required.</p>
+
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section" aria-label="Call to action">
+    <div class="wrap">
+      <h2 class="h2 reveal">Ready to bring EV charging to your HOA?</h2>
+      <p class="body-lg reveal reveal-d1">Enertech covers 100% of hardware, installation, and ongoing management for Colorado HOA communities. Your association pays nothing — and earns a monthly revenue share from day one.</p>
+      <div class="cta-btn-row reveal reveal-d2">
+        <a href="../assessment.html" class="btn btn-white">
+          Get a free community assessment
+          <span class="btn-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+        <a href="../hoa.html" class="btn btn-ghost-light" style="color:rgba(249,250,251,0.78); border-color:rgba(255,255,255,0.18);">HOA program details</a>
+      </div>
+      <p class="risk reveal reveal-d3">No obligation. We present to boards regularly and understand what your community needs to see.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="../index.html" class="footer-logo"><img src="../assets/White_logo_notag.png" alt="Enertech" style="height:28px;width:auto;display:block;"></a>
+          <p class="footer-tagline">Colorado's EV charging partner for multifamily properties. Fort Collins to Colorado Springs — zero cost to the property, always.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <div class="footer-col-title">For properties</div>
+            <a href="../how-it-works.html">How It Works</a>
+            <a href="../property-managers.html">For Property Managers</a>
+            <a href="../property-owners.html">For Property Owners</a>
+            <a href="../hoa.html">For HOAs</a>
+            <a href="../assessment.html">Get a free assessment</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">For drivers</div>
+            <a href="../for-drivers.html">How to charge</a>
+            <a href="../for-drivers.html#charger-specs-heading">Charger specs</a>
+            <a href="../for-drivers.html#faq-heading">Driver FAQ</a>
+            <a href="tel:+18888957158">24/7 support: +1 888 895 7158</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Resources</div>
+            <a href="../service-area.html">Service area</a>
+            <a href="../blog.html">Blog</a>
+            <a href="https://www.linkedin.com/company/enertech-energy" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Enertech. Fort Collins to Colorado Springs.</p>
+        <p class="footer-service">enertech.energy</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); revealObs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => revealObs.observe(el));
+    document.querySelectorAll('.article-hero .reveal').forEach(el => el.classList.add('in-view'));
+
+    const burger = document.querySelector('.nav-burger');
+    const mobileNav = document.getElementById('nav-mobile');
+    burger.addEventListener('click', () => {
+      const open = burger.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open);
+      mobileNav.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        burger.classList.remove('open');
+        burger.setAttribute('aria-expanded', false);
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+</body>
+</html>
