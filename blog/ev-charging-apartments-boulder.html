@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EV charging for Boulder apartments: what property managers need to know | Enertech</title>
+  <meta name="description" content="Boulder has Colorado's highest EV adoption rate. Here's how apartment communities can add EV charging at zero cost — and why waiting is no longer a neutral decision." />
+  <link rel="canonical" href="https://enertech.energy/blog/ev-charging-apartments-boulder" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #0C0C0C; --ink-2: #1C1C1C; --ink-3: #2E2E2E; --secondary: #6B6B6B; --muted: #9B9B9B;
+      --border: rgba(0,0,0,0.08); --border-mid: rgba(0,0,0,0.14); --canvas: #F9FAFB; --surface: #FFFFFF;
+      --canvas-dark: #0C0C0C; --surface-dark: #1C1C1C;
+      --shadow-lift: 0 28px 48px -12px rgba(0,0,0,0.18);
+      --r-xl: 2.5rem; --r-lg: 1.5rem; --r-md: 0.875rem; --r-sm: 0.5rem;
+      --ease: cubic-bezier(0.32, 0.72, 0, 1); --max: 1320px; --article-max: 740px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Outfit', system-ui, -apple-system, sans-serif; background: var(--canvas); color: var(--ink); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    .h1 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.03em; }
+    .h2 { font-size: clamp(1.75rem, 3vw, 2.75rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.022em; }
+    .body-lg { font-size: 1.15rem; line-height: 1.75; letter-spacing: 0.012em; color: var(--secondary); }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.75s var(--ease), transform 0.75s var(--ease); }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 80ms; } .reveal-d2 { transition-delay: 160ms; } .reveal-d3 { transition-delay: 240ms; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; border: none; cursor: pointer; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.95rem; transition: all 0.3s var(--ease); text-decoration: none; white-space: nowrap; }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: var(--ink); color: #F9FAFB; padding: 14px 16px 14px 24px; border-radius: var(--r-md); }
+    .btn-primary:hover { background: var(--ink-3); box-shadow: var(--shadow-lift); }
+    .btn-white { background: #F9FAFB; color: var(--ink); padding: 14px 16px 14px 24px; border-radius: var(--r-md); }
+    .btn-white:hover { background: #fff; box-shadow: var(--shadow-lift); }
+    .btn-white .btn-icon { background: rgba(0,0,0,0.07); }
+    .btn-white:hover .btn-icon { transform: translateX(3px); }
+    .btn-ghost-light { background: transparent; color: var(--ink); padding: 14px 20px; border-radius: var(--r-md); border: 1.5px solid rgba(0,0,0,0.14); }
+    .btn-ghost-light:hover { border-color: var(--ink); }
+    .btn-icon { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.3s var(--ease), background 0.3s var(--ease); }
+    .btn-primary:hover .btn-icon { transform: translateX(3px); background: rgba(255,255,255,0.22); }
+    .risk { font-size: 0.82rem; color: rgba(255,255,255,0.68); margin-top: 12px; }
+    .nav { position: sticky; top: 0; z-index: 100; background: rgba(12,12,12,0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .nav-logo { font-size: 1.2rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; flex-shrink: 0; }
+    .nav-links { display: flex; gap: 2px; list-style: none; }
+    .nav-links a { display: block; padding: 8px 14px; font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.78); text-decoration: none; border-radius: var(--r-sm); transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover { color: #F9FAFB; background: rgba(255,255,255,0.07); }
+    .nav-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .nav-cta .btn-primary { padding: 10px 12px 10px 18px; font-size: 0.875rem; }
+    .nav-cta .btn-icon { width: 28px; height: 28px; }
+    .nav-burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; padding: 8px; background: none; border: none; cursor: pointer; border-radius: 8px; flex-shrink: 0; }
+    .nav-burger span { display: block; width: 22px; height: 2px; background: #F9FAFB; border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease; }
+    .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile { display: none; position: fixed; top: 66px; left: 0; right: 0; bottom: 0; background: rgba(12,12,12,0.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 998; flex-direction: column; padding: 24px 24px 40px; overflow-y: auto; }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a { display: block; color: rgba(249,250,251,0.75); text-decoration: none; font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 500; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.07); transition: color 0.15s; }
+    .nav-mobile a:hover { color: #F9FAFB; }
+    .nav-mobile .mob-cta { display: block; margin-top: 24px; padding: 15px 24px; background: #F9FAFB; color: #0C0C0C !important; border-radius: 100px; text-align: center; font-weight: 700; font-size: 1rem; border-bottom: none; }
+    .article-hero { background: var(--canvas-dark); color: #F9FAFB; padding: 80px 0 72px; }
+    .article-hero-inner { max-width: var(--article-max); }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-bottom: 28px; }
+    .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: rgba(255,255,255,0.8); }
+    .breadcrumb-sep { opacity: 0.4; }
+    .article-tag { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.75); padding: 4px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); margin-bottom: 20px; }
+    .article-hero h1 { color: #F9FAFB; margin-bottom: 20px; }
+    .article-hero .body-lg { color: rgba(249,250,251,0.72); margin-bottom: 28px; }
+    .article-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 0.8rem; color: rgba(255,255,255,0.45); border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; }
+    .article-meta-dot { opacity: 0.4; }
+    .article-wrap { max-width: var(--article-max); margin: 0 auto; padding: 0 40px; }
+    .article-body { padding: 64px 0 80px; }
+    .article-body p { font-size: 1.05rem; line-height: 1.78; color: var(--ink-2); margin-bottom: 1.5em; }
+    .article-body h2 { font-size: 1.5rem; font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; color: var(--ink); margin-top: 2.5em; margin-bottom: 0.75em; }
+    .article-body h3 { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.01em; color: var(--ink); margin-top: 1.75em; margin-bottom: 0.5em; }
+    .article-body ul, .article-body ol { padding-left: 1.5em; margin-bottom: 1.5em; }
+    .article-body li { font-size: 1.05rem; line-height: 1.75; color: var(--ink-2); margin-bottom: 0.4em; }
+    .article-body a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(0,0,0,0.25); transition: text-decoration-color 0.2s; }
+    .article-body a:hover { text-decoration-color: var(--ink); }
+    .article-body strong { font-weight: 700; color: var(--ink); }
+    .callout { background: var(--canvas-dark); color: #F9FAFB; border-radius: var(--r-lg); padding: 36px 40px; margin: 2.5em 0; }
+    .callout p { color: rgba(249,250,251,0.82); font-size: 1rem; margin-bottom: 0.75em; }
+    .callout p:last-of-type { margin-bottom: 20px; }
+    .callout strong { color: #F9FAFB; }
+    .callout-title { font-size: 1rem; font-weight: 800; letter-spacing: -0.01em; color: #F9FAFB; margin-bottom: 12px; }
+    .callout .risk { color: rgba(255,255,255,0.55); margin-top: 10px; }
+    .cta-section { background: var(--ink); padding: 100px 0; text-align: center; }
+    .cta-section .h2 { color: #F9FAFB; margin-bottom: 20px; }
+    .cta-section .body-lg { color: rgba(249,250,251,0.80); margin-bottom: 48px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .cta-btn-row { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .footer { background: var(--canvas-dark); padding: 64px 0 40px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .footer-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 48px; flex-wrap: wrap; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 32px; }
+    .footer-brand { max-width: 320px; }
+    .footer-logo { font-size: 1.3rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; }
+    .footer-tagline { font-size: 0.875rem; color: rgba(255,255,255,0.65); margin-top: 10px; line-height: 1.5; }
+    .footer-links { display: flex; gap: 48px; flex-wrap: wrap; }
+    .footer-col { display: flex; flex-direction: column; gap: 4px; }
+    .footer-col-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 8px; }
+    .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.75); text-decoration: none; padding: 4px 0; transition: color 0.2s; }
+    .footer-col a:hover { color: #F9FAFB; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+    .footer-service { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+    @media (max-width: 900px) {
+      .wrap { padding: 0 24px; } .article-wrap { padding: 0 24px; }
+      .nav-links { display: none; } .nav-burger { display: flex; } .nav-cta { display: none; }
+      .footer-top { flex-direction: column; } .footer-inner { padding: 0 24px; }
+    }
+    @media (max-width: 600px) { .article-hero { padding: 60px 0 52px; } .callout { padding: 28px 24px; } }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo"><img src="../assets/White_logo_notag.png" alt="Enertech" style="height:26px;width:auto;display:block;"></a>
+      <ul class="nav-links">
+        <li><a href="../how-it-works.html">How It Works</a></li>
+        <li><a href="../property-managers.html">Property Managers</a></li>
+        <li><a href="../property-owners.html">Property Owners</a></li>
+        <li><a href="../hoa.html">For HOAs</a></li>
+        <li><a href="../for-drivers.html">For Drivers</a></li>
+        <li><a href="../service-area.html">Service Area</a></li>
+      </ul>
+      <div class="nav-right nav-cta">
+        <a href="../assessment.html" class="btn btn-primary">
+          Get a free assessment
+          <span class="btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+      </div>
+      <button class="nav-burger" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="../how-it-works.html">How It Works</a>
+    <a href="../property-managers.html">Property Managers</a>
+    <a href="../property-owners.html">Property Owners</a>
+    <a href="../hoa.html">For HOAs</a>
+    <a href="../for-drivers.html">For Drivers</a>
+    <a href="../service-area.html">Service Area</a>
+    <a href="../assessment.html" class="mob-cta">Get a free assessment</a>
+  </div>
+
+  <section class="article-hero" aria-label="Article header">
+    <div class="wrap">
+      <div class="article-hero-inner">
+        <div class="breadcrumb reveal">
+          <a href="../blog.html">Blog</a>
+          <span class="breadcrumb-sep">›</span>
+          <span>Boulder</span>
+        </div>
+        <span class="article-tag reveal reveal-d1">Boulder</span>
+        <h1 class="h1 reveal reveal-d1">EV charging for Boulder apartments: meeting the highest EV adoption rate in Colorado</h1>
+        <p class="body-lg reveal reveal-d2">Boulder has the highest EV ownership rate in Colorado — and one of the highest in the country. For apartment communities in Boulder and Longmont, EV charging has moved from amenity to expectation. Here's how to add it at zero cost to the property.</p>
+        <div class="article-meta reveal reveal-d3">
+          <span>Enertech</span>
+          <span class="article-meta-dot">·</span>
+          <span>6 min read</span>
+          <span class="article-meta-dot">·</span>
+          <span>Boulder / Longmont</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body">
+    <div class="article-wrap">
+
+      <p>Boulder is a different market from the rest of Colorado when it comes to EVs. The city's combination of high household incomes, strong environmental values, and proximity to mountain recreation has produced EV ownership rates that consistently rank among the highest in the country. Walk the parking lots of any Boulder apartment community and you'll find EVs — often lots of them.</p>
+
+      <p>For property managers and owners in Boulder and the surrounding Longmont corridor, that means EV charging infrastructure isn't a forward-looking investment. It's a present-tense operational gap for a meaningful share of your current residents.</p>
+
+      <h2>What Boulder's EV adoption means for your property</h2>
+
+      <p>In many Colorado markets, a property manager can reasonably say "we'll add EV charging when demand warrants it." In Boulder, that moment has passed. Residents are already there — they're just charging elsewhere.</p>
+
+      <p>The practical effect for Boulder apartment communities without charging: EV-driving residents are doing one of three things. Some are charging at public stations downtown or at the <a href="https://bouldercolorado.gov/services/electric-vehicle-charging" target="_blank" rel="noopener">City of Boulder's public charging network</a>, which works but is inconvenient for daily use. Some are using portable Level 1 chargers from standard 120V outlets in their parking spaces, which typically add only 4–5 miles of range per hour — fine for occasional use, inadequate for regular commuting. And some are choosing their next apartment specifically based on whether charging is available.</p>
+
+      <p>That last group is the most relevant to lease renewal and vacancy rates. Boulder's rental market is competitive, but it's not infinitely forgiving of missing amenities for residents who have clear preferences.</p>
+
+      <h2>Boulder's unique regulatory context</h2>
+
+      <p>Boulder has historically moved faster than state minimums on energy and sustainability requirements, and its approach to EV charging reflects that. The city has its own green building program — <a href="https://energyfuture.bouldercolorado.gov" target="_blank" rel="noopener">EnergySmart</a> — that offers technical assistance and, in some cases, incentives for energy efficiency improvements including EV charging infrastructure at multifamily properties.</p>
+
+      <p>Boulder is also in Xcel Energy's service territory, which means multifamily properties in Boulder have access to <a href="https://co.my.xcelenergy.com/s/business/ev" target="_blank" rel="noopener">Xcel's EV rebate programs</a> for commercial and multifamily customers — covering both make-ready electrical infrastructure and per-port equipment costs. These programs require pre-project application. Enertech manages this process on behalf of every Boulder property we work with.</p>
+
+      <p>For properties in Longmont, the utility situation is different: Longmont Power & Communications serves much of the city. LPC has its own EV program offerings that we can assess as part of a site evaluation.</p>
+
+      <h2>What EV charging looks like at a Boulder apartment community</h2>
+
+      <p>Boulder apartment communities vary significantly in their parking arrangements — from surface lots and covered carports in older garden-style communities, to structured parking in newer urban infill projects along Canyon Boulevard and Pearl Street. The right EV charging program design depends on what your parking layout actually looks like.</p>
+
+      <p>For surface parking lots, shared Level 2 charging stations positioned near electrical infrastructure are typically the most cost-effective approach. For structured parking, the design gets more nuanced — panel location, conduit routing, and per-space metering all factor in. We've worked through both scenarios in the Boulder market and can assess the most practical path for your specific property in the initial site visit.</p>
+
+      <p>What doesn't change based on layout: the cost to the property. Whether your parking is surface, covered, or structured, Enertech covers 100% of the installation — hardware, electrical work, permits, and ongoing operations. The property earns a revenue share from charging sessions from day one.</p>
+
+      <div class="callout">
+        <div class="callout-title">Enertech in Boulder and Longmont</div>
+        <p>We serve Boulder and Longmont as part of our Front Range coverage area. A <a href="../assessment.html" style="color: rgba(255,255,255,0.85);">free site assessment</a> covers your electrical infrastructure, parking layout, utility program eligibility (Xcel or LPC), and a realistic demand estimate based on your unit count and market.</p>
+        <p>We cover 100% of installation costs. Your property earns a revenue share from day one.</p>
+        <a href="../assessment.html" class="btn btn-white" style="font-size:0.9rem; padding:12px 14px 12px 20px;">
+          Get a free Boulder property assessment
+          <span class="btn-icon" aria-hidden="true" style="width:28px; height:28px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+        <p class="risk">No obligation. We'll tell you honestly if the timing or property isn't the right fit.</p>
+      </div>
+
+      <h2>The HOA and condo dimension in Boulder</h2>
+
+      <p>Boulder has a significant condo and HOA community — particularly in the Table Mesa, Martin Acres, and East Boulder corridors. For these communities, the right-to-charge provisions under Colorado's CCIOA give residents meaningful legal protection for individual EV charger installation requests, which puts HOA boards in a position of needing a clear, consistent policy.</p>
+
+      <p>Many Boulder HOAs are finding that a community-wide charging program — where Enertech installs and operates shared charging stations at no cost to the association — is a cleaner solution than navigating individual installation requests case by case. If your community is in this situation, our <a href="hoa-ev-charging-colorado.html">guide to Colorado HOA EV charging law</a> is a useful starting point, and we present to boards regularly.</p>
+
+      <h2>Why Boulder properties shouldn't wait</h2>
+
+      <p>The argument for moving now rather than later comes down to three things:</p>
+
+      <p><strong>Current resident retention.</strong> EV drivers who are charging at public stations because their apartment doesn't offer charging are already thinking about their next lease decision differently. Meeting that need now costs the property nothing with the Enertech model.</p>
+
+      <p><strong>Xcel rebate program availability.</strong> Xcel's EV rebate programs have defined funding cycles. Properties that apply earlier in a funding cycle tend to receive stronger terms than those that apply when programs are nearing capacity. There's no guarantee current program terms persist unchanged.</p>
+
+      <p><strong>Boulder's competitive rental market.</strong> EV charging is increasingly cited as a factor in lease decisions by Boulder renters — particularly in the $2,000+ monthly rent tier where EV ownership rates are highest. Properties adding charging now are building a differentiator before it becomes table stakes.</p>
+
+      <p>If you manage or own apartment communities in Boulder or Longmont and want to understand what EV charging would look like at your property — including program design, timeline, and what it costs (nothing, with our model) — <a href="../assessment.html">a free site assessment is the right starting point</a>. We can typically schedule an initial conversation within a few days.</p>
+
+    </div>
+  </div>
+
+  <section class="cta-section" aria-label="Call to action">
+    <div class="wrap">
+      <h2 class="h2 reveal">Add EV charging to your Boulder apartment community</h2>
+      <p class="body-lg reveal reveal-d1">Enertech covers 100% of hardware, installation, and ongoing operations in Boulder and Longmont. Your property earns a monthly revenue share — no upfront cost, no ongoing management.</p>
+      <div class="cta-btn-row reveal reveal-d2">
+        <a href="../assessment.html" class="btn btn-white">
+          Get a free property assessment
+          <span class="btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+        <a href="../service-area.html" class="btn btn-ghost-light" style="color:rgba(249,250,251,0.78); border-color:rgba(255,255,255,0.18);">See our service area</a>
+      </div>
+      <p class="risk reveal reveal-d3">No obligation. We'll tell you honestly if it's not the right fit for your property.</p>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="../index.html" class="footer-logo"><img src="../assets/White_logo_notag.png" alt="Enertech" style="height:28px;width:auto;display:block;"></a>
+          <p class="footer-tagline">Colorado's EV charging partner for multifamily properties. Fort Collins to Colorado Springs — zero cost to the property, always.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <div class="footer-col-title">For properties</div>
+            <a href="../how-it-works.html">How It Works</a>
+            <a href="../property-managers.html">For Property Managers</a>
+            <a href="../property-owners.html">For Property Owners</a>
+            <a href="../hoa.html">For HOAs</a>
+            <a href="../assessment.html">Get a free assessment</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">For drivers</div>
+            <a href="../for-drivers.html">How to charge</a>
+            <a href="../for-drivers.html#charger-specs-heading">Charger specs</a>
+            <a href="../for-drivers.html#faq-heading">Driver FAQ</a>
+            <a href="tel:+18888957158">24/7 support: +1 888 895 7158</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Resources</div>
+            <a href="../service-area.html">Service area</a>
+            <a href="../blog.html">Blog</a>
+            <a href="https://www.linkedin.com/company/enertech-energy" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Enertech. Fort Collins to Colorado Springs.</p>
+        <p class="footer-service">enertech.energy</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); revealObs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => revealObs.observe(el));
+    document.querySelectorAll('.article-hero .reveal').forEach(el => el.classList.add('in-view'));
+    const burger = document.querySelector('.nav-burger');
+    const mobileNav = document.getElementById('nav-mobile');
+    burger.addEventListener('click', () => {
+      const open = burger.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open);
+      mobileNav.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        burger.classList.remove('open');
+        burger.setAttribute('aria-expanded', false);
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+</body>
+</html>

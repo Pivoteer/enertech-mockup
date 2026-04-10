@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EV charging for Fort Collins apartments: what property managers need to know | Enertech</title>
+  <meta name="description" content="Fort Collins is one of Colorado's fastest-growing EV markets. Here's how apartment communities can add EV charging at zero cost — and why the Fort Collins market makes now the right time." />
+  <link rel="canonical" href="https://enertech.energy/blog/ev-charging-apartments-fort-collins" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #0C0C0C; --ink-2: #1C1C1C; --ink-3: #2E2E2E; --secondary: #6B6B6B; --muted: #9B9B9B;
+      --border: rgba(0,0,0,0.08); --border-mid: rgba(0,0,0,0.14); --canvas: #F9FAFB; --surface: #FFFFFF;
+      --canvas-dark: #0C0C0C;
+      --shadow-lift: 0 28px 48px -12px rgba(0,0,0,0.18);
+      --r-xl: 2.5rem; --r-lg: 1.5rem; --r-md: 0.875rem; --r-sm: 0.5rem;
+      --ease: cubic-bezier(0.32, 0.72, 0, 1); --max: 1320px; --article-max: 740px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Outfit', system-ui, -apple-system, sans-serif; background: var(--canvas); color: var(--ink); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    .h1 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.03em; }
+    .h2 { font-size: clamp(1.75rem, 3vw, 2.75rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.022em; }
+    .body-lg { font-size: 1.15rem; line-height: 1.75; letter-spacing: 0.012em; color: var(--secondary); }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.75s var(--ease), transform 0.75s var(--ease); }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 80ms; } .reveal-d2 { transition-delay: 160ms; } .reveal-d3 { transition-delay: 240ms; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; border: none; cursor: pointer; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.95rem; transition: all 0.3s var(--ease); text-decoration: none; white-space: nowrap; }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: var(--ink); color: #F9FAFB; padding: 14px 16px 14px 24px; border-radius: var(--r-md); }
+    .btn-primary:hover { background: var(--ink-3); box-shadow: var(--shadow-lift); }
+    .btn-white { background: #F9FAFB; color: var(--ink); padding: 14px 16px 14px 24px; border-radius: var(--r-md); }
+    .btn-white:hover { background: #fff; box-shadow: var(--shadow-lift); }
+    .btn-white .btn-icon { background: rgba(0,0,0,0.07); }
+    .btn-white:hover .btn-icon { transform: translateX(3px); }
+    .btn-ghost-light { background: transparent; color: var(--ink); padding: 14px 20px; border-radius: var(--r-md); border: 1.5px solid rgba(0,0,0,0.14); }
+    .btn-ghost-light:hover { border-color: var(--ink); }
+    .btn-icon { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.3s var(--ease), background 0.3s var(--ease); }
+    .btn-primary:hover .btn-icon { transform: translateX(3px); background: rgba(255,255,255,0.22); }
+    .risk { font-size: 0.82rem; color: rgba(255,255,255,0.68); margin-top: 12px; }
+    .nav { position: sticky; top: 0; z-index: 100; background: rgba(12,12,12,0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .nav-logo { font-size: 1.2rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; flex-shrink: 0; }
+    .nav-links { display: flex; gap: 2px; list-style: none; }
+    .nav-links a { display: block; padding: 8px 14px; font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.78); text-decoration: none; border-radius: var(--r-sm); transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover { color: #F9FAFB; background: rgba(255,255,255,0.07); }
+    .nav-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .nav-cta .btn-primary { padding: 10px 12px 10px 18px; font-size: 0.875rem; }
+    .nav-cta .btn-icon { width: 28px; height: 28px; }
+    .nav-burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; padding: 8px; background: none; border: none; cursor: pointer; border-radius: 8px; flex-shrink: 0; }
+    .nav-burger span { display: block; width: 22px; height: 2px; background: #F9FAFB; border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease; }
+    .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile { display: none; position: fixed; top: 66px; left: 0; right: 0; bottom: 0; background: rgba(12,12,12,0.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 998; flex-direction: column; padding: 24px 24px 40px; overflow-y: auto; }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a { display: block; color: rgba(249,250,251,0.75); text-decoration: none; font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 500; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.07); transition: color 0.15s; }
+    .nav-mobile a:hover { color: #F9FAFB; }
+    .nav-mobile .mob-cta { display: block; margin-top: 24px; padding: 15px 24px; background: #F9FAFB; color: #0C0C0C !important; border-radius: 100px; text-align: center; font-weight: 700; font-size: 1rem; border-bottom: none; }
+    .article-hero { background: var(--canvas-dark); color: #F9FAFB; padding: 80px 0 72px; }
+    .article-hero-inner { max-width: var(--article-max); }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-bottom: 28px; }
+    .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: rgba(255,255,255,0.8); }
+    .breadcrumb-sep { opacity: 0.4; }
+    .article-tag { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.75); padding: 4px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); margin-bottom: 20px; }
+    .article-hero h1 { color: #F9FAFB; margin-bottom: 20px; }
+    .article-hero .body-lg { color: rgba(249,250,251,0.72); margin-bottom: 28px; }
+    .article-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 0.8rem; color: rgba(255,255,255,0.45); border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; }
+    .article-meta-dot { opacity: 0.4; }
+    .article-wrap { max-width: var(--article-max); margin: 0 auto; padding: 0 40px; }
+    .article-body { padding: 64px 0 80px; }
+    .article-body p { font-size: 1.05rem; line-height: 1.78; color: var(--ink-2); margin-bottom: 1.5em; }
+    .article-body h2 { font-size: 1.5rem; font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; color: var(--ink); margin-top: 2.5em; margin-bottom: 0.75em; }
+    .article-body h3 { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.01em; color: var(--ink); margin-top: 1.75em; margin-bottom: 0.5em; }
+    .article-body ul, .article-body ol { padding-left: 1.5em; margin-bottom: 1.5em; }
+    .article-body li { font-size: 1.05rem; line-height: 1.75; color: var(--ink-2); margin-bottom: 0.4em; }
+    .article-body a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(0,0,0,0.25); transition: text-decoration-color 0.2s; }
+    .article-body a:hover { text-decoration-color: var(--ink); }
+    .article-body strong { font-weight: 700; color: var(--ink); }
+    .callout { background: var(--canvas-dark); color: #F9FAFB; border-radius: var(--r-lg); padding: 36px 40px; margin: 2.5em 0; }
+    .callout p { color: rgba(249,250,251,0.82); font-size: 1rem; margin-bottom: 0.75em; }
+    .callout p:last-of-type { margin-bottom: 20px; }
+    .callout strong { color: #F9FAFB; }
+    .callout-title { font-size: 1rem; font-weight: 800; letter-spacing: -0.01em; color: #F9FAFB; margin-bottom: 12px; }
+    .callout .risk { color: rgba(255,255,255,0.55); margin-top: 10px; }
+    .cta-section { background: var(--ink); padding: 100px 0; text-align: center; }
+    .cta-section .h2 { color: #F9FAFB; margin-bottom: 20px; }
+    .cta-section .body-lg { color: rgba(249,250,251,0.80); margin-bottom: 48px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .cta-btn-row { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .footer { background: var(--canvas-dark); padding: 64px 0 40px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .footer-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 48px; flex-wrap: wrap; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 32px; }
+    .footer-brand { max-width: 320px; }
+    .footer-logo { font-size: 1.3rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; }
+    .footer-tagline { font-size: 0.875rem; color: rgba(255,255,255,0.65); margin-top: 10px; line-height: 1.5; }
+    .footer-links { display: flex; gap: 48px; flex-wrap: wrap; }
+    .footer-col { display: flex; flex-direction: column; gap: 4px; }
+    .footer-col-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 8px; }
+    .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.75); text-decoration: none; padding: 4px 0; transition: color 0.2s; }
+    .footer-col a:hover { color: #F9FAFB; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+    .footer-service { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+    @media (max-width: 900px) {
+      .wrap { padding: 0 24px; } .article-wrap { padding: 0 24px; }
+      .nav-links { display: none; } .nav-burger { display: flex; } .nav-cta { display: none; }
+      .footer-top { flex-direction: column; } .footer-inner { padding: 0 24px; }
+    }
+    @media (max-width: 600px) { .article-hero { padding: 60px 0 52px; } .callout { padding: 28px 24px; } }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo"><img src="../assets/White_logo_notag.png" alt="Enertech" style="height:26px;width:auto;display:block;"></a>
+      <ul class="nav-links">
+        <li><a href="../how-it-works.html">How It Works</a></li>
+        <li><a href="../property-managers.html">Property Managers</a></li>
+        <li><a href="../property-owners.html">Property Owners</a></li>
+        <li><a href="../hoa.html">For HOAs</a></li>
+        <li><a href="../for-drivers.html">For Drivers</a></li>
+        <li><a href="../service-area.html">Service Area</a></li>
+      </ul>
+      <div class="nav-right nav-cta">
+        <a href="../assessment.html" class="btn btn-primary">
+          Get a free assessment
+          <span class="btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+      </div>
+      <button class="nav-burger" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="../how-it-works.html">How It Works</a>
+    <a href="../property-managers.html">Property Managers</a>
+    <a href="../property-owners.html">Property Owners</a>
+    <a href="../hoa.html">For HOAs</a>
+    <a href="../for-drivers.html">For Drivers</a>
+    <a href="../service-area.html">Service Area</a>
+    <a href="../assessment.html" class="mob-cta">Get a free assessment</a>
+  </div>
+
+  <section class="article-hero" aria-label="Article header">
+    <div class="wrap">
+      <div class="article-hero-inner">
+        <div class="breadcrumb reveal">
+          <a href="../blog.html">Blog</a>
+          <span class="breadcrumb-sep">›</span>
+          <span>Fort Collins</span>
+        </div>
+        <span class="article-tag reveal reveal-d1">Fort Collins</span>
+        <h1 class="h1 reveal reveal-d1">EV charging for Fort Collins apartments: a fast-moving market and what property managers should do now</h1>
+        <p class="body-lg reveal reveal-d2">Fort Collins is one of Colorado's fastest-growing EV markets — driven by CSU, a young professional renter base, and ambitious city climate goals. For apartment communities in Fort Collins and Loveland, EV charging is moving from optional amenity to competitive baseline.</p>
+        <div class="article-meta reveal reveal-d3">
+          <span>Enertech</span>
+          <span class="article-meta-dot">·</span>
+          <span>6 min read</span>
+          <span class="article-meta-dot">·</span>
+          <span>Fort Collins / Loveland</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body">
+    <div class="article-wrap">
+
+      <p>Fort Collins punches above its weight on EV adoption. The city's combination of Colorado State University, a highly educated young professional workforce, strong environmental culture, and ambitious climate action goals has produced EV ownership rates that far exceed what you'd expect from a city its size.</p>
+
+      <p>Fort Collins is also Enertech's home market — it's where we're based and where we've installed more charging programs than anywhere else in Colorado. We know this market in a way that a national operator managing Colorado from a remote office simply doesn't.</p>
+
+      <h2>What's driving EV adoption in Fort Collins</h2>
+
+      <p>Fort Collins has set some of the most aggressive climate targets of any Colorado city, including a goal of 100% renewable electricity and significant EV adoption as part of its <a href="https://www.fcgov.com/climateaction/" target="_blank" rel="noopener">Climate Action Plan</a>. That policy environment shapes resident expectations and creates real institutional momentum behind EV infrastructure.</p>
+
+      <p>The CSU effect is significant too. The university community — students, faculty, and staff — skews toward environmental consciousness and represents a meaningful share of Fort Collins' rental market. As EV prices continue to fall and more affordable EV models enter the market, EV adoption among younger renters in Fort Collins is accelerating faster than the broader Colorado average.</p>
+
+      <p>Fort Collins also has its own municipal electric utility — Fort Collins Utilities — which runs its own EV programs for residential and commercial customers. For apartment properties served by Fort Collins Utilities, this is the relevant program to assess rather than Xcel Energy. Properties in Loveland are served by Xcel Energy and have access to <a href="https://co.my.xcelenergy.com/s/business/ev" target="_blank" rel="noopener">Xcel's multifamily EV rebate programs</a>. Enertech navigates both utility program landscapes — it's part of what we assess in every Fort Collins and Loveland site evaluation.</p>
+
+      <h2>The Fort Collins apartment market context</h2>
+
+      <p>Fort Collins has a large and diverse apartment stock — from older garden-style communities near CSU and downtown, to newer Class A communities in Midtown and along the South College corridor, to workforce housing developments further south toward Loveland.</p>
+
+      <p>EV charging program design varies meaningfully across these property types. Older garden-style communities built in the 1970s and 80s often have limited electrical panel capacity, which shapes what's possible in the first phase of a program. Newer communities typically have more headroom and can accommodate more chargers immediately. The Enertech site assessment process starts with your actual electrical infrastructure — we don't design programs based on averages.</p>
+
+      <p>What's consistent across Fort Collins property types: the cost to the property is zero. Whether your building is 40 years old with a single electrical panel or a new construction with modern infrastructure, Enertech covers 100% of the installation — hardware, electrical work, permits, and ongoing operations. Your property earns a revenue share from charging sessions from day one.</p>
+
+      <h2>Fort Collins Utilities vs. Xcel: what it means for your property</h2>
+
+      <p>Most of Fort Collins proper is served by Fort Collins Utilities (FCU), the city's municipal electric utility. FCU runs its own EV incentive programs, which differ from Xcel's in structure and eligibility. If your property is within Fort Collins Utilities' service territory, Xcel rebates don't apply — but FCU's programs may provide comparable value.</p>
+
+      <p>Properties in Loveland, Timnath, and Windsor are generally in Xcel Energy's service territory and have access to Xcel's make-ready and equipment rebate programs for multifamily EV charging.</p>
+
+      <p>This utility boundary is something Enertech maps as part of every site assessment. We identify which programs your property qualifies for and handle all pre-project application paperwork — you don't deal with the utility programs at all.</p>
+
+      <div class="callout">
+        <div class="callout-title">Enertech is based in Fort Collins</div>
+        <p>We're a local company — Fort Collins is our home market. When a charger at one of our Fort Collins properties needs attention, we can be there. No dispatching a technician from out of state, no waiting for a national operator's service queue.</p>
+        <p>A <a href="../assessment.html" style="color: rgba(255,255,255,0.85);">free site assessment</a> covers your electrical infrastructure, parking layout, utility program eligibility, and a realistic demand estimate — all at no cost to you.</p>
+        <a href="../assessment.html" class="btn btn-white" style="font-size:0.9rem; padding:12px 14px 12px 20px;">
+          Get a free Fort Collins property assessment
+          <span class="btn-icon" aria-hidden="true" style="width:28px; height:28px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+        <p class="risk">No obligation. We'll tell you honestly if it's not the right fit.</p>
+      </div>
+
+      <h2>What property managers in Fort Collins are asking us</h2>
+
+      <p>Based on the conversations we have regularly with Fort Collins property managers, here are the questions that come up most often:</p>
+
+      <p><strong>"Our building is older — can we actually add EV charging?"</strong> Usually yes, though the scope of the first phase depends on existing panel capacity. We design programs around what's actually there, with a path to expand as capacity allows. Older buildings sometimes benefit from a phased approach — starting with shared charging in common parking areas and adding more circuits over time.</p>
+
+      <p><strong>"How many chargers do we need?"</strong> This depends on your unit count, resident demographics, and parking layout. Fort Collins properties near CSU tend to see faster EV adoption than those further from campus. As a starting point, we look at current parking utilization, any resident EV data you have, and comparable properties we've assessed in the market.</p>
+
+      <p><strong>"What happens if a charger breaks?"</strong> It's our equipment — we fix it. Your maintenance staff are never involved. We monitor every charger remotely and proactively identify issues before residents report them. When something needs physical attention, we dispatch locally from Fort Collins.</p>
+
+      <p><strong>"What does the revenue share look like?"</strong> Revenue share terms are negotiated per property based on the program design, installation scope, and projected utilization. We don't publish specific percentages because they vary. What we can tell you is that most Fort Collins properties see their first revenue share payment within 30–60 days of going live.</p>
+
+      <h2>Why now is the right time for Fort Collins properties</h2>
+
+      <p>Fort Collins' EV adoption curve is steep and still rising. The properties adding EV charging today are meeting current resident demand and building a differentiator that will only become more relevant as EV ownership continues to grow in the Fort Collins market.</p>
+
+      <p>Fort Collins Utilities and Xcel Energy both have active incentive programs for multifamily EV charging. Program terms and funding levels are set periodically — there's no guarantee that current terms persist into future program cycles. Properties that move now are locking in whatever terms are currently available.</p>
+
+      <p>And because Enertech covers 100% of the installation cost, there's no capital outlay waiting for "the right time" from a budget perspective. The cost of adding EV charging through our partnership model is zero — the only cost of waiting is opportunity.</p>
+
+      <p>If you manage or own apartment communities in Fort Collins or Loveland, we'd welcome the conversation. <a href="../assessment.html">A free site assessment</a> takes about 20 minutes and gives you a clear picture of what's possible at your property — and what it would cost you (which, with our model, is nothing). Learn more about <a href="../how-it-works.html">how the Enertech partnership works</a>.</p>
+
+    </div>
+  </div>
+
+  <section class="cta-section" aria-label="Call to action">
+    <div class="wrap">
+      <h2 class="h2 reveal">Add EV charging to your Fort Collins apartment community</h2>
+      <p class="body-lg reveal reveal-d1">Enertech is based in Fort Collins. We cover 100% of hardware, installation, and ongoing operations — and we're local enough to actually show up when something needs attention.</p>
+      <div class="cta-btn-row reveal reveal-d2">
+        <a href="../assessment.html" class="btn btn-white">
+          Get a free property assessment
+          <span class="btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+        <a href="../service-area.html" class="btn btn-ghost-light" style="color:rgba(249,250,251,0.78); border-color:rgba(255,255,255,0.18);">See our service area</a>
+      </div>
+      <p class="risk reveal reveal-d3">No obligation. We'll tell you honestly if it's not the right fit for your property.</p>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="../index.html" class="footer-logo"><img src="../assets/White_logo_notag.png" alt="Enertech" style="height:28px;width:auto;display:block;"></a>
+          <p class="footer-tagline">Colorado's EV charging partner for multifamily properties. Fort Collins to Colorado Springs — zero cost to the property, always.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <div class="footer-col-title">For properties</div>
+            <a href="../how-it-works.html">How It Works</a>
+            <a href="../property-managers.html">For Property Managers</a>
+            <a href="../property-owners.html">For Property Owners</a>
+            <a href="../hoa.html">For HOAs</a>
+            <a href="../assessment.html">Get a free assessment</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">For drivers</div>
+            <a href="../for-drivers.html">How to charge</a>
+            <a href="../for-drivers.html#charger-specs-heading">Charger specs</a>
+            <a href="../for-drivers.html#faq-heading">Driver FAQ</a>
+            <a href="tel:+18888957158">24/7 support: +1 888 895 7158</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Resources</div>
+            <a href="../service-area.html">Service area</a>
+            <a href="../blog.html">Blog</a>
+            <a href="https://www.linkedin.com/company/enertech-energy" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Enertech. Fort Collins to Colorado Springs.</p>
+        <p class="footer-service">enertech.energy</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); revealObs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => revealObs.observe(el));
+    document.querySelectorAll('.article-hero .reveal').forEach(el => el.classList.add('in-view'));
+    const burger = document.querySelector('.nav-burger');
+    const mobileNav = document.getElementById('nav-mobile');
+    burger.addEventListener('click', () => {
+      const open = burger.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open);
+      mobileNav.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        burger.classList.remove('open');
+        burger.setAttribute('aria-expanded', false);
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+</body>
+</html>
