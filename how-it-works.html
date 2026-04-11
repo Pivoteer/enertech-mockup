@@ -473,6 +473,11 @@
       .process-nav { position: static; }
       .revenue-split { grid-template-columns: 1fr; gap: 48px; }
     }
+    @media (max-width: 1120px) {
+      .nav-links { display: none; }
+      .nav-burger { display: flex; }
+    }
+
     @media (max-width: 900px) {
       .wrap { padding: 0 24px; }
       .section { padding: 80px 0; }
@@ -482,8 +487,6 @@
       .model-band-inner { grid-template-columns: 1fr; }
       .model-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
       .model-stat:last-child { border-bottom: none; }
-      .nav-links { display: none; }
-      .nav-burger { display: flex; }
       .nav-cta { display: none; }
       .footer-top { flex-direction: column; }
       .process-detail-grid { grid-template-columns: 1fr; }

@@ -113,9 +113,14 @@
     .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
     .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
     .footer-service { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+    @media (max-width: 1120px) {
+      .nav-links { display: none; }
+      .nav-burger { display: flex; }
+    }
+
     @media (max-width: 900px) {
       .wrap { padding: 0 24px; } .article-wrap { padding: 0 24px; }
-      .nav-links { display: none; } .nav-burger { display: flex; } .nav-cta { display: none; }
+      .nav-cta { display: none; }
       .footer-top { flex-direction: column; } .footer-inner { padding: 0 24px; }
       .stat-row { grid-template-columns: 1fr 1fr; }
     }
