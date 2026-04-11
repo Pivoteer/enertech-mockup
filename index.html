@@ -395,6 +395,26 @@
       height: 28px;
     }
 
+    .nav-drivers {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 14px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.88);
+      text-decoration: none;
+      border-radius: var(--r-sm);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      transition: color 0.2s, background 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-drivers:hover {
+      color: #F9FAFB;
+      background: rgba(255, 255, 255, 0.09);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
     .nav-burger {
       display: none;
       flex-direction: column;
@@ -1833,10 +1853,10 @@
         <li><a href="property-managers.html">Property managers</a></li>
         <li><a href="property-owners.html">Property owners</a></li>
         <li><a href="hoa.html">For HOAs</a></li>
-        <li><a href="for-drivers.html">For drivers</a></li>
         <li><a href="service-area.html">Service area</a></li>
       </ul>
       <div class="nav-right nav-cta">
+        <a href="for-drivers.html" class="nav-drivers">For Drivers</a>
         <a href="assessment.html" class="btn btn-primary">
           Get a free assessment
           <span class="btn-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#F9FAFB"
@@ -1851,11 +1871,11 @@
     </div>
   </nav>
   <div class="nav-mobile" id="nav-mobile">
+    <a href="for-drivers.html" style="color:rgba(249,250,251,0.92);font-weight:700;">⚡ For Drivers</a>
     <a href="how-it-works.html">How It Works</a>
     <a href="property-managers.html">Property Managers</a>
     <a href="property-owners.html">Property Owners</a>
     <a href="hoa.html">For HOAs</a>
-    <a href="for-drivers.html">For Drivers</a>
     <a href="service-area.html">Service Area</a>
     <a href="assessment.html" class="mob-cta">Get a free assessment</a>
   </div>

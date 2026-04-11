@@ -115,6 +115,8 @@
       transition: color 0.2s;
     }
     .nav-phone:hover { color: #F9FAFB; }
+    .nav-drivers { display: inline-flex; align-items: center; padding: 8px 14px; font-size: 0.875rem; font-weight: 600; color: rgba(255,255,255,0.88); text-decoration: none; border-radius: var(--r-sm); border: 1px solid rgba(255,255,255,0.24); transition: color 0.2s, background 0.2s, border-color 0.2s; white-space: nowrap; }
+    .nav-drivers:hover { color: #F9FAFB; background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.5); }
     .nav-burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; padding: 8px; background: none; border: none; cursor: pointer; border-radius: 8px; flex-shrink: 0; }
     .nav-burger span { display: block; width: 22px; height: 2px; background: #F9FAFB; border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease; }
     .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -389,10 +391,10 @@
         <li><a href="property-managers.html">Property Managers</a></li>
         <li><a href="property-owners.html">Property Owners</a></li>
         <li><a href="hoa.html">For HOAs</a></li>
-        <li><a href="for-drivers.html">For Drivers</a></li>
         <li><a href="service-area.html">Service Area</a></li>
       </ul>
       <div class="nav-right">
+        <a href="for-drivers.html" class="nav-drivers">For Drivers</a>
         <a href="tel:+18773267783" class="nav-phone">(877) 326-7783</a>
       </div>
       <button class="nav-burger" aria-label="Open navigation" aria-expanded="false">
@@ -401,11 +403,11 @@
     </div>
   </nav>
   <div class="nav-mobile" id="nav-mobile">
+    <a href="for-drivers.html" style="color:rgba(249,250,251,0.92);font-weight:700;">⚡ For Drivers</a>
     <a href="how-it-works.html">How It Works</a>
     <a href="property-managers.html">Property Managers</a>
     <a href="property-owners.html">Property Owners</a>
     <a href="hoa.html">For HOAs</a>
-    <a href="for-drivers.html">For Drivers</a>
     <a href="service-area.html">Service Area</a>
     <a href="tel:+18773267783" class="mob-cta">Call (877) 326-7783</a>
   </div>
@@ -644,7 +646,6 @@
         <a href="property-managers.html">Property Managers</a>
         <a href="property-owners.html">Property Owners</a>
         <a href="hoa.html">For HOAs</a>
-        <a href="for-drivers.html">For Drivers</a>
         <a href="service-area.html">Service Area</a>
         <a href="tel:+18888957158">+1 888 895 7158</a>
         <a href="https://www.linkedin.com/company/enertech-energy" target="_blank" rel="noopener">LinkedIn ↗</a>
