@@ -493,9 +493,14 @@
       .local-grid { grid-template-columns: 1fr; gap: 3rem; }
       .stats-inner { grid-template-columns: repeat(2, 1fr); }
     }
-    @media (max-width: 768px) {
-      nav { padding: 1rem 1.25rem; }
+    @media (max-width: 1120px) {
+      .nav-links { display: none; }
+      .nav-burger { display: flex; }
+    }
+    @media (max-width: 900px) {
       .nav-cta { display: none; }
+    }
+    @media (max-width: 768px) {
       .section { padding: 5rem 1.25rem; }
       .hero-left { padding: 4rem 1.5rem 3rem; }
       .hero-right { padding: 3rem 1.5rem; }
