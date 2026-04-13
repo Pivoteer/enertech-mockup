@@ -215,7 +215,8 @@
     .qualifies-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
     .qual-list { display: flex; flex-direction: column; gap: 4px; margin-top: 32px; }
     .qual-item { display: flex; align-items: center; gap: 16px; padding: 18px 20px; border-radius: var(--r-md); border: 1px solid var(--border); background: var(--surface); }
-    .qual-item-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .qual-item-icon { width: 36px; height: 36px; flex-shrink: 0; border-radius: 8px; background: var(--ink); display: flex; align-items: center; justify-content: center; }
+    .qual-item-icon svg { width: 18px; height: 18px; stroke: #F9FAFB; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
     .qual-item-text { font-size: 0.95rem; font-weight: 500; color: var(--ink-2); }
     .funding-note { margin-top: 40px; background: var(--canvas); border: 1px solid var(--border-mid); border-radius: var(--r-md); padding: 24px 28px; }
     .funding-note-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
@@ -300,6 +301,8 @@
         <li><a href="property-managers.html">Property Managers</a></li>
         <li><a href="property-owners.html">Property Owners</a></li>
         <li><a href="hoa.html">For HOAs</a></li>
+        <li><a href="community-hubs.html" class="active">Community Hubs</a></li>
+        <li><a href="workplace-charging.html">Workplace Charging</a></li>
         <li><a href="service-area.html">Service Area</a></li>
       </ul>
       <div class="nav-right nav-cta">
@@ -322,6 +325,8 @@
     <a href="property-managers.html">Property Managers</a>
     <a href="property-owners.html">Property Owners</a>
     <a href="hoa.html">For HOAs</a>
+    <a href="community-hubs.html" class="active">Community Hubs</a>
+    <a href="workplace-charging.html">Workplace Charging</a>
     <a href="service-area.html">Service Area</a>
     <a href="assessment.html" class="mob-cta">Get a free assessment</a>
   </div>
@@ -433,7 +438,7 @@
         <ul class="feature-list reveal reveal-d3">
           <li>
             <span class="feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-            CCS and CHAdeMO compatible — works with most EV brands
+            CCS standard · NACS available on request — compatible with every major EV
           </li>
           <li>
             <span class="feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
@@ -468,27 +473,27 @@
       <div>
         <div class="qual-list reveal">
           <div class="qual-item">
-            <span class="qual-item-icon">⛪</span>
+            <div class="qual-item-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V9l7-5 7 5v12M10 21v-4h4v4"/><path d="M12 4V2M11 3h2"/></svg></div>
             <span class="qual-item-text">Churches, parishes, and faith congregations</span>
           </div>
           <div class="qual-item">
-            <span class="qual-item-icon">🕌</span>
+            <div class="qual-item-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M6 21v-8a6 6 0 0112 0v8"/><path d="M12 13V9"/></svg></div>
             <span class="qual-item-text">Mosques, temples, synagogues, and interfaith centers</span>
           </div>
           <div class="qual-item">
-            <span class="qual-item-icon">🏛️</span>
+            <div class="qual-item-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V12h14v9M4 12l8-8 8 8M9 21v-4h6v4"/></svg></div>
             <span class="qual-item-text">Community centers and recreation centers</span>
           </div>
           <div class="qual-item">
-            <span class="qual-item-icon">🤝</span>
+            <div class="qual-item-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
             <span class="qual-item-text">Nonprofit organizations with a parking facility</span>
           </div>
           <div class="qual-item">
-            <span class="qual-item-icon">🍽️</span>
+            <div class="qual-item-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
             <span class="qual-item-text">Food banks, shelters, and social service organizations</span>
           </div>
           <div class="qual-item">
-            <span class="qual-item-icon">📍</span>
+            <div class="qual-item-icon"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 017 7c0 5.25-7 13-7 13S5 14.25 5 9a7 7 0 017-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
             <span class="qual-item-text">Located on Colorado's Front Range (our service area)</span>
           </div>
         </div>
@@ -562,7 +567,7 @@
             <a href="property-managers.html">For Property Managers</a>
             <a href="property-owners.html">For Property Owners</a>
             <a href="hoa.html">For HOAs</a>
-            <a href="community-hubs.html">Community Hubs</a>
+            <a href="community-hubs.html" class="active">Community Hubs</a>
             <a href="workplace-charging.html">Workplace Charging</a>
           </div>
           <div class="footer-col">
