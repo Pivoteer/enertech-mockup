@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="assets/Enertech_favicon.png" />
+  <title>Workplace EV Charging at Zero Cost | Enertech Colorado</title>
+  <meta name="description" content="Enertech installs and operates DC fast EV charging at Colorado workplaces and commercial properties at no cost to your business. Fund, install, operate — we handle it all. You earn a revenue share." />
+  <link rel="canonical" href="https://enertech.energy/workplace-charging" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:         #0C0C0C;
+      --ink-2:       #1C1C1C;
+      --ink-3:       #2E2E2E;
+      --secondary:   #6B6B6B;
+      --muted:       #9B9B9B;
+      --border:      rgba(0,0,0,0.08);
+      --border-mid:  rgba(0,0,0,0.14);
+      --canvas:      #F9FAFB;
+      --surface:     #FFFFFF;
+      --canvas-dark: #0C0C0C;
+      --surface-dark:#1C1C1C;
+      --border-dark: rgba(255,255,255,0.09);
+      --shadow-sm:   0 4px 12px -4px rgba(0,0,0,0.08);
+      --shadow-card: 0 20px 40px -15px rgba(0,0,0,0.07);
+      --shadow-lift: 0 28px 48px -12px rgba(0,0,0,0.18);
+      --r-xl:  2.5rem;
+      --r-lg:  1.5rem;
+      --r-md:  0.875rem;
+      --r-sm:  0.5rem;
+      --ease:  cubic-bezier(0.32, 0.72, 0, 1);
+      --max: 1320px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+      background: var(--canvas);
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .h1 { font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 900; line-height: 1.0; letter-spacing: -0.03em; }
+    .h2 { font-size: clamp(1.9rem, 3.5vw, 3rem); font-weight: 800; line-height: 1.05; letter-spacing: -0.025em; }
+    .h3 { font-size: clamp(1.3rem, 2vw, 1.75rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.015em; }
+    .h4 { font-size: 1.125rem; font-weight: 600; line-height: 1.3; }
+    .body-lg { font-size: clamp(1.05rem, 1.5vw, 1.2rem); line-height: 1.65; }
+    .body-sm { font-size: 0.9rem; line-height: 1.65; }
+    .label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      border: none; cursor: pointer;
+      font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.95rem;
+      transition: all 0.3s var(--ease); text-decoration: none; white-space: nowrap;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: var(--ink); color: #F9FAFB; padding: 14px 16px 14px 24px; border-radius: var(--r-md); }
+    .btn-primary:hover { background: var(--ink-3); box-shadow: var(--shadow-lift); }
+    .btn-icon {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: rgba(255,255,255,0.14);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      transition: transform 0.3s var(--ease), background 0.3s var(--ease);
+    }
+    .btn-primary:hover .btn-icon { transform: translateX(3px); background: rgba(255,255,255,0.22); }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(12,12,12,0.88);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-inner {
+      max-width: var(--max); margin: 0 auto; padding: 0 40px;
+      height: 66px; display: flex; align-items: center;
+      justify-content: space-between; gap: 24px;
+    }
+    .nav-logo { font-size: 1.2rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; flex-shrink: 0; }
+    .nav-links { display: flex; gap: 2px; list-style: none; }
+    .nav-links a {
+      display: block; padding: 8px 14px;
+      font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.78);
+      text-decoration: none; border-radius: var(--r-sm);
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: #F9FAFB; background: rgba(255,255,255,0.07); }
+    .nav-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .nav-cta .btn-primary { padding: 10px 12px 10px 18px; font-size: 0.875rem; }
+    .nav-cta .btn-icon { width: 28px; height: 28px; }
+    .nav-drivers { display: inline-flex; align-items: center; padding: 8px 14px; font-size: 0.875rem; font-weight: 600; color: rgba(255,255,255,0.88); text-decoration: none; border-radius: var(--r-sm); border: 1px solid rgba(255,255,255,0.24); transition: color 0.2s, background 0.2s, border-color 0.2s; white-space: nowrap; }
+    .nav-drivers:hover { color: #F9FAFB; background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.5); }
+    .nav-burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; padding: 8px; background: none; border: none; cursor: pointer; border-radius: 8px; flex-shrink: 0; }
+    .nav-burger span { display: block; width: 22px; height: 2px; background: #F9FAFB; border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease; }
+    .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile { display: none; position: fixed; top: 66px; left: 0; right: 0; bottom: 0; background: rgba(12,12,12,0.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 998; flex-direction: column; padding: 24px 24px 40px; overflow-y: auto; }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a { display: block; color: rgba(249,250,251,0.75); text-decoration: none; font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 500; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.07); transition: color 0.15s; }
+    .nav-mobile a:hover, .nav-mobile a.active { color: #F9FAFB; }
+    .nav-mobile .mob-cta { display: block; margin-top: 24px; padding: 15px 24px; background: #F9FAFB; color: #0C0C0C !important; border-radius: 100px; text-align: center; font-weight: 700; font-size: 1rem; border-bottom: none; }
+    .nav-mobile .mob-cta:hover { background: #e0e0e0; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; min-height: 100dvh;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; background: #0C0C0C;
+    }
+    .hero-bg {
+      position: absolute; inset: -10%; z-index: 0;
+      background: url('assets/Fusion\ 355-garage.webp') center/cover no-repeat;
+      opacity: 0.32;
+      will-change: transform;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(
+        to bottom,
+        rgba(12,12,12,0.45) 0%,
+        rgba(12,12,12,0.15) 40%,
+        rgba(12,12,12,0.72) 100%
+      );
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 860px; margin: 0 auto;
+      padding: 2rem 2rem 6rem;
+      text-align: center; color: #fff;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 100px;
+      padding: 0.4rem 1rem;
+      margin-bottom: 1.5rem;
+      color: rgba(255,255,255,0.85);
+    }
+    .hero-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: #fff; opacity: 0.7; }
+    .hero-title { color: #fff; margin-bottom: 1.5rem; }
+    .hero-title em { font-style: italic; color: #fff; opacity: 1; }
+    .hero-sub {
+      font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+      color: rgba(255,255,255,0.78);
+      max-width: 640px; margin: 0 auto 2.5rem;
+      line-height: 1.6;
+    }
+    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-white { background: #F9FAFB; color: var(--ink); padding: 0.875rem 2rem; border-radius: var(--r-md); font-weight: 700; font-size: 0.95rem; transition: all 0.3s var(--ease); text-decoration: none; display: inline-flex; align-items: center; white-space: nowrap; }
+    .btn-white:hover { background: #fff; box-shadow: var(--shadow-lift); }
+    .btn-ghost { background: transparent; color: rgba(255,255,255,0.85); border: 1px solid rgba(255,255,255,0.28); padding: 0.875rem 2rem; border-radius: var(--r-md); font-weight: 600; font-size: 0.95rem; transition: all 0.3s var(--ease); text-decoration: none; display: inline-flex; align-items: center; white-space: nowrap; }
+    .btn-ghost:hover { background: rgba(255,255,255,0.1); color: #fff; }
+    .hero-scroll-hint { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.4); }
+    .scroll-line { width: 1px; height: 48px; background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent); animation: scrollpulse 2s ease-in-out infinite; }
+    @keyframes scrollpulse { 0%, 100% { opacity: 0.4; transform: scaleY(1); } 50% { opacity: 1; transform: scaleY(1.15); } }
+
+    /* ── STAT BAND ── */
+    .stat-band { background: var(--canvas-dark); padding: 56px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .stat-band-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+    .stat-item { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 32px; border-right: 1px solid rgba(255,255,255,0.08); }
+    .stat-item:last-child { border-right: none; }
+    .stat-value { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; letter-spacing: -0.04em; color: #F9FAFB; line-height: 1; margin-bottom: 8px; }
+    .stat-label { font-size: 0.875rem; color: rgba(255,255,255,0.55); line-height: 1.4; }
+
+    /* ── SECTION ── */
+    .section { padding: 100px 0; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .section-eyebrow { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+    .section-title { margin-bottom: 20px; }
+    .section-sub { font-size: 1.1rem; color: var(--secondary); max-width: 560px; line-height: 1.65; }
+
+    /* ── VALUE PROPS ── */
+    .value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 64px; }
+    .value-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 36px 32px; }
+    .value-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--ink); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .value-icon svg { width: 22px; height: 22px; stroke: #F9FAFB; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .value-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em; }
+    .value-card p { font-size: 0.95rem; color: var(--secondary); line-height: 1.65; }
+
+    /* ── CHARGER SPOTLIGHT ── */
+    .spotlight { background: var(--canvas-dark); padding: 100px 0; }
+    .spotlight-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .spotlight-img-wrap { position: relative; display: flex; align-items: center; justify-content: center; }
+    .spotlight-img { max-width: 320px; width: 100%; filter: drop-shadow(0 40px 60px rgba(0,0,0,0.5)); }
+    .spotlight-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); border-radius: 100px; padding: 6px 16px; margin-bottom: 24px; }
+    .spotlight-badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #4ade80; }
+    .spotlight-badge-text { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+    .spotlight-title { color: #F9FAFB; margin-bottom: 16px; }
+    .spotlight-sub { color: rgba(255,255,255,0.65); font-size: 1rem; line-height: 1.65; margin-bottom: 36px; }
+    .spec-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 36px; }
+    .spec-stat { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--r-md); padding: 20px 16px; text-align: center; }
+    .spec-stat-value { font-size: 1.6rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; line-height: 1; margin-bottom: 6px; }
+    .spec-stat-label { font-size: 0.75rem; color: rgba(255,255,255,0.5); line-height: 1.3; }
+    .feature-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .feature-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
+    .feat-check { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; }
+    .feat-check svg { width: 20px; height: 20px; stroke: #4ade80; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* ── QUALIFIES ── */
+    .qualifies { background: var(--canvas); padding: 100px 0; }
+    .qualifies-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .qual-list { display: flex; flex-direction: column; gap: 4px; margin-top: 32px; }
+    .qual-item { display: flex; align-items: center; gap: 16px; padding: 18px 20px; border-radius: var(--r-md); border: 1px solid var(--border); background: var(--surface); }
+    .qual-item-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .qual-item-text { font-size: 0.95rem; font-weight: 500; color: var(--ink-2); }
+    .funding-note { margin-top: 40px; background: var(--canvas); border: 1px solid var(--border-mid); border-radius: var(--r-md); padding: 24px 28px; }
+    .funding-note-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    .funding-note-text { font-size: 0.95rem; color: var(--secondary); line-height: 1.6; }
+
+    /* ── HOW WE HANDLE IT ── */
+    .handles { background: var(--ink); padding: 100px 0; }
+    .handles-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .handles-title { color: #F9FAFB; margin-bottom: 16px; }
+    .handles-sub { color: rgba(255,255,255,0.65); font-size: 1.05rem; max-width: 520px; margin-bottom: 56px; }
+    .handles-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .handle-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: var(--r-md); padding: 28px 24px; }
+    .handle-num { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 16px; }
+    .handle-title { font-size: 1rem; font-weight: 700; color: #F9FAFB; margin-bottom: 8px; }
+    .handle-desc { font-size: 0.875rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+    /* ── CTA ── */
+    .cta-section { background: var(--canvas); padding: 100px 0; text-align: center; }
+    .cta-section .h2 { margin-bottom: 20px; }
+    .cta-section .body-lg { color: var(--secondary); max-width: 520px; margin: 0 auto 48px; }
+    .cta-btn-row { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .cta-note { font-size: 0.82rem; color: var(--muted); margin-top: 16px; }
+
+    /* ── FOOTER ── */
+    .footer { background: var(--canvas-dark); padding: 64px 0 40px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .footer-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 48px; flex-wrap: wrap; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 32px; }
+    .footer-brand { max-width: 320px; }
+    .footer-logo { font-size: 1.3rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; }
+    .footer-tagline { font-size: 0.875rem; color: rgba(255,255,255,0.65); margin-top: 10px; line-height: 1.5; }
+    .footer-links { display: flex; gap: 48px; flex-wrap: wrap; }
+    .footer-col { display: flex; flex-direction: column; gap: 4px; }
+    .footer-col-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 8px; }
+    .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.75); text-decoration: none; padding: 4px 0; transition: color 0.2s; }
+    .footer-col a:hover { color: #F9FAFB; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+    .footer-service { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-d1 { transition-delay: 80ms; }
+    .reveal-d2 { transition-delay: 160ms; }
+    .reveal-d3 { transition-delay: 240ms; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1120px) {
+      .nav-links { display: none; }
+      .nav-burger { display: flex; }
+    }
+    @media (max-width: 900px) {
+      .nav-cta { display: none; }
+      .stat-band-inner { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 20px 0; }
+      .stat-item:last-child { border-bottom: none; }
+      .value-grid { grid-template-columns: 1fr; }
+      .spotlight-inner { grid-template-columns: 1fr; gap: 48px; }
+      .spotlight-img { max-width: 240px; }
+      .qualifies-inner { grid-template-columns: 1fr; gap: 48px; }
+      .handles-grid { grid-template-columns: 1fr 1fr; }
+      .footer-top { flex-direction: column; }
+      .footer-inner { padding: 0 24px; }
+    }
+    @media (max-width: 600px) {
+      .wrap { padding: 0 24px; }
+      .stat-band-inner { grid-template-columns: 1fr; }
+      .handles-grid { grid-template-columns: 1fr; }
+      .spec-row { grid-template-columns: 1fr 1fr; }
+      .hero-actions { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="assets/White_logo_notag.png" alt="Enertech" style="height:26px;width:auto;display:block;"></a>
+      <ul class="nav-links">
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="property-managers.html">Property Managers</a></li>
+        <li><a href="property-owners.html">Property Owners</a></li>
+        <li><a href="hoa.html">For HOAs</a></li>
+        <li><a href="service-area.html">Service Area</a></li>
+      </ul>
+      <div class="nav-right nav-cta">
+        <a href="for-drivers.html" class="nav-drivers">For Drivers</a>
+        <a href="assessment.html" class="btn btn-primary">
+          Get a free assessment
+          <span class="btn-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+      </div>
+      <button class="nav-burger" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="for-drivers.html" style="color:rgba(249,250,251,0.92);font-weight:700;">⚡ For Drivers</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="property-managers.html">Property Managers</a>
+    <a href="property-owners.html">Property Owners</a>
+    <a href="hoa.html">For HOAs</a>
+    <a href="service-area.html">Service Area</a>
+    <a href="assessment.html" class="mob-cta">Get a free assessment</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow label">
+        <span class="dot"></span>
+        For Businesses &amp; Commercial Properties
+      </div>
+      <h1 class="h1 hero-title">
+        Workplace EV charging<br>your employees will love.<br><em>At zero cost.</em>
+      </h1>
+      <p class="hero-sub">
+        Enertech installs and operates commercial DC fast EV charging at Colorado businesses and office parks — fully funded, with no cost to your company. Turn your parking lot into an employee benefit and sustainability win.
+      </p>
+      <div class="hero-actions">
+        <a href="assessment.html" class="btn-white">Check if your site qualifies →</a>
+        <a href="how-it-works.html" class="btn-ghost">How the model works</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div>
+      <span class="label">Scroll</span>
+    </div>
+  </section>
+
+  <!-- STAT BAND -->
+  <div class="stat-band">
+    <div class="stat-band-inner">
+      <div class="stat-item">
+        <div class="stat-value">$300K+</div>
+        <div class="stat-label">Equipment value covered by Enertech — no capital expense for your business</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">40 kW</div>
+        <div class="stat-label">DC fast charging — adds ~100 miles of range per hour</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">~45 min</div>
+        <div class="stat-label">Typical 20–80% charge — right for a workday or meeting</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY IT WORKS -->
+  <section class="section">
+    <div class="wrap">
+      <p class="section-eyebrow reveal">Why Workplace Charging</p>
+      <h2 class="h2 section-title reveal reveal-d1">The charger your employees<br>are already asking for.</h2>
+      <p class="section-sub reveal reveal-d2">EV adoption in Colorado is accelerating. Your employees are driving EVs — or will be soon. DC fast charging at work means they arrive and leave with a full battery, without paying for home electricity or hunting for a public charger after hours.</p>
+      <div class="value-grid">
+        <div class="value-card reveal">
+          <div class="value-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>A real employee benefit</h3>
+          <p>EV charging at work saves employees $50–$150/month compared to public charging. It's a tangible, daily benefit that costs your company nothing — and shows up in recruiting and retention.</p>
+        </div>
+        <div class="value-card reveal reveal-d1">
+          <div class="value-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Zero cost, zero liability</h3>
+          <p>Enertech covers equipment, installation, electrical work, permits, and all ongoing operations. You provide the parking spaces. We own and maintain the infrastructure — permanently.</p>
+        </div>
+        <div class="value-card reveal reveal-d2">
+          <div class="value-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 3h18v18H3z" stroke-width="1.5"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <h3>Supports your ESG goals</h3>
+          <p>Workplace EV charging reduces your employees' carbon footprint and contributes to Scope 3 emissions reductions. Document it. Report it. It counts — and it's fully funded.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHARGER SPOTLIGHT -->
+  <section class="spotlight">
+    <div class="spotlight-inner">
+      <div class="spotlight-img-wrap reveal">
+        <img class="spotlight-img" src="assets/DC-compact-nobackground.webp" alt="Autel MaxiCharger DC Compact fast charging station" loading="lazy" />
+      </div>
+      <div>
+        <div class="spotlight-badge reveal">
+          <span class="spotlight-badge-dot"></span>
+          <span class="spotlight-badge-text">DC Fast Charging Hardware</span>
+        </div>
+        <h2 class="h2 spotlight-title reveal reveal-d1">Autel DC Compact.<br>Built for commercial use.</h2>
+        <p class="spotlight-sub reveal reveal-d2">Workplace sites receive Enertech's DC fast charging hardware — commercial-grade, weatherproof, and built for daily high-use environments. This is not residential equipment adapted for parking lots.</p>
+        <div class="spec-row reveal reveal-d2">
+          <div class="spec-stat">
+            <div class="spec-stat-value">40 kW</div>
+            <div class="spec-stat-label">Max output</div>
+          </div>
+          <div class="spec-stat">
+            <div class="spec-stat-value">~100 mi</div>
+            <div class="spec-stat-label">Range per hour</div>
+          </div>
+          <div class="spec-stat">
+            <div class="spec-stat-value">~45 min</div>
+            <div class="spec-stat-label">20–80% charge</div>
+          </div>
+        </div>
+        <ul class="feature-list reveal reveal-d3">
+          <li>
+            <span class="feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            CCS and CHAdeMO compatible — works with most EV brands on the market
+          </li>
+          <li>
+            <span class="feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Networked and remotely monitored 24/7 by Enertech
+          </li>
+          <li>
+            <span class="feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Employee app and tap-to-charge — no friction, no setup headache
+          </li>
+          <li>
+            <span class="feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Hardware owned and maintained by Enertech for the life of the program
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO QUALIFIES -->
+  <section class="qualifies">
+    <div class="qualifies-inner">
+      <div>
+        <p class="section-eyebrow reveal">Who Can Apply</p>
+        <h2 class="h2 section-title reveal reveal-d1">Colorado businesses<br>with parking.</h2>
+        <p class="section-sub reveal reveal-d2">DC fast charging infrastructure carries significant upfront cost. Funding comes from Colorado incentive programs with limited pools — not every site qualifies. We'll assess your property and give you a straight answer.</p>
+
+        <div class="funding-note reveal reveal-d2">
+          <div class="funding-note-label">About Funding</div>
+          <div class="funding-note-text">Colorado's DC fast charging incentive programs — including Xcel Energy commercial EV rebates and state infrastructure grants — have limited funding allocations. Enertech navigates these programs on your behalf and secures the funding that makes zero-cost installation possible. Qualification depends on your location, utility provider, site characteristics, and current program availability.</div>
+        </div>
+      </div>
+      <div>
+        <div class="qual-list reveal">
+          <div class="qual-item">
+            <span class="qual-item-icon">🏢</span>
+            <span class="qual-item-text">Office buildings and corporate campuses</span>
+          </div>
+          <div class="qual-item">
+            <span class="qual-item-icon">🏭</span>
+            <span class="qual-item-text">Light industrial and warehouse facilities</span>
+          </div>
+          <div class="qual-item">
+            <span class="qual-item-icon">🏥</span>
+            <span class="qual-item-text">Healthcare facilities, clinics, and medical offices</span>
+          </div>
+          <div class="qual-item">
+            <span class="qual-item-icon">🏫</span>
+            <span class="qual-item-text">Schools, colleges, and educational institutions</span>
+          </div>
+          <div class="qual-item">
+            <span class="qual-item-icon">🛍️</span>
+            <span class="qual-item-text">Retail centers and mixed-use commercial properties</span>
+          </div>
+          <div class="qual-item">
+            <span class="qual-item-icon">📍</span>
+            <span class="qual-item-text">Located on Colorado's Front Range (our service area)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE HANDLE -->
+  <section class="handles">
+    <div class="handles-inner">
+      <h2 class="h2 handles-title reveal">We handle everything.<br>Your team handles nothing.</h2>
+      <p class="handles-sub reveal reveal-d1">From initial assessment to day-to-day operations — Enertech manages the entire lifecycle. Your facilities team stays focused on your business.</p>
+      <div class="handles-grid">
+        <div class="handle-card reveal">
+          <div class="handle-num">01</div>
+          <div class="handle-title">Site assessment</div>
+          <div class="handle-desc">We evaluate your parking layout, electrical capacity, and utility provider to design the optimal charging installation for your property.</div>
+        </div>
+        <div class="handle-card reveal reveal-d1">
+          <div class="handle-num">02</div>
+          <div class="handle-title">Incentive applications</div>
+          <div class="handle-desc">We file every permit, grant application, and utility rebate on your behalf. No paperwork, no back-and-forth with the utility.</div>
+        </div>
+        <div class="handle-card reveal reveal-d2">
+          <div class="handle-num">03</div>
+          <div class="handle-title">Professional installation</div>
+          <div class="handle-desc">Our licensed electrical team handles the complete installation — conduit, wiring, panel work, and charger commissioning. Minimal disruption to your operations.</div>
+        </div>
+        <div class="handle-card reveal reveal-d3">
+          <div class="handle-num">04</div>
+          <div class="handle-title">Ongoing operations</div>
+          <div class="handle-desc">24/7 remote monitoring, proactive maintenance, and on-site repair response. We own it, so we maintain it — your facilities team gets no calls about chargers.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="wrap">
+      <h2 class="h2 reveal">Ready to add EV charging<br>to your workplace?</h2>
+      <p class="body-lg reveal reveal-d1">Start with a free site assessment. We'll evaluate your property, check incentive eligibility, and give you a straight answer on what's possible — no obligation, no pressure.</p>
+      <div class="cta-btn-row">
+        <a href="assessment.html" class="btn btn-primary">
+          Request a free site assessment
+          <span class="btn-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+      </div>
+      <p class="cta-note reveal reveal-d2">Colorado Front Range only · Funding availability varies · No cost to apply</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo"><img src="assets/White_logo_notag.png" alt="Enertech" style="height:24px;width:auto;display:block;"></a>
+          <p class="footer-tagline">Colorado's zero-cost EV charging partner for multifamily properties, HOAs, community hubs, and workplaces.</p>
+          <a href="https://www.linkedin.com/company/enertech-energy" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:0.8rem;color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F9FAFB'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <div class="footer-col-title">For properties</div>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="property-managers.html">For Property Managers</a>
+            <a href="property-owners.html">For Property Owners</a>
+            <a href="hoa.html">For HOAs</a>
+            <a href="community-hubs.html">Community Hubs</a>
+            <a href="workplace-charging.html">Workplace Charging</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Resources</div>
+            <a href="service-area.html">Service Area</a>
+            <a href="blog.html">Blog</a>
+            <a href="assessment.html">Get an Assessment</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">For drivers</div>
+            <a href="for-drivers.html">How to charge</a>
+            <a href="for-drivers.html#charger-specs-heading">Charger specs</a>
+            <a href="for-drivers.html#faq-heading">Driver FAQ</a>
+            <a href="tel:+18888957158">24/7 support: +1 888 895 7158</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Contact</div>
+            <a href="mailto:ev@enertech.energy">ev@enertech.energy</a>
+            <a href="tel:+18773267783">(877) 326-7783</a>
+            <a href="assessment.html">Free assessment</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2025 Enertech. All rights reserved.</span>
+        <span class="footer-service">Serving Colorado's Front Range</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav burger
+    (function() {
+      var burger = document.querySelector('.nav-burger');
+      var menu = document.getElementById('nav-mobile');
+      if (!burger || !menu) return;
+      burger.addEventListener('click', function() {
+        var open = menu.classList.toggle('open');
+        burger.classList.toggle('open', open);
+        burger.setAttribute('aria-expanded', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+      });
+    })();
+
+    // Hero parallax
+    (function() {
+      var bg = document.getElementById('heroBg');
+      if (!bg || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      window.addEventListener('scroll', function() {
+        bg.style.transform = 'translateY(' + (window.scrollY * 0.25) + 'px)';
+      }, { passive: true });
+    })();
+
+    // Reveal on scroll
+    (function() {
+      var els = document.querySelectorAll('.reveal');
+      if (!els.length) return;
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12 });
+      els.forEach(function(el) { io.observe(el); });
+    })();
+  </script>
+</body>
+</html>
