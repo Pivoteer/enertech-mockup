@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="../assets/Enertech_favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xcel Energy EV rebates for multifamily properties | Enertech</title>
+  <meta name="description" content="Xcel Energy offers rebates for multifamily EV charging in Colorado. Here's what's covered, how to qualify, and how to apply for maximum funding." />
+  <link rel="canonical" href="https://enertech.energy/blog/xcel-energy-ev-rebate-multifamily" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://enertech.energy/blog/xcel-energy-ev-rebate-multifamily" />
+  <meta property="og:title" content="Xcel Energy EV rebates for multifamily properties | Enertech" />
+  <meta property="og:description" content="Xcel Energy offers rebates for multifamily EV charging in Colorado. Here's what's covered, how to qualify, and how to apply for maximum funding." />
+  <meta property="og:site_name" content="Enertech" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Xcel Energy EV rebates for multifamily properties | Enertech" />
+  <meta name="twitter:description" content="Xcel Energy offers rebates for multifamily EV charging in Colorado. Here's what's covered, how to qualify, and how to apply for maximum funding." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #0C0C0C; --ink-2: #1C1C1C; --ink-3: #2E2E2E; --secondary: #6B6B6B; --muted: #9B9B9B;
+      --border: rgba(0,0,0,0.08); --border-mid: rgba(0,0,0,0.14); --canvas: #F9FAFB; --surface: #FFFFFF;
+      --canvas-dark: #0C0C0C; --surface-dark: #1C1C1C; --border-dark: rgba(255,255,255,0.09);
+      --shadow-sm: 0 4px 12px -4px rgba(0,0,0,0.08); --shadow-card: 0 20px 40px -15px rgba(0,0,0,0.07);
+      --shadow-lift: 0 28px 48px -12px rgba(0,0,0,0.18);
+      --r-xl: 2.5rem; --r-lg: 1.5rem; --r-md: 0.875rem; --r-sm: 0.5rem;
+      --ease: cubic-bezier(0.32, 0.72, 0, 1); --max: 1320px; --article-max: 740px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Outfit', system-ui, -apple-system, sans-serif; background: var(--canvas); color: var(--ink); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    .h1 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.03em; }
+    .h2 { font-size: clamp(1.75rem, 3vw, 2.75rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.022em; }
+    .body-lg { font-size: 1.15rem; line-height: 1.75; letter-spacing: 0.012em; color: var(--secondary); }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.75s var(--ease), transform 0.75s var(--ease); }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 80ms; } .reveal-d2 { transition-delay: 160ms; } .reveal-d3 { transition-delay: 240ms; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; border: none; cursor: pointer; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.95rem; transition: all 0.3s var(--ease); text-decoration: none; white-space: nowrap; }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: var(--ink); color: #F9FAFB; padding: 14px 16px 14px 24px; border-radius: var(--r-md); }
+    .btn-primary:hover { background: var(--ink-3); box-shadow: var(--shadow-lift); }
+    .btn-white { background: #F9FAFB; color: var(--ink); padding: 14px 16px 14px 24px; border-radius: var(--r-md); }
+    .btn-white:hover { background: #fff; box-shadow: var(--shadow-lift); }
+    .btn-white .btn-icon { background: rgba(0,0,0,0.07); }
+    .btn-white:hover .btn-icon { transform: translateX(3px); }
+    .btn-ghost-light { background: transparent; color: var(--ink); padding: 14px 20px; border-radius: var(--r-md); border: 1.5px solid var(--border-mid); }
+    .btn-ghost-light:hover { border-color: var(--ink); }
+    .btn-icon { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.3s var(--ease), background 0.3s var(--ease); }
+    .btn-primary:hover .btn-icon { transform: translateX(3px); background: rgba(255,255,255,0.22); }
+    .risk { font-size: 0.82rem; color: rgba(255,255,255,0.68); margin-top: 12px; }
+    .nav { position: sticky; top: 0; z-index: 100; background: rgba(12,12,12,0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .nav-logo { font-size: 1.2rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; flex-shrink: 0; }
+    .nav-links { display: flex; gap: 2px; list-style: none; align-items: center; }
+    .nav-links a { display: block; padding: 8px 14px; font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.78); text-decoration: none; border-radius: var(--r-sm); transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover { color: #F9FAFB; background: rgba(255,255,255,0.07); }
+    .nav-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .nav-cta .btn-primary { padding: 10px 12px 10px 18px; font-size: 0.875rem; }
+    .nav-cta .btn-icon { width: 28px; height: 28px; }
+    .nav-drivers { display: inline-flex; align-items: center; padding: 8px 14px; font-size: 0.875rem; font-weight: 600; color: rgba(255,255,255,0.88); text-decoration: none; border-radius: var(--r-sm); border: 1px solid rgba(255,255,255,0.24); transition: color 0.2s, background 0.2s, border-color 0.2s; white-space: nowrap; }
+    .nav-drivers:hover { color: #F9FAFB; background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.5); }
+    .nav-burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; padding: 8px; background: none; border: none; cursor: pointer; border-radius: 8px; flex-shrink: 0; }
+    .nav-burger span { display: block; width: 22px; height: 2px; background: #F9FAFB; border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease; }
+    .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile { display: none; position: fixed; top: 66px; left: 0; right: 0; bottom: 0; background: rgba(12,12,12,0.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 998; flex-direction: column; padding: 24px 24px 40px; overflow-y: auto; }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a { display: block; color: rgba(249,250,251,0.75); text-decoration: none; font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 500; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.07); transition: color 0.15s; }
+    .nav-mobile a:hover { color: #F9FAFB; }
+    .nav-mobile .mob-cta { display: block; margin-top: 24px; padding: 15px 24px; background: #F9FAFB; color: #0C0C0C !important; border-radius: 100px; text-align: center; font-weight: 700; font-size: 1rem; border-bottom: none; }
+    .nav-dropdown { position: relative; list-style: none; }
+    .nav-dd-trigger { display: flex; align-items: center; gap: 4px; padding: 8px 14px; background: none; border: none; cursor: pointer; font-family: 'Outfit', sans-serif; font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.78); border-radius: var(--r-sm); transition: color 0.2s, background 0.2s; white-space: nowrap; }
+    .nav-dd-trigger:hover, .nav-dropdown.is-open .nav-dd-trigger { color: #F9FAFB; background: rgba(255,255,255,0.07); }
+    .nav-dd-trigger svg { width: 11px; height: 11px; stroke: currentColor; stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.2s; }
+    .nav-dropdown.is-open .nav-dd-trigger svg { transform: rotate(180deg); }
+    .nav-dd-menu { display: none; position: absolute; top: calc(100% + 6px); left: 0; min-width: 210px; background: rgba(14,14,14,0.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--r-md); padding: 6px; box-shadow: 0 20px 48px rgba(0,0,0,0.5); z-index: 200; }
+    .nav-dropdown:hover .nav-dd-menu, .nav-dropdown.is-open .nav-dd-menu { display: block; }
+    .nav-dd-menu a { display: block; padding: 9px 14px; font-size: 0.85rem; font-weight: 500; color: rgba(255,255,255,0.72); border-radius: 6px; text-decoration: none; transition: color 0.15s, background 0.15s; }
+    .nav-dd-menu a:hover { color: #F9FAFB; background: rgba(255,255,255,0.08); }
+    .nav-dd-divider { height: 1px; background: rgba(255,255,255,0.07); margin: 4px 2px; }
+    .nav-dd-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .mob-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.35); padding: 20px 0 4px; border-bottom: none !important; }
+    .article-hero { background: var(--canvas-dark); color: #F9FAFB; padding: 80px 0 72px; }
+    .article-hero-inner { max-width: var(--article-max); }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-bottom: 28px; }
+    .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: rgba(255,255,255,0.8); }
+    .breadcrumb-sep { opacity: 0.4; }
+    .article-tag { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.75); padding: 4px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); margin-bottom: 20px; }
+    .article-hero h1 { color: #F9FAFB; margin-bottom: 20px; }
+    .article-hero .body-lg { color: rgba(249,250,251,0.72); margin-bottom: 28px; }
+    .article-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 0.8rem; color: rgba(255,255,255,0.45); border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; }
+    .article-meta-dot { opacity: 0.4; }
+    .article-wrap { max-width: var(--article-max); margin: 0 auto; padding: 0 40px; }
+    .article-body { padding: 64px 0 80px; }
+    .article-body p { font-size: 1.05rem; line-height: 1.78; color: var(--ink-2); margin-bottom: 1.5em; }
+    .article-body h2 { font-size: 1.5rem; font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; color: var(--ink); margin-top: 2.5em; margin-bottom: 0.75em; }
+    .article-body h3 { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.01em; color: var(--ink); margin-top: 1.75em; margin-bottom: 0.5em; }
+    .article-body ul, .article-body ol { padding-left: 1.5em; margin-bottom: 1.5em; }
+    .article-body li { font-size: 1.05rem; line-height: 1.75; color: var(--ink-2); margin-bottom: 0.4em; }
+    .article-body a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(0,0,0,0.25); transition: text-decoration-color 0.2s; }
+    .article-body a:hover { text-decoration-color: var(--ink); }
+    .article-body strong { font-weight: 700; color: var(--ink); }
+    .callout { background: var(--canvas-dark); color: #F9FAFB; border-radius: var(--r-lg); padding: 36px 40px; margin: 2.5em 0; }
+    .callout p { color: rgba(249,250,251,0.82); font-size: 1rem; margin-bottom: 0.75em; }
+    .callout p:last-of-type { margin-bottom: 20px; }
+    .callout strong { color: #F9FAFB; }
+    .callout-title { font-size: 1rem; font-weight: 800; letter-spacing: -0.01em; color: #F9FAFB; margin-bottom: 12px; }
+    .callout .risk { color: rgba(255,255,255,0.55); margin-top: 10px; }
+    .info-box { background: #EEF7EE; border-radius: var(--r-md); padding: 28px 32px; margin: 2em 0; }
+    .info-box-title { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #166534; margin-bottom: 12px; }
+    .info-box p { font-size: 0.95rem; line-height: 1.7; color: #14532D; margin-bottom: 0.6em; }
+    .info-box p:last-child { margin-bottom: 0; }
+    .cta-section { background: var(--ink); padding: 100px 0; text-align: center; }
+    .cta-section .h2 { color: #F9FAFB; margin-bottom: 20px; }
+    .cta-section .body-lg { color: rgba(249,250,251,0.80); margin-bottom: 48px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .cta-btn-row { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .footer { background: var(--canvas-dark); padding: 64px 0 40px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .footer-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 48px; flex-wrap: wrap; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 32px; }
+    .footer-brand { max-width: 320px; }
+    .footer-logo { font-size: 1.3rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; }
+    .footer-tagline { font-size: 0.875rem; color: rgba(255,255,255,0.65); margin-top: 10px; line-height: 1.5; }
+    .footer-links { display: flex; gap: 48px; flex-wrap: wrap; }
+    .footer-col { display: flex; flex-direction: column; gap: 4px; }
+    .footer-col-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 8px; }
+    .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.75); text-decoration: none; padding: 4px 0; transition: color 0.2s; }
+    .footer-col a:hover { color: #F9FAFB; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+    .footer-service { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+    @media (max-width: 1120px) { .nav-links { display: none; } .nav-burger { display: flex; } }
+    @media (max-width: 900px) { .wrap { padding: 0 24px; } .article-wrap { padding: 0 24px; } .nav-cta { display: none; } .footer-top { flex-direction: column; } .footer-inner { padding: 0 24px; } }
+    @media (max-width: 600px) { .article-hero { padding: 60px 0 52px; } .callout { padding: 28px 24px; } .info-box { padding: 24px; } }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo"><img src="../assets/White_logo_notag.png" alt="Enertech" style="height:26px;width:auto;display:block;"></a>
+      <ul class="nav-links">
+        <li><a href="../how-it-works.html">How It Works</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-dd-trigger">Who We Serve
+            <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dd-menu">
+            <a href="../property-managers.html">Property Managers</a>
+            <a href="../property-owners.html">Property Owners</a>
+            <a href="../hoa.html">For HOAs</a>
+            <div class="nav-dd-divider"></div>
+            <a href="../community-charging.html">Community Charging</a>
+            <a href="../workplace-charging.html">Workplace Charging</a>
+          </div>
+        </li>
+        <li><a href="../service-area.html">Service Area</a></li>
+      </ul>
+      <div class="nav-right nav-cta">
+        <a href="../for-drivers.html" class="nav-drivers">For Drivers</a>
+        <a href="../assessment.html" class="btn btn-primary">
+          Get a free assessment
+          <span class="btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+      </div>
+      <button class="nav-burger" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="../for-drivers.html" style="color:rgba(249,250,251,0.92);font-weight:700;">⚡ For Drivers</a>
+    <a href="../how-it-works.html">How It Works</a>
+    <div class="mob-label">Who We Serve</div>
+    <a href="../property-managers.html">Property Managers</a>
+    <a href="../property-owners.html">Property Owners</a>
+    <a href="../hoa.html">For HOAs</a>
+    <a href="../community-charging.html">Community Charging</a>
+    <a href="../workplace-charging.html">Workplace Charging</a>
+    <a href="../service-area.html">Service Area</a>
+    <a href="../assessment.html" class="mob-cta">Get a free assessment</a>
+  </div>
+
+  <section class="article-hero" aria-label="Article header">
+    <div class="wrap">
+      <div class="article-hero-inner">
+        <div class="breadcrumb reveal">
+          <a href="../blog.html">Blog</a>
+          <span class="breadcrumb-sep">›</span>
+          <span>Incentives</span>
+        </div>
+        <span class="article-tag reveal reveal-d1">Incentives</span>
+        <h1 class="h1 reveal reveal-d1">Xcel Energy EV rebates for multifamily properties: what Colorado managers need to know</h1>
+        <p class="body-lg reveal reveal-d2">Xcel Energy offers rebate programs specifically designed for multifamily EV charging — but navigating make-ready infrastructure rebates, per-port equipment rebates, and pre-approval timelines requires knowing which programs apply to your property and in what order to apply.</p>
+        <div class="article-meta reveal reveal-d3">
+          <span>Enertech</span>
+          <span class="article-meta-dot">·</span>
+          <span>7 min read</span>
+          <span class="article-meta-dot">·</span>
+          <span>Incentives</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body">
+    <div class="article-wrap">
+
+      <p>If your Colorado multifamily property is in Xcel Energy's service territory — which covers most of the Front Range — there are meaningful rebates available for EV charging installations. But the programs are more nuanced than a single dollar-per-port figure, and the application sequence matters. Apply in the wrong order, or miss a pre-approval step, and you can forfeit rebate eligibility even for a project that would have qualified.</p>
+
+      <p>This guide covers how Xcel's EV charging rebate programs work, what they cover for multifamily properties specifically, and how to make sure you're capturing the full rebate value available to your project.</p>
+
+      <p><em>Note: Xcel Energy's rebate programs update periodically. Always verify current terms and funding availability directly at <a href="https://www.xcelenergy.com/programs_and_rebates/residential_programs_and_rebates/electric_vehicles/ev_charging_for_multifamily_housing" target="_blank" rel="noopener">Xcel Energy's multifamily EV program page</a> before making financial decisions.</em></p>
+
+      <h2>The two main Xcel rebate programs for multifamily EV charging</h2>
+
+      <p>Xcel Energy offers two distinct programs relevant to multifamily EV charging installations. They're complementary but separate, and each has different application requirements.</p>
+
+      <h3>Make-ready infrastructure rebates</h3>
+
+      <p>The make-ready program covers the electrical backbone of an EV charging installation — the panel capacity, conduit runs, wiring, and other infrastructure work that has to happen before a charger can be installed. This is often the largest single cost in a multifamily EV charging project, particularly at older properties where the electrical system wasn't built with EV loads in mind.</p>
+
+      <p>Make-ready rebates are calculated based on the electrical infrastructure work scope, not the number of chargers. A parking structure that needs a significant service upgrade to support 20 charging stations will have a much larger eligible make-ready cost than a small surface lot where one circuit extension is enough.</p>
+
+      <h3>Equipment rebates for networked Level 2 chargers</h3>
+
+      <p>The equipment rebate covers the chargers themselves — specifically networked Level 2 charging stations installed for multifamily resident or tenant use. Xcel's programs have historically prioritized networked chargers because network connectivity allows load management and demand response, which helps Xcel manage grid load during peak periods.</p>
+
+      <p>Equipment rebates are typically calculated per port (per charging connector), with higher rebate levels available for chargers installed in lower-income or underserved areas.</p>
+
+      <div class="info-box">
+        <div class="info-box-title">Xcel service territory coverage</div>
+        <p>Xcel Energy serves most of the Colorado Front Range including Denver, Aurora, Boulder, Broomfield, Fort Collins, Loveland, Greeley, Longmont, Pueblo, and Colorado Springs. If your property is in Xcel territory, both make-ready and equipment rebates are potentially available.</p>
+        <p>Properties served by other utilities (Black Hills Energy, municipal utilities) have different rebate programs. Contact your utility directly to confirm what's available.</p>
+      </div>
+
+      <h2>What multifamily properties qualify</h2>
+
+      <p>Both programs are available to multifamily property owners and managers installing EV charging for resident use. Key eligibility points:</p>
+
+      <ul>
+        <li><strong>Property type:</strong> Apartment complexes, condominiums, townhome communities, and mixed-use residential properties all qualify. The chargers must serve residents of the property, not just transient public users.</li>
+        <li><strong>Equipment standards:</strong> Chargers must be networked Level 2 units from Xcel's approved equipment list. Non-networked chargers and DC fast chargers have different program treatment.</li>
+        <li><strong>Pre-approval requirement:</strong> Both programs require pre-approval before work begins. Submitting an application after installation is complete will result in rebate denial. This is the single most common reason Colorado multifamily projects miss rebates they otherwise would have qualified for.</li>
+        <li><strong>Licensed contractor:</strong> Work must be performed by a licensed electrical contractor. The contractor documentation is part of the rebate application.</li>
+      </ul>
+
+      <h2>The application sequence — and why order matters</h2>
+
+      <p>The most critical thing to understand about Xcel's multifamily EV programs is that pre-approval must come before construction. The application sequence looks like this:</p>
+
+      <ol>
+        <li><strong>Site assessment and project scoping.</strong> Determine the number of charging stations, their locations, and the electrical infrastructure required. This informs the rebate application.</li>
+        <li><strong>Submit pre-approval application.</strong> Apply to both the make-ready and equipment programs before any installation work begins. Xcel reviews the application and issues a pre-approval letter with the rebate commitment.</li>
+        <li><strong>Complete the installation.</strong> Proceed with installation using the pre-approved scope. Changes to the project scope after pre-approval may require an amendment and can affect rebate amounts.</li>
+        <li><strong>Submit post-installation documentation.</strong> After the project is complete, submit the final documentation package — contractor invoices, inspection records, equipment serial numbers — to trigger rebate payment.</li>
+        <li><strong>Receive rebate payment.</strong> Xcel processes the final documentation and issues payment, typically within 60–90 days of a complete submission.</li>
+      </ol>
+
+      <p>The pre-approval step is where most missed rebates happen. Properties that move quickly to capitalize on available parking or contractor scheduling sometimes complete the work before the paperwork is filed. Once equipment is installed without pre-approval, rebate eligibility is gone.</p>
+
+      <div class="callout">
+        <div class="callout-title">How Enertech handles Xcel rebates for properties we serve</div>
+        <p>For every property in Xcel's territory, we submit the make-ready pre-approval application before any installation work begins. We also track Xcel's program calendar — funding levels shift across program years, and timing your application to coincide with higher funding availability can meaningfully affect the rebate amount.</p>
+        <p>Our zero-cost model means your property pays nothing regardless of rebate status. But Xcel rebates directly expand the scope of infrastructure we can deploy at a given property, which translates to more charging capacity for your residents.</p>
+        <a href="../assessment.html" class="btn btn-white" style="font-size:0.9rem; padding:12px 14px 12px 20px; margin-bottom: 4px;">
+          Get a free property assessment
+          <span class="btn-icon" aria-hidden="true" style="width:28px; height:28px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+        <p class="risk">No obligation. We'll review Xcel rebate availability for your specific property.</p>
+      </div>
+
+      <h2>Stacking Xcel rebates with Charge Ahead Colorado grants</h2>
+
+      <p>For multifamily properties serving income-qualified residents, Xcel's rebate programs can be stacked on top of <a href="charge-ahead-colorado-multifamily.html">Charge Ahead Colorado grants</a>. These two programs have different funding sources and different eligibility criteria, but they're explicitly designed to be complementary.</p>
+
+      <p>The key to stacking them successfully is understanding the sequencing:</p>
+
+      <ul>
+        <li>Xcel's pre-approval needs to be submitted before construction begins regardless of Charge Ahead status</li>
+        <li>Charge Ahead applications need to be submitted during an open funding round — you can't retroactively apply</li>
+        <li>Both programs require the final installation to meet their respective equipment and documentation standards</li>
+      </ul>
+
+      <p>When properly coordinated, the combination can offset a very substantial portion of hardware and infrastructure costs. For income-qualified affordable housing properties, this combination is often the most financially favorable path to a fully equipped EV charging installation.</p>
+
+      <h2>What happens when rebates are involved but you're using a zero-cost partner</h2>
+
+      <p>This is a question we get often: if Enertech is deploying EV charging at zero cost to the property, what happens to the Xcel rebates?</p>
+
+      <p>In our model, we handle the capital investment — including the electrical infrastructure and charging equipment. The Xcel rebates offset a portion of that infrastructure investment on our side, which directly enables us to deploy more capacity at the property than the revenue share economics alone would support. The property still pays nothing. The rebates don't flow to the property as cash — but they make the overall project economics work in a way that benefits the property through larger or more complete installations.</p>
+
+      <p>For properties that want to own their charging infrastructure outright, the rebates would flow directly to the property owner after reimbursing the contractor. In that case, understanding the rebate amounts is essential for making the build-vs-partner financial comparison.</p>
+
+      <p>For more on that comparison, see our guide: <a href="zero-cost-vs-owned-ev-charging-apartments.html">Zero-cost vs. owned EV charging for Colorado apartment properties</a>.</p>
+
+      <h2>Getting started</h2>
+
+      <p>If your Front Range property doesn't have EV charging yet — or has inadequate charging that's creating resident complaints — the Xcel rebate programs are a material reason to move sooner rather than later. Funding levels have historically been better in the first portion of each program year, before high-demand periods draw down available funds.</p>
+
+      <p>A free property assessment is the right starting point. We'll confirm your Xcel service territory status, estimate the make-ready and equipment rebate amounts relevant to your property's size and electrical configuration, and give you a clear picture of what an installation would look like — and what it would cost you (which, with our model, is nothing).</p>
+
+    </div>
+  </div>
+
+  <section class="cta-section" aria-label="Call to action">
+    <div class="wrap">
+      <h2 class="h2 reveal">Find out what Xcel rebates your property qualifies for</h2>
+      <p class="body-lg reveal reveal-d1">We handle the pre-approval application, documentation, and submission for every property we work with. A free assessment tells you what's available for your specific property — no obligation.</p>
+      <div class="cta-btn-row reveal reveal-d2">
+        <a href="../assessment.html" class="btn btn-white">
+          Get a free property assessment
+          <span class="btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+        <a href="../how-it-works.html" class="btn btn-ghost-light" style="color:rgba(249,250,251,0.78); border-color:rgba(255,255,255,0.18);">How our model works</a>
+      </div>
+      <p class="risk reveal reveal-d3">No obligation. We'll tell you honestly what applies to your property.</p>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="../index.html" class="footer-logo"><img src="../assets/White_logo_notag.png" alt="Enertech" style="height:28px;width:auto;display:block;"></a>
+          <p class="footer-tagline">Colorado's EV charging partner for multifamily properties. Fort Collins to Colorado Springs — zero cost to the property, always.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <div class="footer-col-title">For properties</div>
+            <a href="../how-it-works.html">How It Works</a>
+            <a href="../property-managers.html">For Property Managers</a>
+            <a href="../property-owners.html">For Property Owners</a>
+            <a href="../hoa.html">For HOAs</a>
+            <a href="../community-charging.html">Community Charging</a>
+            <a href="../workplace-charging.html">Workplace Charging</a>
+            <a href="../assessment.html">Get a free assessment</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">For drivers</div>
+            <a href="../for-drivers.html">How to charge</a>
+            <a href="../for-drivers.html#charger-specs-heading">Charger specs</a>
+            <a href="../for-drivers.html#faq-heading">Driver FAQ</a>
+            <a href="tel:+18888957158">24/7 support: +1 888 895 7158</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Resources</div>
+            <a href="../service-area.html">Service area</a>
+            <a href="../blog.html">Blog</a>
+            <a href="https://www.linkedin.com/company/enertech-energy" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Enertech. Fort Collins to Colorado Springs.</p>
+        <p class="footer-service">enertech.energy</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); revealObs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => revealObs.observe(el));
+    document.querySelectorAll('.article-hero .reveal').forEach(el => el.classList.add('in-view'));
+    (function() {
+      var dd = document.querySelector('.nav-dropdown');
+      if (!dd) return;
+      var trigger = dd.querySelector('.nav-dd-trigger');
+      trigger.addEventListener('click', function(e) { e.stopPropagation(); dd.classList.toggle('is-open'); });
+      document.addEventListener('click', function() { dd.classList.remove('is-open'); });
+      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') dd.classList.remove('is-open'); });
+    })();
+    const burger = document.querySelector('.nav-burger');
+    const mobileNav = document.getElementById('nav-mobile');
+    burger.addEventListener('click', () => {
+      const open = burger.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open);
+      mobileNav.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        burger.classList.remove('open');
+        burger.setAttribute('aria-expanded', false);
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+</body>
+</html>

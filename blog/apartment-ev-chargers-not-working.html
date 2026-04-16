@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="../assets/Enertech_favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apartment EV chargers not working? Here's why | Enertech</title>
+  <meta name="description" content="EV chargers at your apartment keep going offline or failing? Here's why it happens, what property managers can do, and how to fix the problem for good." />
+  <link rel="canonical" href="https://enertech.energy/blog/apartment-ev-chargers-not-working" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://enertech.energy/blog/apartment-ev-chargers-not-working" />
+  <meta property="og:title" content="Apartment EV chargers not working? Here's why | Enertech" />
+  <meta property="og:description" content="EV chargers at your apartment keep going offline or failing? Here's why it happens, what property managers can do, and how to fix the problem for good." />
+  <meta property="og:site_name" content="Enertech" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Apartment EV chargers not working? Here's why | Enertech" />
+  <meta name="twitter:description" content="EV chargers at your apartment keep going offline or failing? Here's why it happens, what property managers can do, and how to fix the problem for good." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #0C0C0C; --ink-2: #1C1C1C; --ink-3: #2E2E2E; --secondary: #6B6B6B; --muted: #9B9B9B;
+      --border: rgba(0,0,0,0.08); --border-mid: rgba(0,0,0,0.14); --canvas: #F9FAFB; --surface: #FFFFFF;
+      --canvas-dark: #0C0C0C; --surface-dark: #1C1C1C; --border-dark: rgba(255,255,255,0.09);
+      --shadow-sm: 0 4px 12px -4px rgba(0,0,0,0.08); --shadow-card: 0 20px 40px -15px rgba(0,0,0,0.07);
+      --shadow-lift: 0 28px 48px -12px rgba(0,0,0,0.18);
+      --r-xl: 2.5rem; --r-lg: 1.5rem; --r-md: 0.875rem; --r-sm: 0.5rem;
+      --ease: cubic-bezier(0.32, 0.72, 0, 1); --max: 1320px; --article-max: 740px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Outfit', system-ui, -apple-system, sans-serif; background: var(--canvas); color: var(--ink); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    .h1 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.03em; }
+    .h2 { font-size: clamp(1.75rem, 3vw, 2.75rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.022em; }
+    .body-lg { font-size: 1.15rem; line-height: 1.75; letter-spacing: 0.012em; color: var(--secondary); }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.75s var(--ease), transform 0.75s var(--ease); }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 80ms; } .reveal-d2 { transition-delay: 160ms; } .reveal-d3 { transition-delay: 240ms; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; border: none; cursor: pointer; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.95rem; transition: all 0.3s var(--ease); text-decoration: none; white-space: nowrap; }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: var(--ink); color: #F9FAFB; padding: 14px 16px 14px 24px; border-radius: var(--r-md); }
+    .btn-primary:hover { background: var(--ink-3); box-shadow: var(--shadow-lift); }
+    .btn-white { background: #F9FAFB; color: var(--ink); padding: 14px 16px 14px 24px; border-radius: var(--r-md); }
+    .btn-white:hover { background: #fff; box-shadow: var(--shadow-lift); }
+    .btn-white .btn-icon { background: rgba(0,0,0,0.07); }
+    .btn-white:hover .btn-icon { transform: translateX(3px); }
+    .btn-ghost-light { background: transparent; color: var(--ink); padding: 14px 20px; border-radius: var(--r-md); border: 1.5px solid var(--border-mid); }
+    .btn-ghost-light:hover { border-color: var(--ink); }
+    .btn-icon { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.3s var(--ease), background 0.3s var(--ease); }
+    .btn-primary:hover .btn-icon { transform: translateX(3px); background: rgba(255,255,255,0.22); }
+    .risk { font-size: 0.82rem; color: rgba(255,255,255,0.68); margin-top: 12px; }
+    .nav { position: sticky; top: 0; z-index: 100; background: rgba(12,12,12,0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .nav-logo { font-size: 1.2rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; flex-shrink: 0; }
+    .nav-links { display: flex; gap: 2px; list-style: none; align-items: center; }
+    .nav-links a { display: block; padding: 8px 14px; font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.78); text-decoration: none; border-radius: var(--r-sm); transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover { color: #F9FAFB; background: rgba(255,255,255,0.07); }
+    .nav-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .nav-cta .btn-primary { padding: 10px 12px 10px 18px; font-size: 0.875rem; }
+    .nav-cta .btn-icon { width: 28px; height: 28px; }
+    .nav-drivers { display: inline-flex; align-items: center; padding: 8px 14px; font-size: 0.875rem; font-weight: 600; color: rgba(255,255,255,0.88); text-decoration: none; border-radius: var(--r-sm); border: 1px solid rgba(255,255,255,0.24); transition: color 0.2s, background 0.2s, border-color 0.2s; white-space: nowrap; }
+    .nav-drivers:hover { color: #F9FAFB; background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.5); }
+    .nav-burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; padding: 8px; background: none; border: none; cursor: pointer; border-radius: 8px; flex-shrink: 0; }
+    .nav-burger span { display: block; width: 22px; height: 2px; background: #F9FAFB; border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease; }
+    .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile { display: none; position: fixed; top: 66px; left: 0; right: 0; bottom: 0; background: rgba(12,12,12,0.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 998; flex-direction: column; padding: 24px 24px 40px; overflow-y: auto; }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a { display: block; color: rgba(249,250,251,0.75); text-decoration: none; font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 500; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.07); transition: color 0.15s; }
+    .nav-mobile a:hover { color: #F9FAFB; }
+    .nav-mobile .mob-cta { display: block; margin-top: 24px; padding: 15px 24px; background: #F9FAFB; color: #0C0C0C !important; border-radius: 100px; text-align: center; font-weight: 700; font-size: 1rem; border-bottom: none; }
+    .nav-dropdown { position: relative; list-style: none; }
+    .nav-dd-trigger { display: flex; align-items: center; gap: 4px; padding: 8px 14px; background: none; border: none; cursor: pointer; font-family: 'Outfit', sans-serif; font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.78); border-radius: var(--r-sm); transition: color 0.2s, background 0.2s; white-space: nowrap; }
+    .nav-dd-trigger:hover, .nav-dropdown.is-open .nav-dd-trigger { color: #F9FAFB; background: rgba(255,255,255,0.07); }
+    .nav-dd-trigger svg { width: 11px; height: 11px; stroke: currentColor; stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.2s; }
+    .nav-dropdown.is-open .nav-dd-trigger svg { transform: rotate(180deg); }
+    .nav-dd-menu { display: none; position: absolute; top: calc(100% + 6px); left: 0; min-width: 210px; background: rgba(14,14,14,0.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--r-md); padding: 6px; box-shadow: 0 20px 48px rgba(0,0,0,0.5); z-index: 200; }
+    .nav-dropdown:hover .nav-dd-menu, .nav-dropdown.is-open .nav-dd-menu { display: block; }
+    .nav-dd-menu a { display: block; padding: 9px 14px; font-size: 0.85rem; font-weight: 500; color: rgba(255,255,255,0.72); border-radius: 6px; text-decoration: none; transition: color 0.15s, background 0.15s; }
+    .nav-dd-menu a:hover { color: #F9FAFB; background: rgba(255,255,255,0.08); }
+    .nav-dd-divider { height: 1px; background: rgba(255,255,255,0.07); margin: 4px 2px; }
+    .nav-dd-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .mob-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.35); padding: 20px 0 4px; border-bottom: none !important; }
+    .article-hero { background: var(--canvas-dark); color: #F9FAFB; padding: 80px 0 72px; }
+    .article-hero-inner { max-width: var(--article-max); }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-bottom: 28px; }
+    .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: rgba(255,255,255,0.8); }
+    .breadcrumb-sep { opacity: 0.4; }
+    .article-tag { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.75); padding: 4px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); margin-bottom: 20px; }
+    .article-hero h1 { color: #F9FAFB; margin-bottom: 20px; }
+    .article-hero .body-lg { color: rgba(249,250,251,0.72); margin-bottom: 28px; }
+    .article-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 0.8rem; color: rgba(255,255,255,0.45); border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; }
+    .article-meta-dot { opacity: 0.4; }
+    .article-wrap { max-width: var(--article-max); margin: 0 auto; padding: 0 40px; }
+    .article-body { padding: 64px 0 80px; }
+    .article-body p { font-size: 1.05rem; line-height: 1.78; color: var(--ink-2); margin-bottom: 1.5em; }
+    .article-body h2 { font-size: 1.5rem; font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; color: var(--ink); margin-top: 2.5em; margin-bottom: 0.75em; }
+    .article-body h3 { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.01em; color: var(--ink); margin-top: 1.75em; margin-bottom: 0.5em; }
+    .article-body ul, .article-body ol { padding-left: 1.5em; margin-bottom: 1.5em; }
+    .article-body li { font-size: 1.05rem; line-height: 1.75; color: var(--ink-2); margin-bottom: 0.4em; }
+    .article-body a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(0,0,0,0.25); transition: text-decoration-color 0.2s; }
+    .article-body a:hover { text-decoration-color: var(--ink); }
+    .article-body strong { font-weight: 700; color: var(--ink); }
+    .callout { background: var(--canvas-dark); color: #F9FAFB; border-radius: var(--r-lg); padding: 36px 40px; margin: 2.5em 0; }
+    .callout p { color: rgba(249,250,251,0.82); font-size: 1rem; margin-bottom: 0.75em; }
+    .callout p:last-of-type { margin-bottom: 20px; }
+    .callout strong { color: #F9FAFB; }
+    .callout-title { font-size: 1rem; font-weight: 800; letter-spacing: -0.01em; color: #F9FAFB; margin-bottom: 12px; }
+    .callout .risk { color: rgba(255,255,255,0.55); margin-top: 10px; }
+    .cta-section { background: var(--ink); padding: 100px 0; text-align: center; }
+    .cta-section .h2 { color: #F9FAFB; margin-bottom: 20px; }
+    .cta-section .body-lg { color: rgba(249,250,251,0.80); margin-bottom: 48px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .cta-btn-row { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .footer { background: var(--canvas-dark); padding: 64px 0 40px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .footer-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 48px; flex-wrap: wrap; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 32px; }
+    .footer-brand { max-width: 320px; }
+    .footer-logo { font-size: 1.3rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; }
+    .footer-tagline { font-size: 0.875rem; color: rgba(255,255,255,0.65); margin-top: 10px; line-height: 1.5; }
+    .footer-links { display: flex; gap: 48px; flex-wrap: wrap; }
+    .footer-col { display: flex; flex-direction: column; gap: 4px; }
+    .footer-col-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 8px; }
+    .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.75); text-decoration: none; padding: 4px 0; transition: color 0.2s; }
+    .footer-col a:hover { color: #F9FAFB; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+    .footer-service { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+    @media (max-width: 1120px) { .nav-links { display: none; } .nav-burger { display: flex; } }
+    @media (max-width: 900px) { .wrap { padding: 0 24px; } .article-wrap { padding: 0 24px; } .nav-cta { display: none; } .footer-top { flex-direction: column; } .footer-inner { padding: 0 24px; } }
+    @media (max-width: 600px) { .article-hero { padding: 60px 0 52px; } .callout { padding: 28px 24px; } }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo"><img src="../assets/White_logo_notag.png" alt="Enertech" style="height:26px;width:auto;display:block;"></a>
+      <ul class="nav-links">
+        <li><a href="../how-it-works.html">How It Works</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-dd-trigger">Who We Serve
+            <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dd-menu">
+            <a href="../property-managers.html">Property Managers</a>
+            <a href="../property-owners.html">Property Owners</a>
+            <a href="../hoa.html">For HOAs</a>
+            <div class="nav-dd-divider"></div>
+            <a href="../community-charging.html">Community Charging</a>
+            <a href="../workplace-charging.html">Workplace Charging</a>
+          </div>
+        </li>
+        <li><a href="../service-area.html">Service Area</a></li>
+      </ul>
+      <div class="nav-right nav-cta">
+        <a href="../for-drivers.html" class="nav-drivers">For Drivers</a>
+        <a href="../assessment.html" class="btn btn-primary">
+          Get a free assessment
+          <span class="btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+      </div>
+      <button class="nav-burger" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="../for-drivers.html" style="color:rgba(249,250,251,0.92);font-weight:700;">⚡ For Drivers</a>
+    <a href="../how-it-works.html">How It Works</a>
+    <div class="mob-label">Who We Serve</div>
+    <a href="../property-managers.html">Property Managers</a>
+    <a href="../property-owners.html">Property Owners</a>
+    <a href="../hoa.html">For HOAs</a>
+    <a href="../community-charging.html">Community Charging</a>
+    <a href="../workplace-charging.html">Workplace Charging</a>
+    <a href="../service-area.html">Service Area</a>
+    <a href="../assessment.html" class="mob-cta">Get a free assessment</a>
+  </div>
+
+  <section class="article-hero" aria-label="Article header">
+    <div class="wrap">
+      <div class="article-hero-inner">
+        <div class="breadcrumb reveal">
+          <a href="../blog.html">Blog</a>
+          <span class="breadcrumb-sep">›</span>
+          <span>Problem Solving</span>
+        </div>
+        <span class="article-tag reveal reveal-d1">Problem Solving</span>
+        <h1 class="h1 reveal reveal-d1">When apartment EV chargers stop working — and what to do about it</h1>
+        <p class="body-lg reveal reveal-d2">Broken or unreliable EV chargers at multifamily properties aren't just a resident inconvenience — they're a property management problem that signals something deeper about how the installation was designed, who owns ongoing responsibility, and whether your current provider is the right long-term partner.</p>
+        <div class="article-meta reveal reveal-d3">
+          <span>Enertech</span>
+          <span class="article-meta-dot">·</span>
+          <span>7 min read</span>
+          <span class="article-meta-dot">·</span>
+          <span>Problem Solving</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body">
+    <div class="article-wrap">
+
+      <p>Broken apartment EV chargers are one of the most common complaints we hear from both residents and property managers across Colorado. A charger that worked fine for the first year is now offline half the time. Residents are submitting maintenance tickets. The provider's support line has a long hold queue. And the property manager — who had nothing to do with installing the charger and doesn't have the technical background to diagnose it — is stuck in the middle.</p>
+
+      <p>This article explains why apartment EV chargers fail so often, what your options are when they do, and when the right answer is not fixing the existing charger but replacing the entire setup with a model that doesn't put maintenance responsibility on the property at all.</p>
+
+      <h2>Why apartment EV chargers fail more often than people expect</h2>
+
+      <p>EV chargers are more complex than people expect. They're network-connected devices that draw significant electrical current on continuous cycles. When something in that chain isn't right — the hardware, the network connection, the electrical supply, or the software — the charger goes offline.</p>
+
+      <p>The most common failure modes at multifamily properties include:</p>
+
+      <h3>Network and connectivity failures</h3>
+
+      <p>Networked Level 2 chargers communicate with a backend management platform to handle authentication, billing, session logging, and remote monitoring. If the connection between the charger and that platform breaks — because of a WiFi drop, a cellular signal issue, a firmware update that went wrong, or a change in the network provider's infrastructure — the charger can go into an error state and refuse to start sessions.</p>
+
+      <p>This is especially common in parking garages and underground structures where cellular signal is weak. An installation that worked in initial testing may start dropping connectivity as charger firmware updates or network conditions change over time.</p>
+
+      <h3>Electrical supply issues</h3>
+
+      <p>Level 2 chargers draw substantial current on a sustained basis. If the electrical circuit feeding the charger wasn't properly sized — or if other loads on the same circuit have increased since installation — the charger may trip circuit breakers intermittently or enter protective error states. This can look like random charger failures but is actually an electrical infrastructure problem.</p>
+
+      <h3>Hardware wear and physical damage</h3>
+
+      <p>Charger cables and connectors experience physical wear from daily use. In outdoor installations, weather exposure accelerates degradation. Vandalism and accidental vehicle damage are also common in surface parking lots. Most charger warranties cover manufacturing defects but not wear-and-tear or physical damage — which means an out-of-warranty charger with a damaged cable is a property expense.</p>
+
+      <h3>Software and firmware issues</h3>
+
+      <p>Networked chargers receive periodic firmware updates from their manufacturer. Most of the time these updates are invisible. Occasionally they introduce new bugs or compatibility issues with the network management platform. When that happens, chargers can behave unpredictably until the manufacturer releases a patch — leaving the property caught between an unresponsive charger and a support process that can take days or weeks.</p>
+
+      <h2>The real cost of charger downtime at your property</h2>
+
+      <p>Charger downtime isn't just a resident inconvenience. It has real costs that property managers often don't fully account for:</p>
+
+      <ul>
+        <li><strong>Resident complaints and lease renewal risk.</strong> EV drivers chose your property partly because of the charging amenity. A charger that's down more than 10-15% of the time is going to generate complaints — and for a resident whose vehicle charging is tied to their daily routine, it's a genuine quality-of-life issue that affects lease renewal decisions.</li>
+        <li><strong>Management time.</strong> Every maintenance ticket, every call to the charger provider's support line, every follow-up with the electrical contractor — that's property management time that wasn't budgeted for when the charger was installed.</li>
+        <li><strong>Lost amenity value.</strong> A broken charger doesn't appear on your property listing. When prospective residents ask about EV charging, a manager has to choose between admitting the charger is unreliable or overpromising.</li>
+        <li><strong>Deferred maintenance compounds.</strong> Small issues — a loose connector, an intermittent breaker trip, a firmware version that's two cycles out of date — don't resolve themselves. They get worse. A charger that needs a $200 cable replacement today may need a $1,500 hardware swap in six months.</li>
+      </ul>
+
+      <h2>What residents can do when chargers aren't working</h2>
+
+      <p>If you're a resident dealing with a charger that won't work, the first step is to check whether it's a session-specific issue or a persistent hardware problem. Try these in order:</p>
+
+      <ol>
+        <li>Check the charger's status light or display. Most networked chargers show a distinct status code for connectivity failures vs. hardware faults vs. normal idle state.</li>
+        <li>Try ending and restarting the session through the charger's network app if applicable.</li>
+        <li>Try a different charging port if multiple are installed (a hardware fault on one port doesn't necessarily affect others on the same unit).</li>
+        <li>Report the issue to property management with the specific charger location and any error code displayed. A timestamped report helps the provider diagnose the problem remotely.</li>
+      </ol>
+
+      <p>If the charger has been offline for more than 24–48 hours without resolution, that's a signal of a deeper issue that resident-level troubleshooting won't fix.</p>
+
+      <h2>What property managers can do</h2>
+
+      <p>For property managers, the immediate response is to contact the charger network provider's support line and open a ticket with the specific unit ID, error state, and timeline. Most networked charger providers can diagnose the majority of issues remotely — if connectivity is the problem, they can often push a reset or configuration change without a site visit.</p>
+
+      <p>If the problem requires a site visit, the provider should be dispatching their own technician (or a contracted service technician) at no charge if the hardware is under warranty. If it's out of warranty, you're looking at a billable service call — and that's where the model starts to matter.</p>
+
+      <p>The harder question is what to do when the charger keeps failing despite repairs. Recurring failures on the same unit are often a signal that the hardware has reached end-of-useful-life or that the original installation had a design flaw — inadequate circuit capacity, poor cable routing, weak network signal — that no amount of repair will permanently fix.</p>
+
+      <div class="callout">
+        <div class="callout-title">The managed services difference</div>
+        <p>Under Enertech's model, we own the charger hardware and carry all maintenance responsibility. When a charger goes offline, we handle the diagnosis and repair — the property doesn't open a ticket or manage a service call. Monitoring is continuous; we're typically aware of a hardware issue before residents report it.</p>
+        <p>This is the structural difference between a managed partnership and an owned installation: with owned hardware, maintenance falls on the property. With a managed partner, it doesn't.</p>
+        <a href="../assessment.html" class="btn btn-white" style="font-size:0.9rem; padding:12px 14px 12px 20px; margin-bottom: 4px;">
+          Talk to us about your current charger situation
+          <span class="btn-icon" aria-hidden="true" style="width:28px; height:28px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+        <p class="risk">If your current chargers aren't working well, we'll give you an honest assessment of the options.</p>
+      </div>
+
+      <h2>When replacement is the right answer</h2>
+
+      <p>There are situations where repairing existing chargers is the right call — particularly when hardware is relatively new, under warranty, and failing for a diagnosable and fixable reason. There are other situations where continuing to invest in a failing installation is the wrong call.</p>
+
+      <p>Replacement is worth serious consideration when:</p>
+
+      <ul>
+        <li>The charger hardware is out of warranty and has required multiple repairs</li>
+        <li>The network provider has poor support responsiveness and you're regularly waiting days for issue resolution</li>
+        <li>The installation has structural problems (inadequate electrical capacity, poor siting) that make repeated failures likely regardless of hardware condition</li>
+        <li>Residents are actively complaining about reliability and it's affecting lease renewals</li>
+        <li>Your current contract has problematic terms — revenue lock-ups, automatic renewal clauses, limited SLA commitments</li>
+      </ul>
+
+      <p>If any of these apply, the conversation isn't about repairing the charger — it's about whether your current provider and model is the right long-term fit. See our guide on <a href="replacing-blink-chargepoint-apartment-colorado.html">replacing Blink or ChargePoint chargers at Colorado multifamily properties</a> for more on what a provider transition actually looks like.</p>
+
+      <h2>Preventing the problem in the first place</h2>
+
+      <p>For properties evaluating EV charging for the first time, the maintenance question should be front-and-center in provider selection. Ask every provider you evaluate: who owns hardware maintenance responsibility? What's the SLA for bringing a down charger back online? Who pays for service calls after the warranty period? What happens if the network provider changes their platform or pricing?</p>
+
+      <p>The answers to those questions will tell you more about the long-term cost of EV charging at your property than the initial installation price. A zero-cost installation that saddles you with ongoing maintenance responsibility isn't the same as a zero-cost model where maintenance is permanently off your plate.</p>
+
+      <p>For more on evaluating EV charging providers, see our guide: <a href="ev-charging-partner-multifamily-colorado.html">choosing an EV charging partner for your Colorado multifamily property</a>.</p>
+
+    </div>
+  </div>
+
+  <section class="cta-section" aria-label="Call to action">
+    <div class="wrap">
+      <h2 class="h2 reveal">Tired of managing charger problems that aren't yours to manage?</h2>
+      <p class="body-lg reveal reveal-d1">With Enertech, EV charging maintenance is completely off your plate — we own the hardware, monitor it continuously, and handle every service issue. A free assessment shows you what a reliable installation looks like for your property.</p>
+      <div class="cta-btn-row reveal reveal-d2">
+        <a href="../assessment.html" class="btn btn-white">
+          Get a free property assessment
+          <span class="btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+        <a href="../how-it-works.html" class="btn btn-ghost-light" style="color:rgba(249,250,251,0.78); border-color:rgba(255,255,255,0.18);">How our model works</a>
+      </div>
+      <p class="risk reveal reveal-d3">No obligation. We'll tell you honestly what's realistic for your property.</p>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="../index.html" class="footer-logo"><img src="../assets/White_logo_notag.png" alt="Enertech" style="height:28px;width:auto;display:block;"></a>
+          <p class="footer-tagline">Colorado's EV charging partner for multifamily properties. Fort Collins to Colorado Springs — zero cost to the property, always.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <div class="footer-col-title">For properties</div>
+            <a href="../how-it-works.html">How It Works</a>
+            <a href="../property-managers.html">For Property Managers</a>
+            <a href="../property-owners.html">For Property Owners</a>
+            <a href="../hoa.html">For HOAs</a>
+            <a href="../community-charging.html">Community Charging</a>
+            <a href="../workplace-charging.html">Workplace Charging</a>
+            <a href="../assessment.html">Get a free assessment</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">For drivers</div>
+            <a href="../for-drivers.html">How to charge</a>
+            <a href="../for-drivers.html#charger-specs-heading">Charger specs</a>
+            <a href="../for-drivers.html#faq-heading">Driver FAQ</a>
+            <a href="tel:+18888957158">24/7 support: +1 888 895 7158</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Resources</div>
+            <a href="../service-area.html">Service area</a>
+            <a href="../blog.html">Blog</a>
+            <a href="https://www.linkedin.com/company/enertech-energy" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Enertech. Fort Collins to Colorado Springs.</p>
+        <p class="footer-service">enertech.energy</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); revealObs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => revealObs.observe(el));
+    document.querySelectorAll('.article-hero .reveal').forEach(el => el.classList.add('in-view'));
+    (function() {
+      var dd = document.querySelector('.nav-dropdown');
+      if (!dd) return;
+      var trigger = dd.querySelector('.nav-dd-trigger');
+      trigger.addEventListener('click', function(e) { e.stopPropagation(); dd.classList.toggle('is-open'); });
+      document.addEventListener('click', function() { dd.classList.remove('is-open'); });
+      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') dd.classList.remove('is-open'); });
+    })();
+    const burger = document.querySelector('.nav-burger');
+    const mobileNav = document.getElementById('nav-mobile');
+    burger.addEventListener('click', () => {
+      const open = burger.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open);
+      mobileNav.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        burger.classList.remove('open');
+        burger.setAttribute('aria-expanded', false);
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="../assets/Enertech_favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Choosing an EV charging partner for your property | Enertech</title>
+  <meta name="description" content="What to look for when evaluating EV charging companies for Colorado multifamily. The right questions to ask, red flags to avoid, and what good looks like." />
+  <link rel="canonical" href="https://enertech.energy/blog/ev-charging-partner-multifamily-colorado" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://enertech.energy/blog/ev-charging-partner-multifamily-colorado" />
+  <meta property="og:title" content="Choosing an EV charging partner for your property | Enertech" />
+  <meta property="og:description" content="What to look for when evaluating EV charging companies for Colorado multifamily. The right questions to ask, red flags to avoid, and what good looks like." />
+  <meta property="og:site_name" content="Enertech" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Choosing an EV charging partner for your property | Enertech" />
+  <meta name="twitter:description" content="What to look for when evaluating EV charging companies for Colorado multifamily. The right questions to ask, red flags to avoid, and what good looks like." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #0C0C0C; --ink-2: #1C1C1C; --ink-3: #2E2E2E; --secondary: #6B6B6B; --muted: #9B9B9B;
+      --border: rgba(0,0,0,0.08); --border-mid: rgba(0,0,0,0.14); --canvas: #F9FAFB; --surface: #FFFFFF;
+      --canvas-dark: #0C0C0C; --surface-dark: #1C1C1C; --border-dark: rgba(255,255,255,0.09);
+      --shadow-sm: 0 4px 12px -4px rgba(0,0,0,0.08); --shadow-card: 0 20px 40px -15px rgba(0,0,0,0.07);
+      --shadow-lift: 0 28px 48px -12px rgba(0,0,0,0.18);
+      --r-xl: 2.5rem; --r-lg: 1.5rem; --r-md: 0.875rem; --r-sm: 0.5rem;
+      --ease: cubic-bezier(0.32, 0.72, 0, 1); --max: 1320px; --article-max: 740px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Outfit', system-ui, -apple-system, sans-serif; background: var(--canvas); color: var(--ink); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    .h1 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.03em; }
+    .h2 { font-size: clamp(1.75rem, 3vw, 2.75rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.022em; }
+    .body-lg { font-size: 1.15rem; line-height: 1.75; letter-spacing: 0.012em; color: var(--secondary); }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.75s var(--ease), transform 0.75s var(--ease); }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 80ms; } .reveal-d2 { transition-delay: 160ms; } .reveal-d3 { transition-delay: 240ms; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; border: none; cursor: pointer; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.95rem; transition: all 0.3s var(--ease); text-decoration: none; white-space: nowrap; }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: var(--ink); color: #F9FAFB; padding: 14px 16px 14px 24px; border-radius: var(--r-md); }
+    .btn-primary:hover { background: var(--ink-3); box-shadow: var(--shadow-lift); }
+    .btn-white { background: #F9FAFB; color: var(--ink); padding: 14px 16px 14px 24px; border-radius: var(--r-md); }
+    .btn-white:hover { background: #fff; box-shadow: var(--shadow-lift); }
+    .btn-white .btn-icon { background: rgba(0,0,0,0.07); }
+    .btn-white:hover .btn-icon { transform: translateX(3px); }
+    .btn-ghost-light { background: transparent; color: var(--ink); padding: 14px 20px; border-radius: var(--r-md); border: 1.5px solid var(--border-mid); }
+    .btn-ghost-light:hover { border-color: var(--ink); }
+    .btn-icon { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.3s var(--ease), background 0.3s var(--ease); }
+    .btn-primary:hover .btn-icon { transform: translateX(3px); background: rgba(255,255,255,0.22); }
+    .risk { font-size: 0.82rem; color: rgba(255,255,255,0.68); margin-top: 12px; }
+    .nav { position: sticky; top: 0; z-index: 100; background: rgba(12,12,12,0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .nav-logo { font-size: 1.2rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; flex-shrink: 0; }
+    .nav-links { display: flex; gap: 2px; list-style: none; align-items: center; }
+    .nav-links a { display: block; padding: 8px 14px; font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.78); text-decoration: none; border-radius: var(--r-sm); transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover { color: #F9FAFB; background: rgba(255,255,255,0.07); }
+    .nav-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .nav-cta .btn-primary { padding: 10px 12px 10px 18px; font-size: 0.875rem; }
+    .nav-cta .btn-icon { width: 28px; height: 28px; }
+    .nav-drivers { display: inline-flex; align-items: center; padding: 8px 14px; font-size: 0.875rem; font-weight: 600; color: rgba(255,255,255,0.88); text-decoration: none; border-radius: var(--r-sm); border: 1px solid rgba(255,255,255,0.24); transition: color 0.2s, background 0.2s, border-color 0.2s; white-space: nowrap; }
+    .nav-drivers:hover { color: #F9FAFB; background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.5); }
+    .nav-burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; padding: 8px; background: none; border: none; cursor: pointer; border-radius: 8px; flex-shrink: 0; }
+    .nav-burger span { display: block; width: 22px; height: 2px; background: #F9FAFB; border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease; }
+    .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile { display: none; position: fixed; top: 66px; left: 0; right: 0; bottom: 0; background: rgba(12,12,12,0.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 998; flex-direction: column; padding: 24px 24px 40px; overflow-y: auto; }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a { display: block; color: rgba(249,250,251,0.75); text-decoration: none; font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 500; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.07); transition: color 0.15s; }
+    .nav-mobile a:hover { color: #F9FAFB; }
+    .nav-mobile .mob-cta { display: block; margin-top: 24px; padding: 15px 24px; background: #F9FAFB; color: #0C0C0C !important; border-radius: 100px; text-align: center; font-weight: 700; font-size: 1rem; border-bottom: none; }
+    .nav-dropdown { position: relative; list-style: none; }
+    .nav-dd-trigger { display: flex; align-items: center; gap: 4px; padding: 8px 14px; background: none; border: none; cursor: pointer; font-family: 'Outfit', sans-serif; font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.78); border-radius: var(--r-sm); transition: color 0.2s, background 0.2s; white-space: nowrap; }
+    .nav-dd-trigger:hover, .nav-dropdown.is-open .nav-dd-trigger { color: #F9FAFB; background: rgba(255,255,255,0.07); }
+    .nav-dd-trigger svg { width: 11px; height: 11px; stroke: currentColor; stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.2s; }
+    .nav-dropdown.is-open .nav-dd-trigger svg { transform: rotate(180deg); }
+    .nav-dd-menu { display: none; position: absolute; top: calc(100% + 6px); left: 0; min-width: 210px; background: rgba(14,14,14,0.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--r-md); padding: 6px; box-shadow: 0 20px 48px rgba(0,0,0,0.5); z-index: 200; }
+    .nav-dropdown:hover .nav-dd-menu, .nav-dropdown.is-open .nav-dd-menu { display: block; }
+    .nav-dd-menu a { display: block; padding: 9px 14px; font-size: 0.85rem; font-weight: 500; color: rgba(255,255,255,0.72); border-radius: 6px; text-decoration: none; transition: color 0.15s, background 0.15s; }
+    .nav-dd-menu a:hover { color: #F9FAFB; background: rgba(255,255,255,0.08); }
+    .nav-dd-divider { height: 1px; background: rgba(255,255,255,0.07); margin: 4px 2px; }
+    .nav-dd-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .mob-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.35); padding: 20px 0 4px; border-bottom: none !important; }
+    .article-hero { background: var(--canvas-dark); color: #F9FAFB; padding: 80px 0 72px; }
+    .article-hero-inner { max-width: var(--article-max); }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-bottom: 28px; }
+    .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: rgba(255,255,255,0.8); }
+    .breadcrumb-sep { opacity: 0.4; }
+    .article-tag { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.75); padding: 4px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); margin-bottom: 20px; }
+    .article-hero h1 { color: #F9FAFB; margin-bottom: 20px; }
+    .article-hero .body-lg { color: rgba(249,250,251,0.72); margin-bottom: 28px; }
+    .article-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 0.8rem; color: rgba(255,255,255,0.45); border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; }
+    .article-meta-dot { opacity: 0.4; }
+    .article-wrap { max-width: var(--article-max); margin: 0 auto; padding: 0 40px; }
+    .article-body { padding: 64px 0 80px; }
+    .article-body p { font-size: 1.05rem; line-height: 1.78; color: var(--ink-2); margin-bottom: 1.5em; }
+    .article-body h2 { font-size: 1.5rem; font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; color: var(--ink); margin-top: 2.5em; margin-bottom: 0.75em; }
+    .article-body h3 { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.01em; color: var(--ink); margin-top: 1.75em; margin-bottom: 0.5em; }
+    .article-body ul, .article-body ol { padding-left: 1.5em; margin-bottom: 1.5em; }
+    .article-body li { font-size: 1.05rem; line-height: 1.75; color: var(--ink-2); margin-bottom: 0.4em; }
+    .article-body a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(0,0,0,0.25); transition: text-decoration-color 0.2s; }
+    .article-body a:hover { text-decoration-color: var(--ink); }
+    .article-body strong { font-weight: 700; color: var(--ink); }
+    .callout { background: var(--canvas-dark); color: #F9FAFB; border-radius: var(--r-lg); padding: 36px 40px; margin: 2.5em 0; }
+    .callout p { color: rgba(249,250,251,0.82); font-size: 1rem; margin-bottom: 0.75em; }
+    .callout p:last-of-type { margin-bottom: 20px; }
+    .callout strong { color: #F9FAFB; }
+    .callout-title { font-size: 1rem; font-weight: 800; letter-spacing: -0.01em; color: #F9FAFB; margin-bottom: 12px; }
+    .callout .risk { color: rgba(255,255,255,0.55); margin-top: 10px; }
+    .checklist { background: var(--canvas); border: 1.5px solid var(--border-mid); border-radius: var(--r-md); padding: 28px 32px; margin: 2em 0; }
+    .checklist-title { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--secondary); margin-bottom: 16px; }
+    .checklist ul { padding-left: 0; list-style: none; margin-bottom: 0; }
+    .checklist li { font-size: 1rem; line-height: 1.65; color: var(--ink-2); margin-bottom: 0.6em; padding-left: 1.5em; position: relative; }
+    .checklist li::before { content: '✓'; position: absolute; left: 0; color: #166534; font-weight: 700; }
+    .cta-section { background: var(--ink); padding: 100px 0; text-align: center; }
+    .cta-section .h2 { color: #F9FAFB; margin-bottom: 20px; }
+    .cta-section .body-lg { color: rgba(249,250,251,0.80); margin-bottom: 48px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .cta-btn-row { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .footer { background: var(--canvas-dark); padding: 64px 0 40px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .footer-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 48px; flex-wrap: wrap; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 32px; }
+    .footer-brand { max-width: 320px; }
+    .footer-logo { font-size: 1.3rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; }
+    .footer-tagline { font-size: 0.875rem; color: rgba(255,255,255,0.65); margin-top: 10px; line-height: 1.5; }
+    .footer-links { display: flex; gap: 48px; flex-wrap: wrap; }
+    .footer-col { display: flex; flex-direction: column; gap: 4px; }
+    .footer-col-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 8px; }
+    .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.75); text-decoration: none; padding: 4px 0; transition: color 0.2s; }
+    .footer-col a:hover { color: #F9FAFB; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+    .footer-service { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+    @media (max-width: 1120px) { .nav-links { display: none; } .nav-burger { display: flex; } }
+    @media (max-width: 900px) { .wrap { padding: 0 24px; } .article-wrap { padding: 0 24px; } .nav-cta { display: none; } .footer-top { flex-direction: column; } .footer-inner { padding: 0 24px; } }
+    @media (max-width: 600px) { .article-hero { padding: 60px 0 52px; } .callout { padding: 28px 24px; } .checklist { padding: 24px; } }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo"><img src="../assets/White_logo_notag.png" alt="Enertech" style="height:26px;width:auto;display:block;"></a>
+      <ul class="nav-links">
+        <li><a href="../how-it-works.html">How It Works</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-dd-trigger">Who We Serve
+            <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dd-menu">
+            <a href="../property-managers.html">Property Managers</a>
+            <a href="../property-owners.html">Property Owners</a>
+            <a href="../hoa.html">For HOAs</a>
+            <div class="nav-dd-divider"></div>
+            <a href="../community-charging.html">Community Charging</a>
+            <a href="../workplace-charging.html">Workplace Charging</a>
+          </div>
+        </li>
+        <li><a href="../service-area.html">Service Area</a></li>
+      </ul>
+      <div class="nav-right nav-cta">
+        <a href="../for-drivers.html" class="nav-drivers">For Drivers</a>
+        <a href="../assessment.html" class="btn btn-primary">
+          Get a free assessment
+          <span class="btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+      </div>
+      <button class="nav-burger" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="../for-drivers.html" style="color:rgba(249,250,251,0.92);font-weight:700;">⚡ For Drivers</a>
+    <a href="../how-it-works.html">How It Works</a>
+    <div class="mob-label">Who We Serve</div>
+    <a href="../property-managers.html">Property Managers</a>
+    <a href="../property-owners.html">Property Owners</a>
+    <a href="../hoa.html">For HOAs</a>
+    <a href="../community-charging.html">Community Charging</a>
+    <a href="../workplace-charging.html">Workplace Charging</a>
+    <a href="../service-area.html">Service Area</a>
+    <a href="../assessment.html" class="mob-cta">Get a free assessment</a>
+  </div>
+
+  <section class="article-hero" aria-label="Article header">
+    <div class="wrap">
+      <div class="article-hero-inner">
+        <div class="breadcrumb reveal">
+          <a href="../blog.html">Blog</a>
+          <span class="breadcrumb-sep">›</span>
+          <span>Evaluation Guide</span>
+        </div>
+        <span class="article-tag reveal reveal-d1">Evaluation Guide</span>
+        <h1 class="h1 reveal reveal-d1">Choosing an EV charging partner for your Colorado multifamily property</h1>
+        <p class="body-lg reveal reveal-d2">The EV charging partner you choose will be on your property for years. Getting the selection right means looking past the sales pitch to ask the right questions about maintenance responsibility, revenue terms, contract structure, and what happens when something goes wrong.</p>
+        <div class="article-meta reveal reveal-d3">
+          <span>Enertech</span>
+          <span class="article-meta-dot">·</span>
+          <span>8 min read</span>
+          <span class="article-meta-dot">·</span>
+          <span>Evaluation Guide</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body">
+    <div class="article-wrap">
+
+      <p>Selecting an EV charging partner for a multifamily property is a decision that compounds over time. A good partner running reliable hardware with transparent terms and responsive support is an amenity that runs itself. A poor one generates a steady stream of resident complaints, maintenance headaches, and contract disputes that no one budgeted for when the original agreement was signed.</p>
+
+      <p>This guide covers the dimensions that matter most in evaluating EV charging companies for Colorado multifamily properties — and the specific questions to ask before you sign anything.</p>
+
+      <h2>Why the partner matters as much as the hardware</h2>
+
+      <p>The EV charging industry has multiple layers. There are hardware manufacturers (the companies that make the charger units), network operators (the companies that run the software platforms for session management and billing), and managed service providers (companies that bundle hardware, network, installation, and maintenance into a single service). Some companies operate across all three layers; others are primarily in one.</p>
+
+      <p>For a multifamily property, what matters most is not which hardware brand you're getting — it's who is accountable for everything that happens with that hardware after installation. A charger that goes offline at 2am on a Saturday affects your residents regardless of whose logo is on the unit. The question is: who answers the phone, how quickly, and who pays for the fix?</p>
+
+      <h2>Revenue model: who earns what, and how</h2>
+
+      <p>Revenue terms are the most variable — and most negotiated — element of any EV charging partnership agreement. Ask every provider you evaluate to spell out clearly:</p>
+
+      <ul>
+        <li><strong>What percentage of session revenue goes to the property?</strong> This varies significantly across providers. Some offer higher revenue share at lower utilization; others offer better rates once charging volume crosses a threshold.</li>
+        <li><strong>Who controls session pricing?</strong> If the partner sets per-kWh or per-hour rates, understand the pricing methodology and whether the property has any input. Rates that are set too high suppress utilization; rates too low reduce revenue per session.</li>
+        <li><strong>Is there a revenue minimum or guarantee?</strong> Some providers offer a guaranteed minimum monthly payment regardless of charging utilization. Others offer pure revenue share with no floor. For properties with uncertain EV demand, a minimum can be meaningful.</li>
+        <li><strong>How is revenue reported and disbursed?</strong> Monthly reporting with line-item session data is standard for a well-run partner. Vague or quarterly reporting makes it difficult to verify what you're owed.</li>
+        <li><strong>What happens if the charger is offline?</strong> Does the property still receive any payment during downtime periods? Good partners with strong uptime SLAs don't need complex downtime provisions — but the question reveals a lot about how confident a provider is in their hardware reliability.</li>
+      </ul>
+
+      <h2>Maintenance and uptime: the most important operational question</h2>
+
+      <p>Ask every provider two questions: who owns the hardware, and who pays for maintenance after the warranty period?</p>
+
+      <p>These answers define the maintenance risk structure. If the property owns the hardware, the property carries long-term maintenance costs. If the partner owns the hardware, the maintenance obligation belongs to the partner. This distinction matters enormously over a 5–10 year horizon.</p>
+
+      <p>Follow-up questions on maintenance:</p>
+
+      <ul>
+        <li><strong>What is the defined uptime SLA?</strong> A provider confident in their hardware should be willing to commit a specific uptime percentage (e.g., 97% or better annually) in writing, with defined remedies if it's not met.</li>
+        <li><strong>What's the response time commitment when a charger goes offline?</strong> Remote diagnosis is typically fast; physical dispatch takes longer. Understand both — and understand what distinguishes "emergency" from "standard" response in their classification system.</li>
+        <li><strong>Do you have local technicians in Colorado?</strong> A partner dispatching from Denver can respond to a Fort Collins or Colorado Springs property far more quickly than one routing calls through a national dispatch center. For hardware issues that require on-site work, local presence is a meaningful operational advantage.</li>
+        <li><strong>Who manages firmware updates and network compatibility?</strong> For networked chargers, ongoing software management is part of the operational requirement. Understand who handles this and what happens if a firmware update causes issues.</li>
+      </ul>
+
+      <h2>Contract terms: what to read before you sign</h2>
+
+      <p>EV charging agreements are multi-year commercial contracts. The terms that seem minor during the sales process can have significant consequences later. Specific provisions to scrutinize:</p>
+
+      <h3>Contract length and auto-renewal</h3>
+
+      <p>Standard agreements run 3–7 years. Auto-renewal clauses — which extend the contract for another full term if you don't provide written notice within a specified window — are common. Understand when that window opens and make sure it's calendared. Missing an auto-renewal notice has locked many Colorado properties into unwanted contract extensions.</p>
+
+      <h3>Rate adjustment provisions</h3>
+
+      <p>Can the partner unilaterally change network fees, revenue share percentages, or session pricing during the contract term? Rate escalation clauses that allow fees to increase annually without a hard cap can significantly erode the financial terms you agreed to at signing.</p>
+
+      <h3>Hardware ownership and removal</h3>
+
+      <p>If you exit the contract — at term end or early — what happens to the hardware? If the partner owns the equipment, they'll remove it. Understand who bears the removal cost and whether the property must be restored to its prior condition. If you own the hardware, understand whether you can continue operating it independently after the network contract ends.</p>
+
+      <h3>Early termination</h3>
+
+      <p>What does it cost to exit before the term ends? Termination fees are typically framed as a multiple of remaining monthly payments. Understand the formula. Also understand whether there are any breach provisions — conditions under which you can exit without penalty if the partner fails to meet their service commitments.</p>
+
+      <div class="callout">
+        <div class="callout-title">Questions to ask before signing with any provider</div>
+        <p><strong>On revenue:</strong> What percentage goes to the property? Who sets session pricing? Is there a minimum payment?</p>
+        <p><strong>On maintenance:</strong> Who owns the hardware? Who pays for post-warranty repairs? What's your uptime SLA?</p>
+        <p><strong>On contracts:</strong> What's the term? Is there an auto-renewal clause? What's the early termination structure?</p>
+        <p><strong>On local presence:</strong> Do you have Colorado-based technicians? What's your average on-site response time in our market?</p>
+        <a href="../assessment.html" class="btn btn-white" style="font-size:0.9rem; padding:12px 14px 12px 20px; margin-bottom: 4px;">
+          See how Enertech answers these questions
+          <span class="btn-icon" aria-hidden="true" style="width:28px; height:28px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+        <p class="risk">Free assessment. We welcome comparison shopping — it's how you find the right fit.</p>
+      </div>
+
+      <h2>Local presence and Colorado expertise</h2>
+
+      <p>Colorado has specific factors that make local expertise valuable in an EV charging partner:</p>
+
+      <ul>
+        <li><strong>Xcel Energy rebate programs.</strong> The pre-approval process and application sequencing for Xcel's make-ready and equipment rebates requires knowledge of the program. A partner who handles these applications routinely will navigate them more smoothly than one who treats them as an afterthought.</li>
+        <li><strong>Charge Ahead Colorado grants.</strong> For eligible properties, coordinating Charge Ahead applications with Xcel pre-approvals requires knowing both program timelines. This is specialized knowledge.</li>
+        <li><strong>Local permitting.</strong> Electrical permits for EV charging installations are handled at the city or county level. A partner with established relationships with local permitting offices in Denver, Boulder, Fort Collins, and Colorado Springs will move through the process more efficiently.</li>
+        <li><strong>Colorado building regulations.</strong> Colorado's EV-Ready Building Code requirements affect new construction and substantial renovations. A local partner understands what's required and what documentation is needed for compliance.</li>
+      </ul>
+
+      <h2>Red flags to watch for</h2>
+
+      <p>Having evaluated many providers on behalf of Colorado multifamily properties, these are the warning signs that should give you pause:</p>
+
+      <ul>
+        <li><strong>Vague uptime commitments.</strong> "Industry-leading reliability" without a specific SLA percentage is a marketing statement, not a commitment.</li>
+        <li><strong>Opaque revenue reporting.</strong> If a provider can't show you a sample monthly revenue report with line-item session data, ask why.</li>
+        <li><strong>Auto-renewal windows shorter than 90 days.</strong> Short notice windows on auto-renewal clauses are designed to catch properties off guard.</li>
+        <li><strong>No local technicians.</strong> Ask directly: where are your nearest technicians? How do you dispatch for on-site service calls in Fort Collins / Denver / Colorado Springs? Vague answers suggest a national provider without real local infrastructure.</li>
+        <li><strong>Resistance to contract redlines.</strong> A provider who refuses to negotiate any contract terms is telling you something about how they approach the partnership relationship.</li>
+        <li><strong>Revenue projections that don't match comparable properties.</strong> Utilization projections that assume high session volume before a property's EV resident base is established should be questioned. Ask for reference properties with actual session data, not projections.</li>
+      </ul>
+
+      <div class="checklist">
+        <div class="checklist-title">EV charging partner evaluation checklist</div>
+        <ul>
+          <li>Hardware ownership and post-warranty maintenance responsibility is clearly defined in writing</li>
+          <li>Uptime SLA is specified as a percentage with defined remedies for non-compliance</li>
+          <li>Revenue share percentage, reporting cadence, and disbursement timeline are all specified</li>
+          <li>Session pricing methodology is transparent and the property understands who controls rates</li>
+          <li>Auto-renewal clause and notice window are understood and calendared</li>
+          <li>Early termination provisions are reviewed — both fees and breach-based exit rights</li>
+          <li>Provider has confirmed Xcel Energy pre-approval process and rebate handling capability</li>
+          <li>Local technician presence in your Colorado market is verified (not just a call center)</li>
+          <li>Reference properties — ideally in similar Colorado markets — are available to contact</li>
+        </ul>
+      </div>
+
+      <p>The right EV charging partner should be able to answer every question on this list clearly and in writing. If they can't — or if the answers raise more questions than they resolve — that's important information before you sign a multi-year agreement.</p>
+
+    </div>
+  </div>
+
+  <section class="cta-section" aria-label="Call to action">
+    <div class="wrap">
+      <h2 class="h2 reveal">See how Enertech answers the hard questions</h2>
+      <p class="body-lg reveal reveal-d1">We welcome the evaluation process. A free property assessment walks through our model, our contract terms, and what EV charging would look like for your specific property — including what you'd earn and what we'd be responsible for.</p>
+      <div class="cta-btn-row reveal reveal-d2">
+        <a href="../assessment.html" class="btn btn-white">
+          Get a free property assessment
+          <span class="btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+        <a href="../how-it-works.html" class="btn btn-ghost-light" style="color:rgba(249,250,251,0.78); border-color:rgba(255,255,255,0.18);">How our model works</a>
+      </div>
+      <p class="risk reveal reveal-d3">No obligation. Ask us anything — the harder the question, the better.</p>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="../index.html" class="footer-logo"><img src="../assets/White_logo_notag.png" alt="Enertech" style="height:28px;width:auto;display:block;"></a>
+          <p class="footer-tagline">Colorado's EV charging partner for multifamily properties. Fort Collins to Colorado Springs — zero cost to the property, always.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <div class="footer-col-title">For properties</div>
+            <a href="../how-it-works.html">How It Works</a>
+            <a href="../property-managers.html">For Property Managers</a>
+            <a href="../property-owners.html">For Property Owners</a>
+            <a href="../hoa.html">For HOAs</a>
+            <a href="../community-charging.html">Community Charging</a>
+            <a href="../workplace-charging.html">Workplace Charging</a>
+            <a href="../assessment.html">Get a free assessment</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">For drivers</div>
+            <a href="../for-drivers.html">How to charge</a>
+            <a href="../for-drivers.html#charger-specs-heading">Charger specs</a>
+            <a href="../for-drivers.html#faq-heading">Driver FAQ</a>
+            <a href="tel:+18888957158">24/7 support: +1 888 895 7158</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Resources</div>
+            <a href="../service-area.html">Service area</a>
+            <a href="../blog.html">Blog</a>
+            <a href="https://www.linkedin.com/company/enertech-energy" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Enertech. Fort Collins to Colorado Springs.</p>
+        <p class="footer-service">enertech.energy</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); revealObs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => revealObs.observe(el));
+    document.querySelectorAll('.article-hero .reveal').forEach(el => el.classList.add('in-view'));
+    (function() {
+      var dd = document.querySelector('.nav-dropdown');
+      if (!dd) return;
+      var trigger = dd.querySelector('.nav-dd-trigger');
+      trigger.addEventListener('click', function(e) { e.stopPropagation(); dd.classList.toggle('is-open'); });
+      document.addEventListener('click', function() { dd.classList.remove('is-open'); });
+      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') dd.classList.remove('is-open'); });
+    })();
+    const burger = document.querySelector('.nav-burger');
+    const mobileNav = document.getElementById('nav-mobile');
+    burger.addEventListener('click', () => {
+      const open = burger.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open);
+      mobileNav.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        burger.classList.remove('open');
+        burger.setAttribute('aria-expanded', false);
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+</body>
+</html>
