@@ -790,6 +790,7 @@
       })
       .then(res => {
         if (res.ok) {
+          gtag('event', 'generate_lead', { event_category: 'assessment_form', event_label: 'Free property assessment' });
           form.style.display = 'none';
           successState.style.display = 'flex';
         } else {
