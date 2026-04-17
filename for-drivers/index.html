@@ -1349,5 +1349,15 @@
   });
 })();
 </script>
+<script>
+  var feedbackForm = document.querySelector('.feedback-form');
+  if (feedbackForm) {
+    feedbackForm.addEventListener('submit', function () {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'driver_feedback_submitted', { event_category: 'driver_feedback' });
+      }
+    });
+  }
+</script>
 </body>
 </html>
