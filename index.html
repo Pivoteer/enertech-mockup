@@ -2009,44 +2009,53 @@
         <!-- Double-bezel form -->
         <div class="bezel-outer reveal reveal-d2">
           <div class="bezel-inner hero-form">
-            <div class="form-title">Book your free property assessment</div>
-            <div class="form-subtitle">We'll tell you honestly if it's not the right fit.</div>
-            <div class="form-row">
-              <div class="field"><label>First name</label><input type="text" placeholder="Alex" /></div>
-              <div class="field"><label>Last name</label><input type="text" placeholder="Smith" /></div>
+            <!-- Form state -->
+            <form id="hero-form" novalidate>
+              <div class="form-title">Book your free property assessment</div>
+              <div class="form-subtitle">We'll tell you honestly if it's not the right fit.</div>
+              <div class="form-row">
+                <div class="field"><label for="hf-first">First name</label><input id="hf-first" type="text" name="first_name" placeholder="Alex" required /></div>
+                <div class="field"><label for="hf-last">Last name</label><input id="hf-last" type="text" name="last_name" placeholder="Smith" /></div>
+              </div>
+              <div class="field"><label for="hf-email">Email</label><input id="hf-email" type="email" name="email" placeholder="alex@yourproperty.com" required /></div>
+              <div class="field">
+                <label for="hf-city">Property city</label>
+                <select id="hf-city" name="property_city">
+                  <option value="">Select a city</option>
+                  <option>Denver</option>
+                  <option>Fort Collins</option>
+                  <option>Boulder</option>
+                  <option>Colorado Springs</option>
+                  <option>Longmont</option>
+                  <option>Loveland</option>
+                  <option>Other Colorado city</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="hf-units">Approximate unit count</label>
+                <select id="hf-units" name="unit_count">
+                  <option value="">Select range</option>
+                  <option>50–100 units</option>
+                  <option>101–150 units</option>
+                  <option>101–250 units</option>
+                  <option>250+ units</option>
+                </select>
+              </div>
+              <button type="submit" id="hero-submit" class="btn btn-primary" style="width:100%;justify-content:space-between;margin-top:8px;">
+                <span style="flex:1;text-align:left;">Schedule my free assessment</span>
+                <span class="btn-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#F9FAFB"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 7h10M8 3l4 4-4 4" />
+                  </svg></span>
+              </button>
+              <p class="risk-dark" style="text-align:center;">No obligation. Free, no commitment.</p>
+            </form>
+            <!-- Success state -->
+            <div id="hero-success" style="display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 0;gap:16px;">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="20" fill="rgba(255,255,255,0.1)"/><polyline points="12 20 18 26 28 14" stroke="#F9FAFB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <p style="color:#F9FAFB;font-weight:700;font-size:1.05rem;margin:0;">You're on the list.</p>
+              <p style="color:rgba(249,250,251,0.65);font-size:0.9rem;margin:0;">We'll be in touch within one business day to schedule your free assessment.</p>
             </div>
-            <div class="field"><label>Email</label><input type="email" placeholder="alex@yourproperty.com" /></div>
-            <div class="field">
-              <label>Property city</label>
-              <select>
-                <option value="">Select a city</option>
-                <option>Denver</option>
-                <option>Fort Collins</option>
-                <option>Boulder</option>
-                <option>Colorado Springs</option>
-                <option>Longmont</option>
-                <option>Loveland</option>
-                <option>Other Colorado city</option>
-              </select>
-            </div>
-            <div class="field">
-              <label>Approximate unit count</label>
-              <select>
-                <option value="">Select range</option>
-                <option>50–100 units</option>
-                <option>101–150 units</option>
-                <option>101–250 units</option>
-                <option>250+ units</option>
-              </select>
-            </div>
-            <a href="#" class="btn btn-primary" style="width:100%;justify-content:space-between;margin-top:8px;">
-              <span style="flex:1;text-align:left;">Schedule my free assessment</span>
-              <span class="btn-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#F9FAFB"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M2 7h10M8 3l4 4-4 4" />
-                </svg></span>
-            </a>
-            <p class="risk-dark" style="text-align:center;">No obligation. Free, no commitment.</p>
           </div>
         </div>
       </div>
@@ -2709,6 +2718,40 @@
           burger.classList.remove('open');
           burger.setAttribute('aria-expanded', 'false');
           document.body.style.overflow = '';
+        });
+      });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      const form = document.getElementById('hero-form');
+      const btn = document.getElementById('hero-submit');
+      const success = document.getElementById('hero-success');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        // Basic required-field check
+        const firstErr = form.querySelector(':invalid');
+        if (firstErr) { firstErr.focus(); return; }
+        btn.disabled = true;
+        btn.querySelector('span').textContent = 'Sending…';
+        fetch('https://formspree.io/f/mqeglvno', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        }).then(function (res) {
+          if (res.ok) {
+            if (typeof gtag !== 'undefined') gtag('event', 'generate_lead', { event_category: 'hero_form', event_label: 'Free property assessment' });
+            form.style.display = 'none';
+            success.style.display = 'flex';
+          } else {
+            throw new Error();
+          }
+        }).catch(function () {
+          btn.disabled = false;
+          btn.querySelector('span').textContent = 'Something went wrong — try again';
+          btn.style.background = '#c0392b';
         });
       });
     })();
