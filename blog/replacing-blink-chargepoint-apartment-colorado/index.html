@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="../assets/Enertech_favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EV charging for Fort Collins apartments | Enertech</title>
-  <meta name="description" content="Fort Collins is one of Colorado's fastest-growing EV markets. Here's how apartment communities add EV charging at zero cost — and why now is the right time." />
-  <link rel="canonical" href="https://enertech.energy/blog/ev-charging-apartments-fort-collins" />
+  <title>Switching EV charging providers at your apartment | Enertech</title>
+  <meta name="description" content="Unhappy with Blink or ChargePoint at your Colorado apartment? Here's how to switch EV charging providers — contracts, timelines, and what to look for next." />
+  <link rel="canonical" href="https://enertech.energy/blog/replacing-blink-chargepoint-apartment-colorado" />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://enertech.energy/blog/ev-charging-apartments-fort-collins" />
-  <meta property="og:title" content="EV charging for Fort Collins apartments | Enertech" />
-  <meta property="og:description" content="Fort Collins is one of Colorado's fastest-growing EV markets. Here's how apartment communities add EV charging at zero cost — and why now is the right time." />
+  <meta property="og:url" content="https://enertech.energy/blog/replacing-blink-chargepoint-apartment-colorado" />
+  <meta property="og:title" content="Switching EV charging providers at your apartment | Enertech" />
+  <meta property="og:description" content="Unhappy with Blink or ChargePoint at your Colorado apartment? Here's how to switch EV charging providers — contracts, timelines, and what to look for next." />
   <meta property="og:site_name" content="Enertech" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="EV charging for Fort Collins apartments | Enertech" />
-  <meta name="twitter:description" content="Fort Collins is one of Colorado's fastest-growing EV markets. Here's how apartment communities add EV charging at zero cost — and why now is the right time." />
+  <meta name="twitter:title" content="Switching EV charging providers at your apartment | Enertech" />
+  <meta name="twitter:description" content="Unhappy with Blink or ChargePoint at your Colorado apartment? Here's how to switch EV charging providers — contracts, timelines, and what to look for next." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -24,7 +24,8 @@
     :root {
       --ink: #0C0C0C; --ink-2: #1C1C1C; --ink-3: #2E2E2E; --secondary: #6B6B6B; --muted: #9B9B9B;
       --border: rgba(0,0,0,0.08); --border-mid: rgba(0,0,0,0.14); --canvas: #F9FAFB; --surface: #FFFFFF;
-      --canvas-dark: #0C0C0C;
+      --canvas-dark: #0C0C0C; --surface-dark: #1C1C1C; --border-dark: rgba(255,255,255,0.09);
+      --shadow-sm: 0 4px 12px -4px rgba(0,0,0,0.08); --shadow-card: 0 20px 40px -15px rgba(0,0,0,0.07);
       --shadow-lift: 0 28px 48px -12px rgba(0,0,0,0.18);
       --r-xl: 2.5rem; --r-lg: 1.5rem; --r-md: 0.875rem; --r-sm: 0.5rem;
       --ease: cubic-bezier(0.32, 0.72, 0, 1); --max: 1320px; --article-max: 740px;
@@ -46,7 +47,7 @@
     .btn-white:hover { background: #fff; box-shadow: var(--shadow-lift); }
     .btn-white .btn-icon { background: rgba(0,0,0,0.07); }
     .btn-white:hover .btn-icon { transform: translateX(3px); }
-    .btn-ghost-light { background: transparent; color: var(--ink); padding: 14px 20px; border-radius: var(--r-md); border: 1.5px solid rgba(0,0,0,0.14); }
+    .btn-ghost-light { background: transparent; color: var(--ink); padding: 14px 20px; border-radius: var(--r-md); border: 1.5px solid var(--border-mid); }
     .btn-ghost-light:hover { border-color: var(--ink); }
     .btn-icon { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.3s var(--ease), background 0.3s var(--ease); }
     .btn-primary:hover .btn-icon { transform: translateX(3px); background: rgba(255,255,255,0.22); }
@@ -72,35 +73,15 @@
     .nav-mobile a { display: block; color: rgba(249,250,251,0.75); text-decoration: none; font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 500; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.07); transition: color 0.15s; }
     .nav-mobile a:hover { color: #F9FAFB; }
     .nav-mobile .mob-cta { display: block; margin-top: 24px; padding: 15px 24px; background: #F9FAFB; color: #0C0C0C !important; border-radius: 100px; text-align: center; font-weight: 700; font-size: 1rem; border-bottom: none; }
-    /* ── NAV DROPDOWN ── */
     .nav-dropdown { position: relative; list-style: none; }
-    .nav-dd-trigger {
-      display: flex; align-items: center; gap: 4px;
-      padding: 8px 14px; background: none; border: none; cursor: pointer;
-      font-family: 'Outfit', sans-serif; font-size: 0.875rem; font-weight: 500;
-      color: rgba(255,255,255,0.78); border-radius: var(--r-sm);
-      transition: color 0.2s, background 0.2s; white-space: nowrap;
-    }
-    .nav-dd-trigger:hover,
-    .nav-dropdown.is-open .nav-dd-trigger,
-    .nav-dropdown.has-active .nav-dd-trigger { color: #F9FAFB; background: rgba(255,255,255,0.07); }
+    .nav-dd-trigger { display: flex; align-items: center; gap: 4px; padding: 8px 14px; background: none; border: none; cursor: pointer; font-family: 'Outfit', sans-serif; font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.78); border-radius: var(--r-sm); transition: color 0.2s, background 0.2s; white-space: nowrap; }
+    .nav-dd-trigger:hover, .nav-dropdown.is-open .nav-dd-trigger { color: #F9FAFB; background: rgba(255,255,255,0.07); }
     .nav-dd-trigger svg { width: 11px; height: 11px; stroke: currentColor; stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.2s; }
     .nav-dropdown.is-open .nav-dd-trigger svg { transform: rotate(180deg); }
-    .nav-dd-menu {
-      display: none; position: absolute; top: calc(100% + 6px); left: 0;
-      min-width: 210px; background: rgba(14,14,14,0.97);
-      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255,255,255,0.1); border-radius: var(--r-md);
-      padding: 6px; box-shadow: 0 20px 48px rgba(0,0,0,0.5); z-index: 200;
-    }
-    .nav-dropdown:hover .nav-dd-menu,
-    .nav-dropdown.is-open .nav-dd-menu { display: block; }
-    .nav-dd-menu a {
-      display: block; padding: 9px 14px; font-size: 0.85rem; font-weight: 500;
-      color: rgba(255,255,255,0.72); border-radius: 6px;
-      text-decoration: none; transition: color 0.15s, background 0.15s;
-    }
-    .nav-dd-menu a:hover, .nav-dd-menu a.active { color: #F9FAFB; background: rgba(255,255,255,0.08); }
+    .nav-dd-menu { display: none; position: absolute; top: calc(100% + 6px); left: 0; min-width: 210px; background: rgba(14,14,14,0.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--r-md); padding: 6px; box-shadow: 0 20px 48px rgba(0,0,0,0.5); z-index: 200; }
+    .nav-dropdown:hover .nav-dd-menu, .nav-dropdown.is-open .nav-dd-menu { display: block; }
+    .nav-dd-menu a { display: block; padding: 9px 14px; font-size: 0.85rem; font-weight: 500; color: rgba(255,255,255,0.72); border-radius: 6px; text-decoration: none; transition: color 0.15s, background 0.15s; }
+    .nav-dd-menu a:hover { color: #F9FAFB; background: rgba(255,255,255,0.08); }
     .nav-dd-divider { height: 1px; background: rgba(255,255,255,0.07); margin: 4px 2px; }
     .nav-dd-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
     .mob-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.35); padding: 20px 0 4px; border-bottom: none !important; }
@@ -149,16 +130,8 @@
     .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
     .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
     .footer-service { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
-    @media (max-width: 1120px) {
-      .nav-links { display: none; }
-      .nav-burger { display: flex; }
-    }
-
-    @media (max-width: 900px) {
-      .wrap { padding: 0 24px; } .article-wrap { padding: 0 24px; }
-      .nav-cta { display: none; }
-      .footer-top { flex-direction: column; } .footer-inner { padding: 0 24px; }
-    }
+    @media (max-width: 1120px) { .nav-links { display: none; } .nav-burger { display: flex; } }
+    @media (max-width: 900px) { .wrap { padding: 0 24px; } .article-wrap { padding: 0 24px; } .nav-cta { display: none; } .footer-top { flex-direction: column; } .footer-inner { padding: 0 24px; } }
     @media (max-width: 600px) { .article-hero { padding: 60px 0 52px; } .callout { padding: 28px 24px; } }
   </style>
 </head>
@@ -166,27 +139,27 @@
 
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="../index.html" class="nav-logo"><img src="../assets/White_logo_notag.png" alt="Enertech" style="height:26px;width:auto;display:block;"></a>
-            <ul class="nav-links">
-        <li><a href="../how-it-works.html">How It Works</a></li>
+      <a href="/" class="nav-logo"><img src="../assets/White_logo_notag.png" alt="Enertech" style="height:26px;width:auto;display:block;"></a>
+      <ul class="nav-links">
+        <li><a href="/how-it-works/">How It Works</a></li>
         <li class="nav-dropdown">
           <button class="nav-dd-trigger">Who We Serve
             <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="nav-dd-menu">
-            <a href="../property-managers.html">Property Managers</a>
-            <a href="../property-owners.html">Property Owners</a>
-            <a href="../hoa.html">For HOAs</a>
+            <a href="/property-managers/">Property Managers</a>
+            <a href="/property-owners/">Property Owners</a>
+            <a href="/hoa/">For HOAs</a>
             <div class="nav-dd-divider"></div>
-            <a href="../community-charging.html">Community Charging</a>
-            <a href="../workplace-charging.html">Workplace Charging</a>
+            <a href="/community-charging/">Community Charging</a>
+            <a href="/workplace-charging/">Workplace Charging</a>
           </div>
         </li>
-        <li><a href="../service-area.html">Service Area</a></li>
+        <li><a href="/service-area/">Service Area</a></li>
       </ul>
       <div class="nav-right nav-cta">
-        <a href="../for-drivers.html" class="nav-drivers">For Drivers</a>
-        <a href="../assessment.html" class="btn btn-primary">
+        <a href="/for-drivers/" class="nav-drivers">For Drivers</a>
+        <a href="/assessment/" class="btn btn-primary">
           Get a free assessment
           <span class="btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </a>
@@ -194,36 +167,36 @@
       <button class="nav-burger" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </nav>
-    <div class="nav-mobile" id="nav-mobile">
-    <a href="../for-drivers.html" style="color:rgba(249,250,251,0.92);font-weight:700;">⚡ For Drivers</a>
-    <a href="../how-it-works.html">How It Works</a>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="/for-drivers/" style="color:rgba(249,250,251,0.92);font-weight:700;">⚡ For Drivers</a>
+    <a href="/how-it-works/">How It Works</a>
     <div class="mob-label">Who We Serve</div>
-    <a href="../property-managers.html">Property Managers</a>
-    <a href="../property-owners.html">Property Owners</a>
-    <a href="../hoa.html">For HOAs</a>
-    <a href="../community-charging.html">Community Charging</a>
-    <a href="../workplace-charging.html">Workplace Charging</a>
-    <a href="../service-area.html">Service Area</a>
-    <a href="../assessment.html" class="mob-cta">Get a free assessment</a>
+    <a href="/property-managers/">Property Managers</a>
+    <a href="/property-owners/">Property Owners</a>
+    <a href="/hoa/">For HOAs</a>
+    <a href="/community-charging/">Community Charging</a>
+    <a href="/workplace-charging/">Workplace Charging</a>
+    <a href="/service-area/">Service Area</a>
+    <a href="/assessment/" class="mob-cta">Get a free assessment</a>
   </div>
 
   <section class="article-hero" aria-label="Article header">
     <div class="wrap">
       <div class="article-hero-inner">
         <div class="breadcrumb reveal">
-          <a href="../blog.html">Blog</a>
+          <a href="/blog/">Blog</a>
           <span class="breadcrumb-sep">›</span>
-          <span>Fort Collins</span>
+          <span>Switching Providers</span>
         </div>
-        <span class="article-tag reveal reveal-d1">Fort Collins</span>
-        <h1 class="h1 reveal reveal-d1">EV charging for Fort Collins apartments: a fast-moving market and what property managers should do now</h1>
-        <p class="body-lg reveal reveal-d2">Fort Collins is one of Colorado's fastest-growing EV markets — driven by CSU, a young professional renter base, and ambitious city climate goals. For apartment communities in Fort Collins and Loveland, EV charging is moving from optional amenity to competitive baseline.</p>
+        <span class="article-tag reveal reveal-d1">Switching Providers</span>
+        <h1 class="h1 reveal reveal-d1">Replacing Blink or ChargePoint at your Colorado apartment property</h1>
+        <p class="body-lg reveal reveal-d2">Unhappy with your current EV charging provider? You're not alone. Switching is more straightforward than most property managers expect — but it requires understanding your current contract, what happens to the existing hardware, and what to prioritize in the replacement selection.</p>
         <div class="article-meta reveal reveal-d3">
           <span>Enertech</span>
           <span class="article-meta-dot">·</span>
-          <span>6 min read</span>
+          <span>7 min read</span>
           <span class="article-meta-dot">·</span>
-          <span>Fort Collins / Loveland</span>
+          <span>Switching Providers</span>
         </div>
       </div>
     </div>
@@ -232,82 +205,107 @@
   <div class="article-body">
     <div class="article-wrap">
 
-      <p>Fort Collins punches above its weight on EV adoption. The city's combination of Colorado State University, a highly educated young professional workforce, strong environmental culture, and ambitious climate action goals has produced EV ownership rates that far exceed what you'd expect from a city its size.</p>
+      <p>The EV charging industry has been in rapid evolution for several years, and many Colorado multifamily properties that installed chargers through Blink, ChargePoint, or other early-market providers are now dealing with the consequences of contracts and hardware decisions that didn't age well. Outdated charger models, rising network fees, slow support response times, and unfavorable revenue structures are common complaints.</p>
 
-      <p>Fort Collins is also Enertech's home market — it's where we're based and where we've installed more charging programs than anywhere else in Colorado. We know this market in a way that a national operator managing Colorado from a remote office simply doesn't.</p>
+      <p>If your property is in this situation, here's what switching providers actually involves — including the contract considerations that catch most properties off guard.</p>
 
-      <h2>What's driving EV adoption in Fort Collins</h2>
+      <h2>Why Colorado multifamily properties switch EV charging providers</h2>
 
-      <p>Fort Collins has set some of the most aggressive climate targets of any Colorado city, including a goal of 100% renewable electricity and significant EV adoption as part of its <a href="https://www.fcgov.com/climateaction/" target="_blank" rel="noopener">Climate Action Plan</a>. That policy environment shapes resident expectations and creates real institutional momentum behind EV infrastructure.</p>
+      <p>The reasons vary, but common themes emerge across properties we talk to:</p>
 
-      <p>The CSU effect is significant too. The university community — students, faculty, and staff — skews toward environmental consciousness and represents a meaningful share of Fort Collins' rental market. As EV prices continue to fall and more affordable EV models enter the market, EV adoption among younger renters in Fort Collins is accelerating faster than the broader Colorado average.</p>
+      <ul>
+        <li><strong>Hardware reliability.</strong> Older charger models — particularly first and second-generation networked Level 2 chargers installed during the 2015–2020 period — have higher failure rates as they age. Blink's earlier hardware, in particular, developed a poor reputation for reliability at multifamily installations.</li>
+        <li><strong>Support responsiveness.</strong> National charging network providers support thousands of locations. A single multifamily property with two to four chargers is not a high-priority account for their support team. When a charger goes down on a Friday evening, the timeline to resolution can stretch into days.</li>
+        <li><strong>Network fee increases.</strong> Many early contracts had low or subsidized network fees that increased significantly at renewal. Properties that signed agreements with favorable fee structures in 2019 are now seeing substantially higher costs on renewal.</li>
+        <li><strong>Unfavorable revenue terms.</strong> Some early multifamily EV charging agreements gave the network provider a significant portion of session revenue with limited transparency into how rates were set. Properties that discover how much revenue is flowing to the network rather than the property are often motivated to renegotiate or switch.</li>
+        <li><strong>Technology obsolescence.</strong> Charger standards and resident expectations have evolved. A property with older chargers that lack features residents now expect — faster charging speeds, app-based session control, RFID access management — is at a disadvantage against competing properties with newer hardware.</li>
+      </ul>
 
-      <p>Fort Collins also has its own municipal electric utility — Fort Collins Utilities — which runs its own EV programs for residential and commercial customers. For apartment properties served by Fort Collins Utilities, this is the relevant program to assess rather than Xcel Energy. Properties in Loveland are served by Xcel Energy and have access to <a href="https://co.my.xcelenergy.com/s/business/ev" target="_blank" rel="noopener">Xcel's multifamily EV rebate programs</a>. Enertech navigates both utility program landscapes — it's part of what we assess in every Fort Collins and Loveland site evaluation.</p>
+      <h2>Understanding your current contract before you do anything else</h2>
 
-      <h2>The Fort Collins apartment market context</h2>
+      <p>Before taking any steps toward switching, locate and read your current agreement with your EV charging provider. This is the step most properties skip — and it's where unpleasant surprises live.</p>
 
-      <p>Fort Collins has a large and diverse apartment stock — from older garden-style communities near CSU and downtown, to newer Class A communities in Midtown and along the South College corridor, to workforce housing developments further south toward Loveland.</p>
+      <p>Key contract provisions to understand:</p>
 
-      <p>EV charging program design varies meaningfully across these property types. Older garden-style communities built in the 1970s and 80s often have limited electrical panel capacity, which shapes what's possible in the first phase of a program. Newer communities typically have more headroom and can accommodate more chargers immediately. The Enertech site assessment process starts with your actual electrical infrastructure — we don't design programs based on averages.</p>
+      <h3>Term and auto-renewal</h3>
 
-      <p>What's consistent across Fort Collins property types: the cost to the property is zero. Whether your building is 40 years old with a single electrical panel or a new construction with modern infrastructure, Enertech covers 100% of the installation — hardware, electrical work, permits, and ongoing operations. Your property earns a revenue share from charging sessions from day one.</p>
+      <p>Most commercial EV charging agreements have multi-year terms (typically 3–7 years) with automatic renewal clauses. If you don't provide written notice of non-renewal within a specified window before the term ends — often 60 to 90 days — the contract automatically renews for another full term. Many properties discover they're locked into an unwanted renewal because they missed this window.</p>
 
-      <h2>Fort Collins Utilities vs. Xcel: what it means for your property</h2>
+      <h3>Hardware ownership and removal</h3>
 
-      <p>Most of Fort Collins proper is served by Fort Collins Utilities (FCU), the city's municipal electric utility. FCU runs its own EV incentive programs, which differ from Xcel's in structure and eligibility. If your property is within Fort Collins Utilities' service territory, Xcel rebates don't apply — but FCU's programs may provide comparable value.</p>
+      <p>Who owns the charging hardware? If the network provider owns it, they will typically remove the equipment when the contract ends. If the property owns it, you may be able to keep the hardware but need to transition it to a new network or operate it independently.</p>
 
-      <p>Properties in Loveland, Timnath, and Windsor are generally in Xcel Energy's service territory and have access to Xcel's make-ready and equipment rebate programs for multifamily EV charging.</p>
+      <p>For hardware owned by the provider, removal timing and process should be specified in the agreement. Some agreements require the provider to restore the electrical infrastructure to its prior condition; others do not — leaving the property with mounted conduit and breaker capacity that wasn't there before.</p>
 
-      <p>This utility boundary is something Enertech maps as part of every site assessment. We identify which programs your property qualifies for and handle all pre-project application paperwork — you don't deal with the utility programs at all.</p>
+      <h3>Early termination provisions</h3>
+
+      <p>Most agreements have early termination clauses with financial penalties — often calculated as a multiple of monthly fees for the remaining contract term. The good news is that early termination provisions are often negotiable, particularly if the provider is in breach (e.g., persistent charger downtime above contractually specified thresholds, or support response SLA violations).</p>
+
+      <h3>Data and session records</h3>
+
+      <p>At contract end, what happens to historical charging session data? For properties that have been earning revenue, session records may matter for accounting. Get clarity on data export rights before the contract ends.</p>
+
+      <h2>Making the case for early termination</h2>
+
+      <p>If you're mid-contract and want to exit early, the most productive approach is to document your case rather than simply requesting termination. Providers are more likely to negotiate favorable exit terms when the property can demonstrate:</p>
+
+      <ul>
+        <li>Persistent charger downtime above the SLA threshold (if one exists)</li>
+        <li>Support response failures documented with timestamps</li>
+        <li>Fee increases that weren't properly disclosed or that exceed contractually specified limits</li>
+        <li>Hardware failures that were not remediated within the contractual timeframe</li>
+      </ul>
+
+      <p>In our experience helping Colorado properties transition from other providers, many agreements have service level provisions that have been quietly violated over time. Pointing these out is often enough to negotiate a reduced termination fee or a waived penalty.</p>
 
       <div class="callout">
-        <div class="callout-title">Enertech is based in Fort Collins</div>
-        <p>We're a local company — Fort Collins is our home market. When a charger at one of our Fort Collins properties needs attention, we can be there. No dispatching a technician from out of state, no waiting for a national operator's service queue.</p>
-        <p>A <a href="../assessment.html" style="color: rgba(255,255,255,0.85);">free site assessment</a> covers your electrical infrastructure, parking layout, utility program eligibility, and a realistic demand estimate — all at no cost to you.</p>
-        <a href="../assessment.html" class="btn btn-white" style="font-size:0.9rem; padding:12px 14px 12px 20px;">
-          Get a free Fort Collins property assessment
+        <div class="callout-title">How we handle provider transitions</div>
+        <p>When we assess a property that wants to switch from an existing provider, we review the current contract as part of the evaluation. We can advise on termination timing, what to look for in SLA compliance history, and how to structure the transition to minimize any gap in charging availability.</p>
+        <p>For most properties, the transition from an existing provider to Enertech's zero-cost model takes 4–8 weeks once the existing contract is resolved — including electrical assessment, Xcel pre-approval, and installation. The property continues earning from the existing chargers (if operational) until the new installation goes live.</p>
+        <a href="/assessment/" class="btn btn-white" style="font-size:0.9rem; padding:12px 14px 12px 20px; margin-bottom: 4px;">
+          Tell us about your current situation
           <span class="btn-icon" aria-hidden="true" style="width:28px; height:28px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </a>
-        <p class="risk">No obligation. We'll tell you honestly if it's not the right fit.</p>
+        <p class="risk">Free assessment. We'll review your current contract and give you an honest read on your options.</p>
       </div>
 
-      <h2>What property managers in Fort Collins are asking us</h2>
+      <h2>What to look for in a replacement provider</h2>
 
-      <p>Based on the conversations we have regularly with Fort Collins property managers, here are the questions that come up most often:</p>
+      <p>Having been through this process, properties often have a clearer sense of what they should have prioritized in their original selection. The most common themes in what properties want from a replacement:</p>
 
-      <p><strong>"Our building is older — can we actually add EV charging?"</strong> Usually yes, though the scope of the first phase depends on existing panel capacity. We design programs around what's actually there, with a path to expand as capacity allows. Older buildings sometimes benefit from a phased approach — starting with shared charging in common parking areas and adding more circuits over time.</p>
+      <ul>
+        <li><strong>Clear maintenance responsibility.</strong> Who owns the hardware, and who pays for repairs? A managed partnership where the provider owns and maintains all equipment eliminates the property's maintenance exposure entirely.</li>
+        <li><strong>Transparent revenue terms.</strong> What percentage of charging revenue goes to the property? How are session rates set, and who controls them? Is there a minimum revenue guarantee?</li>
+        <li><strong>Defined support SLAs.</strong> What's the committed response time when a charger goes offline? What happens if that SLA is not met? Support commitments that exist only in marketing copy and not in contract terms aren't worth the paper they're printed on.</li>
+        <li><strong>Local presence.</strong> A provider with actual technicians and infrastructure in Colorado will diagnose and resolve site-specific issues faster than a national provider dispatching from a distant hub.</li>
+        <li><strong>Reasonable contract terms.</strong> Auto-renewal clauses, early termination fees, and term lengths should all be reasonable. A provider confident in their service shouldn't need to lock you in with onerous exit provisions.</li>
+      </ul>
 
-      <p><strong>"How many chargers do we need?"</strong> This depends on your unit count, resident demographics, and parking layout. Fort Collins properties near CSU tend to see faster EV adoption than those further from campus. As a starting point, we look at current parking utilization, any resident EV data you have, and comparable properties we've assessed in the market.</p>
+      <p>For a broader look at provider selection criteria, see our guide: <a href="/blog/ev-charging-partner-multifamily-colorado/">choosing an EV charging partner for your Colorado multifamily property</a>.</p>
 
-      <p><strong>"What happens if a charger breaks?"</strong> It's our equipment — we fix it. Your maintenance staff are never involved. We monitor every charger remotely and proactively identify issues before residents report them. When something needs physical attention, we dispatch locally from Fort Collins.</p>
+      <h2>What happens to the existing electrical infrastructure</h2>
 
-      <p><strong>"What does the revenue share look like?"</strong> Revenue share terms are negotiated per property based on the program design, installation scope, and projected utilization. We don't publish specific percentages because they vary. What we can tell you is that most Fort Collins properties see their first revenue share payment within 30–60 days of going live.</p>
+      <p>One practical question many properties have: if the old charger hardware is removed, does the electrical work need to be redone?</p>
 
-      <h2>Why now is the right time for Fort Collins properties</h2>
+      <p>In most cases, no. The electrical infrastructure — conduit, wiring, panel breakers — installed for the original chargers can typically be reused for a replacement installation. The charging hardware mounts to the same locations and connects to the same circuits. This makes a hardware-only swap significantly less disruptive and less expensive than a full new installation.</p>
 
-      <p>Fort Collins' EV adoption curve is steep and still rising. The properties adding EV charging today are meeting current resident demand and building a differentiator that will only become more relevant as EV ownership continues to grow in the Fort Collins market.</p>
-
-      <p>Fort Collins Utilities and Xcel Energy both have active incentive programs for multifamily EV charging. Program terms and funding levels are set periodically — there's no guarantee that current terms persist into future program cycles. Properties that move now are locking in whatever terms are currently available.</p>
-
-      <p>And because Enertech covers 100% of the installation cost, there's no capital outlay waiting for "the right time" from a budget perspective. The cost of adding EV charging through our partnership model is zero — the only cost of waiting is opportunity.</p>
-
-      <p>If you manage or own apartment communities in Fort Collins or Loveland, we'd welcome the conversation. <a href="../assessment.html">A free site assessment</a> takes about 20 minutes and gives you a clear picture of what's possible at your property — and what it would cost you (which, with our model, is nothing). Learn more about <a href="../how-it-works.html">how the Enertech partnership works</a>.</p>
+      <p>We assess the existing electrical infrastructure as part of every replacement evaluation. If the original electrical work was done correctly and is in good condition, we can often reuse it directly. If there are issues — undersized breakers, degraded wiring, poor conduit routing — we'll identify them and address them as part of the transition.</p>
 
     </div>
   </div>
 
   <section class="cta-section" aria-label="Call to action">
     <div class="wrap">
-      <h2 class="h2 reveal">Add EV charging to your Fort Collins apartment community</h2>
-      <p class="body-lg reveal reveal-d1">Enertech is based in Fort Collins. We cover 100% of hardware, installation, and ongoing operations — and we're local enough to actually show up when something needs attention.</p>
+      <h2 class="h2 reveal">Ready to move on from your current provider?</h2>
+      <p class="body-lg reveal reveal-d1">We've helped Colorado multifamily properties transition from Blink, ChargePoint, and other providers. A free assessment reviews your current contract and gives you a clear picture of what switching would involve — and what Enertech's model would look like for your property.</p>
       <div class="cta-btn-row reveal reveal-d2">
-        <a href="../assessment.html" class="btn btn-white">
+        <a href="/assessment/" class="btn btn-white">
           Get a free property assessment
           <span class="btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </a>
-        <a href="../service-area.html" class="btn btn-ghost-light" style="color:rgba(249,250,251,0.78); border-color:rgba(255,255,255,0.18);">See our service area</a>
+        <a href="/how-it-works/" class="btn btn-ghost-light" style="color:rgba(249,250,251,0.78); border-color:rgba(255,255,255,0.18);">How our model works</a>
       </div>
-      <p class="risk reveal reveal-d3">No obligation. We'll tell you honestly if it's not the right fit for your property.</p>
+      <p class="risk reveal reveal-d3">No obligation. We'll give you a straight assessment of your options.</p>
     </div>
   </section>
 
@@ -315,31 +313,31 @@
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
-          <a href="../index.html" class="footer-logo"><img src="../assets/White_logo_notag.png" alt="Enertech" style="height:28px;width:auto;display:block;"></a>
+          <a href="/" class="footer-logo"><img src="../assets/White_logo_notag.png" alt="Enertech" style="height:28px;width:auto;display:block;"></a>
           <p class="footer-tagline">Colorado's EV charging partner for multifamily properties. Fort Collins to Colorado Springs — zero cost to the property, always.</p>
         </div>
         <div class="footer-links">
           <div class="footer-col">
             <div class="footer-col-title">For properties</div>
-            <a href="../how-it-works.html">How It Works</a>
-            <a href="../property-managers.html">For Property Managers</a>
-            <a href="../property-owners.html">For Property Owners</a>
-            <a href="../hoa.html">For HOAs</a>
-            <a href="../community-charging.html">Community Charging</a>
-            <a href="../workplace-charging.html">Workplace Charging</a>
-            <a href="../assessment.html">Get a free assessment</a>
+            <a href="/how-it-works/">How It Works</a>
+            <a href="/property-managers/">For Property Managers</a>
+            <a href="/property-owners/">For Property Owners</a>
+            <a href="/hoa/">For HOAs</a>
+            <a href="/community-charging/">Community Charging</a>
+            <a href="/workplace-charging/">Workplace Charging</a>
+            <a href="/assessment/">Get a free assessment</a>
           </div>
           <div class="footer-col">
             <div class="footer-col-title">For drivers</div>
-            <a href="../for-drivers.html">How to charge</a>
-            <a href="../for-drivers.html#charger-specs-heading">Charger specs</a>
-            <a href="../for-drivers.html#faq-heading">Driver FAQ</a>
+            <a href="/for-drivers/">How to charge</a>
+            <a href="/for-drivers/#charger-specs-heading">Charger specs</a>
+            <a href="/for-drivers/#faq-heading">Driver FAQ</a>
             <a href="tel:+18888957158">24/7 support: +1 888 895 7158</a>
           </div>
           <div class="footer-col">
             <div class="footer-col-title">Resources</div>
-            <a href="../service-area.html">Service area</a>
-            <a href="../blog.html">Blog</a>
+            <a href="/service-area/">Service area</a>
+            <a href="/blog/">Blog</a>
             <a href="https://www.linkedin.com/company/enertech-energy" target="_blank" rel="noopener">LinkedIn ↗</a>
           </div>
         </div>
@@ -358,21 +356,14 @@
     }, { threshold: 0.1 });
     revealEls.forEach(el => revealObs.observe(el));
     document.querySelectorAll('.article-hero .reveal').forEach(el => el.classList.add('in-view'));
-    // Nav dropdown
     (function() {
       var dd = document.querySelector('.nav-dropdown');
       if (!dd) return;
       var trigger = dd.querySelector('.nav-dd-trigger');
-      trigger.addEventListener('click', function(e) {
-        e.stopPropagation();
-        dd.classList.toggle('is-open');
-      });
+      trigger.addEventListener('click', function(e) { e.stopPropagation(); dd.classList.toggle('is-open'); });
       document.addEventListener('click', function() { dd.classList.remove('is-open'); });
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') dd.classList.remove('is-open');
-      });
+      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') dd.classList.remove('is-open'); });
     })();
-
     const burger = document.querySelector('.nav-burger');
     const mobileNav = document.getElementById('nav-mobile');
     burger.addEventListener('click', () => {

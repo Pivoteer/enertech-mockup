@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="../assets/Enertech_favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Apartment EV chargers not working? Here's why | Enertech</title>
-  <meta name="description" content="EV chargers at your apartment keep going offline or failing? Here's why it happens, what property managers can do, and how to fix the problem for good." />
-  <link rel="canonical" href="https://enertech.energy/blog/apartment-ev-chargers-not-working" />
+  <title>Zero-cost vs. owned EV charging for apartments | Enertech</title>
+  <meta name="description" content="Comparing zero-cost EV charging partnerships vs. buying and owning chargers for your Colorado apartment property. The real tradeoffs, explained plainly." />
+  <link rel="canonical" href="https://enertech.energy/blog/zero-cost-vs-owned-ev-charging-apartments" />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://enertech.energy/blog/apartment-ev-chargers-not-working" />
-  <meta property="og:title" content="Apartment EV chargers not working? Here's why | Enertech" />
-  <meta property="og:description" content="EV chargers at your apartment keep going offline or failing? Here's why it happens, what property managers can do, and how to fix the problem for good." />
+  <meta property="og:url" content="https://enertech.energy/blog/zero-cost-vs-owned-ev-charging-apartments" />
+  <meta property="og:title" content="Zero-cost vs. owned EV charging for apartments | Enertech" />
+  <meta property="og:description" content="Comparing zero-cost EV charging partnerships vs. buying and owning chargers for your Colorado apartment property. The real tradeoffs, explained plainly." />
   <meta property="og:site_name" content="Enertech" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Apartment EV chargers not working? Here's why | Enertech" />
-  <meta name="twitter:description" content="EV chargers at your apartment keep going offline or failing? Here's why it happens, what property managers can do, and how to fix the problem for good." />
+  <meta name="twitter:title" content="Zero-cost vs. owned EV charging for apartments | Enertech" />
+  <meta name="twitter:description" content="Comparing zero-cost EV charging partnerships vs. buying and owning chargers for your Colorado apartment property. The real tradeoffs, explained plainly." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -112,6 +112,14 @@
     .callout strong { color: #F9FAFB; }
     .callout-title { font-size: 1rem; font-weight: 800; letter-spacing: -0.01em; color: #F9FAFB; margin-bottom: 12px; }
     .callout .risk { color: rgba(255,255,255,0.55); margin-top: 10px; }
+    .compare-table { width: 100%; border-collapse: collapse; margin: 2em 0; font-size: 0.95rem; }
+    .compare-table th { text-align: left; padding: 12px 16px; background: var(--ink); color: #F9FAFB; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.04em; }
+    .compare-table th:first-child { border-radius: var(--r-sm) 0 0 0; }
+    .compare-table th:last-child { border-radius: 0 var(--r-sm) 0 0; }
+    .compare-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--ink-2); vertical-align: top; line-height: 1.55; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: rgba(0,0,0,0.025); }
+    .compare-table td:first-child { font-weight: 600; color: var(--ink); width: 32%; }
     .cta-section { background: var(--ink); padding: 100px 0; text-align: center; }
     .cta-section .h2 { color: #F9FAFB; margin-bottom: 20px; }
     .cta-section .body-lg { color: rgba(249,250,251,0.80); margin-bottom: 48px; max-width: 520px; margin-left: auto; margin-right: auto; }
@@ -132,34 +140,34 @@
     .footer-service { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
     @media (max-width: 1120px) { .nav-links { display: none; } .nav-burger { display: flex; } }
     @media (max-width: 900px) { .wrap { padding: 0 24px; } .article-wrap { padding: 0 24px; } .nav-cta { display: none; } .footer-top { flex-direction: column; } .footer-inner { padding: 0 24px; } }
-    @media (max-width: 600px) { .article-hero { padding: 60px 0 52px; } .callout { padding: 28px 24px; } }
+    @media (max-width: 600px) { .article-hero { padding: 60px 0 52px; } .callout { padding: 28px 24px; } .compare-table { font-size: 0.85rem; } .compare-table td, .compare-table th { padding: 10px 12px; } }
   </style>
 </head>
 <body>
 
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="../index.html" class="nav-logo"><img src="../assets/White_logo_notag.png" alt="Enertech" style="height:26px;width:auto;display:block;"></a>
+      <a href="/" class="nav-logo"><img src="../assets/White_logo_notag.png" alt="Enertech" style="height:26px;width:auto;display:block;"></a>
       <ul class="nav-links">
-        <li><a href="../how-it-works.html">How It Works</a></li>
+        <li><a href="/how-it-works/">How It Works</a></li>
         <li class="nav-dropdown">
           <button class="nav-dd-trigger">Who We Serve
             <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="nav-dd-menu">
-            <a href="../property-managers.html">Property Managers</a>
-            <a href="../property-owners.html">Property Owners</a>
-            <a href="../hoa.html">For HOAs</a>
+            <a href="/property-managers/">Property Managers</a>
+            <a href="/property-owners/">Property Owners</a>
+            <a href="/hoa/">For HOAs</a>
             <div class="nav-dd-divider"></div>
-            <a href="../community-charging.html">Community Charging</a>
-            <a href="../workplace-charging.html">Workplace Charging</a>
+            <a href="/community-charging/">Community Charging</a>
+            <a href="/workplace-charging/">Workplace Charging</a>
           </div>
         </li>
-        <li><a href="../service-area.html">Service Area</a></li>
+        <li><a href="/service-area/">Service Area</a></li>
       </ul>
       <div class="nav-right nav-cta">
-        <a href="../for-drivers.html" class="nav-drivers">For Drivers</a>
-        <a href="../assessment.html" class="btn btn-primary">
+        <a href="/for-drivers/" class="nav-drivers">For Drivers</a>
+        <a href="/assessment/" class="btn btn-primary">
           Get a free assessment
           <span class="btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </a>
@@ -168,35 +176,35 @@
     </div>
   </nav>
   <div class="nav-mobile" id="nav-mobile">
-    <a href="../for-drivers.html" style="color:rgba(249,250,251,0.92);font-weight:700;">⚡ For Drivers</a>
-    <a href="../how-it-works.html">How It Works</a>
+    <a href="/for-drivers/" style="color:rgba(249,250,251,0.92);font-weight:700;">⚡ For Drivers</a>
+    <a href="/how-it-works/">How It Works</a>
     <div class="mob-label">Who We Serve</div>
-    <a href="../property-managers.html">Property Managers</a>
-    <a href="../property-owners.html">Property Owners</a>
-    <a href="../hoa.html">For HOAs</a>
-    <a href="../community-charging.html">Community Charging</a>
-    <a href="../workplace-charging.html">Workplace Charging</a>
-    <a href="../service-area.html">Service Area</a>
-    <a href="../assessment.html" class="mob-cta">Get a free assessment</a>
+    <a href="/property-managers/">Property Managers</a>
+    <a href="/property-owners/">Property Owners</a>
+    <a href="/hoa/">For HOAs</a>
+    <a href="/community-charging/">Community Charging</a>
+    <a href="/workplace-charging/">Workplace Charging</a>
+    <a href="/service-area/">Service Area</a>
+    <a href="/assessment/" class="mob-cta">Get a free assessment</a>
   </div>
 
   <section class="article-hero" aria-label="Article header">
     <div class="wrap">
       <div class="article-hero-inner">
         <div class="breadcrumb reveal">
-          <a href="../blog.html">Blog</a>
+          <a href="/blog/">Blog</a>
           <span class="breadcrumb-sep">›</span>
-          <span>Problem Solving</span>
+          <span>Strategy</span>
         </div>
-        <span class="article-tag reveal reveal-d1">Problem Solving</span>
-        <h1 class="h1 reveal reveal-d1">When apartment EV chargers stop working — and what to do about it</h1>
-        <p class="body-lg reveal reveal-d2">Broken or unreliable EV chargers at multifamily properties aren't just a resident inconvenience — they're a property management problem that signals something deeper about how the installation was designed, who owns ongoing responsibility, and whether your current provider is the right long-term partner.</p>
+        <span class="article-tag reveal reveal-d1">Strategy</span>
+        <h1 class="h1 reveal reveal-d1">Zero-cost vs. owned EV charging: what Colorado apartment properties should know</h1>
+        <p class="body-lg reveal reveal-d2">Two fundamentally different models exist for getting EV charging into a multifamily property. Understanding the real tradeoffs — not just the upfront cost comparison — determines which one makes sense for your situation.</p>
         <div class="article-meta reveal reveal-d3">
           <span>Enertech</span>
           <span class="article-meta-dot">·</span>
-          <span>7 min read</span>
+          <span>8 min read</span>
           <span class="article-meta-dot">·</span>
-          <span>Problem Solving</span>
+          <span>Strategy</span>
         </div>
       </div>
     </div>
@@ -205,116 +213,160 @@
   <div class="article-body">
     <div class="article-wrap">
 
-      <p>Broken apartment EV chargers are one of the most common complaints we hear from both residents and property managers across Colorado. A charger that worked fine for the first year is now offline half the time. Residents are submitting maintenance tickets. The provider's support line has a long hold queue. And the property manager — who had nothing to do with installing the charger and doesn't have the technical background to diagnose it — is stuck in the middle.</p>
+      <p>When a Colorado apartment property manager decides it's time to add EV charging, two distinct paths are available. The first is to own the equipment outright — buy the chargers, pay for installation, and take on the ongoing operations, maintenance, and network costs. The second is a managed partnership model where a third party installs, owns, and operates the chargers at no cost to the property, in exchange for a revenue share from charging sessions.</p>
 
-      <p>This article explains why apartment EV chargers fail so often, what your options are when they do, and when the right answer is not fixing the existing charger but replacing the entire setup with a model that doesn't put maintenance responsibility on the property at all.</p>
+      <p>Both models can produce good outcomes. The right choice depends on your property's financial situation, management capacity, risk tolerance, and long-term goals. This article explains both models honestly — including where each one falls short — so you can make a well-informed decision.</p>
 
-      <h2>Why apartment EV chargers fail more often than people expect</h2>
+      <h2>The two models, defined clearly</h2>
 
-      <p>EV chargers are more complex than people expect. They're network-connected devices that draw significant electrical current on continuous cycles. When something in that chain isn't right — the hardware, the network connection, the electrical supply, or the software — the charger goes offline.</p>
+      <h3>Owned EV charging</h3>
 
-      <p>The most common failure modes at multifamily properties include:</p>
+      <p>The property purchases the charger hardware, pays for electrical infrastructure upgrades, and either self-manages the network (unlikely) or contracts with a charging network provider for software, payment processing, and remote monitoring. The property owns the equipment outright and retains all revenue from charging sessions. The property also carries all maintenance costs, network subscription fees, and hardware replacement costs over time.</p>
 
-      <h3>Network and connectivity failures</h3>
+      <h3>Zero-cost partnership model</h3>
 
-      <p>Networked Level 2 chargers communicate with a backend management platform to handle authentication, billing, session logging, and remote monitoring. If the connection between the charger and that platform breaks — because of a WiFi drop, a cellular signal issue, a firmware update that went wrong, or a change in the network provider's infrastructure — the charger can go into an error state and refuse to start sessions.</p>
+      <p>A managed services partner — like Enertech — installs, owns, and operates the chargers at no upfront cost to the property. The partner handles all capital investment, electrical infrastructure work, hardware, network fees, maintenance, and 24/7 support. In exchange, the property receives a revenue share from charging sessions. The property earns passive income without investing capital or managing operations.</p>
 
-      <p>This is especially common in parking garages and underground structures where cellular signal is weak. An installation that worked in initial testing may start dropping connectivity as charger firmware updates or network conditions change over time.</p>
+      <h2>Upfront costs: what's actually comparable</h2>
 
-      <h3>Electrical supply issues</h3>
+      <p>The most obvious difference is the upfront cost. A multifamily EV charging installation — hardware, electrical make-ready, installation labor — typically runs into five figures even for a modest installation, and into the low six figures for larger properties or those requiring significant electrical upgrades.</p>
 
-      <p>Level 2 chargers draw substantial current on a sustained basis. If the electrical circuit feeding the charger wasn't properly sized — or if other loads on the same circuit have increased since installation — the charger may trip circuit breakers intermittently or enter protective error states. This can look like random charger failures but is actually an electrical infrastructure problem.</p>
+      <p>The zero-cost model eliminates this entirely. The owned model requires this capital outlay, net of any rebates and incentives captured. For Colorado properties in Xcel Energy's territory, <a href="/blog/xcel-energy-ev-rebate-multifamily/">Xcel's make-ready and equipment rebates</a> can meaningfully reduce the owned-model cost — but they don't eliminate it, and the pre-approval and documentation burden falls on the property owner.</p>
 
-      <h3>Hardware wear and physical damage</h3>
+      <p>The relevant comparison for most properties isn't "free vs. expensive." It's "capital preservation and zero operational risk vs. capital investment with higher long-term revenue potential." That's a meaningful strategic choice, not a simple math problem.</p>
 
-      <p>Charger cables and connectors experience physical wear from daily use. In outdoor installations, weather exposure accelerates degradation. Vandalism and accidental vehicle damage are also common in surface parking lots. Most charger warranties cover manufacturing defects but not wear-and-tear or physical damage — which means an out-of-warranty charger with a damaged cable is a property expense.</p>
+      <h2>Ongoing operations: where the real complexity lives</h2>
 
-      <h3>Software and firmware issues</h3>
+      <p>The upfront cost comparison is straightforward. The operational comparison is where most properties underestimate the owned model's true cost.</p>
 
-      <p>Networked chargers receive periodic firmware updates from their manufacturer. Most of the time these updates are invisible. Occasionally they introduce new bugs or compatibility issues with the network management platform. When that happens, chargers can behave unpredictably until the manufacturer releases a patch — leaving the property caught between an unresponsive charger and a support process that can take days or weeks.</p>
-
-      <h2>The real cost of charger downtime at your property</h2>
-
-      <p>Charger downtime isn't just a resident inconvenience. It has real costs that property managers often don't fully account for:</p>
+      <p>Owned EV charging at a multifamily property involves:</p>
 
       <ul>
-        <li><strong>Resident complaints and lease renewal risk.</strong> EV drivers chose your property partly because of the charging amenity. A charger that's down more than 10-15% of the time is going to generate complaints — and for a resident whose vehicle charging is tied to their daily routine, it's a genuine quality-of-life issue that affects lease renewal decisions.</li>
-        <li><strong>Management time.</strong> Every maintenance ticket, every call to the charger provider's support line, every follow-up with the electrical contractor — that's property management time that wasn't budgeted for when the charger was installed.</li>
-        <li><strong>Lost amenity value.</strong> A broken charger doesn't appear on your property listing. When prospective residents ask about EV charging, a manager has to choose between admitting the charger is unreliable or overpromising.</li>
-        <li><strong>Deferred maintenance compounds.</strong> Small issues — a loose connector, an intermittent breaker trip, a firmware version that's two cycles out of date — don't resolve themselves. They get worse. A charger that needs a $200 cable replacement today may need a $1,500 hardware swap in six months.</li>
+        <li><strong>Network subscription fees.</strong> Networked chargers require an ongoing monthly or annual fee paid to the network operator for software, payment processing, remote monitoring, and customer support. These fees persist for the life of the installation.</li>
+        <li><strong>Hardware maintenance.</strong> Charger cables, connectors, and display components wear over time. Out-of-warranty repairs or replacements are property expenses. A unit that needed one repair call in year one may need three in year five.</li>
+        <li><strong>24/7 support responsibility.</strong> When a resident's charging session fails at 11pm, someone needs to be reachable. With owned hardware, that escalation path leads back to the property and the network provider's support queue — not to a dedicated partner with a stake in uptime.</li>
+        <li><strong>Firmware and platform management.</strong> Networked chargers require periodic firmware updates, and the network platform evolves over time. Keeping hardware and software in sync requires ongoing attention.</li>
+        <li><strong>Utilization management.</strong> Who has access to which chargers? How are sessions priced? What happens when parking spots are blocked by non-EV vehicles? These questions require policy decisions and ongoing enforcement that add to the management load.</li>
       </ul>
 
-      <h2>What residents can do when chargers aren't working</h2>
+      <p>Under a managed partnership, all of these become the partner's problem. The property gets a revenue share and zero operational burden.</p>
 
-      <p>If you're a resident dealing with a charger that won't work, the first step is to check whether it's a session-specific issue or a persistent hardware problem. Try these in order:</p>
+      <h2>Revenue: the math is more nuanced than it appears</h2>
 
-      <ol>
-        <li>Check the charger's status light or display. Most networked chargers show a distinct status code for connectivity failures vs. hardware faults vs. normal idle state.</li>
-        <li>Try ending and restarting the session through the charger's network app if applicable.</li>
-        <li>Try a different charging port if multiple are installed (a hardware fault on one port doesn't necessarily affect others on the same unit).</li>
-        <li>Report the issue to property management with the specific charger location and any error code displayed. A timestamped report helps the provider diagnose the problem remotely.</li>
-      </ol>
+      <p>This is where the comparison gets genuinely complicated — and where properties sometimes make decisions based on incomplete analysis.</p>
 
-      <p>If the charger has been offline for more than 24–48 hours without resolution, that's a signal of a deeper issue that resident-level troubleshooting won't fix.</p>
+      <p>With owned chargers, the property captures 100% of charging revenue (minus network fees). With a partnership model, the property captures a revenue share — less than 100%, but with zero capital invested and zero operational cost.</p>
 
-      <h2>What property managers can do</h2>
+      <p>The honest answer is that revenue projections for EV charging at multifamily properties are highly variable. Utilization rates depend heavily on the EV penetration rate among your residents, the number of charging ports installed, pricing, and local competition. High-utilization properties in neighborhoods with strong EV adoption can see meaningful revenue. Lower-utilization properties see modest revenue regardless of model.</p>
 
-      <p>For property managers, the immediate response is to contact the charger network provider's support line and open a ticket with the specific unit ID, error state, and timeline. Most networked charger providers can diagnose the majority of issues remotely — if connectivity is the problem, they can often push a reset or configuration change without a site visit.</p>
+      <p>The question isn't just "which model pays more." It's: given the capital and operational investment required in the owned model, what's the realistic return on investment over 5–10 years? And how does that compare to the risk-free revenue share from a zero-cost partnership?</p>
 
-      <p>If the problem requires a site visit, the provider should be dispatching their own technician (or a contracted service technician) at no charge if the hardware is under warranty. If it's out of warranty, you're looking at a billable service call — and that's where the model starts to matter.</p>
+      <p>For most multifamily property managers who aren't in the business of operating energy infrastructure, the risk-adjusted comparison favors the partnership model. For larger institutional owners with the operational infrastructure to manage a charging network and the capital to absorb the upfront investment, owned hardware may produce better long-term economics on high-utilization properties.</p>
 
-      <p>The harder question is what to do when the charger keeps failing despite repairs. Recurring failures on the same unit are often a signal that the hardware has reached end-of-useful-life or that the original installation had a design flaw — inadequate circuit capacity, poor cable routing, weak network signal — that no amount of repair will permanently fix.</p>
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Factor</th>
+            <th>Owned model</th>
+            <th>Zero-cost partnership</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Upfront capital</td>
+            <td>Required (net of rebates)</td>
+            <td>None</td>
+          </tr>
+          <tr>
+            <td>Maintenance responsibility</td>
+            <td>Property</td>
+            <td>Partner</td>
+          </tr>
+          <tr>
+            <td>Network fees</td>
+            <td>Property</td>
+            <td>Partner</td>
+          </tr>
+          <tr>
+            <td>Resident support</td>
+            <td>Property + network provider</td>
+            <td>Partner (24/7)</td>
+          </tr>
+          <tr>
+            <td>Charging revenue</td>
+            <td>100% (minus network fees)</td>
+            <td>Revenue share</td>
+          </tr>
+          <tr>
+            <td>Hardware upgrade risk</td>
+            <td>Property</td>
+            <td>Partner</td>
+          </tr>
+          <tr>
+            <td>Rebate/incentive capture</td>
+            <td>Property captures directly</td>
+            <td>Partner captures (expands scope)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Control and flexibility</h2>
+
+      <p>One real advantage of the owned model is control. You set the pricing, you control access policies, you decide when and how to expand. A partnership model involves shared decision-making on some of these points, and you're subject to the terms of the agreement you signed.</p>
+
+      <p>For some property owners, this matters a lot. For most property managers who want reliable EV charging with minimal involvement, it matters very little. The question is whether the control premium is worth the capital, operational burden, and risk it comes attached to.</p>
+
+      <p>Contract terms in partnership models vary significantly. Before signing, understand the revenue share structure, what happens if charging utilization doesn't meet projections, how hardware upgrades are handled as the technology evolves, and what the exit provisions look like. These terms are negotiable — the right partner should offer transparency here, not obscure it in fine print.</p>
 
       <div class="callout">
-        <div class="callout-title">The managed services difference</div>
-        <p>Under Enertech's model, we own the charger hardware and carry all maintenance responsibility. When a charger goes offline, we handle the diagnosis and repair — the property doesn't open a ticket or manage a service call. Monitoring is continuous; we're typically aware of a hardware issue before residents report it.</p>
-        <p>This is the structural difference between a managed partnership and an owned installation: with owned hardware, maintenance falls on the property. With a managed partner, it doesn't.</p>
-        <a href="../assessment.html" class="btn btn-white" style="font-size:0.9rem; padding:12px 14px 12px 20px; margin-bottom: 4px;">
-          Talk to us about your current charger situation
+        <div class="callout-title">How Enertech structures its partnerships</div>
+        <p>We install, own, and operate all equipment at our own cost. The property earns a revenue share from every charging session — passive income with zero management overhead. We handle maintenance, network fees, 24/7 resident support, and Xcel rebate coordination.</p>
+        <p>We're transparent about contract terms because we want long-term partnerships, not transactions. If the owned model genuinely makes more sense for your property, we'll tell you that in the assessment.</p>
+        <a href="/assessment/" class="btn btn-white" style="font-size:0.9rem; padding:12px 14px 12px 20px; margin-bottom: 4px;">
+          Get a free property assessment
           <span class="btn-icon" aria-hidden="true" style="width:28px; height:28px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </a>
-        <p class="risk">If your current chargers aren't working well, we'll give you an honest assessment of the options.</p>
+        <p class="risk">No obligation. We'll give you a straight comparison for your specific property.</p>
       </div>
 
-      <h2>When replacement is the right answer</h2>
+      <h2>Which is right for your property?</h2>
 
-      <p>There are situations where repairing existing chargers is the right call — particularly when hardware is relatively new, under warranty, and failing for a diagnosable and fixable reason. There are other situations where continuing to invest in a failing installation is the wrong call.</p>
-
-      <p>Replacement is worth serious consideration when:</p>
+      <p>The zero-cost partnership model is typically the right call for:</p>
 
       <ul>
-        <li>The charger hardware is out of warranty and has required multiple repairs</li>
-        <li>The network provider has poor support responsiveness and you're regularly waiting days for issue resolution</li>
-        <li>The installation has structural problems (inadequate electrical capacity, poor siting) that make repeated failures likely regardless of hardware condition</li>
-        <li>Residents are actively complaining about reliability and it's affecting lease renewals</li>
-        <li>Your current contract has problematic terms — revenue lock-ups, automatic renewal clauses, limited SLA commitments</li>
+        <li>Properties where capital preservation is a priority</li>
+        <li>Management teams that don't want to add operational complexity</li>
+        <li>Properties that want to move quickly without the rebate application timeline</li>
+        <li>Smaller properties where the owned model's fixed overhead costs make the economics unfavorable</li>
+        <li>Properties with uncertain EV demand where revenue projections are hard to forecast</li>
       </ul>
 
-      <p>If any of these apply, the conversation isn't about repairing the charger — it's about whether your current provider and model is the right long-term fit. See our guide on <a href="replacing-blink-chargepoint-apartment-colorado.html">replacing Blink or ChargePoint chargers at Colorado multifamily properties</a> for more on what a provider transition actually looks like.</p>
+      <p>The owned model may make more sense for:</p>
 
-      <h2>Preventing the problem in the first place</h2>
+      <ul>
+        <li>Large properties with high projected utilization and institutional capital to deploy</li>
+        <li>Ownership groups that want to build an internal EV charging operations capability</li>
+        <li>Properties with existing operational infrastructure (maintenance staff, 24/7 management) that can absorb the added complexity at low marginal cost</li>
+        <li>Situations where the full revenue capture and control premium are worth more than the capital and operational costs</li>
+      </ul>
 
-      <p>For properties evaluating EV charging for the first time, the maintenance question should be front-and-center in provider selection. Ask every provider you evaluate: who owns hardware maintenance responsibility? What's the SLA for bringing a down charger back online? Who pays for service calls after the warranty period? What happens if the network provider changes their platform or pricing?</p>
-
-      <p>The answers to those questions will tell you more about the long-term cost of EV charging at your property than the initial installation price. A zero-cost installation that saddles you with ongoing maintenance responsibility isn't the same as a zero-cost model where maintenance is permanently off your plate.</p>
-
-      <p>For more on evaluating EV charging providers, see our guide: <a href="ev-charging-partner-multifamily-colorado.html">choosing an EV charging partner for your Colorado multifamily property</a>.</p>
+      <p>For most Colorado multifamily properties we talk to — regional managers, community managers, property owners who are focused on running residential operations rather than energy infrastructure — the zero-cost model answers the question cleanly. But the right answer for your property depends on specifics we can only assess once we know your property, your electrical situation, and your goals.</p>
 
     </div>
   </div>
 
   <section class="cta-section" aria-label="Call to action">
     <div class="wrap">
-      <h2 class="h2 reveal">Tired of managing charger problems that aren't yours to manage?</h2>
-      <p class="body-lg reveal reveal-d1">With Enertech, EV charging maintenance is completely off your plate — we own the hardware, monitor it continuously, and handle every service issue. A free assessment shows you what a reliable installation looks like for your property.</p>
+      <h2 class="h2 reveal">Find out which model makes sense for your property</h2>
+      <p class="body-lg reveal reveal-d1">A free assessment gives you a clear picture of what EV charging would look like under both models for your specific property — costs, revenue projections, and a straight recommendation. No sales pitch, no obligation.</p>
       <div class="cta-btn-row reveal reveal-d2">
-        <a href="../assessment.html" class="btn btn-white">
+        <a href="/assessment/" class="btn btn-white">
           Get a free property assessment
           <span class="btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </a>
-        <a href="../how-it-works.html" class="btn btn-ghost-light" style="color:rgba(249,250,251,0.78); border-color:rgba(255,255,255,0.18);">How our model works</a>
+        <a href="/how-it-works/" class="btn btn-ghost-light" style="color:rgba(249,250,251,0.78); border-color:rgba(255,255,255,0.18);">How our model works</a>
       </div>
-      <p class="risk reveal reveal-d3">No obligation. We'll tell you honestly what's realistic for your property.</p>
+      <p class="risk reveal reveal-d3">No obligation. We'll be honest about what makes sense for your situation.</p>
     </div>
   </section>
 
@@ -322,31 +374,31 @@
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
-          <a href="../index.html" class="footer-logo"><img src="../assets/White_logo_notag.png" alt="Enertech" style="height:28px;width:auto;display:block;"></a>
+          <a href="/" class="footer-logo"><img src="../assets/White_logo_notag.png" alt="Enertech" style="height:28px;width:auto;display:block;"></a>
           <p class="footer-tagline">Colorado's EV charging partner for multifamily properties. Fort Collins to Colorado Springs — zero cost to the property, always.</p>
         </div>
         <div class="footer-links">
           <div class="footer-col">
             <div class="footer-col-title">For properties</div>
-            <a href="../how-it-works.html">How It Works</a>
-            <a href="../property-managers.html">For Property Managers</a>
-            <a href="../property-owners.html">For Property Owners</a>
-            <a href="../hoa.html">For HOAs</a>
-            <a href="../community-charging.html">Community Charging</a>
-            <a href="../workplace-charging.html">Workplace Charging</a>
-            <a href="../assessment.html">Get a free assessment</a>
+            <a href="/how-it-works/">How It Works</a>
+            <a href="/property-managers/">For Property Managers</a>
+            <a href="/property-owners/">For Property Owners</a>
+            <a href="/hoa/">For HOAs</a>
+            <a href="/community-charging/">Community Charging</a>
+            <a href="/workplace-charging/">Workplace Charging</a>
+            <a href="/assessment/">Get a free assessment</a>
           </div>
           <div class="footer-col">
             <div class="footer-col-title">For drivers</div>
-            <a href="../for-drivers.html">How to charge</a>
-            <a href="../for-drivers.html#charger-specs-heading">Charger specs</a>
-            <a href="../for-drivers.html#faq-heading">Driver FAQ</a>
+            <a href="/for-drivers/">How to charge</a>
+            <a href="/for-drivers/#charger-specs-heading">Charger specs</a>
+            <a href="/for-drivers/#faq-heading">Driver FAQ</a>
             <a href="tel:+18888957158">24/7 support: +1 888 895 7158</a>
           </div>
           <div class="footer-col">
             <div class="footer-col-title">Resources</div>
-            <a href="../service-area.html">Service area</a>
-            <a href="../blog.html">Blog</a>
+            <a href="/service-area/">Service area</a>
+            <a href="/blog/">Blog</a>
             <a href="https://www.linkedin.com/company/enertech-energy" target="_blank" rel="noopener">LinkedIn ↗</a>
           </div>
         </div>
