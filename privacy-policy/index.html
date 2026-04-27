@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/assets/Enertech_favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | Enertech</title>
+  <meta name="description" content="Enertech's privacy policy — how we collect, use, and protect your information." />
+  <link rel="canonical" href="https://enertech.energy/privacy-policy/" />
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #0C0C0C;
+      --ink-2: #1C1C1C;
+      --ink-3: #2E2E2E;
+      --secondary: #6B6B6B;
+      --muted: #9B9B9B;
+      --border: rgba(0,0,0,0.08);
+      --border-mid: rgba(0,0,0,0.14);
+      --canvas: #F9FAFB;
+      --surface: #FFFFFF;
+      --canvas-dark: #0C0C0C;
+      --shadow-lift: 0 28px 48px -12px rgba(0,0,0,0.18);
+      --r-xl: 2.5rem;
+      --r-lg: 1.5rem;
+      --r-md: 0.875rem;
+      --r-sm: 0.5rem;
+      --ease: cubic-bezier(0.32, 0.72, 0, 1);
+      --max: 1320px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Outfit', system-ui, -apple-system, sans-serif; background: var(--canvas); color: var(--ink); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+
+    /* ── BUTTONS ── */
+    .btn { display: inline-flex; align-items: center; gap: 10px; border: none; cursor: pointer; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.95rem; transition: all 0.3s var(--ease); text-decoration: none; white-space: nowrap; }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: var(--ink); color: #F9FAFB; padding: 14px 16px 14px 24px; border-radius: var(--r-md); }
+    .btn-primary:hover { background: var(--ink-3); box-shadow: var(--shadow-lift); }
+    .btn-icon { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.3s var(--ease), background 0.3s var(--ease); }
+    .btn-primary:hover .btn-icon { transform: translateX(3px); background: rgba(255,255,255,0.22); }
+    .nav-cta .btn-primary { padding: 10px 12px 10px 18px; font-size: 0.875rem; }
+    .nav-cta .btn-icon { width: 28px; height: 28px; }
+
+    /* ── NAV ── */
+    .nav { position: sticky; top: 0; z-index: 100; background: rgba(12,12,12,0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .nav-logo { font-size: 1.2rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; flex-shrink: 0; }
+    .nav-links { display: flex; gap: 2px; list-style: none; align-items: center; }
+    .nav-links a { display: block; padding: 8px 14px; font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.78); text-decoration: none; border-radius: var(--r-sm); transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover { color: #F9FAFB; background: rgba(255,255,255,0.07); }
+    .nav-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .nav-drivers { display: inline-flex; align-items: center; padding: 8px 14px; font-size: 0.875rem; font-weight: 600; color: rgba(255,255,255,0.88); text-decoration: none; border-radius: var(--r-sm); border: 1px solid rgba(255,255,255,0.24); transition: color 0.2s, background 0.2s, border-color 0.2s; white-space: nowrap; }
+    .nav-drivers:hover { color: #F9FAFB; background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.5); }
+    .nav-burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; padding: 8px; background: none; border: none; cursor: pointer; border-radius: 8px; flex-shrink: 0; }
+    .nav-burger span { display: block; width: 22px; height: 2px; background: #F9FAFB; border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease; }
+    .nav-dropdown { position: relative; }
+    .nav-dd-trigger { background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 5px; padding: 8px 14px; font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.78); border-radius: var(--r-sm); transition: color 0.2s, background 0.2s; font-family: 'Outfit', sans-serif; }
+    .nav-dd-trigger:hover { color: #F9FAFB; background: rgba(255,255,255,0.07); }
+    .nav-dd-trigger svg { width: 11px; height: 11px; stroke: currentColor; stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.2s; }
+    .nav-dropdown.is-open .nav-dd-trigger svg { transform: rotate(180deg); }
+    .nav-dd-menu { display: none; position: absolute; top: calc(100% + 8px); left: 0; background: #1C1C1C; border: 1px solid rgba(255,255,255,0.1); border-radius: var(--r-md); padding: 6px; min-width: 200px; box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5); }
+    .nav-dropdown.is-open .nav-dd-menu { display: flex; flex-direction: column; }
+    .nav-dd-menu a { padding: 9px 14px; font-size: 0.875rem; color: rgba(255,255,255,0.78); text-decoration: none; border-radius: 6px; transition: color 0.15s, background 0.15s; }
+    .nav-dd-menu a:hover { color: #F9FAFB; background: rgba(255,255,255,0.07); }
+    .nav-dd-divider { height: 1px; background: rgba(255,255,255,0.08); margin: 4px 0; }
+    .nav-mobile { display: none; position: fixed; inset: 0; top: 66px; background: #0C0C0C; z-index: 99; padding: 24px 32px; overflow-y: auto; flex-direction: column; gap: 2px; }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a { display: block; padding: 13px 0; font-size: 1rem; font-weight: 500; color: rgba(249,250,251,0.85); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .nav-mobile a:hover { color: #F9FAFB; }
+    .mob-cta { background: #F9FAFB; color: var(--ink) !important; border-radius: var(--r-md); padding: 14px 20px !important; font-weight: 700 !important; text-align: center; margin-top: 16px; border-bottom: none !important; }
+    .mob-cta:hover { background: #e0e0e0; }
+    .mob-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.35); padding: 20px 0 4px; }
+
+    /* ── PRIVACY CONTENT ── */
+    .policy-hero { padding: 80px 0 56px; border-bottom: 1px solid var(--border); }
+    .policy-body { padding: 72px 0 120px; }
+    .policy-inner { max-width: 720px; }
+
+    .policy-inner h2 { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.01em; color: var(--ink); margin: 48px 0 14px; }
+    .policy-inner h2:first-child { margin-top: 0; }
+    .policy-inner p { font-size: 1rem; line-height: 1.75; color: var(--secondary); margin-bottom: 16px; }
+    .policy-inner p:last-child { margin-bottom: 0; }
+    .policy-inner ul { margin: 0 0 16px 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .policy-inner ul li { font-size: 1rem; line-height: 1.65; color: var(--secondary); display: flex; gap: 12px; align-items: baseline; }
+    .policy-inner ul li::before { content: '—'; color: var(--border-mid); flex-shrink: 0; }
+    .policy-inner a { color: var(--ink); text-underline-offset: 3px; }
+    .policy-inner a:hover { color: var(--secondary); }
+
+    /* ── FOOTER ── */
+    .footer { background: var(--canvas-dark); padding: 64px 0 40px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .footer-top { display: flex; justify-content: space-between; gap: 48px; margin-bottom: 56px; flex-wrap: wrap; }
+    .footer-brand { max-width: 320px; }
+    .footer-logo { font-size: 1.3rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; }
+    .footer-tagline { font-size: 0.875rem; color: rgba(255,255,255,0.65); margin-top: 10px; line-height: 1.5; }
+    .footer-links { display: flex; gap: 48px; flex-wrap: wrap; }
+    .footer-col { display: flex; flex-direction: column; gap: 4px; }
+    .footer-col-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 8px; }
+    .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.75); text-decoration: none; padding: 4px 0; transition: color 0.2s; }
+    .footer-col a:hover { color: #F9FAFB; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 28px; }
+    .footer-copy { font-size: 0.82rem; color: rgba(255,255,255,0.4); }
+    .footer-service { font-size: 0.82rem; color: rgba(255,255,255,0.4); }
+    .footer-legal { display: flex; gap: 20px; }
+    .footer-legal a { font-size: 0.82rem; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+    .footer-legal a:hover { color: rgba(255,255,255,0.7); }
+
+    @media (max-width: 1024px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-burger { display: flex; }
+    }
+    @media (max-width: 680px) {
+      .wrap { padding: 0 24px; }
+      .footer-inner { padding: 0 24px; }
+      .nav-inner { padding: 0 24px; }
+      .policy-hero { padding: 56px 0 40px; }
+      .policy-body { padding: 48px 0 80px; }
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZF1DTKP1M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0ZF1DTKP1M');
+  </script>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo"><img src="/assets/White_logo_notag.png" alt="Enertech" style="height:26px;width:auto;display:block;"></a>
+      <ul class="nav-links">
+        <li><a href="/how-it-works/">How It Works</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-dd-trigger">Who We Serve
+            <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dd-menu">
+            <a href="/property-managers/">Property Managers</a>
+            <a href="/property-owners/">Property Owners</a>
+            <a href="/hoa/">For HOAs</a>
+            <div class="nav-dd-divider"></div>
+            <a href="/community-charging/">Community Charging</a>
+            <a href="/workplace-charging/">Workplace Charging</a>
+          </div>
+        </li>
+        <li><a href="/service-area/">Service Area</a></li>
+      </ul>
+      <div class="nav-right nav-cta">
+        <a href="/for-drivers/" class="nav-drivers">For Drivers</a>
+        <a href="/assessment/" class="btn btn-primary">
+          Get a free assessment
+          <span class="btn-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#F9FAFB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span>
+        </a>
+      </div>
+      <button class="nav-burger" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="/for-drivers/" style="color:rgba(249,250,251,0.92);font-weight:700;">⚡ For Drivers</a>
+    <a href="/how-it-works/">How It Works</a>
+    <div class="mob-label">Who We Serve</div>
+    <a href="/property-managers/">Property Managers</a>
+    <a href="/property-owners/">Property Owners</a>
+    <a href="/hoa/">For HOAs</a>
+    <a href="/community-charging/">Community Charging</a>
+    <a href="/workplace-charging/">Workplace Charging</a>
+    <a href="/service-area/">Service Area</a>
+    <a href="/assessment/" class="mob-cta">Get a free assessment</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="policy-hero">
+    <div class="wrap">
+      <p class="label">Legal</p>
+      <h1 style="font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-0.03em;line-height:1.05;margin-top:12px;">Privacy Policy</h1>
+      <p style="font-size:0.9rem;color:var(--muted);margin-top:16px;">Last updated: April 27, 2026</p>
+    </div>
+  </section>
+
+  <!-- BODY -->
+  <section class="policy-body">
+    <div class="wrap">
+      <div class="policy-inner">
+
+        <p>Enertech ("we," "us," or "our") operates enertech.energy. This policy explains what information we collect when you use our website and contact us, how we use it, and how you can reach us with questions.</p>
+        <p>We keep this plain. If something is unclear, email us at <a href="mailto:ev@enertech.energy">ev@enertech.energy</a>.</p>
+
+        <h2>Information we collect</h2>
+        <p>We collect information in two ways: what you give us directly, and what our analytics tools collect automatically.</p>
+        <p><strong>What you give us directly</strong> — when you fill out a form on our site, we may collect:</p>
+        <ul>
+          <li>Your name and email address</li>
+          <li>Your property's location and approximate unit count</li>
+          <li>Details about your property type and EV charging situation</li>
+          <li>Any additional information you include in a message or feedback field</li>
+        </ul>
+        <p><strong>What we collect automatically</strong> — like most websites, we use analytics tools that collect standard usage data, including pages visited, time on page, browser type, and general location (city/region level). This data does not identify you personally.</p>
+
+        <h2>How we use your information</h2>
+        <ul>
+          <li>To respond to your assessment request or inquiry</li>
+          <li>To schedule and conduct a free property assessment</li>
+          <li>To follow up on driver feedback you submit</li>
+          <li>To understand how people use our site and improve it</li>
+        </ul>
+        <p>We do not sell your information. We do not use it for advertising outside of our own site. We do not add you to any email list without your knowledge.</p>
+
+        <h2>Third-party services</h2>
+        <p>We use a small number of third-party services to operate this site:</p>
+        <ul>
+          <li><strong>Formspree</strong> — processes form submissions on our behalf. Your form data is transmitted to and stored by Formspree. See their privacy policy at <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener">formspree.io</a>.</li>
+          <li><strong>Google Analytics</strong> — collects anonymised usage data about how visitors interact with our site. We use this to understand which content is useful and where to improve. Google's privacy policy is at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com</a>. You can opt out using the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics opt-out browser add-on</a>.</li>
+          <li><strong>Google Fonts</strong> — we load the Outfit typeface from Google's servers, which may log your IP address. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a>.</li>
+        </ul>
+
+        <h2>Cookies</h2>
+        <p>Google Analytics sets cookies to distinguish returning visitors and measure session activity. These cookies do not contain personally identifiable information. By using our site, you consent to these cookies being set. You can disable cookies in your browser settings at any time, though some site functionality may be affected.</p>
+
+        <h2>Data retention</h2>
+        <p>Form submissions are retained in Formspree for as long as we maintain our account with them. If you would like your submission deleted, contact us and we will request its removal. Google Analytics data is retained for 14 months by default.</p>
+
+        <h2>Your rights</h2>
+        <p>You have the right to request access to, correction of, or deletion of personal information we hold about you. To make a request, email us at <a href="mailto:ev@enertech.energy">ev@enertech.energy</a>. We will respond within 30 days.</p>
+
+        <h2>Children's privacy</h2>
+        <p>Our website is not directed at children under 13. We do not knowingly collect personal information from anyone under 13. If you believe we have inadvertently collected such information, please contact us and we will delete it promptly.</p>
+
+        <h2>Changes to this policy</h2>
+        <p>We may update this policy from time to time. When we do, we'll update the date at the top of the page. We won't notify you of minor changes, but significant changes will be communicated where reasonable.</p>
+
+        <h2>Contact</h2>
+        <p>Questions about this policy? Get in touch:</p>
+        <ul>
+          <li>Email: <a href="mailto:ev@enertech.energy">ev@enertech.energy</a></li>
+          <li>Phone: <a href="tel:+18773267783">+1 877 326 7783</a></li>
+          <li>Enertech — Fort Collins, Colorado</li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="footer-logo"><img src="/assets/White_logo_notag.png" alt="Enertech" style="height:28px;width:auto;display:block;"></a>
+          <p class="footer-tagline">Colorado's EV charging partner for multifamily properties. Fort Collins to Colorado Springs — zero cost to the property, always.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <div class="footer-col-title">For properties</div>
+            <a href="/how-it-works/">How It Works</a>
+            <a href="/property-managers/">For Property Managers</a>
+            <a href="/property-owners/">For Property Owners</a>
+            <a href="/hoa/">For HOAs</a>
+            <a href="/community-charging/">Community Charging</a>
+            <a href="/workplace-charging/">Workplace Charging</a>
+            <a href="/assessment/">Get a free assessment</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">For drivers</div>
+            <a href="/for-drivers/">How to charge</a>
+            <a href="/for-drivers/#charger-specs-heading">Charger specs</a>
+            <a href="/for-drivers/#faq-heading">Driver FAQ</a>
+            <a href="tel:+18888957158">24/7 support: +1 888 895 7158</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Resources</div>
+            <a href="/service-area/">Service area</a>
+            <a href="/blog/">Blog</a>
+            <a href="https://www.linkedin.com/company/enertech-energy" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Enertech. Fort Collins to Colorado Springs.</p>
+        <div class="footer-legal">
+          <a href="/privacy-policy/">Privacy Policy</a>
+        </div>
+        <p class="footer-service">enertech.energy</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var burger = document.querySelector('.nav-burger');
+      var menu = document.querySelector('.nav-mobile');
+      if (!burger || !menu) return;
+      burger.addEventListener('click', function() {
+        var open = menu.classList.toggle('open');
+        burger.classList.toggle('open');
+        burger.setAttribute('aria-expanded', String(open));
+        document.body.style.overflow = open ? 'hidden' : '';
+      });
+      menu.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() {
+          menu.classList.remove('open');
+          burger.classList.remove('open');
+          burger.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+      document.querySelectorAll('.nav-dropdown').forEach(function(dd) {
+        var trigger = dd.querySelector('.nav-dd-trigger');
+        if (!trigger) return;
+        trigger.addEventListener('click', function(e) {
+          e.stopPropagation();
+          dd.classList.toggle('is-open');
+        });
+      });
+      document.addEventListener('click', function() {
+        document.querySelectorAll('.nav-dropdown.is-open').forEach(function(dd) {
+          dd.classList.remove('is-open');
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
