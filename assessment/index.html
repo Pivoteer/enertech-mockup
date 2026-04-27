@@ -583,6 +583,8 @@
               <option>Property owner</option>
               <option>Developer / new construction</option>
               <option>HOA board member</option>
+              <option>Facilities / workplace manager</option>
+              <option>Business owner</option>
               <option>Other</option>
             </select>
             <span class="field-error">Please select your role</span>
@@ -620,16 +622,16 @@
               <span class="field-error">Please select a city</span>
             </div>
             <div class="field-group">
-              <label class="field-label" for="units">Number of units <span class="req">*</span></label>
-              <select class="field-select" id="units" name="units" required>
+              <label class="field-label" for="units">Parking spaces / unit count <span class="req" style="font-weight:400;">(optional)</span></label>
+              <select class="field-select" id="units" name="units">
                 <option value="" disabled selected>Select range</option>
                 <option>50–100 units</option>
                 <option>101–150 units</option>
                 <option>101–200 units</option>
                 <option>201–400 units</option>
                 <option>400+ units</option>
+                <option>Not applicable (workplace / community)</option>
               </select>
-              <span class="field-error">Please select a unit count</span>
             </div>
           </div>
 
@@ -644,6 +646,10 @@
               <label class="pill-label" for="type-hoa">HOA community</label>
               <input class="pill-input" type="radio" name="property_type" id="type-mixed" value="Mixed-use" />
               <label class="pill-label" for="type-mixed">Mixed-use</label>
+              <input class="pill-input" type="radio" name="property_type" id="type-workplace" value="Workplace / office" />
+              <label class="pill-label" for="type-workplace">Workplace / office</label>
+              <input class="pill-input" type="radio" name="property_type" id="type-community" value="Community / shared parking" />
+              <label class="pill-label" for="type-community">Community / shared parking</label>
               <input class="pill-input" type="radio" name="property_type" id="type-other" value="Other" />
               <label class="pill-label" for="type-other">Other</label>
             </div>
