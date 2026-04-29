@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/assets/Enertech_favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How EV charging revenue share works for apartment properties | Enertech</title>
+  <meta name="description" content="How does EV charging revenue share actually work? A plain-language breakdown of the model — where the money comes from, what a property earns, and why the economics hold up." />
+  <link rel="canonical" href="https://enertech.energy/blog/ev-charging-revenue-share-how-it-works" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://enertech.energy/blog/ev-charging-revenue-share-how-it-works" />
+  <meta property="og:title" content="How EV charging revenue share works for apartment properties | Enertech" />
+  <meta property="og:description" content="How does EV charging revenue share actually work? A plain-language breakdown of the model — where the money comes from, what a property earns, and why the economics hold up." />
+  <meta property="og:site_name" content="Enertech" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How EV charging revenue share works for apartment properties | Enertech" />
+  <meta name="twitter:description" content="How does EV charging revenue share actually work? A plain-language breakdown of the model — where the money comes from, what a property earns, and why the economics hold up." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How EV charging revenue share works for apartment properties",
+    "description": "How does EV charging revenue share actually work? A plain-language breakdown of the model — where the money comes from, what a property earns, and why the economics hold up.",
+    "url": "https://enertech.energy/blog/ev-charging-revenue-share-how-it-works",
+    "datePublished": "2026-04-29",
+    "dateModified": "2026-04-29",
+    "author": {
+      "@type": "Organization",
+      "name": "Enertech",
+      "url": "https://enertech.energy"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Enertech",
+      "url": "https://enertech.energy",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://enertech.energy/assets/logo-black.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://enertech.energy/blog/ev-charging-revenue-share-how-it-works"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #0C0C0C; --ink-2: #1C1C1C; --ink-3: #2E2E2E; --secondary: #6B6B6B; --muted: #9B9B9B;
+      --border: rgba(0,0,0,0.08); --border-mid: rgba(0,0,0,0.14); --canvas: #F9FAFB; --surface: #FFFFFF;
+      --canvas-dark: #0C0C0C; --surface-dark: #1C1C1C; --border-dark: rgba(255,255,255,0.09);
+      --shadow-sm: 0 4px 12px -4px rgba(0,0,0,0.08); --shadow-card: 0 20px 40px -15px rgba(0,0,0,0.07);
+      --shadow-lift: 0 28px 48px -12px rgba(0,0,0,0.18);
+      --r-xl: 2.5rem; --r-lg: 1.5rem; --r-md: 0.875rem; --r-sm: 0.5rem;
+      --ease: cubic-bezier(0.32, 0.72, 0, 1); --max: 1320px; --article-max: 740px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Outfit', system-ui, -apple-system, sans-serif; background: var(--canvas); color: var(--ink); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    .h1 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.03em; }
+    .h2 { font-size: clamp(1.75rem, 3vw, 2.75rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.022em; }
+    .body-lg { font-size: 1.15rem; line-height: 1.75; letter-spacing: 0.012em; color: var(--secondary); }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.75s var(--ease), transform 0.75s var(--ease); }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 80ms; } .reveal-d2 { transition-delay: 160ms; } .reveal-d3 { transition-delay: 240ms; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; border: none; cursor: pointer; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.95rem; transition: all 0.3s var(--ease); text-decoration: none; white-space: nowrap; }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: var(--ink); color: #F9FAFB; padding: 14px 16px 14px 24px; border-radius: var(--r-md); }
+    .btn-primary:hover { background: var(--ink-3); box-shadow: var(--shadow-lift); }
+    .btn-white { background: #F9FAFB; color: var(--ink); padding: 14px 16px 14px 24px; border-radius: var(--r-md); }
+    .btn-white:hover { background: #fff; box-shadow: var(--shadow-lift); }
+    .btn-white .btn-icon { background: rgba(0,0,0,0.07); }
+    .btn-white:hover .btn-icon { transform: translateX(3px); }
+    .btn-ghost-light { background: transparent; color: var(--ink); padding: 14px 20px; border-radius: var(--r-md); border: 1.5px solid var(--border-mid); }
+    .btn-ghost-light:hover { border-color: var(--ink); }
+    .btn-icon { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.3s var(--ease), background 0.3s var(--ease); }
+    .btn-primary:hover .btn-icon { transform: translateX(3px); background: rgba(255,255,255,0.22); }
+    .risk { font-size: 0.82rem; color: rgba(255,255,255,0.68); margin-top: 12px; }
+    .nav { position: sticky; top: 0; z-index: 100; background: rgba(12,12,12,0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .nav-logo { font-size: 1.2rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; flex-shrink: 0; }
+    .nav-links { display: flex; gap: 2px; list-style: none; align-items: center; }
+    .nav-links a { display: block; padding: 8px 14px; font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.78); text-decoration: none; border-radius: var(--r-sm); transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover { color: #F9FAFB; background: rgba(255,255,255,0.07); }
+    .nav-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .nav-cta .btn-primary { padding: 10px 12px 10px 18px; font-size: 0.875rem; }
+    .nav-cta .btn-icon { width: 28px; height: 28px; }
+    .nav-drivers { display: inline-flex; align-items: center; padding: 8px 14px; font-size: 0.875rem; font-weight: 600; color: rgba(255,255,255,0.88); text-decoration: none; border-radius: var(--r-sm); border: 1px solid rgba(255,255,255,0.24); transition: color 0.2s, background 0.2s, border-color 0.2s; white-space: nowrap; }
+    .nav-drivers:hover { color: #F9FAFB; background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.5); }
+    .nav-burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; padding: 8px; background: none; border: none; cursor: pointer; border-radius: 8px; flex-shrink: 0; }
+    .nav-burger span { display: block; width: 22px; height: 2px; background: #F9FAFB; border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease; }
+    .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile { display: none; position: fixed; top: 66px; left: 0; right: 0; bottom: 0; background: rgba(12,12,12,0.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 998; flex-direction: column; padding: 24px 24px 40px; overflow-y: auto; }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a { display: block; color: rgba(249,250,251,0.75); text-decoration: none; font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 500; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.07); transition: color 0.15s; }
+    .nav-mobile a:hover { color: #F9FAFB; }
+    .nav-mobile .mob-cta { display: block; margin-top: 24px; padding: 15px 24px; background: #F9FAFB; color: #0C0C0C !important; border-radius: 100px; text-align: center; font-weight: 700; font-size: 1rem; border-bottom: none; }
+    .nav-dropdown { position: relative; list-style: none; }
+    .nav-dd-trigger { display: flex; align-items: center; gap: 4px; padding: 8px 14px; background: none; border: none; cursor: pointer; font-family: 'Outfit', sans-serif; font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.78); border-radius: var(--r-sm); transition: color 0.2s, background 0.2s; white-space: nowrap; }
+    .nav-dd-trigger:hover, .nav-dropdown.is-open .nav-dd-trigger { color: #F9FAFB; background: rgba(255,255,255,0.07); }
+    .nav-dd-trigger svg { width: 11px; height: 11px; stroke: currentColor; stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.2s; }
+    .nav-dropdown.is-open .nav-dd-trigger svg { transform: rotate(180deg); }
+    .nav-dd-menu { display: none; position: absolute; top: calc(100% + 6px); left: 0; min-width: 210px; background: rgba(14,14,14,0.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--r-md); padding: 6px; box-shadow: 0 20px 48px rgba(0,0,0,0.5); z-index: 200; }
+    .nav-dropdown:hover .nav-dd-menu, .nav-dropdown.is-open .nav-dd-menu { display: block; }
+    .nav-dd-menu a { display: block; padding: 9px 14px; font-size: 0.85rem; font-weight: 500; color: rgba(255,255,255,0.72); border-radius: 6px; text-decoration: none; transition: color 0.15s, background 0.15s; }
+    .nav-dd-menu a:hover { color: #F9FAFB; background: rgba(255,255,255,0.08); }
+    .nav-dd-divider { height: 1px; background: rgba(255,255,255,0.07); margin: 4px 2px; }
+    .nav-dd-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .mob-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.35); padding: 20px 0 4px; border-bottom: none !important; }
+    .article-hero { background: var(--canvas-dark); color: #F9FAFB; padding: 80px 0 72px; }
+    .article-hero-inner { max-width: var(--article-max); }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-bottom: 28px; }
+    .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: rgba(255,255,255,0.8); }
+    .breadcrumb-sep { opacity: 0.4; }
+    .article-tag { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.75); padding: 4px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); margin-bottom: 20px; }
+    .article-hero h1 { color: #F9FAFB; margin-bottom: 20px; }
+    .article-hero .body-lg { color: rgba(249,250,251,0.72); margin-bottom: 28px; }
+    .article-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 0.8rem; color: rgba(255,255,255,0.45); border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; }
+    .article-meta-dot { opacity: 0.4; }
+    .article-wrap { max-width: var(--article-max); margin: 0 auto; padding: 0 40px; }
+    .article-body { padding: 64px 0 80px; }
+    .article-body p { font-size: 1.05rem; line-height: 1.78; color: var(--ink-2); margin-bottom: 1.5em; }
+    .article-body h2 { font-size: 1.5rem; font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; color: var(--ink); margin-top: 2.5em; margin-bottom: 0.75em; }
+    .article-body h3 { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.01em; color: var(--ink); margin-top: 1.75em; margin-bottom: 0.5em; }
+    .article-body ul, .article-body ol { padding-left: 1.5em; margin-bottom: 1.5em; }
+    .article-body li { font-size: 1.05rem; line-height: 1.75; color: var(--ink-2); margin-bottom: 0.4em; }
+    .article-body a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(0,0,0,0.25); transition: text-decoration-color 0.2s; }
+    .article-body a:hover { text-decoration-color: var(--ink); }
+    .article-body strong { font-weight: 700; color: var(--ink); }
+    .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 2em 0; }
+    .stat-box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 24px 20px; text-align: center; }
+    .stat-num { font-size: 2rem; font-weight: 900; letter-spacing: -0.03em; color: var(--ink); line-height: 1; }
+    .stat-label { font-size: 0.82rem; color: var(--secondary); margin-top: 6px; line-height: 1.4; }
+    .callout { background: var(--canvas-dark); color: #F9FAFB; border-radius: var(--r-lg); padding: 36px 40px; margin: 2.5em 0; }
+    .callout p { color: rgba(249,250,251,0.82); font-size: 1rem; margin-bottom: 0.75em; }
+    .callout p:last-of-type { margin-bottom: 20px; }
+    .callout strong { color: #F9FAFB; }
+    .callout-title { font-size: 1rem; font-weight: 800; letter-spacing: -0.01em; color: #F9FAFB; margin-bottom: 12px; }
+    .callout .risk { color: rgba(255,255,255,0.55); margin-top: 10px; }
+    .flow-steps { display: flex; flex-direction: column; gap: 0; margin: 2em 0; border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden; }
+    .flow-step { display: grid; grid-template-columns: 48px 1fr; gap: 0; background: var(--surface); border-bottom: 1px solid var(--border); }
+    .flow-step:last-child { border-bottom: none; }
+    .flow-step-num { background: var(--canvas-dark); color: rgba(255,255,255,0.6); font-size: 0.78rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .flow-step-content { padding: 20px 24px; }
+    .flow-step-content strong { display: block; font-size: 0.95rem; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+    .flow-step-content span { font-size: 0.9rem; color: var(--secondary); line-height: 1.5; }
+    .cta-section { background: var(--ink); padding: 100px 0; text-align: center; }
+    .cta-section .h2 { color: #F9FAFB; margin-bottom: 20px; }
+    .cta-section .body-lg { color: rgba(249,250,251,0.80); margin-bottom: 48px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .cta-btn-row { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .footer { background: var(--canvas-dark); padding: 64px 0 40px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .footer-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 48px; flex-wrap: wrap; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 32px; }
+    .footer-brand { max-width: 320px; }
+    .footer-logo { font-size: 1.3rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; }
+    .footer-tagline { font-size: 0.875rem; color: rgba(255,255,255,0.65); margin-top: 10px; line-height: 1.5; }
+    .footer-links { display: flex; gap: 48px; flex-wrap: wrap; }
+    .footer-col { display: flex; flex-direction: column; gap: 4px; }
+    .footer-col-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 8px; }
+    .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.75); text-decoration: none; padding: 4px 0; transition: color 0.2s; }
+    .footer-col a:hover { color: #F9FAFB; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+    .footer-service { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+    @media (max-width: 1120px) { .nav-links { display: none; } .nav-burger { display: flex; } }
+    @media (max-width: 900px) { .wrap { padding: 0 24px; } .article-wrap { padding: 0 24px; } .nav-cta { display: none; } .footer-top { flex-direction: column; } .footer-inner { padding: 0 24px; } .stat-row { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .article-hero { padding: 60px 0 52px; } .callout { padding: 28px 24px; } .stat-row { grid-template-columns: 1fr; } }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZF1DTKP1M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0ZF1DTKP1M');
+  </script>
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo"><img src="/assets/White_logo_notag.png" alt="Enertech" style="height:26px;width:auto;display:block;"></a>
+      <ul class="nav-links">
+        <li><a href="/how-it-works/">How It Works</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-dd-trigger">Who We Serve
+            <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dd-menu">
+            <a href="/property-managers/">Property Managers</a>
+            <a href="/property-owners/">Property Owners</a>
+            <a href="/hoa/">For HOAs</a>
+            <div class="nav-dd-divider"></div>
+            <a href="/community-charging/">Community Charging</a>
+            <a href="/workplace-charging/">Workplace Charging</a>
+          </div>
+        </li>
+        <li><a href="/service-area/">Service Area</a></li>
+      </ul>
+      <div class="nav-right nav-cta">
+        <a href="/for-drivers/" class="nav-drivers">For Drivers</a>
+        <a href="/assessment/" class="btn btn-primary">
+          Get a free assessment
+          <span class="btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+      </div>
+      <button class="nav-burger" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="/for-drivers/" style="color:rgba(249,250,251,0.92);font-weight:700;">⚡ For Drivers</a>
+    <a href="/how-it-works/">How It Works</a>
+    <div class="mob-label">Who We Serve</div>
+    <a href="/property-managers/">Property Managers</a>
+    <a href="/property-owners/">Property Owners</a>
+    <a href="/hoa/">For HOAs</a>
+    <a href="/community-charging/">Community Charging</a>
+    <a href="/workplace-charging/">Workplace Charging</a>
+    <a href="/service-area/">Service Area</a>
+    <a href="/assessment/" class="mob-cta">Get a free assessment</a>
+  </div>
+
+  <section class="article-hero" aria-label="Article header">
+    <div class="wrap">
+      <div class="article-hero-inner">
+        <div class="breadcrumb reveal">
+          <a href="/blog/">Blog</a>
+          <span class="breadcrumb-sep">›</span>
+          <span>Partnership Model</span>
+        </div>
+        <span class="article-tag reveal reveal-d1">Partnership Model</span>
+        <h1 class="h1 reveal reveal-d1">How EV charging revenue share works — a plain-language breakdown</h1>
+        <p class="body-lg reveal reveal-d2">The revenue share model is the reason properties can add EV charging at zero cost. Here's exactly how the money flows, what a property actually earns, and why the economics hold up over time.</p>
+        <div class="article-meta reveal reveal-d3">
+          <span>Enertech</span>
+          <span class="article-meta-dot">·</span>
+          <span>6 min read</span>
+          <span class="article-meta-dot">·</span>
+          <span>Partnership Model</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body">
+    <div class="article-wrap">
+
+      <p>When a property manager first hears "zero cost — and you earn a revenue share," the natural reaction is skepticism. What's the catch? Where does the money actually come from? And what does the property realistically earn?</p>
+
+      <p>These are exactly the right questions. The revenue share model is how companies like Enertech can afford to install and operate EV charging at no cost to the property — and it's worth understanding clearly before you evaluate whether a partnership makes sense for your community.</p>
+
+      <h2>Where the money comes from</h2>
+
+      <p>When a resident charges their EV at your property, they pay a per-session fee — either through a mobile app or an RFID card. That fee is the source of all revenue in the program.</p>
+
+      <p>In Colorado, typical Level 2 residential charging rates run somewhere in the range of $0.20–$0.45 per kWh, or a flat session fee depending on how the program is configured. A full charge from a depleted battery on a midsize EV — say, a Tesla Model 3 or Chevy Bolt — uses roughly 60–75 kWh. Most residents aren't charging from empty; they're topping off. The average session at a multifamily charger tends to be shorter and uses less energy than a full charge.</p>
+
+      <p>The revenue from those sessions is split between Enertech and the property. Enertech uses its share to cover hardware, electrical infrastructure, ongoing operations, maintenance, monitoring, and the overhead of running the program. The property keeps its share as passive income — no management required.</p>
+
+      <h2>What drives the size of the revenue share</h2>
+
+      <p>The specific revenue share percentage varies by property and is negotiated as part of the partnership agreement. What matters more to most property managers is understanding what actually drives how much money the property earns each month:</p>
+
+      <p><strong>Number of chargers.</strong> More ports, more potential sessions. A property with 4 chargers will generate less than one with 12 — all else being equal. Program sizing should reflect actual demand; too few chargers limits revenue, while too many means chargers sit idle. Enertech sizes programs based on property size, parking configuration, and estimated resident EV adoption.</p>
+
+      <p><strong>Utilization rate.</strong> A charger that gets used twice a day generates more revenue than one used twice a week. Utilization is driven by how many EV drivers live at the property, whether the chargers are well-placed and easy to access, and whether residents know how to use them. Properties in high-EV markets — Denver, Boulder, Fort Collins — tend to see faster charger adoption and higher utilization.</p>
+
+      <p><strong>Session rate.</strong> The per-kWh or per-session rate affects both resident cost and total revenue. Rates are set to be competitive with public charging alternatives while being fair to residents who rely on in-building charging as their primary option.</p>
+
+      <h2>What a property realistically earns</h2>
+
+      <p>We don't publish specific revenue projections in this format, because they vary too much by property to be meaningful without a site-specific analysis. What we can say honestly:</p>
+
+      <ul>
+        <li>Most properties with 4–8 chargers and reasonable utilization earn a few hundred dollars per month in their first year, growing as more residents adopt EVs</li>
+        <li>Properties in high-EV markets with higher utilization earn more; properties in early-adoption markets earn less initially but grow as adoption rises</li>
+        <li>The first payment typically arrives 30–60 days after the chargers go live</li>
+        <li>Revenue generally increases over time as EV adoption grows — both nationally and within the existing resident pool</li>
+      </ul>
+
+      <p>The free assessment Enertech provides includes a site-specific revenue projection based on your property's size, parking layout, and local EV adoption data. That projection is our honest estimate — not a sales number.</p>
+
+      <h2>Why it's in Enertech's interest to keep chargers running</h2>
+
+      <p>This is the question that resolves the "too good to be true" skepticism for most property managers: Enertech only earns revenue when chargers are used. If a charger is broken, offline, or poorly maintained, we lose money. That alignment of incentives is structural — it's not a service commitment we make voluntarily, it's built into the economics of how the program works.</p>
+
+      <p>This is a meaningful distinction from the vendor model, where a company sells you hardware and charges maintenance fees regardless of whether the chargers are actually generating value. In the revenue share model, the operator's income depends entirely on charger uptime and resident satisfaction. That's why we invest in 24/7 remote monitoring, proactive maintenance, and local Colorado technicians who can respond quickly when on-site repair is needed.</p>
+
+      <div class="callout">
+        <div class="callout-title">What the Enertech partnership actually costs your property</div>
+        <p>Hardware, installation, electrical work, permits, ongoing maintenance, resident support, and monitoring: <strong>$0</strong>. Always.</p>
+        <p>Your property earns a monthly revenue share from charging sessions from day one. The free assessment includes a site-specific projection for your property — no obligation to move forward.</p>
+        <a href="/assessment/" class="btn btn-white" style="font-size:0.9rem; padding:12px 14px 12px 20px;">
+          Get a free property assessment
+          <span class="btn-icon" aria-hidden="true" style="width:28px; height:28px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+        <p class="risk">No obligation. We'll tell you honestly if the economics don't work for your property.</p>
+      </div>
+
+      <h2>How the revenue share compares to owning chargers yourself</h2>
+
+      <p>Some property managers ask why they shouldn't just buy chargers, own them outright, and keep all the charging revenue. It's a fair question, and the honest answer is: it depends on what you're comparing.</p>
+
+      <p>If you purchase and operate chargers yourself, you do keep all session revenue. But you also absorb all costs — hardware ($1,500–$4,000+ per unit), installation and electrical work (highly variable, often $10,000–$40,000+ for a meaningful program), ongoing maintenance, software subscriptions, and the management burden of handling resident issues, outages, and billing disputes.</p>
+
+      <p>In most multifamily scenarios, the zero-cost partnership model — where Enertech covers everything and the property earns a share — comes out ahead on a net basis, especially when you factor in the operational lift saved. A free assessment can run the comparison for your specific property with actual numbers.</p>
+
+      <h2>How Colorado incentive programs fit in</h2>
+
+      <p>Colorado's EV incentive landscape — Xcel Energy rebates, Charge Ahead Colorado grants — primarily benefits the party funding the installation. In Enertech's model, that's Enertech. We use those programs to offset installation costs, which is part of how the zero-cost model works financially.</p>
+
+      <p>For properties that choose to self-fund installations, those same programs are available — though navigating Xcel's pre-project application process and Charge Ahead's eligibility requirements takes time and expertise. Enertech handles all of this on behalf of every property we work with.</p>
+
+      <p>If you're evaluating whether a partnership or self-funded installation makes more sense for your property, the starting point is understanding your actual costs and revenue potential. <a href="/assessment/">A free assessment</a> covers both — along with a clear picture of which incentive programs your property qualifies for and what each path looks like financially.</p>
+
+    </div>
+  </div>
+
+  <section class="cta-section" aria-label="Call to action">
+    <div class="wrap">
+      <h2 class="h2 reveal">See what the revenue share model looks like for your property</h2>
+      <p class="body-lg reveal reveal-d1">The free assessment includes a site-specific revenue projection, an incentive eligibility review, and an honest comparison of the partnership model vs. self-funded installation. No obligation to move forward.</p>
+      <div class="cta-btn-row reveal reveal-d2">
+        <a href="/assessment/" class="btn btn-white">
+          Get a free property assessment
+          <span class="btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+        <a href="/how-it-works/" class="btn btn-ghost-light" style="color:rgba(249,250,251,0.78); border-color:rgba(255,255,255,0.18);">How the model works</a>
+      </div>
+      <p class="risk reveal reveal-d3">Free, no obligation. We'll tell you honestly if it's not the right fit for your property.</p>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="footer-logo"><img src="/assets/White_logo_notag.png" alt="Enertech" style="height:28px;width:auto;display:block;"></a>
+          <p class="footer-tagline">Colorado's EV charging partner for multifamily properties. Fort Collins to Colorado Springs — zero cost to the property, always.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <div class="footer-col-title">For properties</div>
+            <a href="/how-it-works/">How It Works</a>
+            <a href="/property-managers/">For Property Managers</a>
+            <a href="/property-owners/">For Property Owners</a>
+            <a href="/hoa/">For HOAs</a>
+            <a href="/community-charging/">Community Charging</a>
+            <a href="/workplace-charging/">Workplace Charging</a>
+            <a href="/assessment/">Get a free assessment</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">For drivers</div>
+            <a href="/for-drivers/">How to charge</a>
+            <a href="/for-drivers/#charger-specs-heading">Charger specs</a>
+            <a href="/for-drivers/#faq-heading">Driver FAQ</a>
+            <a href="tel:+18888957158">24/7 support: +1 888 895 7158</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Resources</div>
+            <a href="/service-area/">Service area</a>
+            <a href="/blog/">Blog</a>
+            <a href="https://www.linkedin.com/company/enertech-energy" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Enertech. Fort Collins to Colorado Springs.</p>
+        <div class="footer-legal"><a href="/privacy-policy/">Privacy Policy</a></div>
+        <p class="footer-service">enertech.energy</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); revealObs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => revealObs.observe(el));
+    document.querySelectorAll('.article-hero .reveal').forEach(el => el.classList.add('in-view'));
+    (function() {
+      var dd = document.querySelector('.nav-dropdown');
+      if (!dd) return;
+      var trigger = dd.querySelector('.nav-dd-trigger');
+      trigger.addEventListener('click', function(e) { e.stopPropagation(); dd.classList.toggle('is-open'); });
+      document.addEventListener('click', function() { dd.classList.remove('is-open'); });
+      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') dd.classList.remove('is-open'); });
+    })();
+    const burger = document.querySelector('.nav-burger');
+    const mobileNav = document.getElementById('nav-mobile');
+    burger.addEventListener('click', () => {
+      const open = burger.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open);
+      mobileNav.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        burger.classList.remove('open');
+        burger.setAttribute('aria-expanded', false);
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+  <script type="text/javascript">
+  _linkedin_partner_id = "9046626";
+  window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+  window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+  </script>
+  <script type="text/javascript">
+  (function(l) {
+    if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}
+    var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript"; b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);})(window.lintrk);
+  </script>
+  <noscript><img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=9046626&fmt=gif" /></noscript>
+</body>
+</html>

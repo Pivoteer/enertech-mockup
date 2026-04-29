@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/assets/Enertech_favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How many EV chargers does an apartment complex need? | Enertech</title>
+  <meta name="description" content="How many EV chargers should your apartment community install? A practical framework for Colorado property managers — sizing, staging, and avoiding the two most common mistakes." />
+  <link rel="canonical" href="https://enertech.energy/blog/how-many-ev-chargers-apartment-complex" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://enertech.energy/blog/how-many-ev-chargers-apartment-complex" />
+  <meta property="og:title" content="How many EV chargers does an apartment complex need? | Enertech" />
+  <meta property="og:description" content="How many EV chargers should your apartment community install? A practical framework for Colorado property managers — sizing, staging, and avoiding the two most common mistakes." />
+  <meta property="og:site_name" content="Enertech" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How many EV chargers does an apartment complex need? | Enertech" />
+  <meta name="twitter:description" content="How many EV chargers should your apartment community install? A practical framework for Colorado property managers — sizing, staging, and avoiding the two most common mistakes." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How many EV chargers does an apartment complex need?",
+    "description": "How many EV chargers should your apartment community install? A practical framework for Colorado property managers — sizing, staging, and avoiding the two most common mistakes.",
+    "url": "https://enertech.energy/blog/how-many-ev-chargers-apartment-complex",
+    "datePublished": "2026-04-29",
+    "dateModified": "2026-04-29",
+    "author": {
+      "@type": "Organization",
+      "name": "Enertech",
+      "url": "https://enertech.energy"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Enertech",
+      "url": "https://enertech.energy",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://enertech.energy/assets/logo-black.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://enertech.energy/blog/how-many-ev-chargers-apartment-complex"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #0C0C0C; --ink-2: #1C1C1C; --ink-3: #2E2E2E; --secondary: #6B6B6B; --muted: #9B9B9B;
+      --border: rgba(0,0,0,0.08); --border-mid: rgba(0,0,0,0.14); --canvas: #F9FAFB; --surface: #FFFFFF;
+      --canvas-dark: #0C0C0C; --surface-dark: #1C1C1C; --border-dark: rgba(255,255,255,0.09);
+      --shadow-sm: 0 4px 12px -4px rgba(0,0,0,0.08); --shadow-card: 0 20px 40px -15px rgba(0,0,0,0.07);
+      --shadow-lift: 0 28px 48px -12px rgba(0,0,0,0.18);
+      --r-xl: 2.5rem; --r-lg: 1.5rem; --r-md: 0.875rem; --r-sm: 0.5rem;
+      --ease: cubic-bezier(0.32, 0.72, 0, 1); --max: 1320px; --article-max: 740px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Outfit', system-ui, -apple-system, sans-serif; background: var(--canvas); color: var(--ink); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    .h1 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.03em; }
+    .h2 { font-size: clamp(1.75rem, 3vw, 2.75rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.022em; }
+    .body-lg { font-size: 1.15rem; line-height: 1.75; letter-spacing: 0.012em; color: var(--secondary); }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.75s var(--ease), transform 0.75s var(--ease); }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 80ms; } .reveal-d2 { transition-delay: 160ms; } .reveal-d3 { transition-delay: 240ms; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; border: none; cursor: pointer; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.95rem; transition: all 0.3s var(--ease); text-decoration: none; white-space: nowrap; }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: var(--ink); color: #F9FAFB; padding: 14px 16px 14px 24px; border-radius: var(--r-md); }
+    .btn-primary:hover { background: var(--ink-3); box-shadow: var(--shadow-lift); }
+    .btn-white { background: #F9FAFB; color: var(--ink); padding: 14px 16px 14px 24px; border-radius: var(--r-md); }
+    .btn-white:hover { background: #fff; box-shadow: var(--shadow-lift); }
+    .btn-white .btn-icon { background: rgba(0,0,0,0.07); }
+    .btn-white:hover .btn-icon { transform: translateX(3px); }
+    .btn-ghost-light { background: transparent; color: var(--ink); padding: 14px 20px; border-radius: var(--r-md); border: 1.5px solid var(--border-mid); }
+    .btn-ghost-light:hover { border-color: var(--ink); }
+    .btn-icon { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.3s var(--ease), background 0.3s var(--ease); }
+    .btn-primary:hover .btn-icon { transform: translateX(3px); background: rgba(255,255,255,0.22); }
+    .risk { font-size: 0.82rem; color: rgba(255,255,255,0.68); margin-top: 12px; }
+    .nav { position: sticky; top: 0; z-index: 100; background: rgba(12,12,12,0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .nav-logo { font-size: 1.2rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; flex-shrink: 0; }
+    .nav-links { display: flex; gap: 2px; list-style: none; align-items: center; }
+    .nav-links a { display: block; padding: 8px 14px; font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.78); text-decoration: none; border-radius: var(--r-sm); transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover { color: #F9FAFB; background: rgba(255,255,255,0.07); }
+    .nav-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .nav-cta .btn-primary { padding: 10px 12px 10px 18px; font-size: 0.875rem; }
+    .nav-cta .btn-icon { width: 28px; height: 28px; }
+    .nav-drivers { display: inline-flex; align-items: center; padding: 8px 14px; font-size: 0.875rem; font-weight: 600; color: rgba(255,255,255,0.88); text-decoration: none; border-radius: var(--r-sm); border: 1px solid rgba(255,255,255,0.24); transition: color 0.2s, background 0.2s, border-color 0.2s; white-space: nowrap; }
+    .nav-drivers:hover { color: #F9FAFB; background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.5); }
+    .nav-burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; padding: 8px; background: none; border: none; cursor: pointer; border-radius: 8px; flex-shrink: 0; }
+    .nav-burger span { display: block; width: 22px; height: 2px; background: #F9FAFB; border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease; }
+    .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile { display: none; position: fixed; top: 66px; left: 0; right: 0; bottom: 0; background: rgba(12,12,12,0.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 998; flex-direction: column; padding: 24px 24px 40px; overflow-y: auto; }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a { display: block; color: rgba(249,250,251,0.75); text-decoration: none; font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 500; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.07); transition: color 0.15s; }
+    .nav-mobile a:hover { color: #F9FAFB; }
+    .nav-mobile .mob-cta { display: block; margin-top: 24px; padding: 15px 24px; background: #F9FAFB; color: #0C0C0C !important; border-radius: 100px; text-align: center; font-weight: 700; font-size: 1rem; border-bottom: none; }
+    .nav-dropdown { position: relative; list-style: none; }
+    .nav-dd-trigger { display: flex; align-items: center; gap: 4px; padding: 8px 14px; background: none; border: none; cursor: pointer; font-family: 'Outfit', sans-serif; font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.78); border-radius: var(--r-sm); transition: color 0.2s, background 0.2s; white-space: nowrap; }
+    .nav-dd-trigger:hover, .nav-dropdown.is-open .nav-dd-trigger { color: #F9FAFB; background: rgba(255,255,255,0.07); }
+    .nav-dd-trigger svg { width: 11px; height: 11px; stroke: currentColor; stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.2s; }
+    .nav-dropdown.is-open .nav-dd-trigger svg { transform: rotate(180deg); }
+    .nav-dd-menu { display: none; position: absolute; top: calc(100% + 6px); left: 0; min-width: 210px; background: rgba(14,14,14,0.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--r-md); padding: 6px; box-shadow: 0 20px 48px rgba(0,0,0,0.5); z-index: 200; }
+    .nav-dropdown:hover .nav-dd-menu, .nav-dropdown.is-open .nav-dd-menu { display: block; }
+    .nav-dd-menu a { display: block; padding: 9px 14px; font-size: 0.85rem; font-weight: 500; color: rgba(255,255,255,0.72); border-radius: 6px; text-decoration: none; transition: color 0.15s, background 0.15s; }
+    .nav-dd-menu a:hover { color: #F9FAFB; background: rgba(255,255,255,0.08); }
+    .nav-dd-divider { height: 1px; background: rgba(255,255,255,0.07); margin: 4px 2px; }
+    .nav-dd-menu::before { content: ''; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .mob-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.35); padding: 20px 0 4px; border-bottom: none !important; }
+    .article-hero { background: var(--canvas-dark); color: #F9FAFB; padding: 80px 0 72px; }
+    .article-hero-inner { max-width: var(--article-max); }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-bottom: 28px; }
+    .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: rgba(255,255,255,0.8); }
+    .breadcrumb-sep { opacity: 0.4; }
+    .article-tag { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.75); padding: 4px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); margin-bottom: 20px; }
+    .article-hero h1 { color: #F9FAFB; margin-bottom: 20px; }
+    .article-hero .body-lg { color: rgba(249,250,251,0.72); margin-bottom: 28px; }
+    .article-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 0.8rem; color: rgba(255,255,255,0.45); border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; }
+    .article-meta-dot { opacity: 0.4; }
+    .article-wrap { max-width: var(--article-max); margin: 0 auto; padding: 0 40px; }
+    .article-body { padding: 64px 0 80px; }
+    .article-body p { font-size: 1.05rem; line-height: 1.78; color: var(--ink-2); margin-bottom: 1.5em; }
+    .article-body h2 { font-size: 1.5rem; font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; color: var(--ink); margin-top: 2.5em; margin-bottom: 0.75em; }
+    .article-body h3 { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.01em; color: var(--ink); margin-top: 1.75em; margin-bottom: 0.5em; }
+    .article-body ul, .article-body ol { padding-left: 1.5em; margin-bottom: 1.5em; }
+    .article-body li { font-size: 1.05rem; line-height: 1.75; color: var(--ink-2); margin-bottom: 0.4em; }
+    .article-body a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(0,0,0,0.25); transition: text-decoration-color 0.2s; }
+    .article-body a:hover { text-decoration-color: var(--ink); }
+    .article-body strong { font-weight: 700; color: var(--ink); }
+    .sizing-table { width: 100%; border-collapse: collapse; margin: 2em 0; font-size: 0.95rem; }
+    .sizing-table th { background: var(--canvas-dark); color: #F9FAFB; padding: 12px 16px; text-align: left; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+    .sizing-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); color: var(--ink-2); vertical-align: top; }
+    .sizing-table tr:last-child td { border-bottom: none; }
+    .sizing-table tr:nth-child(even) td { background: var(--surface); }
+    .callout { background: var(--canvas-dark); color: #F9FAFB; border-radius: var(--r-lg); padding: 36px 40px; margin: 2.5em 0; }
+    .callout p { color: rgba(249,250,251,0.82); font-size: 1rem; margin-bottom: 0.75em; }
+    .callout p:last-of-type { margin-bottom: 20px; }
+    .callout strong { color: #F9FAFB; }
+    .callout-title { font-size: 1rem; font-weight: 800; letter-spacing: -0.01em; color: #F9FAFB; margin-bottom: 12px; }
+    .callout .risk { color: rgba(255,255,255,0.55); margin-top: 10px; }
+    .cta-section { background: var(--ink); padding: 100px 0; text-align: center; }
+    .cta-section .h2 { color: #F9FAFB; margin-bottom: 20px; }
+    .cta-section .body-lg { color: rgba(249,250,251,0.80); margin-bottom: 48px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .cta-btn-row { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .footer { background: var(--canvas-dark); padding: 64px 0 40px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .footer-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 48px; flex-wrap: wrap; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 32px; }
+    .footer-brand { max-width: 320px; }
+    .footer-logo { font-size: 1.3rem; font-weight: 900; letter-spacing: -0.03em; color: #F9FAFB; text-decoration: none; }
+    .footer-tagline { font-size: 0.875rem; color: rgba(255,255,255,0.65); margin-top: 10px; line-height: 1.5; }
+    .footer-links { display: flex; gap: 48px; flex-wrap: wrap; }
+    .footer-col { display: flex; flex-direction: column; gap: 4px; }
+    .footer-col-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 8px; }
+    .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.75); text-decoration: none; padding: 4px 0; transition: color 0.2s; }
+    .footer-col a:hover { color: #F9FAFB; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+    .footer-service { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+    @media (max-width: 1120px) { .nav-links { display: none; } .nav-burger { display: flex; } }
+    @media (max-width: 900px) { .wrap { padding: 0 24px; } .article-wrap { padding: 0 24px; } .nav-cta { display: none; } .footer-top { flex-direction: column; } .footer-inner { padding: 0 24px; } .sizing-table { font-size: 0.875rem; } }
+    @media (max-width: 600px) { .article-hero { padding: 60px 0 52px; } .callout { padding: 28px 24px; } }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZF1DTKP1M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0ZF1DTKP1M');
+  </script>
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo"><img src="/assets/White_logo_notag.png" alt="Enertech" style="height:26px;width:auto;display:block;"></a>
+      <ul class="nav-links">
+        <li><a href="/how-it-works/">How It Works</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-dd-trigger">Who We Serve
+            <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dd-menu">
+            <a href="/property-managers/">Property Managers</a>
+            <a href="/property-owners/">Property Owners</a>
+            <a href="/hoa/">For HOAs</a>
+            <div class="nav-dd-divider"></div>
+            <a href="/community-charging/">Community Charging</a>
+            <a href="/workplace-charging/">Workplace Charging</a>
+          </div>
+        </li>
+        <li><a href="/service-area/">Service Area</a></li>
+      </ul>
+      <div class="nav-right nav-cta">
+        <a href="/for-drivers/" class="nav-drivers">For Drivers</a>
+        <a href="/assessment/" class="btn btn-primary">
+          Get a free assessment
+          <span class="btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+      </div>
+      <button class="nav-burger" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="/for-drivers/" style="color:rgba(249,250,251,0.92);font-weight:700;">⚡ For Drivers</a>
+    <a href="/how-it-works/">How It Works</a>
+    <div class="mob-label">Who We Serve</div>
+    <a href="/property-managers/">Property Managers</a>
+    <a href="/property-owners/">Property Owners</a>
+    <a href="/hoa/">For HOAs</a>
+    <a href="/community-charging/">Community Charging</a>
+    <a href="/workplace-charging/">Workplace Charging</a>
+    <a href="/service-area/">Service Area</a>
+    <a href="/assessment/" class="mob-cta">Get a free assessment</a>
+  </div>
+
+  <section class="article-hero" aria-label="Article header">
+    <div class="wrap">
+      <div class="article-hero-inner">
+        <div class="breadcrumb reveal">
+          <a href="/blog/">Blog</a>
+          <span class="breadcrumb-sep">›</span>
+          <span>Planning</span>
+        </div>
+        <span class="article-tag reveal reveal-d1">Planning</span>
+        <h1 class="h1 reveal reveal-d1">How many EV chargers does your apartment complex actually need?</h1>
+        <p class="body-lg reveal reveal-d2">Most properties start too small and regret it. A few overestimate demand and waste infrastructure spend. Here's how to size an EV charging program correctly for a Colorado multifamily property — and why getting this right matters.</p>
+        <div class="article-meta reveal reveal-d3">
+          <span>Enertech</span>
+          <span class="article-meta-dot">·</span>
+          <span>6 min read</span>
+          <span class="article-meta-dot">·</span>
+          <span>Planning</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body">
+    <div class="article-wrap">
+
+      <p>It's one of the first questions property managers ask when they start evaluating EV charging: how many chargers do we actually need? Too few and you've built a waitlist problem before the program even launches. Too many and chargers sit idle, dragging down the economics and leaving you wondering why you bothered.</p>
+
+      <p>The honest answer is that it depends on your property — but there are clear factors that determine the right number, and a logical way to think through them. Here's how Enertech approaches sizing at Colorado properties.</p>
+
+      <h2>The industry starting point: 5–10% of parking spaces</h2>
+
+      <p>A common industry benchmark for first-phase EV charging at multifamily properties is 5–10% of total parking spaces. For a community with 200 parking spaces, that translates to 10–20 chargers in a first phase.</p>
+
+      <p>That range is a reasonable starting point, but it's not a formula — it's a default that needs adjustment based on your specific property. In high-EV markets like Boulder or central Denver, 10% feels light. In a secondary Colorado city where EV adoption is still early, 5% might be the right first step.</p>
+
+      <p>What the benchmark does capture correctly is the idea of phasing. You're not electrifying every parking space on day one. You're meeting current demand, building infrastructure for expansion, and growing the program as EV adoption rises among your resident population.</p>
+
+      <h2>The factors that change the number</h2>
+
+      <h3>Current resident EV adoption</h3>
+
+      <p>The most direct input is how many of your current residents drive EVs. A quick survey — or even an informal ask at a resident event — can give you a rough count. In our experience, actual EV ownership at most Colorado multifamily properties is higher than management estimates. Residents who commute to tech employers along the Front Range, or who regularly drive to mountain recreation areas, are strong candidates.</p>
+
+      <p>If you have 300 units and a rough estimate of 20–30 EV-driving residents today, you need enough chargers to serve them without creating access frustration — typically at least 8–12 ports as a starting point, assuming residents don't all need to charge simultaneously.</p>
+
+      <h3>Property size and unit count</h3>
+
+      <p>Larger properties with more units have both more potential EV demand and more flexibility in how chargers are distributed. A 400-unit community can support a phased rollout more naturally than a 60-unit property where a single cluster of 4 chargers covers the whole community.</p>
+
+      <p>Smaller properties — under 80 units — often work well with 4–6 ports in an initial phase, with make-ready infrastructure installed for expansion. That combination typically meets current demand while avoiding overbuilding.</p>
+
+      <h3>Location and market EV adoption rate</h3>
+
+      <p>Where your property sits matters. Colorado's EV adoption is uneven across the Front Range:</p>
+
+      <ul>
+        <li><strong>Boulder:</strong> Among the highest EV ownership rates in the country — size programs more aggressively here</li>
+        <li><strong>Denver metro (especially central and north Denver):</strong> High adoption, growing fast — plan for demand to accelerate</li>
+        <li><strong>Fort Collins:</strong> Strong university-adjacent EV culture — higher than average for a mid-sized city</li>
+        <li><strong>Colorado Springs, Pueblo:</strong> EV adoption is growing but slower — more conservative initial sizing is appropriate</li>
+        <li><strong>Aurora, Lakewood, Thornton:</strong> Follows broader Denver metro trends, though somewhat more car-dependent — mid-range starting point</li>
+      </ul>
+
+      <h3>Parking structure type</h3>
+
+      <p>Assigned parking makes EV charging significantly easier to size and operate. Each EV driver gets access to a dedicated charger, utilization is predictable, and billing is straightforward. A property with 150 assigned spaces and 10% EV adoption needs roughly 15 chargers.</p>
+
+      <p>Shared surface lots and parking structures are workable but require a different model. Chargers need to be accessible to any resident, access management becomes important as utilization grows, and the ratio of chargers to EV drivers can be slightly lower (since not every driver needs to charge every night). Enertech's Monta network handles access management and fair queuing for shared-lot properties.</p>
+
+      <h3>Existing electrical capacity</h3>
+
+      <p>Your property's electrical infrastructure sets a practical ceiling on how many chargers can be installed at once. Older multifamily buildings — particularly those built before 2000 — often have panels that need upgrading before a substantial charging program is practical. That's not a reason to delay; it's a factor to assess upfront and plan around.</p>
+
+      <p>Enertech's site assessment includes a review of existing electrical capacity, and our installation scope includes panel upgrades when required. The goal is to install as many chargers as make sense now while leaving conduit and panel capacity for expansion — so adding chargers later doesn't require tearing up the parking lot again.</p>
+
+      <h2>The make-ready argument: wire now, install later</h2>
+
+      <p>One of the most cost-effective decisions a property can make is installing make-ready electrical infrastructure beyond the number of chargers going in on day one. The expensive part of an EV charging installation is the electrical work — running conduit, upgrading panels, pulling wire. The charger hardware itself is a smaller portion of the total cost.</p>
+
+      <p>If you're doing electrical work for 8 chargers, adding conduit capacity for 16 costs a fraction of what it would cost to do a second electrical run later. Enertech routinely recommends this approach: install the chargers demand justifies today, but build the infrastructure for the program you'll need in three to five years.</p>
+
+      <div class="callout">
+        <div class="callout-title">How Enertech sizes programs</div>
+        <p>We don't use a generic formula. The free property assessment includes a site-specific recommendation based on your property's unit count, parking layout, electrical capacity, and local EV adoption data. We'll tell you how many chargers make sense now, how to plan for expansion, and what the revenue picture looks like at each scale.</p>
+        <p><strong>And unlike most recommendations — ours cost your property nothing to implement.</strong> We cover 100% of hardware, installation, and electrical work.</p>
+        <a href="/assessment/" class="btn btn-white" style="font-size:0.9rem; padding:12px 14px 12px 20px;">
+          Get a free sizing assessment
+          <span class="btn-icon" aria-hidden="true" style="width:28px; height:28px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+        <p class="risk">No obligation. Takes about 20 minutes.</p>
+      </div>
+
+      <h2>A sizing reference by property type</h2>
+
+      <p>The following is a rough starting-point reference. These aren't formulas — they're the kinds of recommendations Enertech typically makes before a full site assessment narrows the number.</p>
+
+      <table class="sizing-table" aria-label="EV charger sizing reference by property type">
+        <thead>
+          <tr>
+            <th>Property size</th>
+            <th>Market</th>
+            <th>Starting point</th>
+            <th>Make-ready for</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>50–100 units</td>
+            <td>Any Front Range</td>
+            <td>4–6 ports</td>
+            <td>10–12 ports</td>
+          </tr>
+          <tr>
+            <td>100–200 units</td>
+            <td>Denver, Boulder</td>
+            <td>10–16 ports</td>
+            <td>24–30 ports</td>
+          </tr>
+          <tr>
+            <td>100–200 units</td>
+            <td>Fort Collins, Colorado Springs</td>
+            <td>6–10 ports</td>
+            <td>18–24 ports</td>
+          </tr>
+          <tr>
+            <td>200–400 units</td>
+            <td>Denver, Boulder</td>
+            <td>18–28 ports</td>
+            <td>40–60 ports</td>
+          </tr>
+          <tr>
+            <td>200–400 units</td>
+            <td>Fort Collins, Colorado Springs</td>
+            <td>10–18 ports</td>
+            <td>30–40 ports</td>
+          </tr>
+          <tr>
+            <td>400+ units</td>
+            <td>Any Front Range</td>
+            <td>Site assessment required — multiple charging zones typical</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>The two mistakes to avoid</h2>
+
+      <p><strong>Installing too few chargers with no expansion plan.</strong> A community that adds 4 chargers to serve 200 units in a Denver neighborhood will have a waitlist problem within 12–18 months as EV adoption among residents grows. Chargers that are always occupied frustrate residents and generate complaints — the opposite of the low-maintenance amenity you wanted.</p>
+
+      <p><strong>Overbuilding chargers without the infrastructure to support them.</strong> Adding 40 Level 2 chargers to a property whose electrical panel can't support them reliably leads to load management problems, tripped breakers, and unhappy residents. The number of ports needs to match the property's electrical reality — or that infrastructure needs to be upgraded in the same project.</p>
+
+      <p>The right approach is a site-specific assessment that looks at all of these factors together: unit count, parking layout, electrical capacity, local EV adoption data, and what your residents are actually asking for. That's exactly what the <a href="/assessment/">Enertech free assessment</a> covers — and because we handle installation at zero cost to the property, the recommendation is never inflated to sell you more hardware.</p>
+
+    </div>
+  </div>
+
+  <section class="cta-section" aria-label="Call to action">
+    <div class="wrap">
+      <h2 class="h2 reveal">Find out the right number for your property</h2>
+      <p class="body-lg reveal reveal-d1">Enertech's free assessment includes a site-specific charger count recommendation, electrical capacity review, and revenue projection. We cover 100% of installation costs — no budget required from your property.</p>
+      <div class="cta-btn-row reveal reveal-d2">
+        <a href="/assessment/" class="btn btn-white">
+          Get a free property assessment
+          <span class="btn-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+        <a href="/how-it-works/" class="btn btn-ghost-light" style="color:rgba(249,250,251,0.78); border-color:rgba(255,255,255,0.18);">How the model works</a>
+      </div>
+      <p class="risk reveal reveal-d3">No obligation. We'll tell you honestly if the economics don't work for your property.</p>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="footer-logo"><img src="/assets/White_logo_notag.png" alt="Enertech" style="height:28px;width:auto;display:block;"></a>
+          <p class="footer-tagline">Colorado's EV charging partner for multifamily properties. Fort Collins to Colorado Springs — zero cost to the property, always.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <div class="footer-col-title">For properties</div>
+            <a href="/how-it-works/">How It Works</a>
+            <a href="/property-managers/">For Property Managers</a>
+            <a href="/property-owners/">For Property Owners</a>
+            <a href="/hoa/">For HOAs</a>
+            <a href="/community-charging/">Community Charging</a>
+            <a href="/workplace-charging/">Workplace Charging</a>
+            <a href="/assessment/">Get a free assessment</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">For drivers</div>
+            <a href="/for-drivers/">How to charge</a>
+            <a href="/for-drivers/#charger-specs-heading">Charger specs</a>
+            <a href="/for-drivers/#faq-heading">Driver FAQ</a>
+            <a href="tel:+18888957158">24/7 support: +1 888 895 7158</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Resources</div>
+            <a href="/service-area/">Service area</a>
+            <a href="/blog/">Blog</a>
+            <a href="https://www.linkedin.com/company/enertech-energy" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Enertech. Fort Collins to Colorado Springs.</p>
+        <div class="footer-legal"><a href="/privacy-policy/">Privacy Policy</a></div>
+        <p class="footer-service">enertech.energy</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); revealObs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => revealObs.observe(el));
+    document.querySelectorAll('.article-hero .reveal').forEach(el => el.classList.add('in-view'));
+    (function() {
+      var dd = document.querySelector('.nav-dropdown');
+      if (!dd) return;
+      var trigger = dd.querySelector('.nav-dd-trigger');
+      trigger.addEventListener('click', function(e) { e.stopPropagation(); dd.classList.toggle('is-open'); });
+      document.addEventListener('click', function() { dd.classList.remove('is-open'); });
+      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') dd.classList.remove('is-open'); });
+    })();
+    const burger = document.querySelector('.nav-burger');
+    const mobileNav = document.getElementById('nav-mobile');
+    burger.addEventListener('click', () => {
+      const open = burger.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open);
+      mobileNav.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        burger.classList.remove('open');
+        burger.setAttribute('aria-expanded', false);
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+  <script type="text/javascript">
+  _linkedin_partner_id = "9046626";
+  window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+  window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+  </script>
+  <script type="text/javascript">
+  (function(l) {
+    if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}
+    var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript"; b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);})(window.lintrk);
+  </script>
+  <noscript><img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=9046626&fmt=gif" /></noscript>
+</body>
+</html>

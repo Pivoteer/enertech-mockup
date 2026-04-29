@@ -75,7 +75,7 @@
   <!-- Blog index -->
   <url>
     <loc>https://enertech.energy/blog</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -161,6 +161,34 @@
   <url>
     <loc>https://enertech.energy/blog/ev-charging-partner-multifamily-colorado</loc>
     <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://enertech.energy/blog/ev-charging-revenue-share-how-it-works</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://enertech.energy/blog/how-many-ev-chargers-apartment-complex</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://enertech.energy/blog/ev-charging-apartments-aurora</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://enertech.energy/blog/blink-chargepoint-vs-managed-ev-charging-apartment</loc>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
