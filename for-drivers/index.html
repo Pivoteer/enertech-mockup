@@ -74,6 +74,19 @@
     .section--dark .h2 { color: #F9FAFB; }
     .section--mid { background: var(--surface); }
 
+    /* ── CHARGER MAP ── */
+    .charger-map {
+      border: 1px solid var(--border-mid);
+      border-radius: 4px;
+      overflow: hidden;
+      background: var(--surface);
+      line-height: 0;
+    }
+    .charger-map iframe { display: block; width: 100%; height: 600px; }
+    @media (max-width: 720px) {
+      .charger-map iframe { height: 460px; }
+    }
+
     /* ── REVEAL ANIMATIONS ── */
     .reveal {
       opacity: 0;
@@ -809,8 +822,22 @@
     </div>
   </section>
 
+  <!-- CHARGER MAP -->
+  <section class="section section--mid" aria-labelledby="charger-map-heading">
+    <div class="wrap">
+      <div style="max-width:560px; margin-bottom: 48px;">
+        <p class="label reveal">Find a charger</p>
+        <h2 class="h2 reveal reveal-d1" id="charger-map-heading">Where you can charge</h2>
+        <p class="body-lg reveal reveal-d2" style="margin-top: 20px;">Every Enertech charging station on the live Monta network, updated in real time. Tap a marker for connector type, charging speed, and current availability.</p>
+      </div>
+      <div class="charger-map reveal reveal-d3">
+        <iframe src="https://maps.monta.app/?operator=enertech&amp;map_style=silver&amp;marker_style=default&amp;ui_mode=default&amp;tooltip_style=default&amp;onlyAvailable=0&amp;slow=1&amp;fast=1&amp;ultraFast=1&amp;operatorIds=4200" width="100%" height="600" style="border: none;" loading="lazy" title="Map of Enertech EV charging stations"></iframe>
+      </div>
+    </div>
+  </section>
+
   <!-- SUPPORT CTA -->
-  <section class="section" style="padding-top: 0;" aria-labelledby="support-cta-heading">
+  <section class="section" aria-labelledby="support-cta-heading">
     <div class="wrap">
       <div class="support-grid">
         <div class="support-card support-card--dark reveal">
