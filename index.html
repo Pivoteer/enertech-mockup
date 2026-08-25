@@ -5,18 +5,18 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="/assets/Enertech_favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Colorado's EV Charging Company for Multifamily Properties | Enertech</title>
+  <title>Colorado EV Charging: Condos, Apartments &amp; Community Hubs | Enertech</title>
   <meta name="description"
-    content="Enertech is Colorado's EV charging company for multifamily properties. We install, own, and operate chargers at zero cost — your property earns a monthly revenue share. Get a free assessment." />
+    content="Enertech builds and operates the Enertech Charging Network across Colorado — condo and HOA communities, apartments and multifamily, community hubs like churches and schools, and workplaces. We install, own, and operate the chargers at zero cost, and your site earns a monthly revenue share." />
   <link rel="canonical" href="https://www.enertech.energy/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.enertech.energy/" />
-  <meta property="og:title" content="Colorado's EV Charging Company for Multifamily Properties | Enertech" />
-  <meta property="og:description" content="Enertech is Colorado's EV charging company for multifamily properties. We install, own, and operate chargers at zero cost — your property earns a monthly revenue share. Get a free assessment." />
+  <meta property="og:title" content="Colorado EV Charging: Condos, Apartments &amp; Community Hubs | Enertech" />
+  <meta property="og:description" content="Enertech builds and operates the Enertech Charging Network across Colorado — condo and HOA communities, apartments and multifamily, community hubs like churches and schools, and workplaces. We install, own, and operate the chargers at zero cost, and your site earns a monthly revenue share." />
   <meta property="og:site_name" content="Enertech" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Colorado's EV Charging Company for Multifamily Properties | Enertech" />
-  <meta name="twitter:description" content="Enertech is Colorado's EV charging company for multifamily properties. We install, own, and operate chargers at zero cost — your property earns a monthly revenue share. Get a free assessment." />
+  <meta name="twitter:title" content="Colorado EV Charging: Condos, Apartments &amp; Community Hubs | Enertech" />
+  <meta name="twitter:description" content="Enertech builds and operates the Enertech Charging Network across Colorado — condo and HOA communities, apartments and multifamily, community hubs like churches and schools, and workplaces. We install, own, and operate the chargers at zero cost, and your site earns a monthly revenue share." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
@@ -27,7 +27,11 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Enertech",
-    "description": "Enertech installs, owns, and operates EV charging infrastructure at Colorado multifamily properties at zero upfront cost. Properties earn a monthly revenue share.",
+    "description": "Enertech installs, owns, and operates the Enertech Charging Network — EV charging infrastructure at Colorado condo and HOA communities, apartment and multifamily properties, community hubs (churches, schools, community centers, and civic sites), and workplaces — at zero upfront cost. Sites earn a monthly revenue share.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Enertech Charging Network"
+    },
     "url": "https://www.enertech.energy",
     "telephone": "+1-877-326-7783",
     "email": "ev@enertech.energy",
@@ -63,7 +67,15 @@
           "itemOffered": {
             "@type": "Service",
             "name": "Zero-Cost EV Charging Installation",
-            "description": "Enertech installs and operates Level 2 and DC fast chargers at multifamily properties with no upfront cost to the property."
+            "description": "Enertech installs and operates Level 2 and DC fast chargers at condo and HOA communities, apartment and multifamily properties, community hubs, and workplaces with no upfront cost to the property."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Community Hub DC Fast Charging",
+            "description": "Enertech funds, installs, and operates DC fast charging at Colorado community hubs — churches and places of worship, community and recreation centers, schools, nonprofits, and civic sites — at zero cost, with a revenue share to the organization. Workplace and commercial sites are served under the same model."
           }
         },
         {
@@ -432,6 +444,7 @@
 
     .nav-links a {
       display: block;
+      white-space: nowrap;
       padding: 8px 14px;
       font-size: 0.875rem;
       font-weight: 500;
@@ -1940,6 +1953,30 @@
       }
     }
 
+
+    /* ══════ SEGMENTS (property types) ══════ */
+    .segments { padding: 96px 0; background: var(--surface); border-bottom: 1px solid var(--border); }
+    .segments-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; flex-wrap: wrap; margin-bottom: 44px; }
+    .segments-head p.body-md { max-width: 460px; }
+    .segments-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .segment-card { display: block; text-decoration: none; background: var(--canvas); border: 1px solid var(--border); border-radius: var(--r-md); padding: 28px 26px 24px; transition: box-shadow .18s var(--ease), transform .18s var(--ease); }
+    .segment-card:hover { box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+    .segment-card .seg-name { font-size: 1.25rem; font-weight: 800; letter-spacing: -0.025em; color: var(--ink); margin-bottom: 10px; }
+    .segment-card .seg-copy { font-size: 0.94rem; line-height: 1.55; color: var(--secondary); margin-bottom: 18px; }
+    .segment-card .seg-tags { font-size: 0.78rem; line-height: 1.5; color: var(--muted); margin-bottom: 18px; }
+    .segment-card .seg-link { font-size: 0.85rem; font-weight: 600; color: var(--ink); }
+    /* three primary cards — dark */
+    .segments-grid .segment-card.segment-card-feature { background: var(--canvas-dark); border-color: rgba(255,255,255,0.10); padding: 32px 30px 28px; }
+    .segments-grid .segment-card-feature .seg-name { color: #F9FAFB; }
+    .segments-grid .segment-card-feature .seg-copy { color: rgba(249,250,251,0.72); }
+    .segments-grid .segment-card-feature .seg-tags { color: rgba(249,250,251,0.45); }
+    .segments-grid .segment-card-feature .seg-link { color: #F9FAFB; }
+    /* workplace — slim, full width, secondary */
+    .segments-grid .segment-card.segment-card-slim { grid-column: 1 / -1; display: flex; align-items: baseline; gap: 8px 28px; flex-wrap: wrap; padding: 22px 26px; }
+    .segments-grid .segment-card-slim .seg-name { font-size: 1rem; margin-bottom: 0; }
+    .segments-grid .segment-card-slim .seg-copy { font-size: 0.9rem; margin-bottom: 0; flex: 1 1 320px; }
+    @media (max-width: 1024px) { .segments-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .segments-grid { grid-template-columns: 1fr; } .segments { padding: 64px 0; } }
     .home-blog { padding: 80px 0; background: var(--canvas-2, #F5F6F8); }
     .home-blog .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 8px; }
     .home-blog .section-heading { font-size: 1.75rem; font-weight: 800; letter-spacing: -0.03em; color: var(--ink); margin-bottom: 40px; }
@@ -1977,7 +2014,7 @@
           <div class="nav-dd-menu">
             <a href="/property-managers/">Property Managers</a>
             <a href="/property-owners/">Property Owners</a>
-            <a href="/hoa/">For HOAs</a>
+            <a href="/hoa/">Condos &amp; HOAs</a>
             <div class="nav-dd-divider"></div>
             <a href="/community-charging/">Community Charging</a>
             <a href="/workplace-charging/">Workplace Charging</a>
@@ -2006,7 +2043,7 @@
     <div class="mob-label">Who We Serve</div>
     <a href="/property-managers/">Property Managers</a>
     <a href="/property-owners/">Property Owners</a>
-    <a href="/hoa/">For HOAs</a>
+    <a href="/hoa/">Condos &amp; HOAs</a>
     <a href="/community-charging/">Community Charging</a>
     <a href="/workplace-charging/">Workplace Charging</a>
     <a href="/service-area/">Service Area</a>
@@ -2023,7 +2060,7 @@
     <div class="hero-bg">
       <div class="hero-bg-fallback"></div>
       <img id="hero-parallax" class="hero-bg-img" src="/assets/hero-bg.webp"
-        alt="Row of EV charging stations at a Colorado multifamily property" loading="eager" />
+        alt="Row of Enertech Charging Network EV charging stations at a Colorado property" loading="eager" />
       <div class="hero-overlay"></div>
     </div>
 
@@ -2040,8 +2077,9 @@
             <em>We cover the cost.</em>
           </h1>
           <p class="hero-sub reveal reveal-d2">
-            Enertech installs, owns, and operates Level 2 EV charging at multifamily properties across the Front Range.
-            Zero cost to you — ever. Your property earns a monthly revenue share from day one.
+            Enertech installs, owns, and operates the Enertech Charging Network across the Front Range — at condo and
+            HOA communities, apartment and multifamily properties, community hubs like churches and schools, and
+            workplaces. Zero cost to you — ever. Your site earns a monthly revenue share from day one.
           </p>
           <div class="hero-actions reveal reveal-d3">
             <a href="/assessment/" class="btn btn-primary">
@@ -2170,6 +2208,51 @@
     </div>
   </section>
 
+  <!-- ══════ SEGMENTS ══════ -->
+  <section class="segments">
+    <div class="wrap">
+      <div class="segments-head">
+        <div>
+          <p class="label reveal">Who we serve</p>
+          <h2 class="h2 reveal reveal-d1" style="margin-top:12px;max-width:560px;">One charging network.<br>Every
+            kind of Colorado property.</h2>
+        </div>
+        <p class="body-md reveal reveal-d2">A condo association, a 200-unit apartment community, a church parking
+          lot — each needs a different charger, a different layout, and a different conversation. All of them join the
+          Enertech Charging Network on the same terms: same hardware quality, same 24/7 monitoring, same zero cost.</p>
+      </div>
+      <div class="segments-grid">
+        <a href="/hoa/" class="segment-card segment-card-feature reveal">
+          <div class="seg-name">Condos &amp; HOAs</div>
+          <p class="seg-copy">No special assessment, no reserve draw, no board budget. We fund the install, work with
+            your board on placement and access rules, and handle the owners' questions after it's live.</p>
+          <p class="seg-tags">Condo associations · HOA boards · Townhome communities</p>
+          <span class="seg-link">Condo &amp; HOA charging →</span>
+        </a>
+        <a href="/property-managers/" class="segment-card segment-card-feature reveal reveal-d1">
+          <div class="seg-name">Apartments &amp; multifamily</div>
+          <p class="seg-copy">Level 2 charging your residents actually rely on — and a resident support line that
+            isn't your leasing office. Sized to your parking layout, expandable as EV adoption grows.</p>
+          <p class="seg-tags">Apartment communities · Mixed-use · Build-to-rent</p>
+          <span class="seg-link">Multifamily charging →</span>
+        </a>
+        <a href="/community-charging/" class="segment-card segment-card-feature reveal reveal-d2">
+          <div class="seg-name">Community hubs</div>
+          <p class="seg-copy">DC fast charging that serves your members during a service or a meeting — and the
+            neighborhood the rest of the week. Your parking lot becomes an amenity, at no cost to the organization.</p>
+          <p class="seg-tags">Churches &amp; places of worship · Rec &amp; community centers · Schools · Nonprofits · Civic sites</p>
+          <span class="seg-link">Community charging →</span>
+        </a>
+        <a href="/workplace-charging/" class="segment-card segment-card-slim reveal reveal-d3">
+          <div class="seg-name">Workplaces</div>
+          <p class="seg-copy">Offices, industrial parks, and commercial properties — charging for employees, fleets,
+            and visitors, on the same zero-cost terms.</p>
+          <span class="seg-link">Workplace charging →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ══════ HOW IT WORKS ══════ -->
   <section class="section">
     <div class="wrap">
@@ -2179,7 +2262,8 @@
           <h2 class="h2 reveal reveal-d1" style="margin-top:12px;margin-bottom:24px;">Three steps.<br>Then you earn.
           </h2>
           <p class="body-md reveal reveal-d2">Most EV charging companies send you a bill. Enertech doesn't. Here's how
-            our model works for Colorado multifamily properties.</p>
+            our model works for every site on the Enertech Charging Network — condos and HOAs, apartments and multifamily,
+            community hubs, and workplaces.</p>
           <div class="zero-cost-callout reveal reveal-d3">
             <h3 class="h3">We cover 100% of the cost. You keep a share of the revenue.</h3>
             <p>Enertech earns when the chargers are used — so keeping them running is literally in our financial
@@ -2256,7 +2340,7 @@
             Scroll: starts scale(1.08), animates to scale(1.0) on intersection
           -->
             <img id="bento-zoom" src="/assets/property-sunset.webp"
-              alt="Enertech EV charger installed at a Colorado apartment complex" loading="lazy" />
+              alt="Enertech Charging Network charger installed at a Colorado apartment community" loading="lazy" />
             <div class="bento-a-photo-overlay"></div>
           </div>
           <div class="bento-a-text">
@@ -2364,6 +2448,16 @@
           <p class="body-md reveal reveal-d2" style="margin-top:16px;">Straight answers — no corporate hedging.</p>
         </div>
         <div>
+          <div class="accordion-item reveal"><button class="accordion-trigger">We're a church, school, or community organization — does this work for us?<span
+                class="accordion-icon">+</span></button>
+            <div class="accordion-body">
+              <div class="accordion-body-inner">Yes. Places of worship, community and rec centers, schools,
+                nonprofits, and civic sites all qualify, and the model is the same one we run at residential
+                properties: we fund and install DC fast charging, we operate it, and your organization earns a share
+                of every session. A service or a meeting runs one to three hours, which is exactly the window DC fast
+                charging is built for. <a href="/community-charging/" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">See how community charging works</a>.</div>
+            </div>
+          </div>
           <div class="accordion-item reveal"><button class="accordion-trigger">We already have EV chargers.<span
                 class="accordion-icon">+</span></button>
             <div class="accordion-body">
@@ -2435,7 +2529,7 @@
           <div class="t-main-photo">
             <div class="t-main-photo-inner" id="curtain-reveal">
               <img src="/assets/property-fusion.webp"
-                alt="Fusion 355 multifamily property in Colorado with Enertech EV charging" loading="lazy" />
+                alt="Fusion 355 apartment community in Colorado with Enertech EV charging" loading="lazy" />
             </div>
             <div class="t-main-photo-overlay"></div>
           </div>
@@ -2475,7 +2569,7 @@
       <p class="label reveal">Partner properties</p>
       <div
         style="display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-top:12px;">
-        <h2 class="h2 reveal reveal-d1" style="max-width:480px;">Sample properties we serve across the Front Range.</h2>
+        <h2 class="h2 reveal reveal-d1" style="max-width:560px;">Sites on the Enertech Charging Network across the Front Range.</h2>
         <a href="/service-area/" class="reveal reveal-d2"
           style="font-size:0.9rem;font-weight:600;color:var(--secondary);border-bottom:1px solid var(--border-mid);padding-bottom:2px;flex-shrink:0;">See
           full service area →</a>
@@ -2539,8 +2633,9 @@
             <span class="city-tag">Lakewood</span><span class="city-tag">Thornton</span>
             <span class="city-tag">Westminster</span><span class="city-tag">Arvada</span>
           </div>
-          <p class="body-md reveal reveal-d2" style="margin-top:24px;">And surrounding Front Range communities. Not sure
-            if your property qualifies? Ask — we'll tell you honestly.</p>
+          <p class="body-md reveal reveal-d2" style="margin-top:24px;">And surrounding Front Range communities. The
+            Enertech Charging Network covers condos and HOAs, apartments, community hubs, and workplaces in every
+            city listed here. Not sure if your property qualifies? Ask — we'll tell you honestly.</p>
         </div>
         <div>
           <p class="label reveal" style="margin-bottom:28px;">Why local matters for EV charging</p>
@@ -2613,14 +2708,14 @@
 
   <section class="final-cta">
     <div class="final-cta-bg">
-      <img id="final-cta-img" src="/assets/property-sunset.webp" alt="EV charging at a Colorado multifamily property"
+      <img id="final-cta-img" src="/assets/property-sunset.webp" alt="Enertech Charging Network EV charging at a Colorado property at sunset"
         loading="lazy" />
       <div class="final-cta-overlay"></div>
     </div>
     <div class="wrap">
       <div class="final-cta-inner">
         <p class="label reveal" style="color:rgba(255,255,255,0.58);margin-bottom:20px;">Ready to get started</p>
-        <h2 class="h2 reveal reveal-d1">Your property could be earning revenue from EV charging.</h2>
+        <h2 class="h2 reveal reveal-d1">Your property could be earning revenue on the Enertech Charging Network.</h2>
         <p class="body-lg reveal reveal-d2">A free 20-minute assessment tells you how many ports your property needs,
           which Colorado programs you qualify for, and what a revenue share could look like. No obligation, no pressure.
         </p>
@@ -2645,16 +2740,16 @@
       <div class="footer-top">
         <div class="footer-brand">
           <a href="/" class="footer-logo"><img src="/assets/White_logo_notag.png" alt="Enertech" style="height:28px;width:auto;display:block;"></a>
-          <p class="footer-tagline">Colorado's EV charging company for multifamily properties. Fort Collins to Colorado Springs — zero cost to the property, always.</p>
+          <p class="footer-tagline">The Enertech Charging Network — EV charging for Colorado condos and HOAs, apartments, community hubs, and workplaces. Fort Collins to Colorado Springs, zero cost to the site, always.</p>
         </div>
         <div class="footer-links">
           <div class="footer-col">
             <div class="footer-col-title">For properties</div>
             <a href="/how-it-works/">How It Works</a>
+            <a href="/community-charging/">Community Charging</a>
             <a href="/property-managers/">For Property Managers</a>
             <a href="/property-owners/">For Property Owners</a>
-            <a href="/hoa/">For HOAs</a>
-            <a href="/community-charging/">Community Charging</a>
+            <a href="/hoa/">Condos &amp; HOAs</a>
             <a href="/workplace-charging/">Workplace Charging</a>
             <a href="/assessment/">Get a free assessment</a>
           </div>
